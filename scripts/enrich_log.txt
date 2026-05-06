@@ -5306,10 +5306,24 @@ Saving every 50 words. Safe to Ctrl+C and restart.
   [187/3853] development ... OK
   [188/3853] device ... OK
   [189/3853] devil ... OK
-  [190/3853] devise ... 
-  [184/3853] determined ... OK
-  [185/3853] devastate ... OK
-  [186/3853] develop ... OK
-  [187/3853] development ... OK
-  [188/3853] device ... OK
-  [189/3853] devil ... 
+  [190/3853] devise ... OK
+  [191/3853] devote ... OK
+  [192/3853] diagnose ... OK
+  [193/3853] diagnosis ... OK
+  [194/3853] diagram ... OK
+  [195/3853] dialogue ... OK
+  [196/3853] diamond ... OK
+  [197/3853] diary ... OK
+  [198/3853] dictate ... OK
+  [199/3853] dictator ... OK
+  [200/3853] dictionary ... OK
+  [194/3853] diagram ... OK
+  [195/3853] dialogue ... OK
+  [196/3853] diamond ... OK
+  [197/3853] diary ... OK
+  [198/3853] dictate ... OK
+  [199/3853] dictator ... OK
+  [200/3853] dictionary ... OK
+  [checkpoint] saved — 200 updated, 3653 remaining
+
+  [201/3853] die ... 
