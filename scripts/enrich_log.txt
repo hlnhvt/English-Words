@@ -5322,9 +5322,25 @@ Saving every 50 words. Safe to Ctrl+C and restart.
   [201/3853] die ... OK
   [202/3853] diet ... OK
   [203/3853] differ ... OK
-  [204/3853] difference ... ator ... OK
-  [200/3853] dictionary ... OK
-  [checkpoint] saved — 200 updated, 3653 remaining
-
-  [201/3853] die ... OK
-  [202/3853] diet ... 
+  [204/3853] difference ... OK
+  [205/3853] different ... OK
+  [206/3853] differentiate ... OK
+  [207/3853] differently ... OK
+  [208/3853] difficult ... OK
+  [209/3853] difficulty ... OK
+  [210/3853] dig ... OK
+  [211/3853] digital ... OK
+  [212/3853] dignity ... OK
+  [213/3853] dilemma ... OK
+  [214/3853] dimension ... OK
+  [215/3853] diminish ... OK
+  [216/3853] dinner ... OK
+  [217/3853] dip ... OK
+  [218/3853] diplomat ... OK
+  [219/3853] diplomatic ... OK
+  [220/3853] direct ... OK
+  [221/3853] direction ... . OK
+  [215/3853] diminish ... OK
+  [216/3853] dinner ... OK
+  [217/3853] dip ... OK
+  [218/3853] diplomat ... 
