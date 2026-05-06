@@ -116,10 +116,13 @@ export function renderLearn(allWords) {
               
               <!-- Meanings -->
               <div class="space-y-4 flex-1 text-left">
-                ${(word.meaning_en || word.meaning_vi) ? `
-                  <div class="mb-4">
-                    ${word.meaning_en ? `<p class="text-lg font-bold text-surface-100 mb-1">${word.meaning_en}</p>` : ''}
-                    ${word.meaning_vi ? `<p class="text-[15px] font-medium text-primary-400">${word.meaning_vi}</p>` : ''}
+                ${(word.meaning_en || word.meaning_vi || word.meaning_vi_detail) ? `
+                  <div class="glass bg-white/3 rounded-2xl p-4 mb-4">
+                    ${word.meaning_vi ? `
+                      <p class="text-[15px] font-semibold text-primary-400 ${word.meaning_en || word.meaning_vi_detail ? 'mb-3 pb-3 border-b border-white/5' : ''}">${word.meaning_vi}</p>
+                    ` : ''}
+                    ${word.meaning_en ? `<p class="text-base font-bold text-surface-100 mb-1">${word.meaning_en}</p>` : ''}
+                    ${word.meaning_vi_detail ? `<p class="text-sm text-surface-300 leading-relaxed">${word.meaning_vi_detail}</p>` : ''}
                   </div>
                 ` : ''}
                 

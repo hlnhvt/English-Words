@@ -32,8 +32,11 @@ export function renderWordModal(word) {
             <div class="space-y-2">
               <h3 class="text-xs font-bold text-surface-500 uppercase tracking-widest">Ý nghĩa</h3>
               <div class="glass bg-white/3 rounded-2xl p-4">
-                ${word.meaning_en ? `<p class="text-lg font-bold text-surface-100 mb-1">${word.meaning_en}</p>` : ''}
-                ${word.meaning_vi ? `<p class="text-base font-medium text-primary-400">${word.meaning_vi}</p>` : ''}
+                ${word.meaning_vi ? `
+                  <p class="text-base font-semibold text-primary-400 ${word.meaning_en || word.meaning_vi_detail ? 'mb-3 pb-3 border-b border-white/5' : ''}">${word.meaning_vi}</p>
+                ` : ''}
+                ${word.meaning_en ? `<p class="text-base font-bold text-surface-100 mb-1">${word.meaning_en}</p>` : ''}
+                ${word.meaning_vi_detail ? `<p class="text-sm text-surface-300 leading-relaxed">${word.meaning_vi_detail}</p>` : ''}
               </div>
             </div>
 

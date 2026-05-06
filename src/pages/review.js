@@ -8,6 +8,7 @@ function getFirstDayOfMonth() {
 
 let reviewConfig = {
   questionCount: 20,
+  wordSource: 'learned', // learned | all
   levelFilter: 'all',
   dateFilter: 'all',   // all | today | week | month | range
   dateFrom: getFirstDayOfMonth(),
@@ -40,12 +41,12 @@ function buildWordPool(allWords) {
     const p = progress[word.word];
     const hasProgress = !!p;
     const isBookmarked = bookmarkSet.has(word.word);
-    if (!hasProgress && !isBookmarked) return false;
+    if (reviewConfig.wordSource === 'learned' && !hasProgress && !isBookmarked) return false;
     if (reviewConfig.levelFilter !== 'all' && word.level !== reviewConfig.levelFilter) return false;
     if (reviewConfig.bookmarkedOnly && !isBookmarked) return false;
 
     if (reviewConfig.dateFilter !== 'all') {
-      if (!hasProgress) return false;
+      if (!hasProgress) return true; // unlearned words pass date filter when wordSource=all
       const learnDate = p.firstLearned;
       if (!learnDate) return false;
       const today = new Date(); today.setHours(0, 0, 0, 0);
@@ -99,8 +100,37 @@ function renderSetupScreen(allWords) {
       </div>
 
       <div class="space-y-3">
-        <!-- Question Count -->
+        <!-- Word source -->
         <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.05s">
+          <h3 class="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Nguồn từ vựng</h3>
+          <div class="grid grid-cols-2 gap-2">
+            <button data-setup-word-source="learned"
+                    class="flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-medium transition-all
+                           ${reviewConfig.wordSource === 'learned'
+                             ? 'bg-primary-600 text-white shadow-lg shadow-primary-600/25'
+                             : 'bg-white/5 text-surface-400 hover:bg-white/10'}">
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+              </svg>
+              Từ đã học
+            </button>
+            <button data-setup-word-source="all"
+                    class="flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-medium transition-all
+                           ${reviewConfig.wordSource === 'all'
+                             ? 'bg-primary-600 text-white shadow-lg shadow-primary-600/25'
+                             : 'bg-white/5 text-surface-400 hover:bg-white/10'}">
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+              </svg>
+              Tất cả từ vựng
+            </button>
+          </div>
+        </div>
+
+        <!-- Question Count -->
+        <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.1s">
           <h3 class="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Số câu hỏi</h3>
           <div class="flex flex-wrap gap-2">
             ${[10, 20, 30, 50, 'all'].map(n => `
@@ -111,7 +141,7 @@ function renderSetupScreen(allWords) {
         </div>
 
         <!-- Level -->
-        <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.1s">
+        <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.15s">
           <h3 class="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Cấp độ từ</h3>
           <div class="flex flex-wrap gap-2">
             ${['all','A1','A2','B1','B2','C1'].map(lvl => `
@@ -122,7 +152,7 @@ function renderSetupScreen(allWords) {
         </div>
 
         <!-- Date -->
-        <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.15s">
+        <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.2s">
           <h3 class="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Thời gian học</h3>
           <div class="flex flex-wrap gap-2 mb-3">
             ${[
@@ -149,7 +179,7 @@ function renderSetupScreen(allWords) {
         </div>
 
         <!-- Timer -->
-        <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.2s">
+        <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.25s">
           <h3 class="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Thời gian làm bài</h3>
           <div class="flex flex-wrap gap-2">
             ${[
@@ -167,7 +197,7 @@ function renderSetupScreen(allWords) {
         </div>
 
         <!-- Mode + extras -->
-        <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.25s">
+        <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.3s">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <!-- Mode -->
             <div>
@@ -229,7 +259,7 @@ function renderSetupScreen(allWords) {
         </div>
 
         <!-- Start -->
-        <div class="fade-in pt-1" style="animation-delay:.3s">
+        <div class="fade-in pt-1" style="animation-delay:.35s">
           <p class="text-sm px-1 mb-3 ${canStart ? 'text-surface-400' : 'text-red-400/80'}">
             ${canStart
               ? `<span class="font-bold text-primary-400">${poolSize}</span> từ phù hợp với bộ lọc`
@@ -389,10 +419,13 @@ function renderFlashcardMode(word) {
             <h2 class="text-2xl font-bold text-surface-100 mb-1">${word.word}</h2>
             <span class="text-xs text-surface-400 mb-4">${word.pos.join(', ')} · ${word.level}</span>
             <div class="space-y-4 flex-1 text-left">
-              ${(word.meaning_en || word.meaning_vi) ? `
-                <div>
-                  ${word.meaning_en ? `<p class="text-lg font-bold text-surface-100 mb-1">${word.meaning_en}</p>` : ''}
-                  ${word.meaning_vi ? `<p class="text-[15px] font-medium text-primary-400">${word.meaning_vi}</p>` : ''}
+              ${(word.meaning_en || word.meaning_vi || word.meaning_vi_detail) ? `
+                <div class="glass bg-white/3 rounded-2xl p-4">
+                  ${word.meaning_vi ? `
+                    <p class="text-[15px] font-semibold text-primary-400 ${word.meaning_en || word.meaning_vi_detail ? 'mb-3 pb-3 border-b border-white/5' : ''}">${word.meaning_vi}</p>
+                  ` : ''}
+                  ${word.meaning_en ? `<p class="text-base font-bold text-surface-100 mb-1">${word.meaning_en}</p>` : ''}
+                  ${word.meaning_vi_detail ? `<p class="text-sm text-surface-300 leading-relaxed">${word.meaning_vi_detail}</p>` : ''}
                 </div>` : ''}
               ${word.examples?.length > 0 ? `
                 <ul class="space-y-3">
@@ -507,6 +540,9 @@ export function initReviewEvents(allWords, rerenderFn) {
 
   // ── Setup events ──────────────────────────────────────────────────────────
 
+  document.querySelectorAll('[data-setup-word-source]').forEach(btn => {
+    btn.addEventListener('click', () => { reviewConfig.wordSource = btn.dataset.setupWordSource; rerenderFn(); });
+  });
   document.querySelectorAll('[data-q-count]').forEach(btn => {
     btn.addEventListener('click', () => {
       const v = btn.dataset.qCount;

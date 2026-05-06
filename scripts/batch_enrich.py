@@ -2,22 +2,16 @@
 Batch-enrich words.json using the Anthropic Message Batches API.
 
 Usage:
-    # Install deps first (one time):
     pip install anthropic
 
-    # Set your API key:
     set ANTHROPIC_API_KEY=sk-ant-...   (Windows CMD)
     $env:ANTHROPIC_API_KEY="sk-ant-..." (PowerShell)
 
-    # Run (processes up to --count words per batch submission):
-    python scripts/batch_enrich.py                     # submit a new batch (default 1000 words)
-    python scripts/batch_enrich.py --count 2000        # larger chunk
-    python scripts/batch_enrich.py --resume            # poll + apply a previously submitted batch
-    python scripts/batch_enrich.py --status            # check status without applying
-
-Cost estimate (Haiku 4.5 at Batch API 50% discount):
-    ~$0.0005/1M input tokens, ~$0.0025/1M output tokens
-    Full 4868 words ≈ $0.30-0.60 total across all runs
+    python scripts/batch_enrich.py                     # submit + wait + apply (default 1000 words)
+    python scripts/batch_enrich.py --count 2000
+    python scripts/batch_enrich.py --submit-only       # submit and exit (async)
+    python scripts/batch_enrich.py --resume            # poll + apply an existing batch
+    python scripts/batch_enrich.py --status            # check status only
 """
 
 import argparse
@@ -29,8 +23,9 @@ from pathlib import Path
 
 WORDS_PATH = Path("public/data/words.json")
 STATE_PATH = Path("scripts/.batch_state.json")
-MODEL = "claude-haiku-4-5"
-MAX_PER_BATCH = 1000  # stay well under the 100K limit; adjust with --count
+MODEL = "claude-haiku-4-5-20251001"
+MAX_TOKENS = 1024
+MAX_PER_BATCH = 1000
 
 
 def load_words():
@@ -51,6 +46,7 @@ def load_state():
 
 
 def save_state(state):
+    STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(STATE_PATH, "w", encoding="utf-8") as f:
         json.dump(state, f, indent=2)
 
@@ -60,24 +56,50 @@ def clear_state():
 
 
 def needs_enrichment(word):
-    return not word.get("examples") or len(word["examples"]) == 0
+    missing_examples = not word.get("examples") or len(word["examples"]) == 0
+    missing_detail = not word.get("meaning_vi_detail")
+    return missing_examples or missing_detail
 
 
 def build_prompt(word):
     pos = word.get("pos", [""])[0] if word.get("pos") else ""
     level = word.get("level", "")
-    meaning_vi = word.get("meaning_vi", "")
+    current_vi = word.get("meaning_vi", "")
 
-    return f"""Given the English word "{word['word']}" ({pos}, CEFR level {level}), Vietnamese meaning: "{meaning_vi}".
+    return f"""English word: "{word['word']}" ({pos}, CEFR {level})
+Current Vietnamese gloss: "{current_vi}"
 
-Provide a JSON object with these fields:
-- "meaning_en": A clear 1-2 sentence English definition appropriate for {level} level learners.
-- "phonetic": IPA transcription (e.g. "/ˈwɜːrd/"). Include stress marks.
-- "examples": Array of exactly 2 objects, each with:
-  - "en": A natural English example sentence using the word in context.
-  - "vi": Accurate, natural Vietnamese translation of that sentence.
+Return a JSON object with exactly these fields:
 
-Return ONLY valid JSON, no markdown, no extra text."""
+- "meaning_vi": SHORT Vietnamese meaning. 2-5 words only. Comma-separated key concepts or synonyms. No full sentences. Example for "abandon": "bỏ cuộc, từ bỏ, rời bỏ"
+- "meaning_vi_detail": Full Vietnamese translation as a natural complete sentence (or 2 sentences max). This is the detailed explanation in Vietnamese.
+- "meaning_en": Clear English definition, 1-2 sentences, appropriate for {level} learners.
+- "phonetic": IPA transcription with stress marks, e.g. "/əˈbændən/".
+- "examples": Array of exactly 2 objects with "en" (natural example sentence) and "vi" (accurate Vietnamese translation).
+
+Return ONLY valid JSON, no markdown, no extra text. Example format:
+{{"meaning_vi": "bỏ cuộc, từ bỏ", "meaning_vi_detail": "Từ bỏ hoặc buông bỏ quyền kiểm soát; đầu hàng hoặc khuất phục.", "meaning_en": "To give up completely.", "phonetic": "/əˈbændən/", "examples": [{{"en": "She abandoned her car.", "vi": "Cô ấy bỏ lại xe."}}]}}"""
+
+
+def strip_json(raw):
+    raw = raw.strip()
+    if raw.startswith("```"):
+        lines = raw.split("\n")
+        inner = []
+        for i, line in enumerate(lines):
+            if i == 0:
+                continue
+            if line.strip() == "```" and i == len(lines) - 1:
+                continue
+            inner.append(line)
+        raw = "\n".join(inner).strip()
+    return raw
+
+
+def safe_id(word, idx):
+    import re
+    sanitized = re.sub(r"[^a-zA-Z0-9_-]", "_", word)[:58]
+    return f"{sanitized}_{idx}"
 
 
 def submit_batch(words, count):
@@ -89,38 +111,29 @@ def submit_batch(words, count):
 
     client = anthropic.Anthropic()
 
-    # Select words that need enrichment
     targets = [w for w in words if needs_enrichment(w)]
     total_missing = len(targets)
     targets = targets[:count]
 
     if not targets:
-        print("All words already have examples. Nothing to do.")
-        return
+        print("All words are fully enriched. Nothing to do.")
+        return None
 
-    print(f"Words missing examples: {total_missing}")
+    print(f"Words needing enrichment: {total_missing}")
     print(f"Submitting batch for {len(targets)} words (model: {MODEL})...")
-
-    import re
-
-    def safe_id(word, idx):
-        # custom_id must match ^[a-zA-Z0-9_-]{1,64}$
-        sanitized = re.sub(r"[^a-zA-Z0-9_-]", "_", word)[:60]
-        return f"{sanitized}_{idx}"
 
     requests = [
         {
             "custom_id": safe_id(w["word"], i),
             "params": {
                 "model": MODEL,
-                "max_tokens": 512,
+                "max_tokens": MAX_TOKENS,
                 "messages": [{"role": "user", "content": build_prompt(w)}],
             },
         }
         for i, w in enumerate(targets)
     ]
 
-    # Map sanitized ID → original word for result parsing
     id_to_word = {safe_id(w["word"], i): w["word"] for i, w in enumerate(targets)}
 
     batch = client.messages.batches.create(requests=requests)
@@ -136,8 +149,7 @@ def submit_batch(words, count):
 
     print(f"Batch submitted: {batch.id}")
     print(f"Status: {batch.processing_status}")
-    print(f"Saved state to {STATE_PATH}")
-    print(f"\nRun again with --resume to poll and apply results.")
+    return batch.id
 
 
 def poll_and_apply(words, apply=True):
@@ -162,10 +174,8 @@ def poll_and_apply(words, apply=True):
         counts = batch.request_counts
         print(
             f"  Status: {batch.processing_status} | "
-            f"processing={counts.processing} | "
-            f"succeeded={counts.succeeded} | "
-            f"errored={counts.errored} | "
-            f"expired={counts.expired}"
+            f"processing={counts.processing} succeeded={counts.succeeded} "
+            f"errored={counts.errored} expired={counts.expired}"
         )
 
         if batch.processing_status == "ended":
@@ -175,57 +185,56 @@ def poll_and_apply(words, apply=True):
             print("Batch still running. Check again later with --resume.")
             return
 
-        print("  Still running — waiting 30 seconds...")
+        print("  Waiting 30 seconds...")
         time.sleep(30)
 
     if not apply:
         return
 
-    # Build lookup for quick update
     words_by_word = {w["word"]: w for w in words}
     id_to_word = state.get("id_to_word", {})
 
     updated = 0
     errors = 0
+    parse_errors = []
 
     print(f"\nApplying results...")
     for result in client.messages.batches.results(batch_id):
-        # Resolve original word text from the sanitized custom_id
         word_text = id_to_word.get(result.custom_id, result.custom_id)
 
         if result.result.type == "errored":
             errors += 1
-            print(f"  ERROR [{word_text}]: {result.result.error.type}")
+            print(f"  API ERROR [{word_text}]: {result.result.error.type}")
             continue
 
         if result.result.type == "expired":
             errors += 1
             continue
 
-        # Parse the JSON response
         try:
-            raw = result.result.message.content[0].text.strip()
-            # Strip markdown code fences if present
-            if raw.startswith("```"):
-                raw = raw.split("```")[1]
-                if raw.startswith("json"):
-                    raw = raw[4:]
+            raw = result.result.message.content[0].text
+            raw = strip_json(raw)
             data = json.loads(raw)
         except (json.JSONDecodeError, IndexError, AttributeError) as e:
             errors += 1
-            print(f"  PARSE ERROR [{word_text}]: {e}")
+            parse_errors.append(word_text)
+            if len(parse_errors) <= 5:
+                print(f"  PARSE ERROR [{word_text}]: {e}")
             continue
 
         word_obj = words_by_word.get(word_text)
         if not word_obj:
             continue
 
+        if data.get("meaning_vi"):
+            word_obj["meaning_vi"] = data["meaning_vi"]
+        if data.get("meaning_vi_detail"):
+            word_obj["meaning_vi_detail"] = data["meaning_vi_detail"]
         if data.get("meaning_en"):
             word_obj["meaning_en"] = data["meaning_en"]
         if data.get("phonetic"):
             word_obj["phonetic"] = data["phonetic"]
         if data.get("examples") and isinstance(data["examples"], list):
-            # Validate structure
             valid_examples = [
                 ex for ex in data["examples"]
                 if isinstance(ex, dict) and ex.get("en") and ex.get("vi")
@@ -238,11 +247,21 @@ def poll_and_apply(words, apply=True):
     clear_state()
 
     print(f"\nDone. Updated: {updated} words | Errors: {errors}")
-    print(f"Saved to {WORDS_PATH}")
+    if parse_errors and len(parse_errors) > 5:
+        print(f"  ({len(parse_errors)} total parse errors — first 5 shown above)")
 
-    # Show remaining count
+    # Show a sample of enriched words
+    enriched = [w for w in words if w.get("meaning_vi_detail")]
+    sample = enriched[-3:] if len(enriched) >= 3 else enriched
+    if sample:
+        print(f"\nSample enriched words:")
+        for w in sample:
+            print(f"  {w['word']}")
+            print(f"    Short:  {w.get('meaning_vi', '')}")
+            print(f"    Detail: {w.get('meaning_vi_detail', '')[:80]}")
+
     remaining = sum(1 for w in words if needs_enrichment(w))
-    print(f"Words still missing examples: {remaining}")
+    print(f"\nWords still needing enrichment: {remaining}")
     if remaining > 0:
         print(f"Run again (without --resume) to process the next batch.")
 
@@ -251,6 +270,8 @@ def main():
     parser = argparse.ArgumentParser(description="Batch enrich words.json via Claude API")
     parser.add_argument("--count", type=int, default=MAX_PER_BATCH,
                         help=f"Number of words to process per batch (default: {MAX_PER_BATCH})")
+    parser.add_argument("--submit-only", action="store_true",
+                        help="Submit batch and exit immediately (don't wait for results)")
     parser.add_argument("--resume", action="store_true",
                         help="Poll an existing batch and apply results")
     parser.add_argument("--status", action="store_true",
@@ -259,7 +280,8 @@ def main():
 
     if not os.environ.get("ANTHROPIC_API_KEY"):
         print("ERROR: ANTHROPIC_API_KEY environment variable not set.")
-        print("Set it with: set ANTHROPIC_API_KEY=sk-ant-...")
+        print("  Windows CMD:   set ANTHROPIC_API_KEY=sk-ant-...")
+        print("  PowerShell:    $env:ANTHROPIC_API_KEY=\"sk-ant-...\"")
         sys.exit(1)
 
     words = load_words()
@@ -269,12 +291,23 @@ def main():
         poll_and_apply(words, apply=False)
     elif args.resume:
         poll_and_apply(words, apply=True)
-    else:
+    elif args.submit_only:
         if load_state():
             print("WARNING: A pending batch already exists.")
             print("Use --resume to apply it, or delete scripts/.batch_state.json to start fresh.")
             sys.exit(1)
         submit_batch(words, args.count)
+        print(f"\nRun with --resume to poll and apply results when ready.")
+    else:
+        # Default: auto-detect — resume pending batch or submit new one
+        if load_state():
+            print("Found pending batch — resuming it...")
+            poll_and_apply(words, apply=True)
+        else:
+            batch_id = submit_batch(words, args.count)
+            if batch_id:
+                print(f"\nWaiting for batch to complete...")
+                poll_and_apply(words, apply=True)
 
 
 if __name__ == "__main__":
