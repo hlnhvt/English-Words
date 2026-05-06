@@ -5317,13 +5317,14 @@ Saving every 50 words. Safe to Ctrl+C and restart.
   [198/3853] dictate ... OK
   [199/3853] dictator ... OK
   [200/3853] dictionary ... OK
-  [194/3853] diagram ... OK
-  [195/3853] dialogue ... OK
-  [196/3853] diamond ... OK
-  [197/3853] diary ... OK
-  [198/3853] dictate ... OK
-  [199/3853] dictator ... OK
+  [checkpoint] saved — 200 updated, 3653 remaining
+
+  [201/3853] die ... OK
+  [202/3853] diet ... OK
+  [203/3853] differ ... OK
+  [204/3853] difference ... ator ... OK
   [200/3853] dictionary ... OK
   [checkpoint] saved — 200 updated, 3653 remaining
 
-  [201/3853] die ... 
+  [201/3853] die ... OK
+  [202/3853] diet ... 
