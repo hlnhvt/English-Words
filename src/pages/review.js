@@ -15,6 +15,7 @@ let reviewConfig = {
   bookmarkedOnly: false,
   mode: 'quiz',
   showResultImmediately: true,
+  timeLimit: null,     // null = no limit, number = seconds
 };
 
 let reviewSession = {
@@ -24,7 +25,10 @@ let reviewSession = {
   score: { correct: 0, wrong: 0 },
   answered: false,
   answers: [],         // [{word, correct, selectedMeaning, correctMeaning}]
+  startTime: null,
 };
+
+let reviewTimerInterval = null;
 
 // ─── Pool builder ────────────────────────────────────────────────────────────
 
@@ -120,7 +124,7 @@ function renderSetupScreen(allWords) {
         <!-- Date -->
         <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.15s">
           <h3 class="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Thời gian học</h3>
-          <div class="flex gap-2 overflow-x-auto pb-1 mb-3">
+          <div class="flex flex-wrap gap-2 mb-3">
             ${[
               { id: 'all',   label: 'Tất cả' },
               { id: 'today', label: 'Hôm nay' },
@@ -144,8 +148,26 @@ function renderSetupScreen(allWords) {
           ` : ''}
         </div>
 
-        <!-- Mode + extras -->
+        <!-- Timer -->
         <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.2s">
+          <h3 class="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Thời gian làm bài</h3>
+          <div class="flex flex-wrap gap-2">
+            ${[
+              { value: null,  label: 'Không giới hạn' },
+              { value: 60,    label: '1 phút' },
+              { value: 120,   label: '2 phút' },
+              { value: 180,   label: '3 phút' },
+              { value: 300,   label: '5 phút' },
+              { value: 600,   label: '10 phút' },
+            ].map(t => `
+              <button data-setup-timer="${t.value === null ? 'null' : t.value}" ${pill(reviewConfig.timeLimit === t.value)}>
+                ${t.label}
+              </button>`).join('')}
+          </div>
+        </div>
+
+        <!-- Mode + extras -->
+        <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.25s">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <!-- Mode -->
             <div>
@@ -207,7 +229,7 @@ function renderSetupScreen(allWords) {
         </div>
 
         <!-- Start -->
-        <div class="fade-in pt-1" style="animation-delay:.25s">
+        <div class="fade-in pt-1" style="animation-delay:.3s">
           <p class="text-sm px-1 mb-3 ${canStart ? 'text-surface-400' : 'text-red-400/80'}">
             ${canStart
               ? `<span class="font-bold text-primary-400">${poolSize}</span> từ phù hợp với bộ lọc`
@@ -242,6 +264,21 @@ function renderReviewScreen(allWords) {
             <p class="text-xs text-surface-400">${current} / ${total}</p>
           </div>
           <div class="flex items-center gap-3">
+            ${reviewConfig.timeLimit !== null ? (() => {
+              const elapsed = reviewSession.startTime ? Math.floor((Date.now() - reviewSession.startTime) / 1000) : 0;
+              const remaining = Math.max(0, reviewConfig.timeLimit - elapsed);
+              const m = Math.floor(remaining / 60);
+              const s = remaining % 60;
+              const urgent = remaining <= 10;
+              return `<div id="timer-display" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg font-semibold text-xs tabular-nums
+                             ${urgent ? 'bg-red-500/15 text-red-400' : 'bg-surface-700/60 text-surface-300'}">
+                <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span id="timer-text">${m}:${String(s).padStart(2, '0')}</span>
+              </div>`;
+            })() : ''}
             <span class="px-2.5 py-1 rounded-lg bg-success-500/15 text-success-400 font-semibold text-xs">${reviewSession.score.correct} đúng</span>
             <span class="px-2.5 py-1 rounded-lg bg-red-500/15 text-red-400 font-semibold text-xs">${reviewSession.score.wrong} sai</span>
             <button id="btn-exit-review" class="px-3 py-1.5 rounded-lg text-xs text-surface-500 hover:text-surface-300 hover:bg-white/5 transition-all">
@@ -465,6 +502,9 @@ function renderReviewComplete(allWords) {
 
 export function initReviewEvents(allWords, rerenderFn) {
 
+  // Clear any running timer when re-initializing
+  if (reviewTimerInterval) { clearInterval(reviewTimerInterval); reviewTimerInterval = null; }
+
   // ── Setup events ──────────────────────────────────────────────────────────
 
   document.querySelectorAll('[data-q-count]').forEach(btn => {
@@ -495,20 +535,52 @@ export function initReviewEvents(allWords, rerenderFn) {
       rerenderFn();
     });
   });
+  document.querySelectorAll('[data-setup-timer]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const v = btn.dataset.setupTimer;
+      reviewConfig.timeLimit = v === 'null' ? null : parseInt(v);
+      rerenderFn();
+    });
+  });
   document.getElementById('toggle-bookmarked')?.addEventListener('click', () => {
     reviewConfig.bookmarkedOnly = !reviewConfig.bookmarkedOnly; rerenderFn();
   });
   document.getElementById('btn-start-review')?.addEventListener('click', () => {
     const pool = buildWordPool(allWords);
     if (!pool.length) return;
-    reviewSession = { phase: 'reviewing', words: pool, currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [] };
+    reviewSession = { phase: 'reviewing', words: pool, currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [], startTime: Date.now() };
     rerenderFn();
   });
+
+  // ── Timer ─────────────────────────────────────────────────────────────────
+
+  if (reviewConfig.timeLimit !== null && reviewSession.phase === 'reviewing') {
+    reviewTimerInterval = setInterval(() => {
+      const timerEl = document.getElementById('timer-display');
+      const timerText = document.getElementById('timer-text');
+      if (!timerEl || !timerText) { clearInterval(reviewTimerInterval); reviewTimerInterval = null; return; }
+      const elapsed = Math.floor((Date.now() - reviewSession.startTime) / 1000);
+      const remaining = Math.max(0, reviewConfig.timeLimit - elapsed);
+      const m = Math.floor(remaining / 60);
+      const s = remaining % 60;
+      timerText.textContent = `${m}:${String(s).padStart(2, '0')}`;
+      if (remaining <= 10) {
+        timerEl.classList.remove('bg-surface-700/60', 'text-surface-300');
+        timerEl.classList.add('bg-red-500/15', 'text-red-400');
+      }
+      if (remaining === 0) {
+        clearInterval(reviewTimerInterval); reviewTimerInterval = null;
+        reviewSession.phase = 'complete';
+        rerenderFn();
+      }
+    }, 1000);
+  }
 
   // ── Review screen events ──────────────────────────────────────────────────
 
   document.getElementById('btn-exit-review')?.addEventListener('click', () => {
-    reviewSession = { phase: 'setup', words: [], currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [] };
+    if (reviewTimerInterval) { clearInterval(reviewTimerInterval); reviewTimerInterval = null; }
+    reviewSession = { phase: 'setup', words: [], currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [], startTime: null };
     rerenderFn();
   });
 
@@ -577,7 +649,7 @@ export function initReviewEvents(allWords, rerenderFn) {
             });
           }
 
-          // Auto-advance after 2s (guard against stale closure if user exits)
+          // Auto-advance after 1.3s (guard against stale closure if user exits)
           const questionIndex = reviewSession.currentIndex;
           setTimeout(() => {
             if (reviewSession.currentIndex === questionIndex && reviewSession.phase === 'reviewing') {
@@ -585,7 +657,7 @@ export function initReviewEvents(allWords, rerenderFn) {
               reviewSession.answered = false;
               rerenderFn();
             }
-          }, 2000);
+          }, 1300);
         }
       });
     });
@@ -626,12 +698,14 @@ export function initReviewEvents(allWords, rerenderFn) {
 
   // Complete
   document.getElementById('btn-review-again')?.addEventListener('click', () => {
+    if (reviewTimerInterval) { clearInterval(reviewTimerInterval); reviewTimerInterval = null; }
     const pool = buildWordPool(allWords);
-    reviewSession = { phase: 'reviewing', words: pool, currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [] };
+    reviewSession = { phase: 'reviewing', words: pool, currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [], startTime: Date.now() };
     rerenderFn();
   });
   document.getElementById('btn-back-setup')?.addEventListener('click', () => {
-    reviewSession = { phase: 'setup', words: [], currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [] };
+    if (reviewTimerInterval) { clearInterval(reviewTimerInterval); reviewTimerInterval = null; }
+    reviewSession = { phase: 'setup', words: [], currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [], startTime: null };
     rerenderFn();
   });
 }

@@ -21,12 +21,11 @@ export function renderHeader() {
       <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <!-- Logo -->
         <a href="#/" class="flex items-center gap-2 group">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform">
-            Ox
-          </div>
+          <img src="/Screenshot%202026-05-06%20172948.png"
+               class="w-9 h-9 rounded-xl object-cover group-hover:scale-110 transition-transform"
+               alt="Foxlearn">
           <span class="font-bold text-lg hidden sm:block">
-            <span class="text-primary-400">Oxford</span>
-            <span class="text-surface-300">5000</span>
+            <span class="text-primary-400">Fox</span><span class="text-surface-300">learn</span>
           </span>
         </a>
 

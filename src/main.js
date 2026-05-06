@@ -88,10 +88,10 @@ function initRouter() {
 document.getElementById('app').innerHTML = `
   <div class="flex items-center justify-center min-h-screen">
     <div class="text-center fade-in">
-      <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4 pulse-glow">
-        Ox
-      </div>
-      <h2 class="text-lg font-bold text-surface-200 mb-2">Oxford 5000</h2>
+      <img src="/Screenshot%202026-05-06%20172948.png"
+           class="w-16 h-16 rounded-2xl object-cover mx-auto mb-4 pulse-glow"
+           alt="Foxlearn">
+      <h2 class="text-lg font-bold text-surface-200 mb-2">Foxlearn</h2>
       <p class="text-sm text-surface-400">Đang tải từ vựng...</p>
       <div class="mt-4 w-32 h-1 bg-surface-800 rounded-full mx-auto overflow-hidden">
         <div class="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full shimmer" style="width: 60%"></div>

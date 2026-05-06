@@ -46,12 +46,13 @@ export function renderStats(allWords) {
           <h3 class="text-sm font-semibold text-surface-300 mb-4 flex items-center gap-2">
             <svg class="w-4 h-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> Hoạt động học tập
           </h3>
-          <div class="overflow-x-auto">
-            <div class="flex gap-[3px] min-w-fit">
+          <div>
+            <div style="display:grid; grid-template-columns:repeat(${heatmapData.length},1fr); gap:3px; width:100%">
               ${heatmapData.map(week => `
-                <div class="flex flex-col gap-[3px]">
+                <div style="display:grid; grid-template-rows:repeat(7,1fr); gap:3px;">
                   ${week.map(day => `
-                    <div class="w-3 h-3 rounded-sm ${getHeatmapColor(day.count)} cursor-default" 
+                    <div class="rounded-sm ${getHeatmapColor(day.count)}"
+                         style="aspect-ratio:1; min-height:0"
                          title="${day.date}: ${day.count} từ"></div>
                   `).join('')}
                 </div>
