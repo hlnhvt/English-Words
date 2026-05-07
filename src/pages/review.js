@@ -15,6 +15,7 @@ let reviewConfig = {
   dateTo: getToday(),
   bookmarkedOnly: false,
   mode: 'quiz',
+  quizTypes: ['en_to_vi'], // 'en_to_vi' | 'vi_short_to_en' | 'vi_detail_to_en' | 'fill_blank' (multi-select)
   showResultImmediately: true,
   timeLimit: null,     // null = no limit, number = seconds
 };
@@ -25,8 +26,9 @@ let reviewSession = {
   currentIndex: 0,
   score: { correct: 0, wrong: 0 },
   answered: false,
-  answers: [],         // [{word, correct, selectedMeaning, correctMeaning}]
+  answers: [],         // [{word, correct, selectedMeaning, correctMeaning, qType}]
   startTime: null,
+  questionTypes: [],   // pre-computed type per question
 };
 
 let reviewTimerInterval = null;
@@ -198,8 +200,8 @@ function renderSetupScreen(allWords) {
 
         <!-- Mode + extras -->
         <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.3s">
+          <!-- Mode + Bookmark row -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <!-- Mode -->
             <div>
               <h3 class="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Chế độ ôn tập</h3>
               <div class="flex gap-2">
@@ -216,26 +218,7 @@ function renderSetupScreen(allWords) {
                   Flashcard
                 </button>
               </div>
-              ${reviewConfig.mode === 'quiz' ? `
-                <div class="mt-3 pt-3 border-t border-white/5">
-                  <p class="text-xs text-surface-500 mb-2">Công bố kết quả</p>
-                  <div class="flex gap-2">
-                    <button data-show-result="true"
-                            class="flex-1 py-2 rounded-xl text-xs font-medium transition-all
-                                   ${reviewConfig.showResultImmediately ? 'bg-primary-600 text-white' : 'bg-white/5 text-surface-400 hover:bg-white/10'}">
-                      Ngay khi trả lời
-                    </button>
-                    <button data-show-result="false"
-                            class="flex-1 py-2 rounded-xl text-xs font-medium transition-all
-                                   ${!reviewConfig.showResultImmediately ? 'bg-primary-600 text-white' : 'bg-white/5 text-surface-400 hover:bg-white/10'}">
-                      Sau khi hoàn thành
-                    </button>
-                  </div>
-                </div>
-              ` : ''}
             </div>
-
-            <!-- Bookmark -->
             <div>
               <h3 class="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Bộ lọc thêm</h3>
               <button id="toggle-bookmarked"
@@ -256,6 +239,58 @@ function renderSetupScreen(allWords) {
               </button>
             </div>
           </div>
+
+          <!-- Quiz sub-options: full width below -->
+          ${reviewConfig.mode === 'quiz' ? `
+            <div class="mt-4 pt-4 border-t border-white/5">
+              <p class="text-xs text-surface-500 mb-2">Dạng câu hỏi <span class="text-surface-600">(chọn nhiều)</span></p>
+              ${(() => {
+                const ALL_TYPES = ['en_to_vi', 'vi_short_to_en', 'vi_detail_to_en', 'fill_blank'];
+                const allOn = ALL_TYPES.every(id => reviewConfig.quizTypes.includes(id));
+                const types = [
+                  { id: 'en_to_vi',       label: 'Từ → Nghĩa',          desc: 'Nhìn từ, chọn nghĩa tiếng Việt' },
+                  { id: 'vi_short_to_en', label: 'Nghĩa ngắn → Từ',     desc: 'Nhìn nghĩa ngắn, chọn từ tiếng Anh' },
+                  { id: 'vi_detail_to_en',label: 'Nghĩa chi tiết → Từ', desc: 'Nhìn nghĩa đầy đủ, chọn từ tiếng Anh' },
+                  { id: 'fill_blank',     label: 'Điền vào chỗ trống',  desc: 'Nhìn câu ví dụ, chọn từ còn thiếu' },
+                ];
+                const checkBtn = (id, on, label, desc) => `
+                  <button data-quiz-type="${id}"
+                          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium transition-all
+                                 ${on ? 'bg-primary-600/15 text-primary-300 border border-primary-500/30' : 'bg-white/5 text-surface-400 hover:bg-white/8 border border-white/5'}">
+                    <span class="w-4 h-4 rounded border-2 flex items-center justify-center shrink-0
+                                 ${on ? 'bg-primary-600 border-primary-600' : 'border-surface-600'}">
+                      ${on ? '<svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>' : ''}
+                    </span>
+                    <div class="text-left">
+                      <p class="font-semibold leading-tight">${label}</p>
+                      <p class="text-[10px] text-surface-500 leading-tight">${desc}</p>
+                    </div>
+                  </button>`;
+                return `
+                  <div class="mb-1.5">
+                    ${checkBtn('all', allOn, 'Tất cả dạng câu hỏi', 'Bật tất cả các dạng bên dưới')}
+                  </div>
+                  <div class="grid grid-cols-2 gap-1.5">
+                    ${types.map(t => checkBtn(t.id, reviewConfig.quizTypes.includes(t.id), t.label, t.desc)).join('')}
+                  </div>`;
+              })()}
+            </div>
+            <div class="mt-3 pt-3 border-t border-white/5">
+              <p class="text-xs text-surface-500 mb-2">Công bố kết quả</p>
+              <div class="flex gap-2">
+                <button data-show-result="true"
+                        class="flex-1 py-2 rounded-xl text-xs font-medium transition-all
+                               ${reviewConfig.showResultImmediately ? 'bg-primary-600 text-white' : 'bg-white/5 text-surface-400 hover:bg-white/10'}">
+                  Ngay khi trả lời
+                </button>
+                <button data-show-result="false"
+                        class="flex-1 py-2 rounded-xl text-xs font-medium transition-all
+                               ${!reviewConfig.showResultImmediately ? 'bg-primary-600 text-white' : 'bg-white/5 text-surface-400 hover:bg-white/10'}">
+                  Sau khi hoàn thành
+                </button>
+              </div>
+            </div>
+          ` : ''}
         </div>
 
         <!-- Start -->
@@ -291,7 +326,9 @@ function renderReviewScreen(allWords) {
         <div class="flex items-center justify-between mb-3">
           <div>
             <h2 class="text-lg font-bold text-surface-100">Ôn tập</h2>
-            <p class="text-xs text-surface-400">${current} / ${total}</p>
+            <p class="text-xs text-surface-400">${current} / ${total}${reviewConfig.quizTypes.length > 1 ? ` · ${
+              { en_to_vi: 'Từ→Nghĩa', vi_short_to_en: 'Nghĩa ngắn→Từ', vi_detail_to_en: 'Nghĩa chi tiết→Từ', fill_blank: 'Điền từ' }[reviewSession.questionTypes[reviewSession.currentIndex]] || ''
+            }` : ''}</p>
           </div>
           <div class="flex items-center gap-3">
             ${reviewConfig.timeLimit !== null ? (() => {
@@ -327,27 +364,57 @@ function renderReviewScreen(allWords) {
   `;
 }
 
-// ─── Quiz mode ────────────────────────────────────────────────────────────────
+// ─── Quiz mode dispatcher ─────────────────────────────────────────────────────
 
 function renderQuizMode(word, allWords) {
-  const correctAnswer = word.word;
-  let wrongOptions = allWords
+  const type = reviewSession.questionTypes[reviewSession.currentIndex] || 'en_to_vi';
+  if (type === 'vi_short_to_en')  return renderViToEnQuiz(word, allWords, 'short');
+  if (type === 'vi_detail_to_en') return renderViToEnQuiz(word, allWords, 'detail');
+  if (type === 'fill_blank')      return renderFillBlankQuiz(word, allWords);
+  return renderEnToViQuiz(word, allWords);
+}
+
+// Build 4 options (1 correct + 3 wrong same-POS, fallback random)
+function _buildOptions(word, allWords) {
+  let wrong = allWords
     .filter(w => w.word !== word.word && w.pos.some(p => word.pos.includes(p)))
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 3)
-    .map(w => w.word);
-
-  if (wrongOptions.length < 3) {
-    const more = allWords
-      .filter(w => w.word !== word.word && !wrongOptions.includes(w.word))
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 3 - wrongOptions.length)
-      .map(w => w.word);
-    wrongOptions.push(...more);
+    .sort(() => Math.random() - 0.5).slice(0, 3).map(w => w.word);
+  if (wrong.length < 3) {
+    wrong.push(...allWords
+      .filter(w => w.word !== word.word && !wrong.includes(w.word))
+      .sort(() => Math.random() - 0.5).slice(0, 3 - wrong.length).map(w => w.word));
   }
+  return [...wrong, word.word].sort(() => Math.random() - 0.5);
+}
 
-  const options = [...wrongOptions, correctAnswer].sort(() => Math.random() - 0.5);
-  window._reviewCorrectAnswer = correctAnswer;
+function _quizOptionsList(options, getLabel) {
+  return `
+    <div class="space-y-2.5" id="quiz-options">
+      ${options.map((opt, i) => `
+        <button data-answer="${opt}"
+                class="quiz-option w-full text-left px-5 py-3.5 rounded-xl glass hover:bg-white/8 transition-all
+                       border border-white/5 text-sm text-surface-200 font-medium flex items-center gap-3">
+          <span class="option-letter shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full
+                       bg-white/8 text-surface-400 text-xs font-bold"
+                data-letter="${String.fromCharCode(65 + i)}">
+            ${String.fromCharCode(65 + i)}
+          </span>
+          <span class="option-text">${getLabel(opt)}</span>
+        </button>`).join('')}
+    </div>
+    <div id="quiz-next" class="hidden mt-6 text-center">
+      <button id="btn-quiz-next"
+              class="btn-hover px-8 py-2.5 bg-primary-600 hover:bg-primary-500 text-white rounded-xl font-medium text-sm transition-all">
+        Tiếp theo →
+      </button>
+    </div>`;
+}
+
+// ─── En → Vi quiz ─────────────────────────────────────────────────────────────
+
+function renderEnToViQuiz(word, allWords) {
+  const options = _buildOptions(word, allWords);
+  window._reviewCorrectAnswer = word.word;
 
   return `
     <div class="fade-in">
@@ -364,34 +431,72 @@ function renderQuizMode(word, allWords) {
         </button>
         <p class="text-sm text-surface-300 mt-4">Nghĩa của từ này là gì?</p>
       </div>
+      ${_quizOptionsList(options, opt => {
+        const w = allWords.find(x => x.word === opt);
+        return w?.meaning_vi || w?.meaning_en || opt;
+      })}
+    </div>`;
+}
 
-      <div class="space-y-2.5" id="quiz-options">
-        ${options.map((opt, i) => {
-          const optWord = allWords.find(w => w.word === opt);
-          const displayMeaning = optWord?.meaning_vi || optWord?.meaning_en || opt;
-          return `
-            <button data-answer="${opt}"
-                    class="quiz-option w-full text-left px-5 py-3.5 rounded-xl glass hover:bg-white/8 transition-all
-                           border border-white/5 text-sm text-surface-200 font-medium flex items-center gap-3">
-              <span class="option-letter shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full
-                           bg-white/8 text-surface-400 text-xs font-bold"
-                    data-letter="${String.fromCharCode(65 + i)}">
-                ${String.fromCharCode(65 + i)}
-              </span>
-              <span class="option-text">${displayMeaning}</span>
-            </button>
-          `;
-        }).join('')}
-      </div>
+// ─── Vi → En quiz ─────────────────────────────────────────────────────────────
 
-      <div id="quiz-next" class="hidden mt-6 text-center">
-        <button id="btn-quiz-next"
-                class="btn-hover px-8 py-2.5 bg-primary-600 hover:bg-primary-500 text-white rounded-xl font-medium text-sm transition-all">
-          Tiếp theo →
-        </button>
+function renderViToEnQuiz(word, allWords, variant) {
+  const options = _buildOptions(word, allWords);
+  window._reviewCorrectAnswer = word.word;
+
+  const meaning = variant === 'short'
+    ? (word.meaning_vi || word.meaning_vi_detail || '')
+    : (word.meaning_vi_detail || word.meaning_vi || '');
+
+  const typeLabel = variant === 'short' ? 'Nghĩa ngắn → Từ' : 'Nghĩa chi tiết → Từ';
+
+  return `
+    <div class="fade-in">
+      <div class="glass rounded-3xl p-6 sm:p-8 text-center mb-5">
+        <div class="mb-3 flex items-center justify-center gap-2">
+          <span class="text-[10px] px-2 py-1 rounded-full level-${word.level.toLowerCase()} text-white font-medium">${word.level}</span>
+          <span class="text-[10px] px-2 py-1 rounded-full bg-white/10 text-surface-300">${word.pos.join(', ')}</span>
+          <span class="text-[10px] px-2 py-1 rounded-full bg-accent-500/15 text-accent-400">${typeLabel}</span>
+        </div>
+        <p class="text-xs text-surface-500 mb-3">Từ tiếng Anh nào có nghĩa này?</p>
+        <p class="text-base sm:text-lg font-semibold text-surface-100 leading-relaxed px-2">${meaning}</p>
       </div>
-    </div>
-  `;
+      ${_quizOptionsList(options, opt => opt)}
+    </div>`;
+}
+
+// ─── Fill-in-the-blank quiz ───────────────────────────────────────────────────
+
+function _blankSentence(sentence, word) {
+  const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  // Match the word and any suffixes (e.g. "abandon" → "abandoned"), case-insensitive
+  return sentence.replace(new RegExp(`\\b${escaped}\\w*`, 'gi'), '<span class="inline-block min-w-[80px] border-b-2 border-primary-400/60 text-transparent select-none">_____</span>');
+}
+
+function renderFillBlankQuiz(word, allWords) {
+  // Fallback if no examples: treat as vi_detail_to_en
+  const examples = word.examples?.filter(e => e.en);
+  if (!examples || examples.length === 0) return renderViToEnQuiz(word, allWords, 'detail');
+
+  const ex = examples[Math.floor(Math.random() * examples.length)];
+  const blanked = _blankSentence(ex.en, word.word);
+  const options = _buildOptions(word, allWords);
+  window._reviewCorrectAnswer = word.word;
+
+  return `
+    <div class="fade-in">
+      <div class="glass rounded-3xl p-6 sm:p-8 text-center mb-5">
+        <div class="mb-3 flex items-center justify-center gap-2">
+          <span class="text-[10px] px-2 py-1 rounded-full level-${word.level.toLowerCase()} text-white font-medium">${word.level}</span>
+          <span class="text-[10px] px-2 py-1 rounded-full bg-white/10 text-surface-300">${word.pos.join(', ')}</span>
+          <span class="text-[10px] px-2 py-1 rounded-full bg-violet-500/15 text-violet-400">Điền vào chỗ trống</span>
+        </div>
+        <p class="text-xs text-surface-500 mb-4">Chọn từ thích hợp điền vào chỗ trống</p>
+        <p class="text-base sm:text-lg font-medium text-surface-100 leading-loose px-2">${blanked}</p>
+        ${ex.vi ? `<p class="text-sm text-surface-400 mt-3 italic">${ex.vi.replace(new RegExp(word.word, 'gi'), '…')}</p>` : ''}
+      </div>
+      ${_quizOptionsList(options, opt => opt)}
+    </div>`;
 }
 
 // ─── Flashcard mode ───────────────────────────────────────────────────────────
@@ -578,13 +683,36 @@ export function initReviewEvents(allWords, rerenderFn) {
       rerenderFn();
     });
   });
+  document.querySelectorAll('[data-quiz-type]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const t = btn.dataset.quizType;
+      const ALL_TYPES = ['en_to_vi', 'vi_short_to_en', 'vi_detail_to_en', 'fill_blank'];
+      if (t === 'all') {
+        const allOn = ALL_TYPES.every(id => reviewConfig.quizTypes.includes(id));
+        reviewConfig.quizTypes = allOn ? ['en_to_vi'] : [...ALL_TYPES];
+      } else if (reviewConfig.quizTypes.includes(t)) {
+        if (reviewConfig.quizTypes.length > 1) {
+          reviewConfig.quizTypes = reviewConfig.quizTypes.filter(x => x !== t);
+        }
+      } else {
+        reviewConfig.quizTypes = [...reviewConfig.quizTypes, t];
+      }
+      rerenderFn();
+    });
+  });
   document.getElementById('toggle-bookmarked')?.addEventListener('click', () => {
     reviewConfig.bookmarkedOnly = !reviewConfig.bookmarkedOnly; rerenderFn();
   });
   document.getElementById('btn-start-review')?.addEventListener('click', () => {
     const pool = buildWordPool(allWords);
     if (!pool.length) return;
-    reviewSession = { phase: 'reviewing', words: pool, currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [], startTime: Date.now() };
+    const types = reviewConfig.quizTypes;
+    reviewSession = {
+      phase: 'reviewing', words: pool, currentIndex: 0,
+      score: { correct: 0, wrong: 0 }, answered: false, answers: [],
+      startTime: Date.now(),
+      questionTypes: pool.map(() => types[Math.floor(Math.random() * types.length)]),
+    };
     rerenderFn();
   });
 
@@ -616,7 +744,7 @@ export function initReviewEvents(allWords, rerenderFn) {
 
   document.getElementById('btn-exit-review')?.addEventListener('click', () => {
     if (reviewTimerInterval) { clearInterval(reviewTimerInterval); reviewTimerInterval = null; }
-    reviewSession = { phase: 'setup', words: [], currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [], startTime: null };
+    reviewSession = { phase: 'setup', words: [], currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [], startTime: null, questionTypes: [] };
     rerenderFn();
   });
 
@@ -736,12 +864,18 @@ export function initReviewEvents(allWords, rerenderFn) {
   document.getElementById('btn-review-again')?.addEventListener('click', () => {
     if (reviewTimerInterval) { clearInterval(reviewTimerInterval); reviewTimerInterval = null; }
     const pool = buildWordPool(allWords);
-    reviewSession = { phase: 'reviewing', words: pool, currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [], startTime: Date.now() };
+    const types = reviewConfig.quizTypes;
+    reviewSession = {
+      phase: 'reviewing', words: pool, currentIndex: 0,
+      score: { correct: 0, wrong: 0 }, answered: false, answers: [],
+      startTime: Date.now(),
+      questionTypes: pool.map(() => types[Math.floor(Math.random() * types.length)]),
+    };
     rerenderFn();
   });
   document.getElementById('btn-back-setup')?.addEventListener('click', () => {
     if (reviewTimerInterval) { clearInterval(reviewTimerInterval); reviewTimerInterval = null; }
-    reviewSession = { phase: 'setup', words: [], currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [], startTime: null };
+    reviewSession = { phase: 'setup', words: [], currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [], startTime: null, questionTypes: [] };
     rerenderFn();
   });
 }
@@ -749,11 +883,21 @@ export function initReviewEvents(allWords, rerenderFn) {
 // ─── Answer recording helper ─────────────────────────────────────────────────
 
 function _recordAnswer(word, selectedAnswer, isCorrect, allWords) {
-  const correctWordObj = allWords.find(w => w.word === window._reviewCorrectAnswer);
-  const correctMeaning = correctWordObj?.meaning_vi || correctWordObj?.meaning_en || window._reviewCorrectAnswer;
-  const selectedWordObj = allWords.find(w => w.word === selectedAnswer);
-  const selectedMeaning = selectedWordObj?.meaning_vi || selectedWordObj?.meaning_en || selectedAnswer;
-  reviewSession.answers.push({ word: word.word, correct: isCorrect, selectedMeaning, correctMeaning });
+  const qType = reviewSession.questionTypes[reviewSession.currentIndex] || 'en_to_vi';
+  const isViToEn = qType === 'vi_short_to_en' || qType === 'vi_detail_to_en' || qType === 'fill_blank';
+
+  let correctDisplay, selectedDisplay;
+  if (isViToEn) {
+    correctDisplay = word.word;
+    selectedDisplay = selectedAnswer;
+  } else {
+    const cw = allWords.find(w => w.word === window._reviewCorrectAnswer);
+    correctDisplay = cw?.meaning_vi || cw?.meaning_en || window._reviewCorrectAnswer;
+    const sw = allWords.find(w => w.word === selectedAnswer);
+    selectedDisplay = sw?.meaning_vi || sw?.meaning_en || selectedAnswer;
+  }
+
+  reviewSession.answers.push({ word: word.word, correct: isCorrect, qType, selectedMeaning: selectedDisplay, correctMeaning: correctDisplay });
   if (isCorrect) { reviewSession.score.correct++; store.markWordLearned(word.word, 4); }
   else           { reviewSession.score.wrong++;   store.markWordLearned(word.word, 1); }
   store.logReview(isCorrect);
@@ -797,5 +941,5 @@ function _styleOption(btn, type) {
 }
 
 export function resetReviewSession() {
-  reviewSession = { phase: 'setup', words: [], currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [] };
+  reviewSession = { phase: 'setup', words: [], currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [], startTime: null, questionTypes: [] };
 }

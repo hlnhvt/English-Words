@@ -83,7 +83,11 @@ def main():
         print("ERROR: pip install anthropic")
         sys.exit(1)
 
-    client = anthropic.Anthropic(api_key=api_key)
+    # OAuth tokens (sk-ant-oat01-...) need Authorization: Bearer, not x-api-key
+    if api_key.startswith("sk-ant-oat"):
+        client = anthropic.Anthropic(auth_token=api_key)
+    else:
+        client = anthropic.Anthropic(api_key=api_key)
     words = load_words()
     words_by_word = {w["word"]: w for w in words}
 
