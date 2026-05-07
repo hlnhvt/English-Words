@@ -1,4 +1,5 @@
 import store from '../store.js';
+import { renderWordModal, initWordModalEvents } from '../components/modal.js';
 
 let allExamples = [];
 let currentExample = null;
@@ -61,7 +62,7 @@ export function renderWriteSentence(allWords) {
         <!-- Level badge + keyword -->
         <div class="flex items-center gap-2 mb-4">
           <span class="text-[10px] px-2 py-1 rounded-full level-${currentExample.level.toLowerCase()} text-white font-bold">${currentExample.level}</span>
-          <span class="text-sm text-surface-400">Từ khóa: <span class="text-primary-400 font-semibold">${currentExample.word}</span></span>
+          <span class="text-sm text-surface-400">Từ khóa: <button id="write-keyword-btn" class="text-primary-400 font-semibold hover:text-primary-300 hover:underline underline-offset-2 transition-colors">${currentExample.word}</button></span>
         </div>
 
         <!-- Vietnamese prompt -->
@@ -183,6 +184,14 @@ export function initWriteSentenceEvents(allWords, rerenderFn) {
   input?.addEventListener('keydown', e => { if (e.key === 'Enter') checkAnswer(); });
   document.getElementById('write-check')?.addEventListener('click', checkAnswer);
   document.getElementById('write-new')?.addEventListener('click', loadNewSentence);
+
+  document.getElementById('write-keyword-btn')?.addEventListener('click', () => {
+    const wordData = allWords.find(w => w.word === currentExample?.word);
+    if (!wordData) return;
+    document.getElementById('word-modal')?.remove();
+    document.body.insertAdjacentHTML('beforeend', renderWordModal(wordData));
+    initWordModalEvents(wordData);
+  });
 
   document.getElementById('write-speak')?.addEventListener('click', () => {
     if (!window.speechSynthesis || !currentExample) return;
