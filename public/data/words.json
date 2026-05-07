@@ -32810,10 +32810,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "phong bì",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A paper container, usually rectangular, used for sending letters or documents through the mail. It can be sealed shut.",
+    "meaning_vi": "phong bì, bao thư, vỏ bọc",
+    "examples": [
+      {
+        "en": "She put the letter inside the envelope and sealed it.",
+        "vi": "Cô ấy cho thư vào phong bì và dán kín nó."
+      },
+      {
+        "en": "Please write the address on the envelope before posting it.",
+        "vi": "Vui lòng viết địa chỉ trên phong bì trước khi gửi nó."
+      }
+    ],
+    "phonetic": "/ˈenvələʊp/",
+    "meaning_vi_detail": "Một chiếc túi hoặc vỏ bao, thường làm từ giấy, dùng để chứa thư hoặc tài liệu. Có thể gấp lại và dán kín."
   },
   {
     "word": "environment",
@@ -32821,10 +32831,20 @@
       "n."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "môi trường",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The surroundings or conditions in which a person, animal, or plant lives. It includes air, water, land, and all living things around us.",
+    "meaning_vi": "môi trường, hoàn cảnh, bối cảnh",
+    "examples": [
+      {
+        "en": "We should protect the environment for future generations.",
+        "vi": "Chúng ta nên bảo vệ môi trường cho các thế hệ tương lai."
+      },
+      {
+        "en": "Plants grow better in a warm environment.",
+        "vi": "Cây cối phát triển tốt hơn trong môi trường ấm."
+      }
+    ],
+    "phonetic": "/ɪnˈvaɪrənmənt/",
+    "meaning_vi_detail": "Tất cả những điều xung quanh chúng ta, bao gồm không khí, nước, đất đai và các sinh vật sống. Cũng có thể chỉ hoàn cảnh hoặc bối cảnh xung quanh một người hoặc sự việc."
   },
   {
     "word": "environmental",
@@ -32832,10 +32852,20 @@
       "adj."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "môi trường",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Relating to the natural world and the impact of human activity on it. It describes things connected to nature, ecology, and environmental protection.",
+    "meaning_vi": "liên quan đến môi trường, sinh thái",
+    "examples": [
+      {
+        "en": "Environmental protection is important for future generations.",
+        "vi": "Bảo vệ môi trường rất quan trọng đối với các thế hệ tương lai."
+      },
+      {
+        "en": "The government is taking environmental measures to reduce pollution.",
+        "vi": "Chính phủ đang thực hiện các biện pháp bảo vệ môi trường để giảm ô nhiễm."
+      }
+    ],
+    "phonetic": "/ɪnˌvaɪrənˈmentəl/",
+    "meaning_vi_detail": "Liên quan đến môi trường tự nhiên, bao gồm không khí, nước, đất và các sinh vật sống. Thường dùng để chỉ những vấn đề hoặc chính sách bảo vệ tự nhiên."
   },
   {
     "word": "epidemic",
@@ -32843,10 +32873,20 @@
       "n."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "dịch bệnh",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A widespread occurrence of a disease in a community or region at a particular time, affecting many people rapidly.",
+    "meaning_vi": "bệnh dịch, bệnh lây lan",
+    "examples": [
+      {
+        "en": "The COVID-19 epidemic spread rapidly across the country in early 2020.",
+        "vi": "Dịch bệnh COVID-19 lây lan nhanh chóng khắp đất nước vào đầu năm 2020."
+      },
+      {
+        "en": "Health authorities declared an epidemic after hundreds of cases were confirmed within weeks.",
+        "vi": "Các cơ quan y tế công bố tình trạng dịch bệnh sau khi hàng trăm ca bệnh được xác nhận trong vòng vài tuần."
+      }
+    ],
+    "phonetic": "/ˈɛpɪdemɪk/",
+    "meaning_vi_detail": "Một bệnh truyền nhiễm lây lan nhanh chóng trong một cộng đồng hoặc vùng địa lý trong một khoảng thời gian nhất định, ảnh hưởng đến số lượng lớn người."
   },
   {
     "word": "episode",
@@ -32854,10 +32894,20 @@
       "n."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "tập phim",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A single program or part of a television series, or a particular event or period that is part of a series of events.",
+    "meaning_vi": "tập phim, sự kiện, giai đoạn",
+    "examples": [
+      {
+        "en": "I watched the first episode of the new series last night.",
+        "vi": "Tôi đã xem tập đầu tiên của bộ phim mới tối qua."
+      },
+      {
+        "en": "That was an unfortunate episode in her life that she would rather forget.",
+        "vi": "Đó là một giai đoạn không may trong cuộc đời cô ấy mà cô muốn quên đi."
+      }
+    ],
+    "phonetic": "/ˈɛpɪsoʊd/",
+    "meaning_vi_detail": "Một phần hoặc tập của một bộ phim, chương trình truyền hình, hoặc một sự kiện/giai đoạn nhất định trong một chuỗi các sự kiện."
   },
   {
     "word": "equal",
@@ -32867,10 +32917,20 @@
       "n."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "bằng nhau",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The same in size, value, amount, or quality; having the same rights or status.",
+    "meaning_vi": "bằng nhau, ngang bằng, như nhau",
+    "examples": [
+      {
+        "en": "All team members have equal opportunities to succeed.",
+        "vi": "Tất cả các thành viên trong đội có cơ hội thành công bằng nhau."
+      },
+      {
+        "en": "Two plus two is equal to four.",
+        "vi": "Hai cộng hai bằng bốn."
+      }
+    ],
+    "phonetic": "/ˈiːkwəl/",
+    "meaning_vi_detail": "Có cùng kích thước, giá trị, mức độ hoặc chất lượng; không có sự khác biệt giữa hai hoặc nhiều thứ."
   },
   {
     "word": "equality",
@@ -32878,10 +32938,20 @@
       "n."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "bình đẳng",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The state of being equal in rights, opportunities, and treatment; the absence of discrimination or favoritism based on factors such as gender, race, or social status.",
+    "meaning_vi": "bình đẳng, công bằng, ngang nhau",
+    "examples": [
+      {
+        "en": "The organization advocates for gender equality in the workplace.",
+        "vi": "Tổ chức này vận động cho bình đẳng giới tính tại nơi làm việc."
+      },
+      {
+        "en": "Equality of opportunity means everyone should have the same chance to succeed.",
+        "vi": "Bình đẳng cơ hội có nghĩa là mọi người nên có cơ hội như nhau để thành công."
+      }
+    ],
+    "phonetic": "/ɪˈkwɒlɪti/",
+    "meaning_vi_detail": "Tình trạng mà tất cả mọi người có cùng quyền lợi, cơ hội và được đối xử công bằng, không phân biệt; sự vắng mặt của sự phân biệt hoặc ưu đãi."
   },
   {
     "word": "equally",
@@ -32889,10 +32959,20 @@
       "adv."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "bằng nhau",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "In the same way or to the same degree; fairly and without difference.",
+    "meaning_vi": "công bằng, như nhau, ngang nhau",
+    "examples": [
+      {
+        "en": "The prize money was equally divided among all winners.",
+        "vi": "Tiền giải thưởng được chia đều cho tất cả những người chiến thắng."
+      },
+      {
+        "en": "Both candidates are equally qualified for the job.",
+        "vi": "Cả hai ứng viên đều có trình độ ngang nhau cho công việc này."
+      }
+    ],
+    "phonetic": "/ˈiːkwəli/",
+    "meaning_vi_detail": "Một cách công bằng hoặc ngang bằng; chia sẻ hoặc phân phối một cách đều đặn mà không có sự khác biệt."
   },
   {
     "word": "equation",
@@ -32900,10 +32980,20 @@
       "n."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "phương trình",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A mathematical statement asserting that two expressions are equal, typically containing one or more variables and used to solve mathematical problems.",
+    "meaning_vi": "phương trình, đẳng thức toán học",
+    "examples": [
+      {
+        "en": "The equation 2x + 5 = 13 can be solved to find that x equals 4.",
+        "vi": "Phương trình 2x + 5 = 13 có thể được giải để tìm ra rằng x bằng 4."
+      },
+      {
+        "en": "Scientists used the Einstein equation E=mc² to explain the relationship between energy and mass.",
+        "vi": "Các nhà khoa học sử dụng phương trình Einstein E=mc² để giải thích mối quan hệ giữa năng lượng và khối lượng."
+      }
+    ],
+    "phonetic": "/ɪˈkweɪʒən/",
+    "meaning_vi_detail": "Một phát biểu toán học thể hiện rằng hai biểu thức có giá trị bằng nhau, thường chứa các biến và được sử dụng để giải quyết các vấn đề toán học."
   },
   {
     "word": "equip",
@@ -32911,10 +33001,20 @@
       "v."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "trang bị",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To provide someone or something with the necessary tools, equipment, or skills needed for a particular purpose or task.",
+    "meaning_vi": "trang bị, cung cấp, tặng",
+    "examples": [
+      {
+        "en": "The school equipped the laboratory with modern scientific instruments.",
+        "vi": "Nhà trường trang bị cho phòng thí nghiệm những dụng cụ khoa học hiện đại."
+      },
+      {
+        "en": "She was well equipped with the knowledge needed to succeed in her new job.",
+        "vi": "Cô ấy được trang bị tốt với kiến thức cần thiết để thành công trong công việc mới."
+      }
+    ],
+    "phonetic": "/ɪˈkwɪp/",
+    "meaning_vi_detail": "Cung cấp hoặc trang bị cho ai đó những thứ cần thiết để làm việc gì đó. Nghĩa là cho ai đó những công cụ, kỹ năng hoặc thứ vật chất để hoàn thành một nhiệm vụ."
   },
   {
     "word": "equipment",
@@ -32922,10 +33022,20 @@
       "n."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "thiết bị",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The tools, machines, or other things needed to do a particular job or activity.",
+    "meaning_vi": "thiết bị, dụng cụ, công cụ",
+    "examples": [
+      {
+        "en": "The gym has modern exercise equipment.",
+        "vi": "Phòng tập có các thiết bị tập luyện hiện đại."
+      },
+      {
+        "en": "We need camping equipment for our trip.",
+        "vi": "Chúng tôi cần các dụng cụ cắm trại cho chuyến đi."
+      }
+    ],
+    "phonetic": "/ɪˈkwɪpmənt/",
+    "meaning_vi_detail": "Những vật dụng, máy móc, hoặc công cụ cần thiết để làm một công việc hoặc hoạt động nào đó."
   },
   {
     "word": "equivalent",
@@ -32934,10 +33044,20 @@
       "adj."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "tương đương",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Something that is equal in value, meaning, or effect to something else; a counterpart or equal.",
+    "meaning_vi": "tương đương, ngang bằng, có giá trị bằng",
+    "examples": [
+      {
+        "en": "A bachelor's degree from this university is the equivalent of a master's degree from some other institutions.",
+        "vi": "Bằng cử nhân từ đại học này tương đương với bằng thạc sĩ từ một số trường khác."
+      },
+      {
+        "en": "There is no equivalent in English for that French word.",
+        "vi": "Không có từ tương đương trong tiếng Anh cho từ Pháp đó."
+      }
+    ],
+    "phonetic": "/ɪˈkwɪvələnt/",
+    "meaning_vi_detail": "Điều gì đó có cùng giá trị, ý nghĩa hoặc hiệu quả như một thứ khác; đối tương hoặc mục đích tương đương."
   },
   {
     "word": "era",
@@ -32945,10 +33065,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "thời đại",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A long period of time in history characterized by particular events, features, or people.",
+    "meaning_vi": "thời kỳ, thời đại, giai đoạn",
+    "examples": [
+      {
+        "en": "We are living in the digital era.",
+        "vi": "Chúng ta đang sống trong thời đại kỹ thuật số."
+      },
+      {
+        "en": "The Victorian era was a period of great change in Britain.",
+        "vi": "Thời đại Victoria là một giai đoạn thay đổi lớn lao ở Anh."
+      }
+    ],
+    "phonetic": "/ˈɪrə/",
+    "meaning_vi_detail": "Một khoảng thời gian dài trong lịch sử được đặc trưng bởi những sự kiện, đặc điểm hoặc người nổi bật nào đó."
   },
   {
     "word": "erect",
@@ -32956,10 +33086,20 @@
       "v."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "dựng lên",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To construct, build, or establish something physical (like a structure or building) or abstract (like a system or institution). It can also mean to set something upright or in a vertical position.",
+    "meaning_vi": "dựng lên, xây dựng, thiết lập",
+    "examples": [
+      {
+        "en": "The government decided to erect a monument in the city center.",
+        "vi": "Chính phủ quyết định dựng một tượng đài ở trung tâm thành phố."
+      },
+      {
+        "en": "They erected strict barriers to erect a clear boundary between the two zones.",
+        "vi": "Họ dựng lên những rào cản nghiêm ngặt để thiết lập ranh giới rõ ràng giữa hai khu vực."
+      }
+    ],
+    "phonetic": "/ɪˈrɛkt/",
+    "meaning_vi_detail": "Xây dựng, dựng lên hoặc thiết lập một cấu trúc, tòa nhà, hoặc hệ thống. Có thể mang nghĩa chỉ hành động vật lý hoặc trừu tượng như thiết lập quy tắc, điều luật."
   },
   {
     "word": "error",
@@ -32967,10 +33107,20 @@
       "n."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "lỗi",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A mistake or something that is not correct. An inaccuracy or fault in something you do or make.",
+    "meaning_vi": "lỗi, sai sót, khuyết điểm",
+    "examples": [
+      {
+        "en": "I made an error in my homework.",
+        "vi": "Tôi đã mắc một lỗi trong bài tập về nhà của mình."
+      },
+      {
+        "en": "There is a spelling error in this sentence.",
+        "vi": "Có một lỗi chính tả trong câu này."
+      }
+    ],
+    "phonetic": "/ˈerər/",
+    "meaning_vi_detail": "Một cái gì đó không đúng hoặc không chính xác; một sự nhầm lẫn hoặc khuyết điểm trong công việc, tính toán hoặc hành động."
   },
   {
     "word": "erupt",
@@ -32978,10 +33128,20 @@
       "v."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "phun trào",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To burst forth or break out suddenly and violently, often referring to a volcano, fire, or strong emotion.",
+    "meaning_vi": "phun trào, bùng phát, nổ ra",
+    "examples": [
+      {
+        "en": "The volcano erupted and sent ash into the sky.",
+        "vi": "Núi lửa phun trào và phát tro vào bầu trời."
+      },
+      {
+        "en": "The crowd erupted in cheers when the team won.",
+        "vi": "Đám đông bùng nổ tiếng reo hò khi đội thắng cuộc."
+      }
+    ],
+    "phonetic": "/ɪˈrʌpt/",
+    "meaning_vi_detail": "Bùng phát hoặc phun trào một cách bất ngờ và mạnh mẽ, thường liên quan đến lửa, nước hoặc cảm xúc mãnh liệt."
   },
   {
     "word": "escalate",
@@ -32989,10 +33149,20 @@
       "v."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "leo thang",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To increase in intensity, severity, or scope; to make a situation worse or more serious.",
+    "meaning_vi": "leo thang, tăng cường, nâng cao",
+    "examples": [
+      {
+        "en": "The tension between the two countries escalated into armed conflict.",
+        "vi": "Căng thẳng giữa hai nước leo thang thành xung đột vũ trang."
+      },
+      {
+        "en": "If we don't resolve this issue soon, the problem will escalate further.",
+        "vi": "Nếu chúng ta không giải quyết vấn đề này sớm, tình trạng sẽ trở nên tồi tệ hơn."
+      }
+    ],
+    "phonetic": "/ˈɛskəleɪt/",
+    "meaning_vi_detail": "Làm cho một tình huống trở nên tồi tệ, nguy hiểm hoặc nghiêm trọng hơn; tăng mức độ, cường độ hoặc phạm vi của điều gì đó."
   },
   {
     "word": "escape",
@@ -33001,10 +33171,20 @@
       "n."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "trốn thoát",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To get away from a place or situation, especially by running away or breaking free from confinement or danger.",
+    "meaning_vi": "trốn thoát, thoát khỏi, vượt thoát",
+    "examples": [
+      {
+        "en": "The prisoner managed to escape from jail last night.",
+        "vi": "Tù nhân đã thiết法 trốn thoát khỏi nhà tù vào đêm qua."
+      },
+      {
+        "en": "She escaped the traffic by taking a back road.",
+        "vi": "Cô ấy tránh thoát khỏi tắc đường bằng cách đi con đường phụ."
+      }
+    ],
+    "phonetic": "/ɪˈskeɪp/",
+    "meaning_vi_detail": "Thoát khỏi một nơi hoặc tình huống nguy hiểm hoặc khó khăn; rời đi mà không được cho phép hoặc bị phát hiện."
   },
   {
     "word": "especially",
@@ -33012,10 +33192,20 @@
       "adv."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "đặc biệt",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "In a way that is special or more than usual; used to emphasize something that stands out or is particularly important.",
+    "meaning_vi": "đặc biệt, riêng biệt, nhất là",
+    "examples": [
+      {
+        "en": "I love ice cream, especially chocolate.",
+        "vi": "Tôi yêu kem, đặc biệt là kem sô-cô-la."
+      },
+      {
+        "en": "It's very cold today, especially in the morning.",
+        "vi": "Hôm nay rất lạnh, đặc biệt là vào buổi sáng."
+      }
+    ],
+    "phonetic": "/ɪˈspeʃəli/",
+    "meaning_vi_detail": "Dùng để chỉ một điều gì đó quan trọng hoặc đáng chú ý hơn so với những thứ khác; thường nhấn mạnh một trường hợp hoặc người cụ thể nào đó."
   },
   {
     "word": "essay",
@@ -33023,10 +33213,20 @@
       "n."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "tiểu luận",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A short piece of writing about a particular subject, usually written for school or a magazine.",
+    "meaning_vi": "bài viết, tiểu luận, bài luận",
+    "examples": [
+      {
+        "en": "I need to write an essay about climate change for my English class.",
+        "vi": "Tôi cần viết một bài tiểu luận về biến đổi khí hậu cho lớp Tiếng Anh của mình."
+      },
+      {
+        "en": "She wrote an essay exploring the benefits of reading books.",
+        "vi": "Cô ấy viết một bài luận khám phá những lợi ích của việc đọc sách."
+      }
+    ],
+    "phonetic": "/ˈeseɪ/",
+    "meaning_vi_detail": "Một bài viết ngắn về một chủ đề cụ thể, thường được viết cho trường học hoặc tạp chí. Đây là một tác phẩm văn học hoặc học thuật thể hiện ý kiến của tác giả."
   },
   {
     "word": "essence",
@@ -33034,10 +33234,20 @@
       "n."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "bản chất",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The most important or fundamental characteristic or nature of something that makes it what it is; the intrinsic quality or element that defines something.",
+    "meaning_vi": "bản chất, cốt lõi, yếu tố cơ bản",
+    "examples": [
+      {
+        "en": "The essence of her argument is that education is the key to success.",
+        "vi": "Bản chất của lập luận của cô ấy là giáo dục là chìa khóa để thành công."
+      },
+      {
+        "en": "In essence, we need to reduce costs without compromising quality.",
+        "vi": "Về bản chất, chúng ta cần giảm chi phí mà không ảnh hưởng đến chất lượng."
+      }
+    ],
+    "phonetic": "/ˈɛsəns/",
+    "meaning_vi_detail": "Đặc điểm hoặc tính chất cốt lõi nhất của một vật, người hay sự vật; những gì làm cho cái gì đó trở thành như vậy."
   },
   {
     "word": "essential",
@@ -33045,10 +33255,20 @@
       "adj."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "thiết yếu",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Absolutely necessary or extremely important; something that you cannot do without or that must be included.",
+    "meaning_vi": "cần thiết, không thể thiếu, quan trọng",
+    "examples": [
+      {
+        "en": "Good communication is essential for a successful relationship.",
+        "vi": "Giao tiếp tốt là thiết yếu cho một mối quan hệ thành công."
+      },
+      {
+        "en": "Water is essential for human survival.",
+        "vi": "Nước là cần thiết cho sự sống còn của con người."
+      }
+    ],
+    "phonetic": "/ɪˈsenʃəl/",
+    "meaning_vi_detail": "Cái gì đó là thiết yếu nếu nó cần thiết và không thể thiếu để hoàn thành một mục đích hoặc tồn tại. Đó là điều quan trọng nhất hoặc cơ bản nhất."
   },
   {
     "word": "essentially",
@@ -33056,10 +33276,20 @@
       "adv."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "về cơ bản",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "In essence; fundamentally or mainly; used to emphasize the most important aspect of something.",
+    "meaning_vi": "về cơ bản, chủ yếu, trong本质上",
+    "examples": [
+      {
+        "en": "The two proposals are essentially the same, despite their different wording.",
+        "vi": "Hai đề xuất về cơ bản giống nhau, mặc dù được diễn đạt khác nhau."
+      },
+      {
+        "en": "She is essentially a kind person, even though she can be strict sometimes.",
+        "vi": "Về cơ bản, cô ấy là một người tốt bụng, mặc dù đôi khi cô ấy có thể khắt khe."
+      }
+    ],
+    "phonetic": "/ɪˈsenʃəli/",
+    "meaning_vi_detail": "Về cơ bản, chủ yếu; về phần lớn; nói một cách vắn tắt hay bỏ qua những chi tiết không quan trọng."
   },
   {
     "word": "establish",
@@ -33067,10 +33297,20 @@
       "v."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "thành lập",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To set up or create something formally or officially, such as an organization, system, or relationship, usually intending it to last.",
+    "meaning_vi": "thành lập, xây dựng, thiết lập",
+    "examples": [
+      {
+        "en": "The company was established in 1995.",
+        "vi": "Công ty được thành lập vào năm 1995."
+      },
+      {
+        "en": "They want to establish a good working relationship with their partners.",
+        "vi": "Họ muốn thiết lập một mối quan hệ làm việc tốt với các đối tác của mình."
+      }
+    ],
+    "phonetic": "/ɪˈstæblɪʃ/",
+    "meaning_vi_detail": "Tạo ra, xây dựng hoặc thiết lập cái gì đó một cách chính thức và thường lâu dài, chẳng hạn như một công ty, tổ chức, hệ thống hoặc mối quan hệ."
   },
   {
     "word": "establishment",
@@ -33078,10 +33318,20 @@
       "n."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "thành lập",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The action of establishing or founding an organization, institution, or system; also refers to the organization or institution itself that has been established.",
+    "meaning_vi": "thành lập, cơ sở, tổ chức",
+    "examples": [
+      {
+        "en": "The establishment of the university dates back to 1850.",
+        "vi": "Sự thành lập của đại học này có từ năm 1850."
+      },
+      {
+        "en": "He challenged the political establishment with his revolutionary ideas.",
+        "vi": "Anh ấy thách thức chế độ chính trị hiện hành bằng những ý tưởng cách mạng của mình."
+      }
+    ],
+    "phonetic": "/ɪˈstæblɪʃmənt/",
+    "meaning_vi_detail": "Hành động thành lập hoặc tạo ra một tổ chức, cơ sở, hay hệ thống; cũng có thể chỉ tổ chức hoặc cơ sở đã được thành lập."
   },
   {
     "word": "estate",
@@ -33089,10 +33339,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "bất động sản",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A large area of land in the country, or all the property and assets that a person owns, especially when passed on after death.",
+    "meaning_vi": "bất động sản, tài sản, locupp",
+    "examples": [
+      {
+        "en": "He inherited a large estate from his grandfather.",
+        "vi": "Anh ta thừa hưởng một tài sản lớn từ ông ngoại."
+      },
+      {
+        "en": "The royal estate covers thousands of acres.",
+        "vi": "Các lâu đài và đất đai hoàng gia chiếm hàng nghìn mẫu."
+      }
+    ],
+    "phonetic": "/ɪˈsteɪt/",
+    "meaning_vi_detail": "Một mảnh đất hoặc tòa nhà, hoặc tập hợp các tài sản và tính chất của một người (đặc biệt là sau khi họ chết)."
   },
   {
     "word": "estimate",
@@ -33101,10 +33361,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "ước tính",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To roughly calculate or form an approximate judgment about the value, size, cost, or quantity of something based on available information.",
+    "meaning_vi": "ước tính, đánh giá, dự đoán",
+    "examples": [
+      {
+        "en": "The builder estimated that the project would cost around $50,000.",
+        "vi": "Nhà thầu ước tính rằng dự án sẽ tốn khoảng $50,000."
+      },
+      {
+        "en": "Based on the data, experts estimate the population will grow by 2% next year.",
+        "vi": "Dựa trên dữ liệu, các chuyên gia ước tính dân số sẽ tăng 2% vào năm tới."
+      }
+    ],
+    "phonetic": "/ˈestɪmeɪt/",
+    "meaning_vi_detail": "Đưa ra một phán đoán hoặc tính toán gần đúng về kích thước, giá trị, chi phí hoặc số lượng của cái gì đó dựa trên thông tin có sẵn."
   },
   {
     "word": "eternal",
@@ -33112,10 +33382,20 @@
       "adj."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "vĩnh cửu",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Lasting or existing forever; without beginning or end, timeless and unchanging.",
+    "meaning_vi": "vĩnh cửu, không bao giờ kết thúc, trường tồn",
+    "examples": [
+      {
+        "en": "Many people believe in eternal life after death.",
+        "vi": "Nhiều người tin vào cuộc sống vĩnh cửu sau cái chết."
+      },
+      {
+        "en": "The lovers promised eternal devotion to each other.",
+        "vi": "Cặp tình nhân hứa sẽ yêu thương nhau vĩnh cửu."
+      }
+    ],
+    "phonetic": "/ɪˈtɜːrnəl/",
+    "meaning_vi_detail": "Kéo dài mãi mãi không có thời gian kết thúc; không thay đổi, luôn luôn tồn tại mà không có sự phân hủy hay biến mất."
   },
   {
     "word": "ethic",
@@ -33123,10 +33403,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "đạo đức",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A set of moral principles that concerns the distinction between right and wrong behavior; standards of conduct that guide how a person or group should act.",
+    "meaning_vi": "đạo đức, chuẩn mực hành động, nguyên tắc",
+    "examples": [
+      {
+        "en": "The company's business ethics require transparency in all transactions.",
+        "vi": "Đạo đức kinh doanh của công ty yêu cầu tính minh bạch trong tất cả các giao dịch."
+      },
+      {
+        "en": "Medical ethics dictate that doctors must prioritize patient confidentiality.",
+        "vi": "Đạo đức y tế quy định rằng các bác sĩ phải ưu tiên bảo mật thông tin bệnh nhân."
+      }
+    ],
+    "phonetic": "/ˈeθɪk/",
+    "meaning_vi_detail": "Những nguyên tắc hoặc chuẩn mực về hành vi đúng đắn và sai trái; tiêu chuẩn đạo đức của một người hoặc nhóm người."
   },
   {
     "word": "ethical",
@@ -33134,10 +33424,20 @@
       "adj."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "đạo đức",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Relating to moral principles about right and wrong; based on honest and fair behavior.",
+    "meaning_vi": "có đạo đức, liêm chính, hợp lý luân",
+    "examples": [
+      {
+        "en": "It is not ethical to copy someone else's work without permission.",
+        "vi": "Không có đạo đức khi sao chép công việc của người khác mà không xin phép."
+      },
+      {
+        "en": "The company made an ethical decision to reduce plastic waste.",
+        "vi": "Công ty đã đưa ra quyết định có đạo đức là giảm chất thải nhựa."
+      }
+    ],
+    "phonetic": "/ˈeθɪkəl/",
+    "meaning_vi_detail": "Tuân theo các nguyên tắc đạo đức và道德; được coi là đúng đắn và công bằng theo các tiêu chuẩn đạo đức."
   },
   {
     "word": "ethnic",
@@ -33145,10 +33445,20 @@
       "adj."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "dân tộc",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Relating to a group of people sharing the same culture, language, origin, or characteristics. Connected to a particular racial or cultural group.",
+    "meaning_vi": "liên quan dân tộc, tộc người, văn hóa dân tộc",
+    "examples": [
+      {
+        "en": "She is studying ethnic minorities in Southeast Asia.",
+        "vi": "Cô ấy đang nghiên cứu các dân tộc thiểu số ở Đông Nam Á."
+      },
+      {
+        "en": "The restaurant serves authentic ethnic cuisine from different countries.",
+        "vi": "Nhà hàng phục vụ các món ăn dân tộc chính thức từ những nước khác nhau."
+      }
+    ],
+    "phonetic": "/ˈeθnɪk/",
+    "meaning_vi_detail": "Liên quan đến một nhóm người có chung nguồn gốc, ngôn ngữ, văn hóa hoặc đặc điểm chung; thuộc về một tộc người hoặc dân tộc cụ thể."
   },
   {
     "word": "euro",
@@ -33156,10 +33466,20 @@
       "n."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "đồng euro",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The official currency of the European Union used by many countries in Europe.",
+    "meaning_vi": "đồng tiền chung châu Âu, tiền tệ",
+    "examples": [
+      {
+        "en": "This book costs 20 euros.",
+        "vi": "Cuốn sách này giá 20 đồng euro."
+      },
+      {
+        "en": "I exchanged my dollars for euros.",
+        "vi": "Tôi đã đổi đô la của tôi lấy đồng euro."
+      }
+    ],
+    "phonetic": "/ˈjʊəroʊ/",
+    "meaning_vi_detail": "Đồng euro là đơn vị tiền tệ chính thức được sử dụng bởi nhiều quốc gia thành viên của Liên minh Châu Âu."
   },
   {
     "word": "evacuate",
@@ -33167,10 +33487,20 @@
       "v."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "sơ tán",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To remove or withdraw people from a place, typically due to danger or emergency. It refers to the act of leaving a location quickly for safety reasons.",
+    "meaning_vi": "sơ tán, rời khỏi, thevacu",
+    "examples": [
+      {
+        "en": "The authorities evacuated the building when the fire alarm was triggered.",
+        "vi": "Các nhà chức trách đã sơ tán tòa nhà khi chuông báo cháy phát động."
+      },
+      {
+        "en": "Residents were evacuated from the coastal areas before the hurricane arrived.",
+        "vi": "Cư dân được sơ tán khỏi các khu vực ven biển trước khi bão đến."
+      }
+    ],
+    "phonetic": "/ɪˈvækjueɪt/",
+    "meaning_vi_detail": "Rời bỏ hoặc di chuyển mọi người khỏi một địa điểm, thường là do nguy hiểm hoặc khẩn cấp. Đó là hành động nhanh chóng để đảm bảo an toàn cho mọi người."
   },
   {
     "word": "evaluate",
@@ -33178,10 +33508,20 @@
       "v."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "đánh giá",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To carefully consider and form a judgment or opinion about the value, quality, or effectiveness of something.",
+    "meaning_vi": "đánh giá, phân tích, xem xét",
+    "examples": [
+      {
+        "en": "The teacher will evaluate your performance based on the test results.",
+        "vi": "Giáo viên sẽ đánh giá kết quả học tập của bạn dựa trên kết quả bài kiểm tra."
+      },
+      {
+        "en": "We need to evaluate the costs and benefits of this project before making a decision.",
+        "vi": "Chúng ta cần đánh giá chi phí và lợi ích của dự án này trước khi quyết định."
+      }
+    ],
+    "phonetic": "/ɪˈvæljueɪt/",
+    "meaning_vi_detail": "Xem xét kỹ lưỡng và đưa ra nhận xét hoặc kết luận về giá trị, chất lượng hoặc hiệu quả của cái gì đó."
   },
   {
     "word": "evaluation",
@@ -33189,10 +33529,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "đánh giá",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The process of carefully examining and judging the quality, value, or performance of something or someone based on specific criteria.",
+    "meaning_vi": "đánh giá, phân tích, xét lường",
+    "examples": [
+      {
+        "en": "The teacher conducted a careful evaluation of the students' work.",
+        "vi": "Giáo viên tiến hành đánh giá kỹ lưỡng công việc của học sinh."
+      },
+      {
+        "en": "A performance evaluation helps employees understand their strengths and weaknesses.",
+        "vi": "Đánh giá hiệu suất giúp nhân viên hiểu rõ những điểm mạnh và điểm yếu của mình."
+      }
+    ],
+    "phonetic": "/ɪˌvæljuˈeɪʃən/",
+    "meaning_vi_detail": "Quá trình xem xét kỹ lưỡng và đưa ra nhận xét về chất lượng, giá trị hoặc hiệu quả của ai đó hoặc cái gì đó dựa trên các tiêu chí cụ thể."
   },
   {
     "word": "even",
@@ -33201,10 +33551,20 @@
       "adj."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "thậm chí",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Used to emphasize something surprising or beyond expectation. It means 'also' or 'including' when added to a statement or list.",
+    "meaning_vi": "thậm chí, cả, ngay cả",
+    "examples": [
+      {
+        "en": "Even children can understand this.",
+        "vi": "Thậm chí những đứa trẻ cũng có thể hiểu được điều này."
+      },
+      {
+        "en": "She didn't eat even a little bit.",
+        "vi": "Cô ấy thậm chí không ăn dù chỉ một chút."
+      }
+    ],
+    "phonetic": "/ˈiːvən/",
+    "meaning_vi_detail": "Dùng để nhấn mạnh điều gì đó đáng ngạc nhiên hoặc vượt quá mong đợi. Có nghĩa là 'cả' hoặc 'ngay cả' khi thêm vào danh sách hoặc tuyên bố."
   },
   {
     "word": "evening",
@@ -33212,10 +33572,20 @@
       "n."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "buổi tối",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The time of day between afternoon and night, when the sun has gone down.",
+    "meaning_vi": "buổi tối, chiều tối, ban tối",
+    "examples": [
+      {
+        "en": "I like to take a walk in the evening.",
+        "vi": "Tôi thích đi dạo vào buổi tối."
+      },
+      {
+        "en": "We have dinner in the evening.",
+        "vi": "Chúng tôi ăn tối vào buổi tối."
+      }
+    ],
+    "phonetic": "/ˈiːvnɪŋ/",
+    "meaning_vi_detail": "Khoảng thời gian từ khi mặt trời lặn đến khi đi ngủ, thường là từ khoảng 6 giờ chiều đến đêm khuya."
   },
   {
     "word": "event",
@@ -33223,10 +33593,20 @@
       "n."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "sự kiện",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Something that happens or takes place. It can be planned (like a party or concert) or unplanned (like an accident).",
+    "meaning_vi": "sự kiện, cái gì xảy ra, chuyện",
+    "examples": [
+      {
+        "en": "The school organized a sports event last week.",
+        "vi": "Nhà trường tổ chức một sự kiện thể thao tuần trước."
+      },
+      {
+        "en": "I enjoyed the music event very much.",
+        "vi": "Tôi rất thích sự kiện âm nhạc đó."
+      }
+    ],
+    "phonetic": "/ɪˈvɛnt/",
+    "meaning_vi_detail": "Một điều gì đó xảy ra hoặc được lên kế hoạch, đặc biệt là một cái gì đó quan trọng hoặc thú vị."
   },
   {
     "word": "eventually",
@@ -33234,10 +33614,20 @@
       "adv."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "cuối cùng",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "After a long time or after many events, something finally happens or is achieved. It suggests that something will happen sooner or later.",
+    "meaning_vi": "cuối cùng, rồi, sau cùng",
+    "examples": [
+      {
+        "en": "He studied hard for years, and eventually he passed the exam.",
+        "vi": "Anh ấy học chăm chỉ trong nhiều năm, và cuối cùng anh ấy đã đỗ kỳ thi."
+      },
+      {
+        "en": "The company faced many difficulties, but eventually it became successful.",
+        "vi": "Công ty gặp nhiều khó khăn, nhưng cuối cùng nó đã thành công."
+      }
+    ],
+    "phonetic": "/ɪˈventʃuəli/",
+    "meaning_vi_detail": "Sau một khoảng thời gian dài hoặc sau khi trải qua nhiều sự kiện, điều gì đó cuối cùng cũng xảy ra hoặc đạt được. Có nghĩa là sớm muộn gì cũng sẽ xảy ra."
   },
   {
     "word": "ever",
@@ -33245,10 +33635,20 @@
       "adv."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "bao giờ hết",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "At any time; used to ask about or refer to time. Often used in questions or negative sentences.",
+    "meaning_vi": "bao giờ, lúc nào, chưa bao giờ",
+    "examples": [
+      {
+        "en": "Have you ever been to Paris?",
+        "vi": "Bạn đã bao giờ đến Paris chưa?"
+      },
+      {
+        "en": "I have never ever seen such a beautiful sunset.",
+        "vi": "Tôi chưa bao giờ thấy một hoàng hôn đẹp như vậy."
+      }
+    ],
+    "phonetic": "/ˈɛvər/",
+    "meaning_vi_detail": "Được sử dụng để hỏi hoặc nói về thời gian, thường dùng trong câu hỏi hoặc phủ định. Có thể mang nghĩa 'lúc nào', 'bao giờ', hoặc 'không bao giờ' tùy theo ngữ cảnh."
   },
   {
     "word": "every",
@@ -33256,10 +33656,20 @@
       "det."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "mỗi",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Each one of a group or set; all things without exception.",
+    "meaning_vi": "mỗi, từng cái, tất cả các",
+    "examples": [
+      {
+        "en": "Every student in the class has a book.",
+        "vi": "Mỗi học sinh trong lớp đều có một cuốn sách."
+      },
+      {
+        "en": "I drink coffee every morning.",
+        "vi": "Tôi uống cà phê mỗi sáng."
+      }
+    ],
+    "phonetic": "/ˈɛvri/",
+    "meaning_vi_detail": "Chỉ mỗi một cái riêng biệt trong một nhóm hoặc tập hợp; áp dụng cho tất cả mà không có ngoại lệ."
   },
   {
     "word": "everybody",
@@ -33267,10 +33677,20 @@
       "pron."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "mọi người",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Every person in a group; all people without exception.",
+    "meaning_vi": "tất cả mọi người, từng người một",
+    "examples": [
+      {
+        "en": "Everybody is welcome here.",
+        "vi": "Mọi người đều được chào đón ở đây."
+      },
+      {
+        "en": "Does everybody understand the question?",
+        "vi": "Mọi người có hiểu câu hỏi không?"
+      }
+    ],
+    "phonetic": "/ˈevrɪbɑːdi/",
+    "meaning_vi_detail": "Tất cả những người trong một nhóm, không có ngoại lệ. Bao gồm mọi cá nhân trong một tập hợp người nào đó."
   },
   {
     "word": "everyday",
@@ -33278,10 +33698,20 @@
       "adj."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "hàng ngày",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Used or done every day as part of normal life; ordinary and not special.",
+    "meaning_vi": "hàng ngày, thường ngày, đời thường",
+    "examples": [
+      {
+        "en": "I wear everyday clothes to work.",
+        "vi": "Tôi mặc quần áo hàng ngày đi làm."
+      },
+      {
+        "en": "Speaking English is part of my everyday life.",
+        "vi": "Nói tiếng Anh là một phần của cuộc sống hàng ngày của tôi."
+      }
+    ],
+    "phonetic": "/ˈɛvriˌdeɪ/",
+    "meaning_vi_detail": "Những việc hoặc thứ mà bạn làm hoặc sử dụng mỗi ngày trong cuộc sống bình thường, thường xuyên."
   },
   {
     "word": "everyone",
@@ -33289,10 +33719,20 @@
       "pron."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "mọi người",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Every person in a group; all people with no exceptions.",
+    "meaning_vi": "tất cả mọi người, từng người một",
+    "examples": [
+      {
+        "en": "Everyone is invited to the party.",
+        "vi": "Mọi người đều được mời đến bữa tiệc."
+      },
+      {
+        "en": "Does everyone have a pen?",
+        "vi": "Mọi người đều có bút không?"
+      }
+    ],
+    "phonetic": "/ˈɛvrɪˌwʌn/",
+    "meaning_vi_detail": "Tất cả các người trong một nhóm hoặc không có ngoại lệ; mỗi người đều bao gồm."
   },
   {
     "word": "everything",
@@ -33300,10 +33740,20 @@
       "pron."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "mọi thứ",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "All things; every single thing without exception.",
+    "meaning_vi": "tất cả mọi thứ, toàn bộ",
+    "examples": [
+      {
+        "en": "I like everything about this place.",
+        "vi": "Tôi thích mọi thứ về nơi này."
+      },
+      {
+        "en": "She knows everything about the project.",
+        "vi": "Cô ấy biết tất cả mọi thứ về dự án này."
+      }
+    ],
+    "phonetic": "/ˈɛvrɪθɪŋ/",
+    "meaning_vi_detail": "Tất cả các vật, sự việc, hoặc mọi điều mà bạn đang nói đến; không ngoại lệ gì cả."
   },
   {
     "word": "everywhere",
@@ -33311,10 +33761,20 @@
       "adv."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "ở khắp mọi nơi",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "In or to all places; in every location. Used to say something is present or happens in all areas.",
+    "meaning_vi": "khắp mọi nơi, ở tất cả mọi chỗ",
+    "examples": [
+      {
+        "en": "I looked everywhere for my keys.",
+        "vi": "Tôi đã tìm kiếm ở khắp mọi nơi để tìm chìa khóa của mình."
+      },
+      {
+        "en": "There are coffee shops everywhere in the city.",
+        "vi": "Có quán cà phê ở khắp mọi nơi trong thành phố."
+      }
+    ],
+    "phonetic": "/ˌɛvrɪˈwɛər/",
+    "meaning_vi_detail": "Ở hoặc có mặt trong tất cả các địa điểm, không có ngoại lệ; lan rộng khắp."
   },
   {
     "word": "evidence",
@@ -33322,10 +33782,20 @@
       "n."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "bằng chứng",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Facts, information, or objects that prove something is true or happened.",
+    "meaning_vi": "bằng chứng, chứng cớ, minh chứng",
+    "examples": [
+      {
+        "en": "The police found evidence at the crime scene.",
+        "vi": "Cảnh sát tìm thấy bằng chứng tại hiện trường vụ án."
+      },
+      {
+        "en": "There is clear evidence that smoking is bad for your health.",
+        "vi": "Có bằng chứng rõ ràng cho thấy hút thuốc có hại cho sức khỏe của bạn."
+      }
+    ],
+    "phonetic": "/ˈɛvɪdəns/",
+    "meaning_vi_detail": "Những sự kiện, thông tin hoặc vật thể được sử dụng để chứng minh rằng điều gì đó là đúng hoặc xảy ra."
   },
   {
     "word": "evident",
@@ -33333,10 +33803,20 @@
       "adj."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "hiển nhiên",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Clearly seen or understood; obvious and easy to notice or perceive.",
+    "meaning_vi": "rõ ràng, hiển nhiên, dễ thấy",
+    "examples": [
+      {
+        "en": "It is evident that she has worked hard on this project.",
+        "vi": "Rõ ràng là cô ấy đã làm việc chăm chỉ cho dự án này."
+      },
+      {
+        "en": "The evidence makes it evident that he was innocent.",
+        "vi": "Bằng chứng cho thấy rõ ràng rằng anh ta là vô tội."
+      }
+    ],
+    "phonetic": "/ɪˈvɪdənt/",
+    "meaning_vi_detail": "Rõ ràng hoặc dễ nhận thấy; không cần chứng minh hay giải thích thêm."
   },
   {
     "word": "evil",
@@ -33345,10 +33825,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "tà ác",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Morally bad, wicked, or causing harm; something that is deeply unpleasant or undesirable.",
+    "meaning_vi": "xấu xa, độc ác, vô đạo đức",
+    "examples": [
+      {
+        "en": "The villain in the movie was portrayed as an evil character who wanted to destroy the city.",
+        "vi": "Nhân vật phản diện trong phim được miêu tả là một nhân vật tà ác muốn phá hủy thành phố."
+      },
+      {
+        "en": "Many people believe that lying is an evil act that destroys trust.",
+        "vi": "Nhiều người tin rằng nói dối là một hành động độc ác phá hủy lòng tin."
+      }
+    ],
+    "phonetic": "/ˈiːvəl/",
+    "meaning_vi_detail": "Có bản chất xấu, độc hại hoặc tàn ác; gây ra hại lợi, đau khổ hoặc thiệt hại cho người khác."
   },
   {
     "word": "evoke",
@@ -33356,10 +33846,20 @@
       "v."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "gợi lên",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To bring out, produce, or trigger a feeling, memory, image, or response in someone.",
+    "meaning_vi": "gợi lên, kích thích, làm nảy sinh",
+    "examples": [
+      {
+        "en": "The old photograph evoked memories of her childhood.",
+        "vi": "Bức ảnh cũ đó gợi lên những ký ức về tuổi thơ của cô ấy."
+      },
+      {
+        "en": "His speech evoked a strong emotional response from the audience.",
+        "vi": "Bài phát biểu của anh ấy gợi lên một phản ứng cảm xúc mạnh mẽ từ khán giả."
+      }
+    ],
+    "phonetic": "/ɪˈvoʊk/",
+    "meaning_vi_detail": "Gợi lên hoặc tạo ra một cảm xúc, kỷ niệm, hoặc phản ứng nào đó trong ai đó; làm xuất hiện một điều gì đó."
   },
   {
     "word": "evolution",
@@ -33367,10 +33867,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "sự tiến hóa",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A gradual process of change and development, especially the biological process by which living organisms develop from earlier forms.",
+    "meaning_vi": "sự tiến hóa, sự phát triển, quá trình thay đổi",
+    "examples": [
+      {
+        "en": "The theory of evolution explains how species change over millions of years.",
+        "vi": "Thuyết tiến hóa giải thích cách các loài thay đổi qua hàng triệu năm."
+      },
+      {
+        "en": "We can see the evolution of technology from the invention of the telephone to smartphones.",
+        "vi": "Chúng ta có thể thấy sự phát triển của công nghệ từ phát minh điện thoại đến điện thoại thông minh."
+      }
+    ],
+    "phonetic": "/ˌɛvəˈluːʃən/",
+    "meaning_vi_detail": "Quá trình thay đổi và phát triển dần dần theo thời gian, đặc biệt là sự tiến hóa sinh học của các loài sống hoặc sự phát triển của một ý tưởng, hệ thống."
   },
   {
     "word": "evolutionary",
@@ -33378,10 +33888,20 @@
       "adj."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "tiến hóa",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Relating to or concerning the process of evolution; developing gradually over long periods of time through successive changes.",
+    "meaning_vi": "liên quan đến tiến hóa, thay đổi dần dần theo thời gian",
+    "examples": [
+      {
+        "en": "Evolutionary biology studies how species change and adapt over millions of years.",
+        "vi": "Sinh học tiến hóa nghiên cứu cách các loài thay đổi và thích ứng trong hàng triệu năm."
+      },
+      {
+        "en": "The evolutionary advantages of cooperation helped human societies develop complex structures.",
+        "vi": "Những lợi thế tiến hóa của hợp tác đã giúp các xã hội con người phát triển các cấu trúc phức tạp."
+      }
+    ],
+    "phonetic": "/ˌɛvəˈluːʃəneri/",
+    "meaning_vi_detail": "Liên quan đến quá trình tiến hóa hoặc sự phát triển dần dần của các loài và xã hội qua nhiều thế hệ. Mô tả những thay đổi từng bước theo thời gian trong tự nhiên hoặc xã hội."
   },
   {
     "word": "evolve",
@@ -33389,10 +33909,20 @@
       "v."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "tiến hóa",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To develop or change gradually over time, especially to become more advanced or sophisticated.",
+    "meaning_vi": "phát triển, thay đổi, tiến hóa",
+    "examples": [
+      {
+        "en": "Technology has evolved significantly over the past decade.",
+        "vi": "Công nghệ đã phát triển đáng kể trong thập kỷ vừa qua."
+      },
+      {
+        "en": "As she gained experience, her skills evolved and improved.",
+        "vi": "Khi có thêm kinh nghiệm, kỹ năng của cô ấy phát triển và được cải thiện."
+      }
+    ],
+    "phonetic": "/ɪˈvɒlv/",
+    "meaning_vi_detail": "Thay đổi hoặc phát triển dần dần theo thời gian, đặc biệt là để trở nên tốt hơn hoặc phức tạp hơn."
   },
   {
     "word": "exact",
@@ -33400,10 +33930,20 @@
       "adj."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "chính xác",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Completely correct or accurate; without any mistakes or errors.",
+    "meaning_vi": "chính xác, đúng, chuẩn xác",
+    "examples": [
+      {
+        "en": "The exact time is 3:45 PM.",
+        "vi": "Thời gian chính xác là 3 giờ 45 phút chiều."
+      },
+      {
+        "en": "I need the exact amount of money for the ticket.",
+        "vi": "Tôi cần số tiền chính xác để mua vé."
+      }
+    ],
+    "phonetic": "/ɪɡˈzækt/",
+    "meaning_vi_detail": "Hoàn toàn đúng, không có sai sót hoặc không có lỗi; thỏa mãn các yêu cầu hoặc tiêu chuẩn đặc định."
   },
   {
     "word": "exactly",
@@ -33411,10 +33951,20 @@
       "adv."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "chính xác",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "In a way that is completely accurate or precise; without any doubt or error.",
+    "meaning_vi": "chính xác, đúng, hoàn toàn",
+    "examples": [
+      {
+        "en": "What time is it exactly?",
+        "vi": "Bây giờ mấy giờ chính xác?"
+      },
+      {
+        "en": "That's exactly what I wanted to say.",
+        "vi": "Đó chính là những gì tôi muốn nói."
+      }
+    ],
+    "phonetic": "/ɪɡˈzæktli/",
+    "meaning_vi_detail": "Một cách chính xác, đúng đắn hoặc hoàn toàn; không có sai sót hay nghi ngờ."
   },
   {
     "word": "exaggerate",
@@ -33422,10 +33972,20 @@
       "v."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "phóng đại",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To represent something as greater, more important, or more extreme than it actually is; to overstate or magnify the truth.",
+    "meaning_vi": "phóng đại, cường điệu, phóng to",
+    "examples": [
+      {
+        "en": "He exaggerated his injuries to get sympathy from his friends.",
+        "vi": "Anh ấy phóng đại vết thương của mình để nhận được sự đồng cảm từ bạn bè."
+      },
+      {
+        "en": "The media tends to exaggerate the dangers of the new technology.",
+        "vi": "Các phương tiện truyền thông có xu hướng phóng đại những nguy hiểm của công nghệ mới."
+      }
+    ],
+    "phonetic": "/ɪɡˈzædʒəreɪt/",
+    "meaning_vi_detail": "Nói hoặc mô tả cái gì đó lớn hơn, tồi tệ hơn hoặc ấn tượng hơn so với thực tế; cổ súy hay làm cho điều gì trở nên quá độ."
   },
   {
     "word": "exam",
@@ -33433,10 +33993,20 @@
       "n."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "kỳ thi",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A test of knowledge or skills, usually in school. A formal assessment to check what you have learned.",
+    "meaning_vi": "bài kiểm tra, kỳ thi, cuộc thi",
+    "examples": [
+      {
+        "en": "I have a math exam next week.",
+        "vi": "Tôi có kỳ thi toán tuần tới."
+      },
+      {
+        "en": "She studied hard for her English exam.",
+        "vi": "Cô ấy học chăm chỉ cho kỳ thi tiếng Anh."
+      }
+    ],
+    "phonetic": "/ɪɡˈzæm/",
+    "meaning_vi_detail": "Một bài kiểm tra hoặc cuộc thi để đánh giá kiến thức, kỹ năng hoặc khả năng của một người trong một môn học hoặc lĩnh vực nào đó."
   },
   {
     "word": "examination",
@@ -33444,10 +34014,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "kiểm tra",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A detailed inspection or investigation of something; or a formal test of knowledge or ability, usually consisting of questions and exercises to be answered.",
+    "meaning_vi": "kiểm tra, xét hỏi, cuộc thi",
+    "examples": [
+      {
+        "en": "She passed her final examination in mathematics.",
+        "vi": "Cô ấy vượt qua kỳ thi cuối cùng môn toán học."
+      },
+      {
+        "en": "The doctor conducted a thorough examination of the patient.",
+        "vi": "Bác sĩ tiến hành kiểm tra kỹ lưỡng bệnh nhân."
+      }
+    ],
+    "phonetic": "/ɪɡˈzæmɪneɪʃən/",
+    "meaning_vi_detail": "Quá trình kiểm tra, xem xét kỹ lưỡng hoặc đánh giá kiến thức/kỹ năng của ai đó thông qua các câu hỏi hoặc bài tập. Có thể là một kỳ thi chính thức hoặc quá trình khám phá chi tiết."
   },
   {
     "word": "examine",
@@ -33455,10 +34035,20 @@
       "v."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "kiểm tra",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To look at something carefully and in detail to check or understand it.",
+    "meaning_vi": "kiểm tra, xem xét, nghiên cứu",
+    "examples": [
+      {
+        "en": "The doctor examined the patient's leg.",
+        "vi": "Bác sĩ kiểm tra chân của bệnh nhân."
+      },
+      {
+        "en": "Please examine this document carefully before signing.",
+        "vi": "Vui lòng xem xét kỹ lưỡng tài liệu này trước khi ký."
+      }
+    ],
+    "phonetic": "/ɪɡˈzæmɪn/",
+    "meaning_vi_detail": "Quan sát hoặc kiểm tra cái gì một cách cẩn thận để tìm hiểu hoặc xác minh thông tin; nhìn kỹ lưỡng để phát hiện chi tiết."
   },
   {
     "word": "example",
@@ -33466,10 +34056,20 @@
       "n."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "ví dụ",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A thing characteristic of its kind or illustrating a general rule; a specimen or instance that shows or explains something.",
+    "meaning_vi": "ví dụ, mẫu, hình mẫu",
+    "examples": [
+      {
+        "en": "Can you give me an example of a healthy breakfast?",
+        "vi": "Bạn có thể cho tôi một ví dụ về bữa sáng lành mạnh?"
+      },
+      {
+        "en": "For example, apples are a type of fruit.",
+        "vi": "Ví dụ, táo là một loại trái cây."
+      }
+    ],
+    "phonetic": "/ɪɡˈzɑːmpəl/",
+    "meaning_vi_detail": "Một trường hợp hoặc sự vật được chọn để minh họa hoặc giải thích một ý tưởng. Nó giúp làm cho một khái niệm trở nên dễ hiểu hơn."
   },
   {
     "word": "exceed",
@@ -33477,10 +34077,20 @@
       "v."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "vượt quá",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To go beyond a limit, number, or amount; to be greater than something expected or allowed.",
+    "meaning_vi": "vượt quá, tăng hơn, vượt mức",
+    "examples": [
+      {
+        "en": "The cost of the project exceeded our budget.",
+        "vi": "Chi phí của dự án vượt quá ngân sách của chúng tôi."
+      },
+      {
+        "en": "Her performance exceeded all expectations.",
+        "vi": "Hiệu suất của cô ấy vượt quá tất cả những kỳ vọng."
+      }
+    ],
+    "phonetic": "/ɪkˈsiːd/",
+    "meaning_vi_detail": "Đi vượt quá một giới hạn, mức độ hoặc con số nào đó; trở nên nhiều hơn hoặc lớn hơn một lượng được phép hoặc mong đợi."
   },
   {
     "word": "excellence",
@@ -33488,10 +34098,20 @@
       "n."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "sự xuất sắc",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The quality of being exceptionally good or superior in performance, ability, or achievement. It represents the highest standard of excellence in a particular field.",
+    "meaning_vi": "sự xuất sắc, sự tuyệt vời, sự hoàn hảo",
+    "examples": [
+      {
+        "en": "The university is renowned for its academic excellence and cutting-edge research.",
+        "vi": "Đại học nổi tiếng vì sự xuất sắc về học thuật và nghiên cứu tiên tiến."
+      },
+      {
+        "en": "She pursued excellence in her craft, refusing to settle for mediocrity.",
+        "vi": "Cô ấy theo đuổi sự hoàn hảo trong nghề của mình, kiên quyết từ chối sự tầm thường."
+      }
+    ],
+    "phonetic": "/ˈɛksələns/",
+    "meaning_vi_detail": "Chất lượng hoặc trạng thái của việc vượt trội, đạt được tiêu chuẩn cao nhất; sự thực hiện rất tốt trong lĩnh vực nào đó."
   },
   {
     "word": "excellent",
@@ -33499,10 +34119,20 @@
       "adj."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "xuất sắc",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Very good or of the highest quality. Something that is excellent is extremely good and deserves praise.",
+    "meaning_vi": "xuất sắc, tuyệt vời, rất tốt",
+    "examples": [
+      {
+        "en": "She did an excellent job on the project.",
+        "vi": "Cô ấy đã làm một công việc xuất sắc cho dự án này."
+      },
+      {
+        "en": "That restaurant serves excellent food.",
+        "vi": "Nhà hàng đó phục vụ những món ăn tuyệt vời."
+      }
+    ],
+    "phonetic": "/ɪkˈselənt/",
+    "meaning_vi_detail": "Rất tốt, đạt mức độ cao nhất về chất lượng, hiệu suất hoặc năng lực. Thể hiện sự vượt trội và đáng khen ngợi."
   },
   {
     "word": "except",
@@ -33511,10 +34141,20 @@
       "conj."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "ngoại trừ",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Not including someone or something; everyone or everything but.",
+    "meaning_vi": "ngoại trừ, trừ, không kể",
+    "examples": [
+      {
+        "en": "Everyone came to the party except Tom.",
+        "vi": "Tất cả mọi người đã đến bữa tiệc ngoại trừ Tom."
+      },
+      {
+        "en": "The shop is open every day except Sunday.",
+        "vi": "Cửa hàng mở cửa mỗi ngày ngoại trừ chủ nhật."
+      }
+    ],
+    "phonetic": "/ɪkˈsept/",
+    "meaning_vi_detail": "Có nghĩa là không bao gồm hoặc loại trừ ai/cái gì khỏi một nhóm hoặc danh sách; chỉ tất cả trừ người/vật được đề cập."
   },
   {
     "word": "exception",
@@ -33522,10 +34162,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "ngoại lệ",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A person or thing that is different from the usual rule or pattern; something that is not included in a general statement or rule.",
+    "meaning_vi": "ngoại lệ, trường hợp ngoài quy tắc, ngoại lệ",
+    "examples": [
+      {
+        "en": "Most students passed the exam, but John was an exception.",
+        "vi": "Hầu hết học sinh đều vượt qua bài kiểm tra, nhưng John là một ngoại lệ."
+      },
+      {
+        "en": "With the exception of Monday, we are open every day.",
+        "vi": "Ngoại trừ thứ Hai, chúng tôi mở cửa mỗi ngày."
+      }
+    ],
+    "phonetic": "/ɪkˈsepʃən/",
+    "meaning_vi_detail": "Một người hoặc điều gì đó không tuân theo quy tắc, tiêu chuẩn hoặc mẫu thông thường. Một trường hợp không được áp dụng quy tắc chung."
   },
   {
     "word": "exceptional",
@@ -33533,10 +34183,20 @@
       "adj."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "đặc biệt",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Unusually good, remarkable, or outstanding; significantly better than what is ordinary or expected.",
+    "meaning_vi": "ngoại thường, xuất sắc, hiếm có",
+    "examples": [
+      {
+        "en": "Her exceptional talent in mathematics earned her a scholarship to the best university.",
+        "vi": "Tài năng toán học ngoài thường của cô ấy đã giúp cô nhận được học bổng vào đại học hàng đầu."
+      },
+      {
+        "en": "The chef's exceptional attention to detail made every dish a masterpiece.",
+        "vi": "Sự chú ý tỉ mỉ đặc biệt của đầu bếp đã biến mỗi món ăn thành một kiệt tác."
+      }
+    ],
+    "phonetic": "/ɪkˈsepʃənəl/",
+    "meaning_vi_detail": "Vượt trội hơn những cái thông thường; không phổ biến hoặc đặc biệt nổi bật trong khía cạnh tích cực như khả năng, chất lượng hoặc hiệu suất."
   },
   {
     "word": "excess",
@@ -33545,10 +34205,20 @@
       "adj."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "dư thừa",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "An amount or quantity that is more than necessary, permitted, or normal; the state of surpassing or going beyond a limit.",
+    "meaning_vi": "lượng dư, quá mức, sự vượt quá",
+    "examples": [
+      {
+        "en": "The government imposed a tax on excess profits.",
+        "vi": "Chính phủ áp dụng thuế đối với lợi nhuận vượt quá."
+      },
+      {
+        "en": "Drinking alcohol in excess can damage your health.",
+        "vi": "Uống rượu quá mức có thể làm tổn hại sức khỏe của bạn."
+      }
+    ],
+    "phonetic": "/ɪkˈsɛs/",
+    "meaning_vi_detail": "Lượng hoặc mức độ vượt quá những gì cần thiết, cho phép hoặc bình thường; sự thừa thãi hoặc quá nhiều của một cái gì đó."
   },
   {
     "word": "excessive",
@@ -33556,10 +34226,20 @@
       "adj."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "quá mức",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "More than necessary, normal, or reasonable; going beyond what is acceptable or required.",
+    "meaning_vi": "quá mức, vượt quá, dư thừa",
+    "examples": [
+      {
+        "en": "The company was criticized for excessive spending on office renovations.",
+        "vi": "Công ty bị chỉ trích vì chi tiêu quá mức cho việc cải tạo văn phòng."
+      },
+      {
+        "en": "Drinking excessive amounts of alcohol is harmful to your health.",
+        "vi": "Uống rượu vượt quá mức là có hại cho sức khỏe của bạn."
+      }
+    ],
+    "phonetic": "/ɪkˈsɛsɪv/",
+    "meaning_vi_detail": "Vượt quá mức độ bình thường hoặc cần thiết; nhiều hơn những gì là thích hợp hoặc hợp lý."
   },
   {
     "word": "exchange",
@@ -33568,10 +34248,20 @@
       "v."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "trao đổi",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The act of giving one thing and receiving another in return; also a place where goods, money, or services are traded.",
+    "meaning_vi": "trao đổi, hoán đổi, giao dịch",
+    "examples": [
+      {
+        "en": "We decided to exchange our old furniture for new pieces.",
+        "vi": "Chúng tôi quyết định trao đổi đồ nội thất cũ lấy những cái mới."
+      },
+      {
+        "en": "The stock exchange is where investors buy and sell shares.",
+        "vi": "Sàn chứng khoán là nơi các nhà đầu tư mua bán cổ phiếu."
+      }
+    ],
+    "phonetic": "/ɪksˈtʃeɪndʒ/",
+    "meaning_vi_detail": "Việc trao đổi, hoán đổi hoặc thay thế một thứ bằng thứ khác; cũng có thể là nơi giao dịch hoặc tập đoàn tài chính."
   },
   {
     "word": "excited",
@@ -33579,10 +34269,20 @@
       "adj."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "vui mừng",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Feeling very happy and eager about something good that is happening or will happen.",
+    "meaning_vi": "vui mừng, phấn khích, hứng thú",
+    "examples": [
+      {
+        "en": "I am excited about my birthday party tomorrow.",
+        "vi": "Tôi rất vui mừng về bữa tiệc sinh nhật của tôi ngày mai."
+      },
+      {
+        "en": "The children were excited to see the animals at the zoo.",
+        "vi": "Các em bé rất phấn khích khi được nhìn thấy những con vật ở sở thú."
+      }
+    ],
+    "phonetic": "/ɪkˈsaɪtɪd/",
+    "meaning_vi_detail": "Cảm thấy rất vui vẻ, hứng thú hoặc phấn khích về điều gì đó, thường vì mong chờ hoặc trông đợi một sự kiện tốt đẹp."
   },
   {
     "word": "excitement",
@@ -33590,10 +34290,20 @@
       "n."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "sự phấn khích",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A feeling of great enthusiasm and happiness about something. It is the state of being emotionally aroused and eager about an event or experience.",
+    "meaning_vi": "sự phấn khích, sự h興奮, hạnh phúc",
+    "examples": [
+      {
+        "en": "The children showed great excitement when they heard about the school trip.",
+        "vi": "Những đứa trẻ tỏ ra rất phấn khích khi nghe về chuyến đi học ngoài trời."
+      },
+      {
+        "en": "There was a lot of excitement in the crowd before the concert started.",
+        "vi": "Có rất nhiều sự hứng khởi trong đám đông trước khi buổi hòa nhạc bắt đầu."
+      }
+    ],
+    "phonetic": "/ɪkˈsaɪtmənt/",
+    "meaning_vi_detail": "Trạng thái cảm xúc mạnh mẽ khi vui vẻ, hồ hởi hoặc háo hức về điều gì đó. Đó là cảm giác phấn chấn, vui mừng trước một sự kiện hoặc tình huống đáng mong chờ."
   },
   {
     "word": "exciting",
@@ -33601,10 +34311,20 @@
       "adj."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "thú vị",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Causing someone to feel very interested or enthusiastic. Something that makes you want to know or do more.",
+    "meaning_vi": "hứng thú, gây hứng thú, kích thích",
+    "examples": [
+      {
+        "en": "The exciting movie kept us on the edge of our seats.",
+        "vi": "Bộ phim hứng thú giữ chúng tôi trong tình trạng căng thẳng."
+      },
+      {
+        "en": "Going to the theme park is exciting for children.",
+        "vi": "Đi đến công viên giải trí là điều thú vị cho trẻ em."
+      }
+    ],
+    "phonetic": "/ɪkˈsaɪtɪŋ/",
+    "meaning_vi_detail": "Làm cho ai đó cảm thấy vui vẻ, hứng thú hoặc quan tâm sâu sắc. Điều gì đó hay, thú vị khiến người ta muốn tìm hiểu thêm."
   },
   {
     "word": "exclude",
@@ -33612,10 +34332,20 @@
       "v."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "loại trừ",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To prevent someone or something from entering a place or participating in an activity; to leave out or not include.",
+    "meaning_vi": "loại trừ, không cho phép, không bao gồm",
+    "examples": [
+      {
+        "en": "The club excludes non-members from attending their events.",
+        "vi": "Câu lạc bộ không cho phép những người không phải là thành viên tham dự các sự kiện của họ."
+      },
+      {
+        "en": "The price excludes tax and delivery fees.",
+        "vi": "Giá không bao gồm thuế và phí giao hàng."
+      }
+    ],
+    "phonetic": "/ɪkˈskluːd/",
+    "meaning_vi_detail": "Không cho phép ai đó tham gia hoặc không bao gồm ai đó/cái gì đó trong một nhóm, hoạt động hoặc địa điểm nào đó."
   },
   {
     "word": "exclusion",
@@ -33623,10 +34353,20 @@
       "n."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "loại trừ",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The act of deliberately preventing someone or something from entering, participating in, or being part of a group or activity.",
+    "meaning_vi": "loại trừ, loại bỏ, sự không được phép tham gia",
+    "examples": [
+      {
+        "en": "The exclusion of women from the club sparked widespread criticism.",
+        "vi": "Sự loại trừ phụ nữ khỏi câu lạc bộ đã gây ra những lời chỉ trích rộng rãi."
+      },
+      {
+        "en": "The student faced temporary exclusion from school due to misconduct.",
+        "vi": "Học sinh đã bị loại bỏ tạm thời khỏi trường học vì hành vi sai trái."
+      }
+    ],
+    "phonetic": "/ɪkˈskluːʒən/",
+    "meaning_vi_detail": "Hành động không cho phép ai đó tham gia vào một nhóm, sự kiện hoặc hoạt động; việc cố ý tách biệt hoặc từ chối một người nào đó."
   },
   {
     "word": "exclusive",
@@ -33634,10 +34374,20 @@
       "adj."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "độc quyền",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Restricted to one person or group; not shared with others. Can also describe something of high quality available only to a select few.",
+    "meaning_vi": "độc quyền, riêng biệt, cao cấp",
+    "examples": [
+      {
+        "en": "This luxury resort offers exclusive access to a private beach.",
+        "vi": "Khu resort cao cấp này cung cấp quyền truy cập độc quyền đến một bãi biển riêng tư."
+      },
+      {
+        "en": "The magazine published an exclusive interview with the famous actor.",
+        "vi": "Tạp chí đăng tải một cuộc phỏng vấn độc quyền với diễn viên nổi tiếng."
+      }
+    ],
+    "phonetic": "/ɪkˈskluːsɪv/",
+    "meaning_vi_detail": "Chỉ dành cho một người hoặc một nhóm nhất định, không chia sẻ với những người khác. Có thể chỉ những thứ đặc biệt, sang trọng hoặc chỉ có sẵn cho một số ít người."
   },
   {
     "word": "exclusively",
@@ -33645,10 +34395,20 @@
       "adv."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "độc quyền",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "In a way that is not shared with or limited to only one person, group, or thing; without including anyone or anything else.",
+    "meaning_vi": "chỉ riêng, duy nhất, không chia sẻ",
+    "examples": [
+      {
+        "en": "This product is available exclusively in our flagship store.",
+        "vi": "Sản phẩm này chỉ có sẵn duy nhất ở cửa hàng chính của chúng tôi."
+      },
+      {
+        "en": "She works exclusively with sustainable materials in her designs.",
+        "vi": "Cô ấy chỉ làm việc với các vật liệu bền vững trong những thiết kế của mình."
+      }
+    ],
+    "phonetic": "/ɪkˈskluːsɪvli/",
+    "meaning_vi_detail": "Một cách độc quyền hoặc chỉ dành riêng cho một người, nhóm hay mục đích nào đó; không được dùng chung hay chia sẻ với bất kỳ ai khác."
   },
   {
     "word": "excuse",
@@ -33657,10 +34417,20 @@
       "v."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "xin lỗi",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A reason or explanation given to justify an action or to avoid blame; a pretense or pretext.",
+    "meaning_vi": "lý do bào chữa, cớ để trốn tránh",
+    "examples": [
+      {
+        "en": "He made an excuse for being late to the meeting.",
+        "vi": "Anh ấy đưa ra lý do để bào chữa cho việc đến muộn cuộc họp."
+      },
+      {
+        "en": "That's not a valid excuse for missing class.",
+        "vi": "Đó không phải là lý do chính đáng để vắng mặt trong lớp học."
+      }
+    ],
+    "phonetic": "/ɪkˈskjuːs/",
+    "meaning_vi_detail": "Một lý do hoặc giải thích được đưa ra để biện minh cho một hành động hoặc để tránh trách nhiệm; cái cớ hay cái chối."
   },
   {
     "word": "execute",
@@ -33668,10 +34438,20 @@
       "v."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "thi hành",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To carry out or complete a plan, order, or program; also refers to inflict capital punishment on a condemned person.",
+    "meaning_vi": "thi hành, thực hiện, xử tử",
+    "examples": [
+      {
+        "en": "The company executed a successful marketing strategy that increased sales by 40%.",
+        "vi": "Công ty đã thực hiện một chiến lược tiếp thị thành công khiến doanh số bán tăng 40%."
+      },
+      {
+        "en": "The government announced plans to execute the convicted criminal tomorrow.",
+        "vi": "Chính phủ thông báo kế hoạch thi hành án tử hình đối với tên tội phạm bị kết tội vào ngày mai."
+      }
+    ],
+    "phonetic": "/ˈɛksɪˌkjuːt/",
+    "meaning_vi_detail": "Thực hiện hoặc hoàn thành một kế hoạch, lệnh, hoặc chương trình; cũng có thể chỉ việc thi hành án tử hình đối với một người phạm tội."
   },
   {
     "word": "execution",
@@ -33679,10 +34459,20 @@
       "n."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "thi hành án",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The carrying out or implementation of a plan, order, or sentence; the act of performing or completing something, especially the infliction of a legal punishment such as a death sentence.",
+    "meaning_vi": "thực hiện, thi hành, thực thi",
+    "examples": [
+      {
+        "en": "The execution of the project took longer than expected.",
+        "vi": "Việc thực hiện dự án mất nhiều thời gian hơn dự kiến."
+      },
+      {
+        "en": "The death row inmate faced execution for his crimes.",
+        "vi": "Tù nhân bị kết án tử hình phải đối mặt với hình phạt tử tù vì tội ác của mình."
+      }
+    ],
+    "phonetic": "/ˌeksɪˈkjuːʃən/",
+    "meaning_vi_detail": "Hành động hoàn thành hoặc thực hiện một kế hoạch, lệnh, hoặc phán quyết; việc thực thi một bản án tử hình hoặc hình phạt."
   },
   {
     "word": "executive",
@@ -33691,10 +34481,20 @@
       "adj."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "điều hành",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A person in a senior managerial position in a company or organization who is responsible for implementing decisions and policies.",
+    "meaning_vi": "giám đốc, nhân viên cấp cao",
+    "examples": [
+      {
+        "en": "The company executives met to discuss the new strategy.",
+        "vi": "Các giám đốc của công ty họp lại để thảo luận chiến lược mới."
+      },
+      {
+        "en": "She works as an executive in a multinational corporation.",
+        "vi": "Cô ấy làm việc với tư cách là một nhân viên cấp cao tại một tập đoàn đa quốc gia."
+      }
+    ],
+    "phonetic": "/ɪɡˈzɛkjətɪv/",
+    "meaning_vi_detail": "Một người có địa vị quản lý cao trong một công ty hoặc tổ chức, chịu trách nhiệm thực hiện các quyết định và chính sách."
   },
   {
     "word": "exercise",
@@ -33703,10 +34503,20 @@
       "v."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "tập thể dục",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Physical activity or movement that you do to stay healthy and fit.",
+    "meaning_vi": "tập luyện, hoạt động thể chất",
+    "examples": [
+      {
+        "en": "I do exercise every morning.",
+        "vi": "Tôi tập thể dục mỗi sáng."
+      },
+      {
+        "en": "Walking is a good exercise.",
+        "vi": "Đi bộ là một bài tập thể dục tốt."
+      }
+    ],
+    "phonetic": "/ˈɛksərsaɪz/",
+    "meaning_vi_detail": "Hoạt động thể chất được thực hiện để duy trì sức khỏe, tăng cường thể lực hoặc rèn luyện kỹ năng."
   },
   {
     "word": "exert",
@@ -33714,10 +34524,20 @@
       "v."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "gắng sức",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To apply or bring to bear (effort, influence, or power) with full force or intensity; to make a strenuous physical or mental effort.",
+    "meaning_vi": "sử dụng hết sức, nỗ lực mạnh mẽ",
+    "examples": [
+      {
+        "en": "She exerted all her strength to push the heavy door open.",
+        "vi": "Cô ấy sử dụng hết sức để đẩy cánh cửa nặng mở ra."
+      },
+      {
+        "en": "The government exerted pressure on the company to reduce pollution.",
+        "vi": "Chính phủ tác động áp lực lên công ty để giảm ô nhiễm."
+      }
+    ],
+    "phonetic": "/ɪɡˈzɜːrt/",
+    "meaning_vi_detail": "Dùng hết sức lực, nỗ lực hoặc ảnh hưởng của mình để làm điều gì đó; áp dụng hoặc tác động một cách mạnh mẽ."
   },
   {
     "word": "exhibit",
@@ -33726,10 +34546,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "triển lãm",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To put something in a place where people can see it, or to show or display something publicly. It can also mean to show or reveal a feeling, behavior, or quality.",
+    "meaning_vi": "trưng bày, giới thiệu, thể hiện",
+    "examples": [
+      {
+        "en": "The museum will exhibit paintings from the 19th century.",
+        "vi": "Bảo tàng sẽ trưng bày những bức tranh từ thế kỷ 19."
+      },
+      {
+        "en": "He exhibited great courage during the emergency.",
+        "vi": "Anh ấy thể hiện sự dũng cảm lớn trong tình huống khẩn cấp."
+      }
+    ],
+    "phonetic": "/ɪɡˈzɪbɪt/",
+    "meaning_vi_detail": "Đặt hoặc trưng bày một cái gì đó để mọi người có thể nhìn thấy. Cũng có thể có nghĩa là thể hiện hoặc biểu lộ một cảm xúc, hành vi hay đặc điểm nào đó."
   },
   {
     "word": "exhibition",
@@ -33737,10 +34567,20 @@
       "n."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "triển lãm",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A public event where artworks, products, or other items are displayed for people to view. It can also refer to the act of showing or displaying something.",
+    "meaning_vi": "triển lãm, cuộc trưng bày",
+    "examples": [
+      {
+        "en": "We visited an art exhibition at the museum last weekend.",
+        "vi": "Chúng tôi đã tham quan một triển lãm nghệ thuật ở bảo tàng tuần trước."
+      },
+      {
+        "en": "The car exhibition showcased the latest models from different manufacturers.",
+        "vi": "Triển lãm ô tô giới thiệu các mẫu xe mới nhất từ các nhà sản xuất khác nhau."
+      }
+    ],
+    "phonetic": "/ˌeksɪˈbɪʃən/",
+    "meaning_vi_detail": "Một sự kiện công khai nơi các tác phẩm nghệ thuật, sản phẩm, hoặc các vật khác được trưng bày để mọi người xem và chiêm ngưỡng."
   },
   {
     "word": "exile",
@@ -33748,10 +34588,20 @@
       "n."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "lưu đày",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The state of being banished from one's country or home, typically as a form of punishment or political consequence. A person in this condition is called an exile.",
+    "meaning_vi": "lưu đày, xây nơi khác, phát thải",
+    "examples": [
+      {
+        "en": "The political dissident lived in exile for twenty years before being allowed to return home.",
+        "vi": "Nhà hoạt động chính trị sống lưu đày trong hai mươi năm trước khi được phép trở về nhà."
+      },
+      {
+        "en": "Many writers and artists chose exile rather than compromise their principles under the oppressive regime.",
+        "vi": "Nhiều nhà văn và nghệ sĩ chọn lưu đày thay vì thỏa hiệp nguyên tắc của họ dưới chế độ áp bức."
+      }
+    ],
+    "phonetic": "/ˈɛɡzaɪl/",
+    "meaning_vi_detail": "Sự bị buộc phải rời khỏi đất nước hoặc nơi ở của mình, thường do lý do chính trị hoặc hình phạt. Một người bị lưu đày được gọi là người lưu đày."
   },
   {
     "word": "exist",
@@ -33759,10 +34609,20 @@
       "v."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "tồn tại",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To be present or to have reality; to be found in a place or situation.",
+    "meaning_vi": "tồn tại, có mặt, sống",
+    "examples": [
+      {
+        "en": "Dinosaurs existed millions of years ago.",
+        "vi": "Khủng long tồn tại hàng triệu năm trước."
+      },
+      {
+        "en": "Does life exist on other planets?",
+        "vi": "Có sự sống tồn tại trên các hành tinh khác không?"
+      }
+    ],
+    "phonetic": "/ɪɡˈzɪst/",
+    "meaning_vi_detail": "Có mặt hoặc có sự tồn tại ở một nơi nào đó. Điều gì đó là có thực, không phải là tưởng tượng."
   },
   {
     "word": "existence",
@@ -33770,10 +34630,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "sự tồn tại",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The fact or state of being alive, existing, or present. It refers to the continuation of life or the reality of something's presence.",
+    "meaning_vi": "sự tồn tại, tính sống còn, cuộc sống",
+    "examples": [
+      {
+        "en": "The existence of life on other planets has not been proven yet.",
+        "vi": "Sự tồn tại của sự sống trên các hành tinh khác chưa được chứng minh."
+      },
+      {
+        "en": "She struggled to maintain her existence during the difficult times.",
+        "vi": "Cô ấy đấu tranh để duy trì cuộc sống của mình trong những thời kỳ khó khăn."
+      }
+    ],
+    "phonetic": "/ɪɡˈzɪstəns/",
+    "meaning_vi_detail": "Thực tế của việc tồn tại, sống hoặc có mặt; trạng thái của một điều gì đó hoặc ai đó đang sống hoặc hiện hữu."
   },
   {
     "word": "exit",
@@ -33782,10 +34652,20 @@
       "v."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "lối ra",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A way out of a place; a door or passage you use to leave a building or area.",
+    "meaning_vi": "lối ra, cửa ra, rời đi",
+    "examples": [
+      {
+        "en": "In case of fire, please use the nearest exit.",
+        "vi": "Trong trường hợp có hỏa hoạn, vui lòng sử dụng lối ra gần nhất."
+      },
+      {
+        "en": "He walked towards the exit after the movie ended.",
+        "vi": "Anh ấy đi về phía lối ra sau khi bộ phim kết thúc."
+      }
+    ],
+    "phonetic": "/ˈɛɡzɪt/",
+    "meaning_vi_detail": "Lối hoặc cửa để rời khỏi một nơi; cũng có thể chỉ hành động rời đi hoặc kết thúc."
   },
   {
     "word": "exotic",
@@ -33793,10 +34673,20 @@
       "adj."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "kỳ lạ",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Originating from or characteristic of a distant or foreign place; unusual or striking because of being unfamiliar or different from what is typical.",
+    "meaning_vi": "lạ, kỳ lạ, từ nước ngoài, không bình thường",
+    "examples": [
+      {
+        "en": "She decorated her apartment with exotic plants from the Amazon.",
+        "vi": "Cô ấy trang trí căn hộ với các loại cây lạ từ rừng Amazon."
+      },
+      {
+        "en": "The restaurant offers exotic cuisines from around the world.",
+        "vi": "Nhà hàng cung cấp các món ăn kỳ lạ từ khắp nơi trên thế giới."
+      }
+    ],
+    "phonetic": "/ɪɡˈzɒtɪk/",
+    "meaning_vi_detail": "Có xuất xứ từ một nơi khác, đặc biệt là từ những đất nước xa xôi; điều gì đó hiếm gặp, lạ mắt hoặc gợi cảm giác thú vị vì không quen thuộc."
   },
   {
     "word": "expand",
@@ -33804,10 +34694,20 @@
       "v."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "mở rộng",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To make something larger, wider, or more developed. To increase in size, extent, or scope.",
+    "meaning_vi": "mở rộng, phát triển, mở ra",
+    "examples": [
+      {
+        "en": "The company plans to expand its business to other countries.",
+        "vi": "Công ty có kế hoạch mở rộng kinh doanh sang các nước khác."
+      },
+      {
+        "en": "Heat causes metals to expand.",
+        "vi": "Nhiệt làm cho kim loại giãn nở."
+      }
+    ],
+    "phonetic": "/ɪkˈspænd/",
+    "meaning_vi_detail": "Làm cho cái gì đó trở nên lớn hơn, rộng hơn hoặc phát triển hơn. Có thể là về kích thước, phạm vi, kiến thức hoặc kinh doanh."
   },
   {
     "word": "expansion",
@@ -33815,10 +34715,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "mở rộng",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The process of becoming larger or more extensive; an increase in size, scope, or volume.",
+    "meaning_vi": "mở rộng, phát triển, mở rộng phạm vi",
+    "examples": [
+      {
+        "en": "The company announced a major expansion into new markets.",
+        "vi": "Công ty đã công bố một kế hoạch mở rộng lớn vào những thị trường mới."
+      },
+      {
+        "en": "The expansion of the airport will take three years to complete.",
+        "vi": "Việc mở rộng sân bay sẽ mất ba năm để hoàn thành."
+      }
+    ],
+    "phonetic": "/ɪkˈspænʃən/",
+    "meaning_vi_detail": "Sự tăng kích thước, phạm vi, hoặc mức độ của cái gì đó; quá trình làm cho cái gì đó trở nên lớn hơn hoặc phong phú hơn."
   },
   {
     "word": "expect",
@@ -33826,10 +34736,20 @@
       "v."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "mong đợi",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To believe that something will happen or to wait for something to occur.",
+    "meaning_vi": "mong đợi, chờ đợi, dự kiến",
+    "examples": [
+      {
+        "en": "I expect the bus to arrive in ten minutes.",
+        "vi": "Tôi mong đợi chiếc xe buýt sẽ đến trong mười phút nữa."
+      },
+      {
+        "en": "She expects good results from her hard work.",
+        "vi": "Cô ấy mong đợi kết quả tốt từ sự chăm chỉ của mình."
+      }
+    ],
+    "phonetic": "/ɪkˈspekt/",
+    "meaning_vi_detail": "Tin rằng điều gì đó sẽ xảy ra hoặc chờ đợi điều gì đó sẽ diễn ra trong tương lai."
   },
   {
     "word": "expectation",
@@ -33837,10 +34757,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "sự mong đợi",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A strong belief or hope that something will happen or be the case in the future; what someone thinks will or should occur.",
+    "meaning_vi": "sự mong đợi, kỳ vọng, dự kiến",
+    "examples": [
+      {
+        "en": "The results exceeded everyone's expectations.",
+        "vi": "Kết quả vượt quá kỳ vọng của mọi người."
+      },
+      {
+        "en": "She had high expectations for her new job.",
+        "vi": "Cô ấy có những kỳ vọng cao cho công việc mới của mình."
+      }
+    ],
+    "phonetic": "/ɪkˈspekˈteɪʃən/",
+    "meaning_vi_detail": "Niềm tin hoặc hy vọng rằng điều gì đó sẽ xảy ra; cái mà một người mong chờ hoặc kỳ vọng sẽ diễn ra trong tương lai."
   },
   {
     "word": "expected",
@@ -33848,10 +34778,20 @@
       "adj."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "dự kiến",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Thought to be likely to happen or arrive; anticipated or predicted beforehand.",
+    "meaning_vi": "dự kiến, được mong đợi, lường trước",
+    "examples": [
+      {
+        "en": "The expected arrival time is 3 PM.",
+        "vi": "Thời gian đến dự kiến là 3 giờ chiều."
+      },
+      {
+        "en": "The results were better than expected.",
+        "vi": "Kết quả tốt hơn mong đợi."
+      }
+    ],
+    "phonetic": "/ɪkˈspektɪd/",
+    "meaning_vi_detail": "Điều gì đó được dự đoán hoặc dự kiến sẽ xảy ra; điều gì đó được mong chờ hoặc dự tính trước."
   },
   {
     "word": "expenditure",
@@ -33859,10 +34799,20 @@
       "n."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "chi tiêu",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The spending of money on something, or the amount of money spent. It refers to the cost or consumption of resources for a specific purpose.",
+    "meaning_vi": "chi tiêu, chi phí, tiền tệ chi ra",
+    "examples": [
+      {
+        "en": "The government's defense expenditure has increased significantly this year.",
+        "vi": "Chi tiêu quốc phòng của chính phủ đã tăng đáng kể trong năm nay."
+      },
+      {
+        "en": "We need to control our household expenditure to save money.",
+        "vi": "Chúng ta cần kiểm soát chi tiêu hộ gia đình để tiết kiệm tiền."
+      }
+    ],
+    "phonetic": "/ɪkˈspendɪtʃə/",
+    "meaning_vi_detail": "Số tiền hoặc tài nguyên được sử dụng hoặc tiêu tốn cho một mục đích cụ thể. Đây là hành động chi tiêu hoặc số lượng tiền được chi."
   },
   {
     "word": "expense",
@@ -33870,10 +34820,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "chi phí",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The cost of something; an amount of money spent on something.",
+    "meaning_vi": "chi phí, khoản tiêu, chi tiêu",
+    "examples": [
+      {
+        "en": "The company covered all travel expenses for the conference.",
+        "vi": "Công ty thanh toán tất cả các chi phí du lịch cho hội nghị."
+      },
+      {
+        "en": "Medical expenses have increased significantly this year.",
+        "vi": "Chi phí y tế đã tăng lên đáng kể trong năm nay."
+      }
+    ],
+    "phonetic": "/ɪkˈspens/",
+    "meaning_vi_detail": "Khoản tiền hoặc chi phí mà bạn phải trả ra để mua cái gì đó hoặc để thực hiện một hoạt động nào đó."
   },
   {
     "word": "expensive",
@@ -33881,10 +34841,20 @@
       "adj."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "đắt tiền",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Costing a lot of money; not cheap.",
+    "meaning_vi": "đắt tiền, giá cao, tốn kém",
+    "examples": [
+      {
+        "en": "This phone is very expensive.",
+        "vi": "Chiếc điện thoại này rất đắt tiền."
+      },
+      {
+        "en": "Expensive restaurants serve good food.",
+        "vi": "Những nhà hàng đắt tiền phục vụ thức ăn ngon."
+      }
+    ],
+    "phonetic": "/ɪkˈspensɪv/",
+    "meaning_vi_detail": "Có giá cao, cần phải chi trả nhiều tiền để mua hoặc sử dụng cái gì đó."
   },
   {
     "word": "experience",
@@ -33893,10 +34863,20 @@
       "v."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "kinh nghiệm",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The knowledge or skill you have gained from doing something. It can also mean an event or situation that you have lived through.",
+    "meaning_vi": "kinh nghiệm, trải nghiệm, sự thử thách",
+    "examples": [
+      {
+        "en": "She has five years of experience working in a hospital.",
+        "vi": "Cô ấy có năm năm kinh nghiệm làm việc tại bệnh viện."
+      },
+      {
+        "en": "Traveling to new countries is a great experience.",
+        "vi": "Du lịch đến những đất nước mới là một trải nghiệm tuyệt vời."
+      }
+    ],
+    "phonetic": "/ɪkˈspɪəriəns/",
+    "meaning_vi_detail": "Kinh nghiệm là những sự việc, sự kiện mà một người đã trải qua hoặc học được từ việc làm điều gì đó. Nó có thể là kỹ năng, kiến thức, hoặc cảm giác từ những hoạt động trong quá khứ."
   },
   {
     "word": "experienced",
@@ -33904,10 +34884,20 @@
       "adj."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "có kinh nghiệm",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Having skills and knowledge gained through doing something for a long time or many times.",
+    "meaning_vi": "có kinh nghiệm, giàu kinh nghiệm, dày dạn",
+    "examples": [
+      {
+        "en": "She is an experienced teacher with 20 years in the classroom.",
+        "vi": "Cô ấy là một giáo viên giàu kinh nghiệm với 20 năm giảng dạy."
+      },
+      {
+        "en": "We need an experienced driver for this long journey.",
+        "vi": "Chúng tôi cần một tài xế có kinh nghiệm cho chuyến hành trình dài này."
+      }
+    ],
+    "phonetic": "/ɪkˈspɪəriənst/",
+    "meaning_vi_detail": "Có nhiều kinh nghiệm và kỹ năng trong một lĩnh vực nhất định do đã làm việc hoặc thực hiện điều đó trong thời gian dài."
   },
   {
     "word": "experiment",
@@ -33916,10 +34906,20 @@
       "v."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "thí nghiệm",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A test or trial done to discover or prove something. It is a scientific process to find out how something works.",
+    "meaning_vi": "thí nghiệm, thử nghiệm, kiểm tra",
+    "examples": [
+      {
+        "en": "The students did an experiment in the science lab.",
+        "vi": "Các học sinh đã thực hiện một thí nghiệm trong phòng thí nghiệm khoa học."
+      },
+      {
+        "en": "We conducted an experiment to test if plants need sunlight.",
+        "vi": "Chúng tôi tiến hành một thí nghiệm để kiểm tra xem cây cối có cần ánh sáng mặt trời hay không."
+      }
+    ],
+    "phonetic": "/ɪkˈsperɪmənt/",
+    "meaning_vi_detail": "Một bài kiểm tra hoặc thử nghiệm được thực hiện để khám phá điều gì đó hoặc để chứng minh một ý tưởng. Đó là một quá trình khoa học để tìm hiểu hoặc kiểm tra sự thật."
   },
   {
     "word": "experimental",
