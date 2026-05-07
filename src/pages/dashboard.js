@@ -32,7 +32,7 @@ export function renderDashboard(allWords) {
   else if (hour >= 18) greeting = 'Chào buổi tối';
 
   return `
-    <div class="max-w-6xl mx-auto px-4 pt-20 pb-10">
+    <div class="max-w-6xl mx-auto px-4 pt-10 pb-10">
       <!-- Hero Section -->
       <div class="fade-in mb-8">
         <div class="relative overflow-hidden rounded-3xl hero-bg border border-white/5 p-6 sm:p-8">

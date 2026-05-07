@@ -1,0 +1,731 @@
+[
+  {
+    "id": 101,
+    "title": "Đặt vé máy bay",
+    "topic": "Du lịch",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "I'd like to book a round-trip ticket to Da Nang, please.", "vi": "Tôi muốn đặt vé khứ hồi đến Đà Nẵng." },
+      { "speaker": "B", "en": "Sure. When would you like to depart and return?", "vi": "Vâng. Bạn muốn đi và về vào ngày nào?" },
+      { "speaker": "A", "en": "I want to leave on the 15th and come back on the 22nd.", "vi": "Tôi muốn đi ngày 15 và về ngày 22." },
+      { "speaker": "B", "en": "We have a morning flight at 7 AM and an afternoon one at 2 PM. Which do you prefer?", "vi": "Chúng tôi có chuyến bay buổi sáng lúc 7 giờ và buổi chiều lúc 2 giờ. Bạn thích chuyến nào?" },
+      { "speaker": "A", "en": "The morning flight, please. And I'd like a window seat if possible.", "vi": "Cho tôi chuyến sáng. Và tôi muốn chỗ ngồi cạnh cửa sổ nếu có thể." },
+      { "speaker": "B", "en": "No problem. That will be 1,850,000 dong for the round trip. Would you like to add luggage?", "vi": "Không vấn đề. Tổng cộng là 1.850.000 đồng cho vé khứ hồi. Bạn có muốn thêm hành lý không?" },
+      { "speaker": "A", "en": "Yes, please add 20 kilograms of checked baggage.", "vi": "Có, cho tôi thêm 20 kilogram hành lý ký gửi." },
+      { "speaker": "B", "en": "Done. I'll send your e-ticket to your email within the hour.", "vi": "Xong rồi. Tôi sẽ gửi vé điện tử đến email của bạn trong vòng một giờ." }
+    ]
+  },
+  {
+    "id": 102,
+    "title": "Hỏi đường đến khách sạn",
+    "topic": "Du lịch",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "Excuse me, could you tell me how to get to the Grand Hotel?", "vi": "Xin lỗi, bạn có thể chỉ đường đến khách sạn Grand không?" },
+      { "speaker": "B", "en": "Of course. Go straight ahead for two blocks, then turn left at the traffic light.", "vi": "Tất nhiên. Đi thẳng hai dãy nhà, rồi rẽ trái tại đèn giao thông." },
+      { "speaker": "A", "en": "Turn left at the traffic light. Got it. And then?", "vi": "Rẽ trái tại đèn giao thông. Hiểu rồi. Rồi sao nữa?" },
+      { "speaker": "B", "en": "Walk about 200 meters and the hotel will be on your right side.", "vi": "Đi khoảng 200 mét và khách sạn sẽ ở bên tay phải của bạn." },
+      { "speaker": "A", "en": "Is it far from here? I'm on foot.", "vi": "Có xa không? Tôi đang đi bộ." },
+      { "speaker": "B", "en": "Not at all. It's only about a ten-minute walk from here.", "vi": "Không xa đâu. Chỉ mất khoảng mười phút đi bộ từ đây." },
+      { "speaker": "A", "en": "Perfect. Thank you so much for your help.", "vi": "Tuyệt vời. Cảm ơn bạn rất nhiều." }
+    ]
+  },
+  {
+    "id": 103,
+    "title": "Thuê xe máy",
+    "topic": "Du lịch",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "Hi, I'd like to rent a motorbike for three days.", "vi": "Xin chào, tôi muốn thuê xe máy trong ba ngày." },
+      { "speaker": "B", "en": "Sure. Do you have an international driving license?", "vi": "Vâng. Bạn có bằng lái xe quốc tế không?" },
+      { "speaker": "A", "en": "Yes, I have one. What models do you have available?", "vi": "Có, tôi có. Bạn có những dòng xe nào?" },
+      { "speaker": "B", "en": "We have automatic scooters and semi-automatic motorbikes. Scooters are more popular with tourists.", "vi": "Chúng tôi có xe ga tự động và xe số bán tự động. Xe ga phổ biến hơn với khách du lịch." },
+      { "speaker": "A", "en": "I'll go with the scooter. How much is it per day?", "vi": "Tôi sẽ chọn xe ga. Giá thuê mỗi ngày là bao nhiêu?" },
+      { "speaker": "B", "en": "It's 150,000 dong per day, including helmet and basic insurance.", "vi": "Giá là 150.000 đồng mỗi ngày, bao gồm mũ bảo hiểm và bảo hiểm cơ bản." },
+      { "speaker": "A", "en": "That sounds reasonable. Can I also get a map of the area?", "vi": "Nghe có vẻ hợp lý. Tôi có thể xin thêm bản đồ khu vực không?" },
+      { "speaker": "B", "en": "Absolutely. I'll show you the best routes and places to avoid.", "vi": "Tất nhiên. Tôi sẽ chỉ cho bạn các tuyến đường tốt nhất và những nơi cần tránh." }
+    ]
+  },
+  {
+    "id": 104,
+    "title": "Phàn nàn về phòng khách sạn",
+    "topic": "Du lịch",
+    "level": "B2",
+    "lines": [
+      { "speaker": "A", "en": "Good evening. I'm in room 312. There's a problem with my air conditioning — it's not working.", "vi": "Chào buổi tối. Tôi ở phòng 312. Điều hòa phòng tôi bị hỏng, không hoạt động." },
+      { "speaker": "B", "en": "I'm so sorry to hear that. I'll send a technician right away. Is there anything else bothering you?", "vi": "Tôi rất tiếc khi nghe điều đó. Tôi sẽ cho kỹ thuật viên lên ngay. Còn vấn đề gì khác không?" },
+      { "speaker": "A", "en": "Yes, actually. The hot water in the shower is also intermittent.", "vi": "Vâng, thực ra là có. Nước nóng trong vòi hoa sen cũng bị thất thường." },
+      { "speaker": "B", "en": "I apologize for the inconvenience. We'll fix both issues immediately.", "vi": "Tôi xin lỗi vì sự bất tiện này. Chúng tôi sẽ sửa cả hai vấn đề ngay lập tức." },
+      { "speaker": "A", "en": "How long will it take? I need to sleep early tonight.", "vi": "Sẽ mất bao lâu? Tôi cần ngủ sớm tối nay." },
+      { "speaker": "B", "en": "Within 30 minutes. If we can't fix it, we'll move you to another room at no extra charge.", "vi": "Trong vòng 30 phút. Nếu không sửa được, chúng tôi sẽ chuyển bạn sang phòng khác miễn phí." },
+      { "speaker": "A", "en": "Alright. I appreciate you handling this promptly.", "vi": "Được rồi. Tôi đánh giá cao việc bạn xử lý nhanh như vậy." }
+    ]
+  },
+  {
+    "id": 105,
+    "title": "Mua đồ lưu niệm",
+    "topic": "Du lịch",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "These lacquerware boxes are beautiful. How much are they?", "vi": "Những hộp sơn mài này đẹp quá. Giá bao nhiêu vậy?" },
+      { "speaker": "B", "en": "The small ones are 80,000 dong and the large ones are 150,000 dong.", "vi": "Loại nhỏ là 80.000 đồng và loại lớn là 150.000 đồng." },
+      { "speaker": "A", "en": "Can I get a discount if I buy three of the small ones?", "vi": "Nếu tôi mua ba cái nhỏ thì có được giảm giá không?" },
+      { "speaker": "B", "en": "I can give you three for 200,000 dong. That's a good deal.", "vi": "Tôi có thể bán ba cái với giá 200.000 đồng. Đó là giá tốt rồi đó." },
+      { "speaker": "A", "en": "Alright, I'll take three small ones and one large one.", "vi": "Được rồi, tôi lấy ba cái nhỏ và một cái lớn." },
+      { "speaker": "B", "en": "Good choice! I'll wrap them carefully so they don't break in your luggage.", "vi": "Lựa chọn tốt! Tôi sẽ gói cẩn thận để không bị vỡ trong hành lý của bạn." }
+    ]
+  },
+  {
+    "id": 106,
+    "title": "Phỏng vấn xin việc",
+    "topic": "Công việc",
+    "level": "B2",
+    "lines": [
+      { "speaker": "A", "en": "Good morning. Please have a seat. Tell me a little about yourself.", "vi": "Chào buổi sáng. Mời bạn ngồi. Hãy kể cho tôi nghe một chút về bản thân bạn." },
+      { "speaker": "B", "en": "Thank you. I graduated from the University of Economics three years ago and have been working in digital marketing since then.", "vi": "Cảm ơn. Tôi tốt nghiệp Đại học Kinh tế ba năm trước và đã làm marketing kỹ thuật số từ đó đến nay." },
+      { "speaker": "A", "en": "That's interesting. What specific skills do you bring to this role?", "vi": "Thú vị đó. Bạn mang đến những kỹ năng cụ thể nào cho vị trí này?" },
+      { "speaker": "B", "en": "I specialize in SEO, content strategy, and data analytics. I also have experience managing social media campaigns.", "vi": "Tôi chuyên về SEO, chiến lược nội dung và phân tích dữ liệu. Tôi cũng có kinh nghiệm quản lý các chiến dịch mạng xã hội." },
+      { "speaker": "A", "en": "Can you describe a challenge you faced at your previous job and how you handled it?", "vi": "Bạn có thể mô tả một thách thức bạn từng đối mặt ở công việc cũ và cách bạn xử lý không?" },
+      { "speaker": "B", "en": "Sure. We had a campaign with a shrinking budget, so I reallocated resources to focus only on the highest-converting channels. We exceeded our KPIs by 20%.", "vi": "Được. Chúng tôi có một chiến dịch với ngân sách giảm dần, nên tôi phân bổ lại nguồn lực để chỉ tập trung vào các kênh có tỷ lệ chuyển đổi cao nhất. Chúng tôi đã vượt KPI 20%." },
+      { "speaker": "A", "en": "Impressive. What are your salary expectations for this position?", "vi": "Ấn tượng. Kỳ vọng lương của bạn cho vị trí này là bao nhiêu?" },
+      { "speaker": "B", "en": "Based on my experience and the scope of this role, I was thinking in the range of 18 to 22 million dong per month.", "vi": "Dựa trên kinh nghiệm và phạm vi của vị trí này, tôi đang nghĩ đến mức 18 đến 22 triệu đồng mỗi tháng." }
+    ]
+  },
+  {
+    "id": 107,
+    "title": "Thảo luận dự án nhóm",
+    "topic": "Công việc",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "Let's review where we stand on the product launch. We have two weeks left.", "vi": "Hãy xem xét tiến độ của việc ra mắt sản phẩm. Chúng ta còn hai tuần nữa." },
+      { "speaker": "B", "en": "The design team just finished the UI mockups. We're waiting on feedback from the client.", "vi": "Nhóm thiết kế vừa hoàn thành các bản phác thảo giao diện. Chúng ta đang chờ phản hồi từ khách hàng." },
+      { "speaker": "A", "en": "And the development side? Are we still on schedule?", "vi": "Còn phía phát triển thì sao? Chúng ta có còn đúng tiến độ không?" },
+      { "speaker": "B", "en": "Mostly, but we hit a bug in the payment module yesterday. The team is working on a fix.", "vi": "Phần lớn là có, nhưng chúng tôi gặp một lỗi trong module thanh toán hôm qua. Nhóm đang xử lý." },
+      { "speaker": "A", "en": "How serious is it? Will it delay the launch?", "vi": "Nghiêm trọng đến mức nào? Liệu có trì hoãn việc ra mắt không?" },
+      { "speaker": "B", "en": "We estimate a two-day delay at most. I'll have a clearer picture by end of day.", "vi": "Chúng tôi ước tính trì hoãn tối đa hai ngày. Cuối ngày hôm nay tôi sẽ có cái nhìn rõ hơn." },
+      { "speaker": "A", "en": "Keep me posted. Let's schedule a status call tomorrow morning.", "vi": "Hãy cập nhật cho tôi biết. Chúng ta hãy lên lịch cuộc gọi kiểm tra tiến độ vào sáng mai." }
+    ]
+  },
+  {
+    "id": 108,
+    "title": "Đàm phán hợp đồng",
+    "topic": "Công việc",
+    "level": "C1",
+    "lines": [
+      { "speaker": "A", "en": "We've reviewed your proposal and we're interested, but the timeline is a concern.", "vi": "Chúng tôi đã xem xét đề xuất của bạn và chúng tôi quan tâm, nhưng thời hạn là một vấn đề." },
+      { "speaker": "B", "en": "I understand. What specific timeline would work better for your team?", "vi": "Tôi hiểu. Thời hạn cụ thể nào sẽ phù hợp hơn với nhóm của bạn?" },
+      { "speaker": "A", "en": "We'd need the first deliverable within four weeks rather than six.", "vi": "Chúng tôi cần sản phẩm bàn giao đầu tiên trong vòng bốn tuần thay vì sáu tuần." },
+      { "speaker": "B", "en": "That's achievable if we can bring in one additional developer. That would add 5% to the project cost.", "vi": "Điều đó khả thi nếu chúng tôi có thể đưa thêm một lập trình viên vào. Điều đó sẽ tăng thêm 5% chi phí dự án." },
+      { "speaker": "A", "en": "We'd prefer to keep the budget as quoted. Can you optimize internally instead?", "vi": "Chúng tôi muốn giữ nguyên ngân sách như đã báo giá. Bạn có thể tối ưu hóa nội bộ thay thế không?" },
+      { "speaker": "B", "en": "We could if we narrow the scope slightly — perhaps defer the reporting dashboard to phase two.", "vi": "Chúng tôi có thể làm vậy nếu thu hẹp phạm vi một chút — có lẽ dời bảng điều khiển báo cáo sang giai đoạn hai." },
+      { "speaker": "A", "en": "That's acceptable. Let's document that and move forward with signing.", "vi": "Điều đó có thể chấp nhận được. Hãy ghi lại điều đó và tiến hành ký kết." }
+    ]
+  },
+  {
+    "id": 109,
+    "title": "Nghỉ phép xin phép sếp",
+    "topic": "Công việc",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "Mr. Nam, do you have a moment? I'd like to request some time off.", "vi": "Anh Nam ơi, anh có rảnh không? Em muốn xin nghỉ phép." },
+      { "speaker": "B", "en": "Of course. How many days are you thinking?", "vi": "Được chứ. Em đang nghĩ khoảng bao nhiêu ngày?" },
+      { "speaker": "A", "en": "Five days, from the 20th to the 24th. I'll make sure all my tasks are completed before then.", "vi": "Năm ngày, từ ngày 20 đến 24. Em sẽ đảm bảo hoàn thành hết công việc trước đó." },
+      { "speaker": "B", "en": "That's around the time of the quarterly report. Can you prepare your section in advance?", "vi": "Khoảng thời gian đó gần với báo cáo quý. Em có thể chuẩn bị phần của mình trước không?" },
+      { "speaker": "A", "en": "Yes, I can have it ready by the 18th and brief a colleague to handle any questions.", "vi": "Vâng, em có thể hoàn thành trước ngày 18 và tóm tắt cho một đồng nghiệp để họ xử lý các câu hỏi phát sinh." },
+      { "speaker": "B", "en": "In that case, I'll approve it. Just send the request through the HR system.", "vi": "Trong trường hợp đó, anh sẽ duyệt. Em chỉ cần gửi yêu cầu qua hệ thống nhân sự." },
+      { "speaker": "A", "en": "Thank you so much. I really appreciate it.", "vi": "Cảm ơn anh rất nhiều. Em thực sự biết ơn." }
+    ]
+  },
+  {
+    "id": 110,
+    "title": "Làm việc từ xa",
+    "topic": "Công việc",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "How are you finding working from home? Is it working well for you?", "vi": "Bạn thấy làm việc ở nhà thế nào? Có ổn không?" },
+      { "speaker": "B", "en": "It's mostly good, but I miss the face-to-face collaboration with the team.", "vi": "Phần lớn là tốt, nhưng tôi nhớ sự hợp tác trực tiếp với nhóm." },
+      { "speaker": "A", "en": "I know what you mean. Video calls aren't the same as being in the same room.", "vi": "Tôi hiểu ý bạn. Cuộc gọi video không giống như ở cùng một phòng." },
+      { "speaker": "B", "en": "Exactly. Also, it's harder to separate work time from personal time.", "vi": "Đúng vậy. Ngoài ra, việc tách biệt thời gian làm việc và thời gian cá nhân cũng khó hơn." },
+      { "speaker": "A", "en": "Do you have a dedicated workspace at home?", "vi": "Bạn có không gian làm việc riêng ở nhà không?" },
+      { "speaker": "B", "en": "Sort of. I set up a desk in the spare room, which helps me get into work mode.", "vi": "Cũng có. Tôi đã bố trí một bàn làm việc trong phòng thừa, điều đó giúp tôi vào trạng thái làm việc." },
+      { "speaker": "A", "en": "That's smart. I try to start and finish at the same time every day to maintain routine.", "vi": "Thật thông minh. Tôi cố gắng bắt đầu và kết thúc cùng một giờ mỗi ngày để duy trì thói quen." }
+    ]
+  },
+  {
+    "id": 111,
+    "title": "Khám bệnh cúm",
+    "topic": "Sức khỏe",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "Good morning, doctor. I've had a fever and sore throat for two days.", "vi": "Chào buổi sáng, bác sĩ. Tôi bị sốt và đau họng hai ngày rồi." },
+      { "speaker": "B", "en": "Let me take a look. Open your mouth wide, please.", "vi": "Để tôi kiểm tra. Hãy há miệng to nào." },
+      { "speaker": "A", "en": "Is it serious, doctor?", "vi": "Có nghiêm trọng không, bác sĩ?" },
+      { "speaker": "B", "en": "Your throat is a bit red and your temperature is 38.5. It looks like a mild case of the flu.", "vi": "Họng của bạn hơi đỏ và nhiệt độ là 38,5 độ. Có vẻ như bạn bị cúm nhẹ." },
+      { "speaker": "A", "en": "What should I do? I have an important meeting next week.", "vi": "Tôi phải làm gì? Tôi có một cuộc họp quan trọng tuần tới." },
+      { "speaker": "B", "en": "Rest as much as possible, drink plenty of fluids, and take this medicine three times a day after meals.", "vi": "Hãy nghỉ ngơi nhiều nhất có thể, uống nhiều nước, và uống thuốc này ba lần mỗi ngày sau bữa ăn." },
+      { "speaker": "A", "en": "Should I come back if I don't feel better?", "vi": "Tôi có nên quay lại nếu không thấy khỏe hơn không?" },
+      { "speaker": "B", "en": "Yes, if your fever doesn't go down within three days, come back and we'll run more tests.", "vi": "Vâng, nếu sốt không giảm trong vòng ba ngày, hãy quay lại và chúng tôi sẽ làm thêm xét nghiệm." }
+    ]
+  },
+  {
+    "id": 112,
+    "title": "Tư vấn dinh dưỡng",
+    "topic": "Sức khỏe",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "I've been trying to eat healthier but I don't know where to start.", "vi": "Tôi đã cố ăn uống lành mạnh hơn nhưng không biết bắt đầu từ đâu." },
+      { "speaker": "B", "en": "A good starting point is to reduce processed foods and increase vegetables and whole grains.", "vi": "Điểm khởi đầu tốt là giảm thực phẩm chế biến sẵn và tăng rau củ và ngũ cốc nguyên hạt." },
+      { "speaker": "A", "en": "What about protein? I work out three times a week.", "vi": "Còn chất đạm thì sao? Tôi tập thể dục ba lần mỗi tuần." },
+      { "speaker": "B", "en": "For someone who exercises regularly, aim for about 1.2 to 1.6 grams of protein per kilogram of body weight.", "vi": "Đối với người tập thể dục thường xuyên, hãy nhắm đến khoảng 1,2 đến 1,6 gram chất đạm mỗi kilogram trọng lượng cơ thể." },
+      { "speaker": "A", "en": "That sounds like a lot. What are good protein sources?", "vi": "Nghe có vẻ nhiều. Những nguồn chất đạm tốt là gì?" },
+      { "speaker": "B", "en": "Chicken, fish, eggs, tofu, and legumes like lentils and chickpeas are all excellent choices.", "vi": "Gà, cá, trứng, đậu phụ và các loại đậu như đậu lăng và đậu gà đều là những lựa chọn tuyệt vời." },
+      { "speaker": "A", "en": "I'll try to add more of those. Should I also track my calories?", "vi": "Tôi sẽ cố thêm những thứ đó. Tôi có nên theo dõi lượng calo của mình không?" }
+    ]
+  },
+  {
+    "id": 113,
+    "title": "Tập gym lần đầu",
+    "topic": "Sức khỏe",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "Hi, this is my first time at a gym. I'm not sure what to do.", "vi": "Xin chào, đây là lần đầu tiên tôi đến phòng gym. Tôi không biết phải làm gì." },
+      { "speaker": "B", "en": "Welcome! Don't worry, I can show you around. What are your fitness goals?", "vi": "Chào mừng! Đừng lo, tôi có thể chỉ cho bạn. Mục tiêu thể hình của bạn là gì?" },
+      { "speaker": "A", "en": "I mostly want to lose some weight and get stronger.", "vi": "Tôi chủ yếu muốn giảm cân và tăng sức mạnh." },
+      { "speaker": "B", "en": "Great. I'd recommend combining cardio with weight training. Have you done either before?", "vi": "Tuyệt. Tôi khuyên bạn nên kết hợp cardio với tập tạ. Bạn đã từng làm cái nào chưa?" },
+      { "speaker": "A", "en": "I used to jog but I've never lifted weights before.", "vi": "Tôi từng chạy bộ nhưng chưa bao giờ tập tạ." },
+      { "speaker": "B", "en": "Then let's start with the basics — machines are safer and easier to learn than free weights for beginners.", "vi": "Vậy thì hãy bắt đầu với những bài cơ bản — máy tập an toàn hơn và dễ học hơn tạ tự do cho người mới bắt đầu." },
+      { "speaker": "A", "en": "That makes sense. How many times a week should I come?", "vi": "Điều đó hợp lý. Tôi nên đến bao nhiêu lần mỗi tuần?" },
+      { "speaker": "B", "en": "Start with three times a week to let your body recover. You can increase gradually as you get fitter.", "vi": "Bắt đầu với ba lần mỗi tuần để cơ thể phục hồi. Bạn có thể tăng dần khi thể lực tốt hơn." }
+    ]
+  },
+  {
+    "id": 114,
+    "title": "Thảo luận về chính sách môi trường",
+    "topic": "Môi trường",
+    "level": "C1",
+    "lines": [
+      { "speaker": "A", "en": "The new carbon tax policy has sparked a lot of debate. What's your take on it?", "vi": "Chính sách thuế carbon mới đã gây ra nhiều tranh luận. Bạn có suy nghĩ gì về điều đó?" },
+      { "speaker": "B", "en": "I think it's a necessary step, even if it's unpopular. Without pricing carbon emissions, companies have little incentive to reduce them.", "vi": "Tôi nghĩ đó là bước cần thiết, dù không được ưa chuộng. Nếu không định giá phát thải carbon, các công ty ít có động lực để giảm phát thải." },
+      { "speaker": "A", "en": "But critics argue it disproportionately burdens lower-income households.", "vi": "Nhưng các nhà phê bình lập luận rằng nó gây gánh nặng không cân xứng cho các hộ gia đình thu nhập thấp hơn." },
+      { "speaker": "B", "en": "That's a valid concern. The revenue should be redistributed as direct rebates to offset the impact on vulnerable groups.", "vi": "Đó là mối lo ngại hợp lý. Doanh thu nên được phân phối lại dưới dạng hoàn tiền trực tiếp để bù đắp tác động lên các nhóm dễ bị tổn thương." },
+      { "speaker": "A", "en": "Some countries have tried that model with mixed results. Canada, for example.", "vi": "Một số quốc gia đã thử mô hình đó với kết quả không đồng đều. Canada chẳng hạn." },
+      { "speaker": "B", "en": "True. Implementation matters as much as policy design. Transparency and enforcement are key.", "vi": "Đúng vậy. Việc thực thi quan trọng không kém thiết kế chính sách. Tính minh bạch và thực thi là chìa khóa." }
+    ]
+  },
+  {
+    "id": 115,
+    "title": "Phân loại rác và tái chế",
+    "topic": "Môi trường",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "I'm new to this neighborhood. Can you explain how the recycling system works here?", "vi": "Tôi mới đến khu phố này. Bạn có thể giải thích hệ thống tái chế ở đây hoạt động như thế nào không?" },
+      { "speaker": "B", "en": "Of course. We have three bins — blue for paper and cardboard, yellow for plastics and cans, and green for organic waste.", "vi": "Tất nhiên. Chúng ta có ba thùng — xanh dương cho giấy và bìa cứng, vàng cho nhựa và lon, xanh lá cho rác hữu cơ." },
+      { "speaker": "A", "en": "What about glass? I have a lot of bottles.", "vi": "Còn thủy tinh thì sao? Tôi có nhiều chai lọ." },
+      { "speaker": "B", "en": "Glass goes in the clear bag, and there's a collection point at the end of the street.", "vi": "Thủy tinh cho vào túi trong suốt, và có điểm thu gom ở cuối phố." },
+      { "speaker": "A", "en": "And what about batteries and electronics?", "vi": "Còn pin và đồ điện tử thì sao?" },
+      { "speaker": "B", "en": "Those are hazardous waste. The supermarket has a drop-off bin for batteries, and the council collects electronics monthly.", "vi": "Những thứ đó là rác thải nguy hại. Siêu thị có thùng thu pin, và hội đồng địa phương thu đồ điện tử hàng tháng." },
+      { "speaker": "A", "en": "That's really well organized. I'll make sure to follow the rules.", "vi": "Thật sự rất có tổ chức. Tôi sẽ tuân thủ các quy định đó." }
+    ]
+  },
+  {
+    "id": 116,
+    "title": "Biến đổi khí hậu và thế hệ trẻ",
+    "topic": "Môi trường",
+    "level": "B2",
+    "lines": [
+      { "speaker": "A", "en": "Young people today seem much more concerned about climate change than previous generations.", "vi": "Giới trẻ ngày nay có vẻ quan tâm đến biến đổi khí hậu nhiều hơn các thế hệ trước." },
+      { "speaker": "B", "en": "That makes sense — they'll live with the consequences the longest. It's their future that's most at stake.", "vi": "Điều đó có lý — họ sẽ sống với hậu quả lâu nhất. Tương lai của họ là thứ đang bị đe dọa nhất." },
+      { "speaker": "A", "en": "But there's also a feeling of helplessness among young people — that individual actions don't really matter.", "vi": "Nhưng cũng có cảm giác bất lực trong giới trẻ — rằng hành động cá nhân không thực sự quan trọng." },
+      { "speaker": "B", "en": "I understand that frustration. Systemic change requires collective action and political will.", "vi": "Tôi hiểu sự thất vọng đó. Thay đổi hệ thống đòi hỏi hành động tập thể và ý chí chính trị." },
+      { "speaker": "A", "en": "Still, movements like Fridays for Future show that young voices can shift the conversation.", "vi": "Tuy nhiên, các phong trào như Fridays for Future cho thấy tiếng nói của giới trẻ có thể thay đổi cuộc trò chuyện." },
+      { "speaker": "B", "en": "Absolutely. Advocacy, voting, and consumer choices all add up. No single solution is enough on its own.", "vi": "Hoàn toàn đúng. Vận động, bỏ phiếu và lựa chọn tiêu dùng đều có giá trị cộng gộp. Không có giải pháp đơn lẻ nào là đủ." }
+    ]
+  },
+  {
+    "id": 117,
+    "title": "Năng lượng tái tạo",
+    "topic": "Môi trường",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "My neighbor just installed solar panels on their roof. Is it really worth it?", "vi": "Hàng xóm của tôi vừa lắp tấm pin mặt trời trên mái nhà. Liệu có thực sự đáng không?" },
+      { "speaker": "B", "en": "It depends on your electricity consumption and the amount of sunlight in your area. In Vietnam, the conditions are generally very good.", "vi": "Điều đó phụ thuộc vào mức tiêu thụ điện của bạn và lượng ánh nắng ở khu vực của bạn. Ở Việt Nam, điều kiện thường rất tốt." },
+      { "speaker": "A", "en": "How long does it take to recover the initial investment?", "vi": "Mất bao lâu để thu hồi vốn đầu tư ban đầu?" },
+      { "speaker": "B", "en": "Typically five to seven years with current prices. After that, the electricity is essentially free.", "vi": "Thường từ năm đến bảy năm với giá hiện tại. Sau đó, điện về cơ bản là miễn phí." },
+      { "speaker": "A", "en": "That's not bad. Can excess power be sold back to the grid?", "vi": "Không tệ. Điện dư có thể bán lại cho lưới điện không?" },
+      { "speaker": "B", "en": "Yes, in some provinces there are programs that allow you to sell surplus energy. It's worth checking local regulations.", "vi": "Có, ở một số tỉnh có chương trình cho phép bán điện dư. Đáng để kiểm tra quy định địa phương." }
+    ]
+  },
+  {
+    "id": 118,
+    "title": "Ô nhiễm không khí đô thị",
+    "topic": "Môi trường",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "The air quality index in the city has been very poor this week. It's over 150.", "vi": "Chỉ số chất lượng không khí trong thành phố tuần này rất kém. Hơn 150 rồi." },
+      { "speaker": "B", "en": "I know. I've been avoiding going outside unless necessary. The smog is really thick.", "vi": "Tôi biết. Tôi đã tránh ra ngoài trừ khi cần thiết. Sương mù thực sự rất dày đặc." },
+      { "speaker": "A", "en": "What causes it to spike like this?", "vi": "Điều gì khiến nó tăng đột biến như vậy?" },
+      { "speaker": "B", "en": "A combination of vehicle emissions, factory pollution, and weather patterns that trap pollutants close to the ground.", "vi": "Sự kết hợp của khí thải phương tiện, ô nhiễm từ nhà máy và các kiểu thời tiết giữ chất ô nhiễm gần mặt đất." },
+      { "speaker": "A", "en": "Should I wear a mask when I go out?", "vi": "Tôi có nên đeo khẩu trang khi ra ngoài không?" },
+      { "speaker": "B", "en": "Yes. An N95 or similar respirator is much more effective than a regular surgical mask for fine particles.", "vi": "Có. Khẩu trang N95 hoặc loại tương tự hiệu quả hơn nhiều so với khẩu trang phẫu thuật thông thường đối với các hạt mịn." }
+    ]
+  },
+  {
+    "id": 119,
+    "title": "Xem phim rạp",
+    "topic": "Giải trí",
+    "level": "A1",
+    "lines": [
+      { "speaker": "A", "en": "Have you seen any good movies lately?", "vi": "Gần đây bạn có xem bộ phim nào hay không?" },
+      { "speaker": "B", "en": "Yes! I watched 'Inside Out 2' last week. It was amazing.", "vi": "Có! Tôi đã xem 'Inside Out 2' tuần trước. Phim thật tuyệt vời." },
+      { "speaker": "A", "en": "Oh, I've been wanting to see that. Is it suitable for children?", "vi": "Ồ, tôi muốn xem phim đó. Có phù hợp cho trẻ em không?" },
+      { "speaker": "B", "en": "Definitely. But adults will love it too — it's very emotional.", "vi": "Chắc chắn rồi. Nhưng người lớn cũng sẽ thích — phim rất cảm động." },
+      { "speaker": "A", "en": "Is it still showing at the cinema near here?", "vi": "Phim có còn chiếu ở rạp gần đây không?" },
+      { "speaker": "B", "en": "I think so. Let me check the schedule on my phone.", "vi": "Tôi nghĩ vậy. Để tôi kiểm tra lịch chiếu trên điện thoại." },
+      { "speaker": "A", "en": "Great! Maybe we can go together this weekend.", "vi": "Tuyệt! Có thể chúng ta đi cùng nhau vào cuối tuần này." }
+    ]
+  },
+  {
+    "id": 120,
+    "title": "Chơi game trực tuyến",
+    "topic": "Giải trí",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "Do you play video games? I've been getting into online gaming lately.", "vi": "Bạn có chơi trò chơi điện tử không? Tôi gần đây bắt đầu chơi game trực tuyến." },
+      { "speaker": "B", "en": "Yes, I play a lot! What kind of games do you like?", "vi": "Có, tôi chơi nhiều lắm! Bạn thích loại game nào?" },
+      { "speaker": "A", "en": "Mostly strategy games. I just started playing a city-building game.", "vi": "Chủ yếu là game chiến lược. Tôi vừa bắt đầu chơi một game xây dựng thành phố." },
+      { "speaker": "B", "en": "Nice. I prefer team-based games like shooters or multiplayer online battle arenas.", "vi": "Hay đó. Tôi thích game theo nhóm như bắn súng hay đấu trường chiến thuật nhiều người." },
+      { "speaker": "A", "en": "Do you play with friends or with strangers online?", "vi": "Bạn chơi với bạn bè hay với người lạ trực tuyến?" },
+      { "speaker": "B", "en": "Both. But it's more fun with friends because you can communicate and coordinate better.", "vi": "Cả hai. Nhưng chơi với bạn bè vui hơn vì bạn có thể giao tiếp và phối hợp tốt hơn." },
+      { "speaker": "A", "en": "Makes sense. Maybe you could show me some good games to try.", "vi": "Có lý đó. Có thể bạn chỉ cho tôi một số game hay để thử." }
+    ]
+  },
+  {
+    "id": 121,
+    "title": "Đọc sách và thư viện",
+    "topic": "Giải trí",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "I'm looking for a good book to read. Any recommendations?", "vi": "Tôi đang tìm một cuốn sách hay để đọc. Bạn có gợi ý nào không?" },
+      { "speaker": "B", "en": "What kind of books do you usually enjoy?", "vi": "Bạn thường thích loại sách nào?" },
+      { "speaker": "A", "en": "I like mystery stories and historical fiction.", "vi": "Tôi thích truyện bí ẩn và tiểu thuyết lịch sử." },
+      { "speaker": "B", "en": "Then you might enjoy 'The Name of the Rose' by Umberto Eco. It's both a mystery and set in medieval times.", "vi": "Vậy thì bạn có thể thích 'Tên của bông hồng' của Umberto Eco. Đó vừa là truyện bí ẩn vừa diễn ra trong thời trung cổ." },
+      { "speaker": "A", "en": "That sounds perfect. Is it available at the city library?", "vi": "Nghe có vẻ hoàn hảo. Cuốn sách đó có ở thư viện thành phố không?" },
+      { "speaker": "B", "en": "I believe so. You can check their online catalog. Library membership is free.", "vi": "Tôi nghĩ có. Bạn có thể kiểm tra danh mục trực tuyến của họ. Thẻ thư viện miễn phí." },
+      { "speaker": "A", "en": "I didn't know it was free. I'll sign up today.", "vi": "Tôi không biết là miễn phí. Tôi sẽ đăng ký hôm nay." }
+    ]
+  },
+  {
+    "id": 122,
+    "title": "Đi dã ngoại cuối tuần",
+    "topic": "Giải trí",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "Are you free this Saturday? A few of us are going on a picnic.", "vi": "Bạn có rảnh thứ Bảy này không? Một vài người chúng tôi sẽ đi dã ngoại." },
+      { "speaker": "B", "en": "That sounds great! Where are you planning to go?", "vi": "Nghe tuyệt vời! Bạn đang lên kế hoạch đi đâu?" },
+      { "speaker": "A", "en": "To Suoi Tien park. The weather forecast looks perfect for it.", "vi": "Đến công viên Suối Tiên. Dự báo thời tiết có vẻ hoàn hảo cho chuyến đi." },
+      { "speaker": "B", "en": "I'm in! What should I bring?", "vi": "Tôi sẽ đi! Tôi nên mang theo gì?" },
+      { "speaker": "A", "en": "Just bring yourself and maybe a dish to share. We're doing a potluck.", "vi": "Chỉ cần mang bản thân và có thể một món ăn để chia sẻ. Chúng tôi tổ chức kiểu mỗi người mang một món." },
+      { "speaker": "B", "en": "I can make spring rolls. Everyone seems to love them.", "vi": "Tôi có thể làm chả giò. Mọi người có vẻ đều thích." },
+      { "speaker": "A", "en": "Perfect! We're meeting at 9 AM at the main entrance.", "vi": "Hoàn hảo! Chúng tôi sẽ gặp nhau lúc 9 giờ sáng tại cổng chính." }
+    ]
+  },
+  {
+    "id": 123,
+    "title": "Học chơi đàn guitar",
+    "topic": "Âm nhạc",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "I've always wanted to learn guitar. Do you think it's hard to start?", "vi": "Tôi luôn muốn học guitar. Bạn có nghĩ khó để bắt đầu không?" },
+      { "speaker": "B", "en": "It's challenging at first, especially for your fingertips. But with daily practice, you'll progress quickly.", "vi": "Lúc đầu thật sự thách thức, đặc biệt là với đầu ngón tay. Nhưng với việc luyện tập hàng ngày, bạn sẽ tiến bộ nhanh." },
+      { "speaker": "A", "en": "How long did it take you to play a full song?", "vi": "Bạn mất bao lâu để chơi được một bài hát hoàn chỉnh?" },
+      { "speaker": "B", "en": "About a month of daily practice. The first song I learned was 'Knockin' on Heaven's Door' — simple chords.", "vi": "Khoảng một tháng luyện tập hàng ngày. Bài đầu tiên tôi học là 'Knockin' on Heaven's Door' — các hợp âm đơn giản." },
+      { "speaker": "A", "en": "Should I take lessons or just learn from YouTube?", "vi": "Tôi có nên học bài bản hay chỉ cần học từ YouTube?" },
+      { "speaker": "B", "en": "A few lessons to get the basics right is helpful — especially technique and posture. After that, YouTube works well.", "vi": "Vài buổi học để nắm đúng cơ bản rất hữu ích — đặc biệt là kỹ thuật và tư thế. Sau đó, YouTube hoạt động tốt." }
+    ]
+  },
+  {
+    "id": 124,
+    "title": "Phong cách âm nhạc yêu thích",
+    "topic": "Âm nhạc",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "What kind of music are you into? I'm always looking for new things to listen to.", "vi": "Bạn thích thể loại nhạc nào? Tôi luôn tìm kiếm thứ gì đó mới để nghe." },
+      { "speaker": "B", "en": "I'm really into jazz lately. There's something about the improvisation that feels very alive.", "vi": "Tôi đang rất thích nhạc jazz gần đây. Có điều gì đó về sự ứng tấu cảm thấy rất sinh động." },
+      { "speaker": "A", "en": "I can see that. It's very spontaneous. Do you have a favorite artist?", "vi": "Tôi có thể thấy điều đó. Nó rất tự phát. Bạn có nghệ sĩ yêu thích không?" },
+      { "speaker": "B", "en": "Miles Davis and Chet Baker. Their albums from the 1950s are timeless.", "vi": "Miles Davis và Chet Baker. Các album của họ từ những năm 1950 là bất hủ." },
+      { "speaker": "A", "en": "I mostly listen to indie pop. Artists like Phoebe Bridgers or Bon Iver.", "vi": "Tôi chủ yếu nghe indie pop. Các nghệ sĩ như Phoebe Bridgers hay Bon Iver." },
+      { "speaker": "B", "en": "Oh, Bon Iver is great. There's actually a lot of jazz influence in his music if you listen closely.", "vi": "Ồ, Bon Iver hay lắm. Thực ra có rất nhiều ảnh hưởng nhạc jazz trong nhạc của anh ấy nếu bạn nghe kỹ." }
+    ]
+  },
+  {
+    "id": 125,
+    "title": "Hòa nhạc trực tiếp",
+    "topic": "Âm nhạc",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "I went to a live concert last night. It was incredible.", "vi": "Tôi đã đến một buổi hòa nhạc trực tiếp tối qua. Thật tuyệt vời." },
+      { "speaker": "B", "en": "Who was performing?", "vi": "Ai biểu diễn vậy?" },
+      { "speaker": "A", "en": "A local band called The Coastal Waves. They played mostly original songs.", "vi": "Một ban nhạc địa phương tên The Coastal Waves. Họ chơi phần lớn là bài hát gốc." },
+      { "speaker": "B", "en": "I've heard of them! How was the crowd?", "vi": "Tôi đã nghe đến họ! Đám đông như thế nào?" },
+      { "speaker": "A", "en": "Completely electric. Everyone was singing along by the third song.", "vi": "Cực kỳ sôi động. Mọi người đều hát theo từ bài thứ ba." },
+      { "speaker": "B", "en": "That's the best feeling at a concert — when the whole room is connected.", "vi": "Đó là cảm giác tuyệt nhất tại buổi hòa nhạc — khi cả khán phòng đồng điệu với nhau." },
+      { "speaker": "A", "en": "Exactly. You should come with me next time they perform.", "vi": "Chính xác. Bạn nên đến cùng tôi lần tới khi họ biểu diễn." }
+    ]
+  },
+  {
+    "id": 126,
+    "title": "Khám phá vũ trụ",
+    "topic": "Khoa học",
+    "level": "B2",
+    "lines": [
+      { "speaker": "A", "en": "Did you follow the news about the James Webb telescope's latest images?", "vi": "Bạn có theo dõi tin tức về những hình ảnh mới nhất của kính thiên văn James Webb không?" },
+      { "speaker": "B", "en": "Yes! The deep field images showing galaxies 13 billion light-years away are mind-blowing.", "vi": "Có! Những hình ảnh deep field cho thấy các thiên hà cách xa 13 tỷ năm ánh sáng thật kỳ diệu." },
+      { "speaker": "A", "en": "It's almost incomprehensible. What does that kind of observation actually tell scientists?", "vi": "Gần như không thể hiểu được. Loại quan sát đó thực sự nói với các nhà khoa học điều gì?" },
+      { "speaker": "B", "en": "It helps them study the early universe — how the first stars and galaxies formed just after the Big Bang.", "vi": "Nó giúp họ nghiên cứu vũ trụ thuở sơ khai — cách các ngôi sao và thiên hà đầu tiên hình thành ngay sau Vụ Nổ Lớn." },
+      { "speaker": "A", "en": "Do you think we'll ever find evidence of life outside Earth?", "vi": "Bạn có nghĩ chúng ta sẽ tìm thấy bằng chứng về sự sống ngoài Trái Đất không?" },
+      { "speaker": "B", "en": "I think it's statistically almost inevitable, given the scale of the universe. The question is whether we can detect it.", "vi": "Tôi nghĩ về mặt thống kê gần như là không thể tránh khỏi, với quy mô của vũ trụ. Câu hỏi là liệu chúng ta có thể phát hiện ra nó không." }
+    ]
+  },
+  {
+    "id": 127,
+    "title": "Công nghệ sinh học",
+    "topic": "Khoa học",
+    "level": "C1",
+    "lines": [
+      { "speaker": "A", "en": "The CRISPR gene-editing technology seems to be advancing rapidly. What's your view on its potential?", "vi": "Công nghệ chỉnh sửa gen CRISPR có vẻ đang phát triển rất nhanh. Bạn có quan điểm gì về tiềm năng của nó?" },
+      { "speaker": "B", "en": "The medical applications are genuinely exciting — treating genetic diseases like sickle cell anemia, for instance. But germline editing raises serious ethical questions.", "vi": "Các ứng dụng y tế thực sự rất thú vị — chữa các bệnh di truyền như thiếu máu hồng cầu hình liềm chẳng hạn. Nhưng chỉnh sửa dòng mầm đặt ra những câu hỏi đạo đức nghiêm trọng." },
+      { "speaker": "A", "en": "You mean editing embryos? The case of the Chinese researcher He Jiankui comes to mind.", "vi": "Bạn có nghĩa là chỉnh sửa phôi không? Trường hợp của nhà nghiên cứu người Trung Quốc Hạ Kiến Khuê hiện ra trong tôi." },
+      { "speaker": "B", "en": "Exactly. He modified embryos without sufficient oversight, which the global scientific community strongly condemned.", "vi": "Chính xác. Ông ấy đã chỉnh sửa phôi mà không có sự giám sát đầy đủ, điều mà cộng đồng khoa học toàn cầu lên án mạnh mẽ." },
+      { "speaker": "A", "en": "So regulation has to keep pace with the science.", "vi": "Vì vậy quy định phải theo kịp khoa học." },
+      { "speaker": "B", "en": "Absolutely. International treaties and ethics boards need to be adaptive and proactive rather than reactive.", "vi": "Tuyệt đối. Các điều ước quốc tế và hội đồng đạo đức cần phải thích ứng và chủ động thay vì phản ứng sau sự việc." }
+    ]
+  },
+  {
+    "id": 128,
+    "title": "Trí tuệ nhân tạo trong cuộc sống",
+    "topic": "Khoa học",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "AI is everywhere now. Do you use any AI tools in your daily life?", "vi": "AI ở khắp nơi rồi. Bạn có sử dụng công cụ AI nào trong cuộc sống hàng ngày không?" },
+      { "speaker": "B", "en": "Yes, quite a few. I use AI assistants for writing drafts and a translation app for reading foreign articles.", "vi": "Có, khá nhiều. Tôi dùng trợ lý AI để viết bản nháp và ứng dụng dịch thuật để đọc các bài báo nước ngoài." },
+      { "speaker": "A", "en": "Does it worry you that AI might replace certain jobs?", "vi": "Bạn có lo lắng rằng AI có thể thay thế một số công việc nhất định không?" },
+      { "speaker": "B", "en": "Some jobs, yes. But I think new roles will emerge too. The key is adaptability.", "vi": "Một số công việc, có. Nhưng tôi nghĩ các vai trò mới cũng sẽ xuất hiện. Chìa khóa là khả năng thích nghi." },
+      { "speaker": "A", "en": "What skills do you think will be most valuable in an AI-driven world?", "vi": "Bạn nghĩ những kỹ năng nào sẽ có giá trị nhất trong một thế giới do AI dẫn dắt?" },
+      { "speaker": "B", "en": "Critical thinking, creativity, and emotional intelligence — things that AI still struggles with.", "vi": "Tư duy phản biện, sáng tạo và trí tuệ cảm xúc — những thứ mà AI vẫn còn gặp khó khăn." }
+    ]
+  },
+  {
+    "id": 129,
+    "title": "Thời tiết mùa mưa",
+    "topic": "Thời tiết",
+    "level": "A1",
+    "lines": [
+      { "speaker": "A", "en": "It's raining again. This is the third day in a row!", "vi": "Lại mưa rồi. Đây là ngày thứ ba liên tiếp!" },
+      { "speaker": "B", "en": "Welcome to rainy season! It usually lasts until October.", "vi": "Chào mừng đến mùa mưa! Thường kéo dài đến tháng Mười." },
+      { "speaker": "A", "en": "I didn't expect it to rain this heavily. Is it always like this?", "vi": "Tôi không nghĩ trời mưa nặng như vậy. Có phải lúc nào cũng vậy không?" },
+      { "speaker": "B", "en": "Not always. Sometimes we get a light shower, but lately the storms have been stronger.", "vi": "Không phải lúc nào cũng vậy. Đôi khi chúng tôi có mưa nhẹ, nhưng gần đây các cơn bão mạnh hơn." },
+      { "speaker": "A", "en": "I should have packed a better raincoat.", "vi": "Tôi nên mang theo áo mưa tốt hơn." },
+      { "speaker": "B", "en": "You can buy one nearby for a good price. The street vendors sell them everywhere.", "vi": "Bạn có thể mua một cái ở gần đây với giá tốt. Các người bán hàng rong bán khắp nơi." }
+    ]
+  },
+  {
+    "id": 130,
+    "title": "Hỏi về thời tiết du lịch",
+    "topic": "Thời tiết",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "I'm planning to visit Da Lat next month. What's the weather like there in November?", "vi": "Tôi đang lên kế hoạch thăm Đà Lạt tháng tới. Thời tiết ở đó tháng Mười Một như thế nào?" },
+      { "speaker": "B", "en": "November is actually a lovely time. It's cool and dry — perfect for sightseeing.", "vi": "Tháng Mười Một thực sự là thời điểm tuyệt vời. Mát mẻ và khô ráo — hoàn hảo để tham quan." },
+      { "speaker": "A", "en": "What temperatures should I expect?", "vi": "Tôi nên mong đợi nhiệt độ như thế nào?" },
+      { "speaker": "B", "en": "Around 15 to 20 degrees Celsius during the day. It can drop to about 10 degrees at night, so bring a light jacket.", "vi": "Khoảng 15 đến 20 độ Celsius ban ngày. Ban đêm có thể xuống khoảng 10 độ, vì vậy hãy mang theo áo khoác nhẹ." },
+      { "speaker": "A", "en": "That's much cooler than Ho Chi Minh City! I'll definitely pack some warmer clothes.", "vi": "Mát hơn Thành phố Hồ Chí Minh nhiều! Tôi chắc chắn sẽ mang theo quần áo ấm hơn." },
+      { "speaker": "B", "en": "Good idea. And book accommodation in advance — November is peak season there.", "vi": "Hay đó. Và đặt chỗ nghỉ trước — Tháng Mười Một là mùa cao điểm ở đó." }
+    ]
+  },
+  {
+    "id": 131,
+    "title": "Bão và chuẩn bị khẩn cấp",
+    "topic": "Thời tiết",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "The news says Typhoon Linda might hit the coast this weekend. Are you prepared?", "vi": "Bản tin nói bão Linda có thể đổ bộ vào bờ biển cuối tuần này. Bạn đã chuẩn bị chưa?" },
+      { "speaker": "B", "en": "I'm stocking up on essentials — water, canned food, flashlights, and batteries.", "vi": "Tôi đang dự trữ những thứ thiết yếu — nước, thức ăn đóng hộp, đèn pin và pin." },
+      { "speaker": "A", "en": "That's smart. Have you secured anything outside that could be blown around?", "vi": "Thật thông minh. Bạn đã cố định những thứ bên ngoài có thể bị thổi bay chưa?" },
+      { "speaker": "B", "en": "Yes, I brought the flower pots inside and secured the garden furniture.", "vi": "Rồi, tôi đã mang các chậu hoa vào trong và cố định đồ nội thất ngoài vườn." },
+      { "speaker": "A", "en": "What about your car? Should you move it to a parking garage?", "vi": "Còn xe ô tô thì sao? Bạn có nên chuyển nó đến nhà xe không?" },
+      { "speaker": "B", "en": "Good point. I'll do that tomorrow morning before the storm hits.", "vi": "Ý kiến hay. Tôi sẽ làm vậy sáng mai trước khi bão đến." }
+    ]
+  },
+  {
+    "id": 132,
+    "title": "Thảo luận về điện ảnh",
+    "topic": "Nghệ thuật",
+    "level": "B2",
+    "lines": [
+      { "speaker": "A", "en": "I finally watched 'Parasite' last night. I can see why it won the Palme d'Or.", "vi": "Tôi cuối cùng đã xem 'Ký sinh trùng' tối qua. Tôi hiểu tại sao nó giành Cành cọ vàng." },
+      { "speaker": "B", "en": "It's a masterpiece. Bong Joon-ho is incredibly precise in how he uses visual metaphors.", "vi": "Đó là một kiệt tác. Bong Joon-ho cực kỳ chính xác trong cách sử dụng ẩn dụ hình ảnh." },
+      { "speaker": "A", "en": "The staircase, for example — it's such a clear symbol of class hierarchy.", "vi": "Cầu thang chẳng hạn — đó là biểu tượng rõ ràng của phân cấp giai cấp." },
+      { "speaker": "B", "en": "Exactly. And the flooding scene at the end is devastating precisely because of the contrast with the Park family's obliviousness.", "vi": "Chính xác. Và cảnh ngập lụt ở cuối thật đau lòng chính vì sự tương phản với sự vô tình của gia đình Park." },
+      { "speaker": "A", "en": "Have you seen his earlier films? I'm curious whether that visual language is consistent.", "vi": "Bạn đã xem các bộ phim trước của ông ấy chưa? Tôi tò mò liệu ngôn ngữ hình ảnh đó có nhất quán không." },
+      { "speaker": "B", "en": "Yes — 'Memories of Murder' and 'Mother' are both excellent and show the same thematic depth.", "vi": "Có — 'Memories of Murder' và 'Mother' đều xuất sắc và thể hiện chiều sâu chủ đề tương tự." }
+    ]
+  },
+  {
+    "id": 133,
+    "title": "Triển lãm nghệ thuật",
+    "topic": "Nghệ thuật",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "Have you been to the contemporary art exhibition at the Fine Arts Museum?", "vi": "Bạn đã đến triển lãm nghệ thuật đương đại tại Bảo tàng Mỹ thuật chưa?" },
+      { "speaker": "B", "en": "Not yet. What's it about?", "vi": "Chưa. Triển lãm về chủ đề gì?" },
+      { "speaker": "A", "en": "It focuses on Vietnamese identity through a mix of traditional and modern techniques. Some of the installations are really thought-provoking.", "vi": "Nó tập trung vào bản sắc Việt Nam thông qua sự kết hợp giữa kỹ thuật truyền thống và hiện đại. Một số tác phẩm sắp đặt thực sự khiến bạn suy nghĩ." },
+      { "speaker": "B", "en": "That sounds fascinating. Do you have a favorite piece?", "vi": "Nghe thật hấp dẫn. Bạn có tác phẩm yêu thích không?" },
+      { "speaker": "A", "en": "There's a video installation that maps migration patterns onto traditional embroidery patterns. It really stayed with me.", "vi": "Có một tác phẩm sắp đặt video ánh xạ các mẫu di cư lên các mẫu thêu truyền thống. Nó thực sự đọng lại trong tôi." },
+      { "speaker": "B", "en": "That sounds stunning. When does it close? I don't want to miss it.", "vi": "Nghe thật tuyệt vời. Khi nào kết thúc? Tôi không muốn bỏ lỡ." }
+    ]
+  },
+  {
+    "id": 134,
+    "title": "Tranh luận về thể thao điện tử",
+    "topic": "Thể thao",
+    "level": "B2",
+    "lines": [
+      { "speaker": "A", "en": "Do you think esports should be considered a real sport?", "vi": "Bạn có nghĩ thể thao điện tử nên được coi là một môn thể thao thực sự không?" },
+      { "speaker": "B", "en": "I think it qualifies as a competitive discipline, but calling it a sport in the traditional sense is a stretch.", "vi": "Tôi nghĩ nó đủ điều kiện là một bộ môn cạnh tranh, nhưng gọi nó là thể thao theo nghĩa truyền thống hơi quá." },
+      { "speaker": "A", "en": "Why? Competitive gaming requires intense training, teamwork, and mental agility — the same as chess or darts, which are recognized sports.", "vi": "Tại sao? Chơi game cạnh tranh đòi hỏi luyện tập cường độ cao, tinh thần đồng đội và sự nhanh nhạy tinh thần — giống như cờ vua hay phi tiêu, vốn là những môn thể thao được công nhận." },
+      { "speaker": "B", "en": "That's fair. The distinction seems arbitrary when you put it that way.", "vi": "Điều đó có lý. Sự phân biệt có vẻ tùy tiện khi bạn đặt vấn đề như vậy." },
+      { "speaker": "A", "en": "And professional players train ten or more hours a day. Their physical health — wrists, posture, eyes — matters enormously.", "vi": "Và các game thủ chuyên nghiệp luyện tập mười giờ mỗi ngày hoặc hơn. Sức khỏe thể chất của họ — cổ tay, tư thế, mắt — quan trọng vô cùng." },
+      { "speaker": "B", "en": "I can see that. I'll revise my view — it's a legitimate competitive pursuit that deserves recognition and proper regulation.", "vi": "Tôi có thể thấy điều đó. Tôi sẽ xem xét lại quan điểm — đó là một hoạt động cạnh tranh hợp lệ xứng đáng được công nhận và quy định đúng đắn." }
+    ]
+  },
+  {
+    "id": 135,
+    "title": "Đội bóng yêu thích",
+    "topic": "Thể thao",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "Did you watch the match last night? Vietnam versus Thailand!", "vi": "Bạn có xem trận đấu tối qua không? Việt Nam đấu với Thái Lan!" },
+      { "speaker": "B", "en": "Of course! What a game. The second half was so tense.", "vi": "Tất nhiên rồi! Trận đấu thật tuyệt. Hiệp hai căng thẳng lắm." },
+      { "speaker": "A", "en": "I thought we were going to lose when Thailand scored the equalizer in the 80th minute.", "vi": "Tôi nghĩ chúng ta sẽ thua khi Thái Lan gỡ hòa ở phút 80." },
+      { "speaker": "B", "en": "And then that incredible header in injury time! The whole street was cheering.", "vi": "Rồi pha đánh đầu tuyệt vời đó trong giờ bù! Cả phố đều reo hò." },
+      { "speaker": "A", "en": "Who do you think is the best player on the national team right now?", "vi": "Bạn nghĩ ai là cầu thủ giỏi nhất của đội tuyển quốc gia hiện tại?" },
+      { "speaker": "B", "en": "For me it's the goalkeeper — he saved us at least three times last night.", "vi": "Đối với tôi là thủ môn — anh ấy đã cứu chúng ta ít nhất ba lần tối qua." }
+    ]
+  },
+  {
+    "id": 136,
+    "title": "Học bơi",
+    "topic": "Thể thao",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "I've decided to learn to swim properly. Do you have any advice?", "vi": "Tôi đã quyết định học bơi đúng cách. Bạn có lời khuyên nào không?" },
+      { "speaker": "B", "en": "The best thing is to take a proper course. A qualified instructor makes a huge difference.", "vi": "Điều tốt nhất là tham gia một khóa học bài bản. Một giáo viên có chuyên môn tạo ra sự khác biệt lớn." },
+      { "speaker": "A", "en": "I'm a bit nervous because I was scared of water as a child.", "vi": "Tôi hơi lo lắng vì hồi nhỏ tôi sợ nước." },
+      { "speaker": "B", "en": "That's totally normal. A good instructor will ease you in at your own pace — no pressure.", "vi": "Điều đó hoàn toàn bình thường. Giáo viên giỏi sẽ từ từ dẫn dắt bạn theo tốc độ của bạn — không có áp lực." },
+      { "speaker": "A", "en": "How long before I can swim a full lap?", "vi": "Mất bao lâu trước khi tôi có thể bơi một vòng đầy đủ?" },
+      { "speaker": "B", "en": "With weekly lessons and a bit of practice in between, most beginners can do a lap within a couple of months.", "vi": "Với các buổi học hàng tuần và một chút luyện tập ở giữa, hầu hết người mới bắt đầu có thể bơi một vòng trong vài tháng." }
+    ]
+  },
+  {
+    "id": 137,
+    "title": "Cuộc sống tại ký túc xá",
+    "topic": "Giáo dục",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "How are you finding dormitory life? Is it different from what you expected?", "vi": "Bạn thấy cuộc sống ký túc xá thế nào? Có khác với những gì bạn mong đợi không?" },
+      { "speaker": "B", "en": "It's quite an adjustment. Sharing a room with three other people takes some getting used to.", "vi": "Cần phải thích nghi khá nhiều. Ở chung phòng với ba người khác cần thời gian để quen." },
+      { "speaker": "A", "en": "Do you get along well with your roommates?", "vi": "Bạn có hòa hợp tốt với bạn cùng phòng không?" },
+      { "speaker": "B", "en": "Mostly yes. We set some house rules early on — quiet hours, cleaning schedule — and that really helped.", "vi": "Phần lớn là có. Chúng tôi đặt ra một số quy tắc sớm — giờ yên tĩnh, lịch dọn dẹp — và điều đó thực sự giúp ích." },
+      { "speaker": "A", "en": "That's a good approach. What's the hardest part?", "vi": "Đó là cách tiếp cận tốt. Phần khó nhất là gì?" },
+      { "speaker": "B", "en": "The noise. People study at different times, so it's hard to focus sometimes.", "vi": "Tiếng ồn. Mọi người học vào những thời điểm khác nhau, vì vậy đôi khi khó tập trung." },
+      { "speaker": "A", "en": "I use noise-canceling headphones. They've been a lifesaver for me.", "vi": "Tôi dùng tai nghe chống ồn. Chúng thực sự là cứu tinh đối với tôi." }
+    ]
+  },
+  {
+    "id": 138,
+    "title": "Học bổng du học",
+    "topic": "Giáo dục",
+    "level": "B2",
+    "lines": [
+      { "speaker": "A", "en": "I'm applying for a scholarship to study abroad. Any tips for making my application stronger?", "vi": "Tôi đang đăng ký học bổng du học. Có mẹo nào để tăng sức mạnh hồ sơ của tôi không?" },
+      { "speaker": "B", "en": "Your personal statement is crucial. Committees want to see a clear narrative — why you, why this program, what you'll contribute.", "vi": "Bản luận cá nhân của bạn rất quan trọng. Hội đồng muốn thấy một câu chuyện rõ ràng — tại sao bạn, tại sao chương trình này, bạn sẽ đóng góp gì." },
+      { "speaker": "A", "en": "How do I stand out when thousands of people apply for the same scholarship?", "vi": "Làm thế nào tôi nổi bật khi hàng nghìn người đăng ký cùng một học bổng?" },
+      { "speaker": "B", "en": "Specificity. Don't write generic ambitions. Tie your goals to a specific project, a specific professor, or a specific gap in your field.", "vi": "Tính cụ thể. Đừng viết những tham vọng chung chung. Liên kết mục tiêu của bạn với một dự án cụ thể, một giáo sư cụ thể, hoặc một khoảng trống cụ thể trong lĩnh vực của bạn." },
+      { "speaker": "A", "en": "Should I ask my professors for strong recommendation letters well in advance?", "vi": "Tôi có nên nhờ giáo sư viết thư giới thiệu mạnh trước đó không?" },
+      { "speaker": "B", "en": "Absolutely — at least six weeks out. Give them your CV, transcript, and a draft of your personal statement so they can tailor their letter.", "vi": "Tuyệt đối — ít nhất sáu tuần trước. Đưa cho họ CV, bảng điểm và bản nháp luận cá nhân để họ có thể điều chỉnh thư giới thiệu." }
+    ]
+  },
+  {
+    "id": 139,
+    "title": "Thảo luận về phương pháp học tập",
+    "topic": "Giáo dục",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "I have a huge exam next week and I'm panicking a little.", "vi": "Tôi có kỳ thi lớn tuần tới và tôi hơi hoảng loạn." },
+      { "speaker": "B", "en": "I've been there. What's the subject?", "vi": "Tôi đã trải qua điều đó. Môn gì vậy?" },
+      { "speaker": "A", "en": "Calculus. There's so much material to cover.", "vi": "Giải tích. Có rất nhiều tài liệu cần ôn tập." },
+      { "speaker": "B", "en": "For math, practice is more effective than re-reading notes. Do past exam papers under timed conditions.", "vi": "Đối với toán học, luyện tập hiệu quả hơn là đọc lại ghi chú. Hãy làm đề thi cũ trong điều kiện có giới hạn thời gian." },
+      { "speaker": "A", "en": "That makes sense. Should I study alone or in a group?", "vi": "Điều đó có lý. Tôi có nên học một mình hay theo nhóm?" },
+      { "speaker": "B", "en": "Both have their place. Study core material alone first, then use study groups to test each other and clarify confusing concepts.", "vi": "Cả hai đều có vị trí của nó. Học tài liệu cốt lõi một mình trước, rồi dùng nhóm học tập để kiểm tra nhau và làm rõ các khái niệm khó hiểu." }
+    ]
+  },
+  {
+    "id": 140,
+    "title": "Lớp học tiếng Anh trực tuyến",
+    "topic": "Giáo dục",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "Have you tried any online English learning platforms?", "vi": "Bạn đã thử các nền tảng học tiếng Anh trực tuyến nào chưa?" },
+      { "speaker": "B", "en": "Yes, I use Duolingo for daily vocabulary practice and I also do live sessions with a tutor on iTalki.", "vi": "Có, tôi dùng Duolingo để luyện từ vựng hàng ngày và tôi cũng tham gia các buổi học trực tiếp với gia sư trên iTalki." },
+      { "speaker": "A", "en": "Which is more helpful for you?", "vi": "Cái nào hữu ích hơn với bạn?" },
+      { "speaker": "B", "en": "The live sessions definitely. Real conversation practice is irreplaceable — you get immediate feedback.", "vi": "Các buổi học trực tiếp chắc chắn hơn. Thực hành hội thoại thực sự là không thể thay thế — bạn nhận được phản hồi ngay lập tức." },
+      { "speaker": "A", "en": "How often do you have sessions?", "vi": "Bạn có buổi học bao lâu một lần?" },
+      { "speaker": "B", "en": "Twice a week. It's enough to make progress without burning out.", "vi": "Hai lần mỗi tuần. Đủ để tiến bộ mà không bị kiệt sức." },
+      { "speaker": "A", "en": "I'll look into iTalki. I really need to improve my speaking confidence.", "vi": "Tôi sẽ tìm hiểu về iTalki. Tôi thực sự cần cải thiện sự tự tin khi nói." }
+    ]
+  },
+  {
+    "id": 141,
+    "title": "Mua đồ nội thất",
+    "topic": "Mua sắm",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "I'm furnishing my new apartment. Where's a good place to buy affordable furniture?", "vi": "Tôi đang trang bị nội thất cho căn hộ mới. Đâu là nơi tốt để mua nội thất giá cả phải chăng?" },
+      { "speaker": "B", "en": "IKEA has a wide range at decent prices. But if you want something more local, try the furniture market on Ly Thuong Kiet.", "vi": "IKEA có nhiều loại với giá cả hợp lý. Nhưng nếu bạn muốn thứ gì đó địa phương hơn, hãy thử chợ nội thất trên đường Lý Thường Kiệt." },
+      { "speaker": "A", "en": "I didn't know there was a furniture market there. Is it cheaper?", "vi": "Tôi không biết ở đó có chợ nội thất. Rẻ hơn không?" },
+      { "speaker": "B", "en": "Generally yes, and you can negotiate prices. Quality varies though, so inspect everything carefully.", "vi": "Nói chung là có, và bạn có thể thương lượng giá. Tuy nhiên chất lượng không đồng đều, vì vậy hãy kiểm tra kỹ mọi thứ." },
+      { "speaker": "A", "en": "What do you recommend for a small bedroom?", "vi": "Bạn gợi ý gì cho phòng ngủ nhỏ?" },
+      { "speaker": "B", "en": "A bed with built-in storage is a great space-saver. And a tall narrow bookshelf uses vertical space well.", "vi": "Giường có ngăn chứa đồ là cách tiết kiệm không gian tuyệt vời. Và kệ sách cao hẹp tận dụng không gian chiều dọc tốt." }
+    ]
+  },
+  {
+    "id": 142,
+    "title": "Trả hàng bị lỗi",
+    "topic": "Mua sắm",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "Excuse me, I bought this blender last week and it stopped working after two days.", "vi": "Xin lỗi, tôi đã mua máy xay sinh tố này tuần trước và nó ngừng hoạt động sau hai ngày." },
+      { "speaker": "B", "en": "I'm sorry to hear that. Do you have your receipt?", "vi": "Tôi rất tiếc khi nghe điều đó. Bạn có hóa đơn không?" },
+      { "speaker": "A", "en": "Yes, here it is. And the blender is still in the original box.", "vi": "Vâng, đây rồi. Và máy xay vẫn còn trong hộp gốc." },
+      { "speaker": "B", "en": "Great. We can offer you a full refund or an exchange for the same model.", "vi": "Tuyệt. Chúng tôi có thể hoàn tiền đầy đủ hoặc đổi sang cùng dòng sản phẩm." },
+      { "speaker": "A", "en": "Can I exchange it for a different model if I pay the difference?", "vi": "Tôi có thể đổi sang dòng khác nếu trả thêm tiền chênh lệch không?" },
+      { "speaker": "B", "en": "Absolutely. Let me show you some upgraded options that are popular with our customers.", "vi": "Tuyệt đối. Để tôi chỉ cho bạn một số tùy chọn nâng cấp được khách hàng của chúng tôi ưa thích." }
+    ]
+  },
+  {
+    "id": 143,
+    "title": "Mua sắm trực tuyến",
+    "topic": "Mua sắm",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "Do you shop online a lot? I'm still a bit nervous about it.", "vi": "Bạn có mua sắm trực tuyến nhiều không? Tôi vẫn hơi lo lắng về điều đó." },
+      { "speaker": "B", "en": "Yes, I buy most things online now. It's very convenient once you get used to it.", "vi": "Có, bây giờ tôi mua phần lớn mọi thứ trực tuyến. Rất tiện lợi một khi bạn quen với nó." },
+      { "speaker": "A", "en": "What about the quality? I worry the product won't match the description.", "vi": "Còn chất lượng thì sao? Tôi lo lắng sản phẩm sẽ không khớp với mô tả." },
+      { "speaker": "B", "en": "Read the reviews carefully and check the seller's rating. Established sellers usually deliver what they advertise.", "vi": "Đọc kỹ đánh giá và kiểm tra xếp hạng của người bán. Những người bán đã có tiếng thường giao đúng những gì họ quảng cáo." },
+      { "speaker": "A", "en": "What if there's a problem and I need to return something?", "vi": "Nếu có vấn đề và tôi cần trả lại đồ thì sao?" },
+      { "speaker": "B", "en": "Most big platforms have good return policies. Keep the packaging until you're sure you're happy with the item.", "vi": "Hầu hết các nền tảng lớn đều có chính sách đổi trả tốt. Hãy giữ bao bì cho đến khi bạn chắc chắn hài lòng với sản phẩm." }
+    ]
+  },
+  {
+    "id": 144,
+    "title": "Chăm sóc da",
+    "topic": "Làm đẹp",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "My skin has been really dry lately. Any skincare tips?", "vi": "Da tôi gần đây thực sự rất khô. Bạn có mẹo chăm sóc da nào không?" },
+      { "speaker": "B", "en": "The basics matter most — gentle cleanser, a good moisturizer, and sunscreen every morning.", "vi": "Những điều cơ bản quan trọng nhất — sữa rửa mặt dịu nhẹ, kem dưỡng ẩm tốt và kem chống nắng mỗi sáng." },
+      { "speaker": "A", "en": "I use sunscreen in summer, but is it really necessary in winter?", "vi": "Tôi dùng kem chống nắng vào mùa hè, nhưng có thực sự cần thiết vào mùa đông không?" },
+      { "speaker": "B", "en": "Absolutely. UV rays are present year-round, and they're the main cause of premature aging and skin damage.", "vi": "Tuyệt đối. Tia UV có mặt quanh năm, và đó là nguyên nhân chính gây lão hóa sớm và tổn thương da." },
+      { "speaker": "A", "en": "I also have some dark spots. What helps with those?", "vi": "Tôi cũng có một số đốm thâm. Cái gì giúp ích cho những chỗ đó?" },
+      { "speaker": "B", "en": "Vitamin C serum in the morning can brighten spots over time. Look for a stable formula — around 10 to 15 percent concentration.", "vi": "Serum vitamin C vào buổi sáng có thể làm sáng vết thâm theo thời gian. Hãy tìm công thức ổn định — nồng độ khoảng 10 đến 15 phần trăm." }
+    ]
+  },
+  {
+    "id": 145,
+    "title": "Cắt tóc tại salon",
+    "topic": "Làm đẹp",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "Good afternoon. I'd like a haircut, please.", "vi": "Chào buổi chiều. Tôi muốn cắt tóc." },
+      { "speaker": "B", "en": "Of course. How would you like it cut?", "vi": "Được chứ. Bạn muốn cắt như thế nào?" },
+      { "speaker": "A", "en": "About 5 centimeters off the length and trim the layers. I want it to look tidier but keep it long.", "vi": "Cắt khoảng 5 xentimét và tỉa các lớp. Tôi muốn nó trông gọn gàng hơn nhưng vẫn giữ dài." },
+      { "speaker": "B", "en": "Got it. Do you want us to blow-dry and style it afterward?", "vi": "Hiểu rồi. Bạn có muốn chúng tôi sấy khô và tạo kiểu sau đó không?" },
+      { "speaker": "A", "en": "Yes please. And can you use a bit of product to define the waves?", "vi": "Vâng làm ơn. Và bạn có thể dùng một chút sản phẩm để tạo hình những lọn tóc không?" },
+      { "speaker": "B", "en": "Absolutely. I'll use a curl cream — it'll give you definition without weighing the hair down.", "vi": "Tuyệt đối. Tôi sẽ dùng kem uốn tóc — nó sẽ giúp định hình mà không làm tóc nặng xuống." }
+    ]
+  },
+  {
+    "id": 146,
+    "title": "Nói về ước mơ tương lai",
+    "topic": "Giao tiếp hàng ngày",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "What do you dream about doing five years from now?", "vi": "Bạn mơ về việc làm gì trong năm năm nữa?" },
+      { "speaker": "B", "en": "I'd love to be running my own small business. Something in the food industry, maybe a cafe.", "vi": "Tôi muốn tự điều hành doanh nghiệp nhỏ của mình. Điều gì đó trong ngành thực phẩm, có thể là một quán cà phê." },
+      { "speaker": "A", "en": "That's a great goal. Have you started planning for it?", "vi": "Đó là mục tiêu tuyệt vời. Bạn đã bắt đầu lên kế hoạch chưa?" },
+      { "speaker": "B", "en": "A little. I've been saving money and learning more about business management in my spare time.", "vi": "Một chút. Tôi đang tiết kiệm tiền và tìm hiểu thêm về quản lý kinh doanh trong thời gian rảnh." },
+      { "speaker": "A", "en": "What about you? Do you have big plans?", "vi": "Còn bạn thì sao? Bạn có kế hoạch lớn không?" },
+      { "speaker": "A", "en": "I want to work abroad for a few years to gain international experience, then come back and contribute to something meaningful here.", "vi": "Tôi muốn làm việc ở nước ngoài vài năm để tích lũy kinh nghiệm quốc tế, rồi quay về và đóng góp cho điều gì đó có ý nghĩa ở đây." },
+      { "speaker": "B", "en": "Those are both really concrete plans. I think people who plan like that tend to achieve what they want.", "vi": "Cả hai đều là kế hoạch rất cụ thể. Tôi nghĩ những người lên kế hoạch như vậy thường đạt được những gì họ muốn." }
+    ]
+  },
+  {
+    "id": 147,
+    "title": "Gặp gỡ bạn cũ",
+    "topic": "Giao tiếp hàng ngày",
+    "level": "A2",
+    "lines": [
+      { "speaker": "A", "en": "Oh my goodness — Minh! Is that you? I haven't seen you in years!", "vi": "Ôi trời — Minh! Đó là cậu à? Tớ không gặp cậu mấy năm rồi!" },
+      { "speaker": "B", "en": "Lan! What a surprise! How have you been?", "vi": "Lan! Thật bất ngờ! Cậu khỏe không?" },
+      { "speaker": "A", "en": "Really well, thanks. I'm working in marketing now. What about you?", "vi": "Rất tốt, cảm ơn. Tớ đang làm marketing bây giờ. Còn cậu thì sao?" },
+      { "speaker": "B", "en": "I just came back from three years in Japan. I was teaching English there.", "vi": "Tớ vừa về từ ba năm ở Nhật Bản. Tớ đã dạy tiếng Anh ở đó." },
+      { "speaker": "A", "en": "That sounds incredible! Did you enjoy it?", "vi": "Nghe thật tuyệt vời! Cậu có thích không?" },
+      { "speaker": "B", "en": "It was an amazing experience. The culture and food are just incredible.", "vi": "Đó là một trải nghiệm tuyệt vời. Văn hóa và ẩm thực thật sự tuyệt vời." },
+      { "speaker": "A", "en": "We have to catch up properly. Are you free for coffee this week?", "vi": "Chúng mình phải gặp nhau nói chuyện đúng nghĩa. Cậu có rảnh uống cà phê tuần này không?" }
+    ]
+  },
+  {
+    "id": 148,
+    "title": "Chia sẻ sở thích",
+    "topic": "Giao tiếp hàng ngày",
+    "level": "A1",
+    "lines": [
+      { "speaker": "A", "en": "What do you like to do when you're not working?", "vi": "Bạn thích làm gì khi không làm việc?" },
+      { "speaker": "B", "en": "I love cooking. Trying new recipes is my way of relaxing.", "vi": "Tôi thích nấu ăn. Thử công thức nấu ăn mới là cách tôi thư giãn." },
+      { "speaker": "A", "en": "That's wonderful. What's your specialty?", "vi": "Thật tuyệt vời. Món sở trường của bạn là gì?" },
+      { "speaker": "B", "en": "Italian food, especially pasta. I can make a pretty good carbonara.", "vi": "Ẩm thực Ý, đặc biệt là mì ống. Tôi có thể làm carbonara khá ngon." },
+      { "speaker": "A", "en": "I'd love to try it sometime! I enjoy photography myself.", "vi": "Tôi muốn thử một lúc nào đó! Bản thân tôi thích chụp ảnh." },
+      { "speaker": "B", "en": "Oh really? What do you like to photograph?", "vi": "Ồ thật sao? Bạn thích chụp ảnh gì?" },
+      { "speaker": "A", "en": "Street scenes mostly. I love capturing everyday life in the city.", "vi": "Chủ yếu là cảnh đường phố. Tôi thích ghi lại cuộc sống hàng ngày trong thành phố." }
+    ]
+  },
+  {
+    "id": 149,
+    "title": "Tranh luận nhẹ về quan điểm",
+    "topic": "Giao tiếp hàng ngày",
+    "level": "B2",
+    "lines": [
+      { "speaker": "A", "en": "I think working from home is always better than commuting to an office.", "vi": "Tôi nghĩ làm việc từ xa luôn tốt hơn di chuyển đến văn phòng." },
+      { "speaker": "B", "en": "I partly agree, but I think the office has irreplaceable benefits — spontaneous collaboration, a clearer work-life divide.", "vi": "Tôi một phần đồng ý, nhưng tôi nghĩ văn phòng có những lợi ích không thể thay thế — sự hợp tác ngẫu hứng, ranh giới rõ ràng hơn giữa công việc và cuộc sống." },
+      { "speaker": "A", "en": "But for many people, commuting eats up two hours a day that could be used more productively.", "vi": "Nhưng đối với nhiều người, việc di chuyển chiếm mất hai tiếng mỗi ngày có thể được sử dụng hiệu quả hơn." },
+      { "speaker": "B", "en": "That's true. The ideal is probably a hybrid model — the flexibility to choose based on the type of work you're doing.", "vi": "Điều đó đúng. Lý tưởng có lẽ là mô hình kết hợp — sự linh hoạt để lựa chọn dựa trên loại công việc bạn đang làm." },
+      { "speaker": "A", "en": "I can agree with that. The problem is many companies don't offer genuine flexibility.", "vi": "Tôi có thể đồng ý với điều đó. Vấn đề là nhiều công ty không cung cấp sự linh hoạt thực sự." },
+      { "speaker": "B", "en": "Absolutely. Hybrid on paper and hybrid in practice are very different things.", "vi": "Hoàn toàn đúng. Kết hợp trên giấy tờ và kết hợp trong thực tế là hai thứ rất khác nhau." }
+    ]
+  },
+  {
+    "id": 150,
+    "title": "Lời khuyên cuộc sống",
+    "topic": "Giao tiếp hàng ngày",
+    "level": "B1",
+    "lines": [
+      { "speaker": "A", "en": "What's the best piece of advice you've ever received?", "vi": "Lời khuyên hay nhất bạn từng nhận được là gì?" },
+      { "speaker": "B", "en": "Probably 'done is better than perfect.' I used to overthink everything and it held me back.", "vi": "Có lẽ là 'hoàn thành tốt hơn hoàn hảo.' Tôi từng suy nghĩ quá nhiều về mọi thứ và điều đó kìm hãm tôi." },
+      { "speaker": "A", "en": "I can relate to that. What changed when you started applying that idea?", "vi": "Tôi hiểu điều đó. Điều gì thay đổi khi bạn bắt đầu áp dụng ý tưởng đó?" },
+      { "speaker": "B", "en": "I started finishing projects, getting feedback, and improving from there. Perfectionism just causes paralysis.", "vi": "Tôi bắt đầu hoàn thành dự án, nhận phản hồi và cải thiện từ đó. Chủ nghĩa hoàn hảo chỉ gây ra tê liệt." },
+      { "speaker": "A", "en": "That's really wise. My best advice was from my father — 'Don't compare your beginning to someone else's middle.'", "vi": "Thật sự rất thông thái. Lời khuyên hay nhất của tôi là từ cha tôi — 'Đừng so sánh điểm khởi đầu của mình với chặng giữa của người khác.'" },
+      { "speaker": "B", "en": "That's powerful. Social media makes that comparison almost unavoidable, but it's so destructive.", "vi": "Điều đó thật sâu sắc. Mạng xã hội khiến sự so sánh đó gần như không thể tránh khỏi, nhưng nó rất phá hoại." },
+      { "speaker": "A", "en": "Exactly. Everyone's timeline is different, and that's completely fine.", "vi": "Chính xác. Lịch trình của mọi người đều khác nhau, và điều đó hoàn toàn ổn." }
+    ]
+  }
+]

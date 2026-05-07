@@ -126,25 +126,43 @@ export function initHeaderEvents(allWords = []) {
       const renderTicker = () => {
         currentWord = learnedWords[currentIndex];
         tickerContainer.innerHTML = `
-          <div class="fade-in flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-800/50 border border-white/5 shadow-sm max-w-full cursor-pointer hover:bg-white/10 transition-all">
-            <span class="font-bold text-primary-400 whitespace-nowrap text-sm sm:text-base">${currentWord.word}</span>
-            <span class="text-surface-400 text-xs sm:text-sm whitespace-nowrap hidden sm:inline">${currentWord.phonetic || ''}</span>
-            <span class="text-surface-300 text-xs sm:text-sm ml-1 truncate max-w-[120px] sm:max-w-[200px] lg:max-w-[400px]">- ${currentWord.meaning_vi || ''}</span>
+          <div class="fade-in flex items-center gap-2 px-3 py-1 rounded-full bg-surface-800/50 border border-white/5 shadow-sm max-w-full group/ticker transition-all">
+            <div class="flex items-center gap-2 flex-1 min-w-0 cursor-pointer hover:bg-white/5 px-2 py-0.5 rounded-full" id="header-ticker-info">
+              <span class="font-bold text-primary-400 whitespace-nowrap text-sm sm:text-base">${currentWord.word}</span>
+              <span class="text-surface-400 text-xs sm:text-sm whitespace-nowrap hidden sm:inline">${currentWord.phonetic || ''}</span>
+              <span class="text-surface-300 text-xs sm:text-sm ml-1 truncate max-w-[80px] sm:max-w-[200px] lg:max-w-[400px]">- ${currentWord.meaning_vi || ''}</span>
+            </div>
+            <button id="header-ticker-audio" class="w-7 h-7 rounded-full bg-primary-500/10 text-primary-400 hover:bg-primary-500/20 flex items-center justify-center transition-all shrink-0" title="Phát âm">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+            </button>
           </div>
         `;
+        
+        const info = tickerContainer.querySelector('#header-ticker-info');
+        const audio = tickerContainer.querySelector('#header-ticker-audio');
+        
+        if (info) {
+          info.onclick = () => {
+            const modalRoot = document.getElementById('modal-root') || document.createElement('div');
+            modalRoot.id = 'modal-root';
+            if (!document.getElementById('modal-root')) document.body.appendChild(modalRoot);
+            modalRoot.innerHTML = renderWordModal(currentWord);
+            initWordModalEvents(currentWord);
+          };
+        }
+        
+        if (audio) {
+          audio.onclick = (e) => {
+            e.stopPropagation();
+            const utterance = new SpeechSynthesisUtterance(currentWord.word);
+            utterance.lang = 'en-US';
+            window.speechSynthesis.speak(utterance);
+          };
+        }
+        
         currentIndex = (currentIndex + 1) % learnedWords.length;
       };
 
-      tickerContainer.onclick = () => {
-        if (currentWord) {
-          const modalRoot = document.getElementById('modal-root') || document.createElement('div');
-          modalRoot.id = 'modal-root';
-          if (!document.getElementById('modal-root')) document.body.appendChild(modalRoot);
-          modalRoot.innerHTML = renderWordModal(currentWord);
-          initWordModalEvents(currentWord);
-        }
-      };
-      
       renderTicker();
       headerTickerInterval = setInterval(renderTicker, 6000);
     }

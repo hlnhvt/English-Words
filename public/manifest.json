@@ -1,0 +1,21 @@
+{
+  "name": "Foxlearn",
+  "short_name": "Foxlearn",
+  "description": "Học từ vựng tiếng Anh Oxford 5000",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "/Screenshot%202026-05-06%20172948.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Screenshot%202026-05-06%20172948.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -96,10 +96,17 @@ function renderSetupScreen(allWords) {
             ${active ? 'bg-primary-600 text-white shadow-lg shadow-primary-600/25' : 'bg-white/5 text-surface-400 hover:bg-white/10'}"`;
 
   return `
-    <div class="max-w-xl mx-auto px-4 pt-20 pb-10">
+    <div class="max-w-xl mx-auto px-4 pt-10 pb-24">
       <div class="fade-in mb-6">
         <h2 class="text-2xl font-bold text-surface-100 mb-1">Thiết lập ôn tập</h2>
-        <p class="text-sm text-surface-400">Chọn phạm vi từ vựng và cách ôn tập</p>
+        <div class="flex items-center justify-between gap-4">
+          <p class="text-sm text-surface-400">Chọn phạm vi từ vựng và cách ôn tập</p>
+          <div class="text-sm px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 ${canStart ? 'text-surface-300' : 'text-red-400/80'}">
+            ${canStart
+              ? `<span class="font-bold text-primary-400">${poolSize}</span> từ`
+              : '0 từ'}
+          </div>
+        </div>
       </div>
 
       <div class="space-y-3">
@@ -114,7 +121,7 @@ function renderSetupScreen(allWords) {
                              : 'bg-white/5 text-surface-400 hover:bg-white/10'}">
               <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
               </svg>
               Từ đã học
             </button>
@@ -292,23 +299,33 @@ function renderSetupScreen(allWords) {
               </div>
             </div>
           ` : ''}
-        </div>
+      </div>
 
-        <!-- Start -->
-        <div class="fade-in pt-1" style="animation-delay:.35s">
-          <p class="text-sm px-1 mb-3 ${canStart ? 'text-surface-400' : 'text-red-400/80'}">
-            ${canStart
-              ? `<span class="font-bold text-primary-400">${poolSize}</span> từ phù hợp với bộ lọc`
-              : 'Không có từ nào phù hợp — hãy thử thay đổi bộ lọc'}
-          </p>
-          <button id="btn-start-review" ${canStart ? '' : 'disabled'}
-                  class="w-full py-4 rounded-2xl font-bold text-base transition-all
-                         ${canStart
-                           ? 'bg-gradient-to-r from-primary-600 to-accent-600 text-white shadow-lg shadow-primary-600/20 hover:shadow-primary-600/40 active:scale-[0.99]'
-                           : 'bg-white/5 text-surface-600 cursor-not-allowed'}">
-            Bắt đầu ôn tập →
-          </button>
-        </div>
+      <!-- Fixed Start Button -->
+      <div class="fixed bottom-8 right-8 z-50">
+        <button id="btn-start-review" ${canStart ? '' : 'disabled'}
+                class="group flex items-center justify-center gap-0 hover:gap-3 h-14 px-4 rounded-2xl font-bold text-base transition-all shadow-2xl overflow-hidden
+                       ${canStart
+                         ? 'bg-gradient-to-r from-primary-600 to-accent-600 text-white shadow-primary-600/40 hover:scale-[1.05] active:scale-[0.95]'
+                         : 'bg-surface-800 text-surface-600 cursor-not-allowed border border-white/5 opacity-50'}">
+          <svg class="w-8 h-8 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Rocket Body -->
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+            <!-- Left Wing -->
+            <path d="M9 12H4s.5-1 1-4c2 1 3 3 3 3z"/>
+            <!-- Right Wing -->
+            <path d="M12 15v5s1 .5 4 1c-1-2-3-3-3-3z"/>
+            <!-- Window -->
+            <circle cx="14.5" cy="9.5" r="1.5" />
+            <!-- Exhaust Lines -->
+            <line x1="2" y1="22" x2="6" y2="18" />
+            <line x1="6" y1="22" x2="9" y2="19" />
+            <line x1="2" y1="18" x2="5" y2="15" />
+          </svg>
+          <span class="max-w-0 overflow-hidden whitespace-nowrap transition-all duration-300 group-hover:max-w-[200px]">
+            ${canStart ? 'Bắt đầu ôn tập' : 'Không có từ phù hợp'}
+          </span>
+        </button>
       </div>
     </div>
   `;
@@ -322,7 +339,7 @@ function renderReviewScreen(allWords) {
   const current = reviewSession.currentIndex + 1;
 
   return `
-    <div class="max-w-2xl mx-auto px-4 pt-20 pb-10">
+    <div class="max-w-2xl mx-auto px-4 pt-10 pb-10">
       <div class="fade-in mb-6">
         <div class="flex items-center justify-between mb-3">
           <div>
@@ -593,7 +610,7 @@ function renderReviewComplete(allWords) {
   }
 
   return `
-    <div class="max-w-2xl mx-auto px-4 pt-20 pb-10">
+    <div class="max-w-2xl mx-auto px-4 pt-10 pb-10">
       <div class="fade-in text-center py-6">
         <div class="${grade.color} mb-4 flex justify-center">
           <svg class="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24">

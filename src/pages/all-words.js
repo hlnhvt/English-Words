@@ -133,7 +133,12 @@ export function renderAllWords(allWords) {
         return `
                   <tr class="hover:bg-primary-600/5 transition-all duration-300 group cursor-pointer" data-word-detail="${word.word}">
                     <td class="px-6 py-5">
-                      <span class="text-lg font-bold text-surface-100 group-hover:text-primary-400 transition-colors">${word.word}</span>
+                      <div class="flex items-center gap-3">
+                        <span class="text-lg font-bold text-surface-100 group-hover:text-primary-400 transition-colors">${word.word}</span>
+                        <button data-audio-btn="${word.word}" class="w-8 h-8 rounded-full bg-primary-500/10 text-primary-400 hover:bg-primary-500/20 flex items-center justify-center transition-all" title="Phát âm">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                        </button>
+                      </div>
                     </td>
                     <td class="px-6 py-5">
                       <span class="text-sm text-surface-400 font-medium">${word.phonetic || ''}</span>
@@ -326,6 +331,17 @@ export function initAllWordsEvents(allWords, rerenderFn) {
         modalContainer.innerHTML = renderWordModal(wordData);
         initWordModalEvents(wordData);
       }
+    });
+  });
+
+  // Audio buttons
+  document.querySelectorAll('[data-audio-btn]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const word = btn.dataset.audioBtn;
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = 'en-US';
+      window.speechSynthesis.speak(utterance);
     });
   });
 }

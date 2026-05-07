@@ -1,0 +1,705 @@
+[
+  {
+    "id": 51,
+    "title": "Gia đình buổi sáng",
+    "topic": "Gia đình",
+    "level": "A1",
+    "lines": [
+      { "speaker": "Mum", "en": "Time to wake up! Breakfast is ready.", "vi": "Đến giờ dậy rồi! Bữa sáng đã sẵn sàng." },
+      { "speaker": "Tom", "en": "Already? What time is it?", "vi": "Rồi sao? Mấy giờ rồi ạ?" },
+      { "speaker": "Mum", "en": "It's half past seven. You'll be late for school.", "vi": "Bảy rưỡi rồi. Con sẽ muộn học đó." },
+      { "speaker": "Tom", "en": "Okay, I'm coming. What's for breakfast?", "vi": "Được rồi, con xuống liền. Bữa sáng có gì ạ?" },
+      { "speaker": "Mum", "en": "Toast and eggs. Your dad already left for work.", "vi": "Bánh mì nướng và trứng. Bố con đã đi làm rồi." },
+      { "speaker": "Tom", "en": "Okay. Mum, can you sign my permission slip for the school trip?", "vi": "Được ạ. Mẹ ơi, mẹ có thể ký phiếu cho phép tham gia chuyến đi học không ạ?" }
+    ]
+  },
+  {
+    "id": 52,
+    "title": "Họp mặt gia đình",
+    "topic": "Gia đình",
+    "level": "A2",
+    "lines": [
+      { "speaker": "Grandma", "en": "It's so wonderful to have everyone here for Christmas!", "vi": "Thật tuyệt vời khi có mọi người ở đây vào dịp Giáng sinh!" },
+      { "speaker": "Lisa", "en": "It really is, Gran. I've missed this so much.", "vi": "Thật vậy bà ơi. Cháu nhớ điều này lắm." },
+      { "speaker": "Grandma", "en": "You look well! Are you eating enough at university?", "vi": "Con trông khỏe lắm! Con có ăn đủ ở trường đại học không?" },
+      { "speaker": "Lisa", "en": "I'm eating fine, Gran. I even learned to cook a few things.", "vi": "Cháu ăn tốt lắm bà ơi. Cháu còn học được cách nấu vài món nữa." },
+      { "speaker": "Grandma", "en": "Oh, that's wonderful! Your grandfather never learned to boil water.", "vi": "Ồ, thật tuyệt vời! Ông nội của con chưa bao giờ học cách đun sôi nước." },
+      { "speaker": "Lisa", "en": "Ha! Well, I'll cook dinner one evening this week to show you.", "vi": "Ha! Vậy thì cháu sẽ nấu tối một buổi trong tuần này để bà xem nhé." }
+    ]
+  },
+  {
+    "id": 53,
+    "title": "Tranh luận về quy tắc gia đình",
+    "topic": "Gia đình",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Dad", "en": "I think you're spending too much time on your phone at the dinner table.", "vi": "Bố nghĩ con dành quá nhiều thời gian cho điện thoại ở bàn ăn." },
+      { "speaker": "Jake", "en": "I was just replying to a message from my friend about homework.", "vi": "Con chỉ đang trả lời tin nhắn từ bạn về bài tập về nhà thôi." },
+      { "speaker": "Dad", "en": "It can wait until after dinner. Family time is important.", "vi": "Nó có thể đợi đến sau bữa tối. Thời gian gia đình rất quan trọng." },
+      { "speaker": "Jake", "en": "You check your work emails at dinner sometimes too, though.", "vi": "Nhưng bố đôi khi cũng kiểm tra email công việc lúc ăn tối đó thôi." },
+      { "speaker": "Dad", "en": "You're right, and I shouldn't. Let's both put our phones away during meals.", "vi": "Con nói đúng, và bố không nên làm vậy. Chúng ta hãy cùng cất điện thoại đi trong bữa ăn nhé." },
+      { "speaker": "Jake", "en": "Deal. That's actually fair. Can we make it a family rule?", "vi": "Thỏa thuận. Thực ra điều đó hợp lý. Chúng ta có thể biến nó thành quy tắc gia đình không?" }
+    ]
+  },
+  {
+    "id": 54,
+    "title": "Chăm sóc cha mẹ lớn tuổi",
+    "topic": "Gia đình",
+    "level": "B2",
+    "lines": [
+      { "speaker": "Emma", "en": "I've been thinking about Mum living alone. I'm worried about her.", "vi": "Tôi đang nghĩ về việc mẹ sống một mình. Tôi lo lắng cho bà ấy." },
+      { "speaker": "Mark", "en": "Me too. She had that fall last month and it really shook me.", "vi": "Tôi cũng vậy. Bà ấy bị ngã tháng trước và điều đó thực sự làm tôi bàng hoàng." },
+      { "speaker": "Emma", "en": "I've been looking into care options. There are some really good assisted living communities nearby.", "vi": "Tôi đã tìm hiểu về các lựa chọn chăm sóc. Có một số cộng đồng sống có hỗ trợ rất tốt gần đây." },
+      { "speaker": "Mark", "en": "She'll resist. You know how fiercely independent she is.", "vi": "Bà ấy sẽ phản đối. Bạn biết bà ấy độc lập mạnh mẽ như thế nào rồi đó." },
+      { "speaker": "Emma", "en": "I know. But maybe we can frame it as a choice rather than a necessity.", "vi": "Tôi biết. Nhưng có lẽ chúng ta có thể đặt vấn đề như là một sự lựa chọn thay vì một sự cần thiết." },
+      { "speaker": "Mark", "en": "That's a good approach. Let's visit her together this weekend and have an honest conversation.", "vi": "Đó là cách tiếp cận tốt. Chúng ta hãy đến thăm bà cùng nhau vào cuối tuần này và có một cuộc trò chuyện thành thật." }
+    ]
+  },
+  {
+    "id": 55,
+    "title": "Chuẩn bị đám cưới",
+    "topic": "Gia đình",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Sarah", "en": "We still need to finalise the guest list. We're already at 120 people.", "vi": "Chúng ta vẫn cần hoàn thiện danh sách khách mời. Chúng ta đã có 120 người rồi." },
+      { "speaker": "James", "en": "I know. My parents keep adding cousins I've never even met.", "vi": "Tôi biết. Bố mẹ tôi cứ thêm những người anh họ tôi chưa bao giờ gặp." },
+      { "speaker": "Sarah", "en": "Same! We need to set a firm limit. The venue only holds 150.", "vi": "Tôi cũng vậy! Chúng ta cần đặt giới hạn rõ ràng. Địa điểm chỉ chứa được 150 người." },
+      { "speaker": "James", "en": "Let's agree: immediate family, close friends, and that's it. No exceptions.", "vi": "Hãy đồng ý: gia đình thân thiết, bạn bè thân, và thế thôi. Không có ngoại lệ." },
+      { "speaker": "Sarah", "en": "Agreed. Have you spoken to the caterer about the vegetarian options?", "vi": "Đồng ý. Bạn đã nói chuyện với người phục vụ ăn uống về các lựa chọn ăn chay chưa?" },
+      { "speaker": "James", "en": "Not yet. I'll call them tomorrow. There's so much to organise.", "vi": "Chưa. Tôi sẽ gọi cho họ ngày mai. Có quá nhiều thứ cần tổ chức." }
+    ]
+  },
+  {
+    "id": 56,
+    "title": "Sinh con đầu lòng",
+    "topic": "Gia đình",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Anna", "en": "How are you coping with the new baby? You look exhausted!", "vi": "Bạn đang xoay xở thế nào với em bé mới? Bạn trông kiệt sức quá!" },
+      { "speaker": "Lucy", "en": "I am! She only sleeps in two-hour stretches. I've forgotten what eight hours feels like.", "vi": "Đúng vậy! Bé chỉ ngủ từng khoảng hai tiếng. Tôi đã quên cảm giác ngủ tám tiếng là như thế nào." },
+      { "speaker": "Anna", "en": "It gets easier, I promise. By three months they usually sleep longer.", "vi": "Nó sẽ dễ dàng hơn, tôi hứa đấy. Khoảng ba tháng tuổi bé thường ngủ lâu hơn." },
+      { "speaker": "Lucy", "en": "Three months feels like forever right now. But honestly, when she smiles at me, it makes everything worth it.", "vi": "Ba tháng cảm giác như mãi mãi lúc này. Nhưng thành thật mà nói, khi bé cười với tôi, điều đó làm cho mọi thứ đều xứng đáng." },
+      { "speaker": "Anna", "en": "That smile is the best thing in the world, isn't it.", "vi": "Nụ cười đó là điều tốt nhất trên đời phải không." },
+      { "speaker": "Lucy", "en": "It really is. I didn't know I could love something this much.", "vi": "Thật vậy. Tôi không biết mình có thể yêu thương điều gì nhiều đến vậy." }
+    ]
+  },
+  {
+    "id": 57,
+    "title": "Thảo luận về giờ giới nghiêm",
+    "topic": "Gia đình",
+    "level": "A2",
+    "lines": [
+      { "speaker": "Mum", "en": "What time did you get home last night? It was past midnight.", "vi": "Tối qua con về nhà lúc mấy giờ? Đã qua nửa đêm rồi đó." },
+      { "speaker": "Sophie", "en": "It was only twelve-thirty. The party finished late.", "vi": "Chỉ mới mười hai rưỡi thôi. Bữa tiệc kết thúc muộn." },
+      { "speaker": "Mum", "en": "We agreed on midnight. You need to respect that.", "vi": "Chúng ta đã thỏa thuận là nửa đêm. Con cần tôn trọng điều đó." },
+      { "speaker": "Sophie", "en": "I'm seventeen, Mum. All my friends stayed until one.", "vi": "Con mười bảy tuổi rồi mẹ ơi. Tất cả bạn bè con đều ở lại đến một giờ." },
+      { "speaker": "Mum", "en": "I understand you want more freedom. But you could have texted me to ask for more time.", "vi": "Mẹ hiểu con muốn tự do hơn. Nhưng con có thể nhắn tin cho mẹ để xin thêm thời gian." },
+      { "speaker": "Sophie", "en": "You're right, I should have. I'm sorry. Can we talk about changing the curfew to twelve-thirty?", "vi": "Mẹ đúng rồi, con đáng lẽ phải vậy. Con xin lỗi. Chúng ta có thể nói chuyện về việc thay đổi giờ giới nghiêm thành mười hai rưỡi không?" }
+    ]
+  },
+  {
+    "id": 58,
+    "title": "Kế hoạch nghỉ hưu",
+    "topic": "Gia đình",
+    "level": "B2",
+    "lines": [
+      { "speaker": "Dad", "en": "I've been thinking about retiring next year. What do you think?", "vi": "Bố đã nghĩ đến việc nghỉ hưu năm tới. Con nghĩ thế nào?" },
+      { "speaker": "Kate", "en": "Really? Are you financially ready for that?", "vi": "Thật sao? Bố đã sẵn sàng về tài chính chưa?" },
+      { "speaker": "Dad", "en": "I believe so. Your mother and I have been planning this for years.", "vi": "Bố tin vậy. Mẹ và bố đã lên kế hoạch cho điều này nhiều năm rồi." },
+      { "speaker": "Kate", "en": "What will you do with your time? You've always been so busy.", "vi": "Bố sẽ làm gì với thời gian của mình? Bố luôn bận rộn như vậy." },
+      { "speaker": "Dad", "en": "Travel, golf, and I want to volunteer at the community garden. I've got a long list!", "vi": "Du lịch, chơi golf, và bố muốn tình nguyện ở khu vườn cộng đồng. Bố có một danh sách dài lắm!" },
+      { "speaker": "Kate", "en": "That sounds wonderful. You've worked so hard all your life. You deserve it.", "vi": "Nghe tuyệt vời quá. Bố đã làm việc chăm chỉ cả đời. Bố xứng đáng được như vậy." }
+    ]
+  },
+  {
+    "id": 59,
+    "title": "Nhận nuôi thú cưng",
+    "topic": "Gia đình",
+    "level": "A2",
+    "lines": [
+      { "speaker": "Child", "en": "Mum, can we please get a dog? I promise I'll look after it!", "vi": "Mẹ ơi, chúng ta có thể nuôi chó không ạ? Con hứa sẽ chăm sóc nó!" },
+      { "speaker": "Mum", "en": "A dog is a big responsibility. It needs walking every day.", "vi": "Nuôi chó là trách nhiệm lớn lắm. Cần dắt đi dạo mỗi ngày đó." },
+      { "speaker": "Child", "en": "I'll walk it before school every morning, I promise!", "vi": "Con sẽ dắt nó đi trước giờ đến trường mỗi buổi sáng, con hứa đó!" },
+      { "speaker": "Mum", "en": "And what about when you're at school for seven hours? The dog will be alone.", "vi": "Còn khi con học bảy tiếng thì sao? Con chó sẽ ở một mình mà." },
+      { "speaker": "Child", "en": "Maybe grandma could check on it during the day?", "vi": "Có lẽ bà nội có thể ghé thăm nó ban ngày được không?" },
+      { "speaker": "Mum", "en": "That's actually not a bad idea. Let me discuss it with your dad and grandma first.", "vi": "Thực ra đó không phải ý tưởng tệ. Để mẹ thảo luận với bố và bà nội trước đã nhé." }
+    ]
+  },
+  {
+    "id": 60,
+    "title": "Học bổng đại học",
+    "topic": "Gia đình",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Ben", "en": "Mum, I got accepted to the university in Edinburgh! But there's a problem.", "vi": "Mẹ ơi, con được nhận vào đại học ở Edinburgh rồi! Nhưng có một vấn đề." },
+      { "speaker": "Mum", "en": "That's wonderful news! What's the problem?", "vi": "Đó là tin tuyệt vời! Vấn đề là gì vậy?" },
+      { "speaker": "Ben", "en": "The tuition fees are really high. I don't want you and dad to struggle because of me.", "vi": "Học phí thực sự rất cao. Con không muốn mẹ và bố vất vả vì con." },
+      { "speaker": "Mum", "en": "We've been saving for this since you were born. It's what the money is for.", "vi": "Chúng ta đã tiết kiệm cho điều này từ khi con ra đời. Đó là mục đích của số tiền đó." },
+      { "speaker": "Ben", "en": "I also applied for a scholarship. I'll find out in two weeks.", "vi": "Con cũng đã nộp đơn xin học bổng. Con sẽ biết kết quả trong hai tuần nữa." },
+      { "speaker": "Mum", "en": "I'm so proud of you. Whatever happens, we'll make it work together.", "vi": "Mẹ rất tự hào về con. Dù chuyện gì xảy ra, chúng ta sẽ cùng nhau giải quyết được." }
+    ]
+  },
+  {
+    "id": 61,
+    "title": "Bắt xe buýt",
+    "topic": "Giao thông",
+    "level": "A1",
+    "lines": [
+      { "speaker": "Tom", "en": "Excuse me, does this bus go to the city centre?", "vi": "Xin lỗi, xe buýt này có đi đến trung tâm thành phố không?" },
+      { "speaker": "Driver", "en": "Yes, it does. That'll be two pounds fifty.", "vi": "Có đấy. Giá vé là hai bảng rưỡi." },
+      { "speaker": "Tom", "en": "Here you go. How long does it take?", "vi": "Đây ạ. Mất bao lâu vậy?" },
+      { "speaker": "Driver", "en": "About twenty minutes with traffic. I'll call the stop.", "vi": "Khoảng hai mươi phút trong điều kiện giao thông bình thường. Tôi sẽ thông báo trạm." },
+      { "speaker": "Tom", "en": "Thank you. Is there a stop near the museum?", "vi": "Cảm ơn. Có trạm dừng gần bảo tàng không?" },
+      { "speaker": "Driver", "en": "Yes, Victoria Street stop. It's just a two-minute walk from there.", "vi": "Có, trạm đường Victoria. Từ đó chỉ đi bộ hai phút thôi." }
+    ]
+  },
+  {
+    "id": 62,
+    "title": "Gọi taxi",
+    "topic": "Giao thông",
+    "level": "A2",
+    "lines": [
+      { "speaker": "Anna", "en": "Hi, I'd like to book a taxi for tomorrow morning, please.", "vi": "Xin chào, tôi muốn đặt taxi cho sáng mai, làm ơn." },
+      { "speaker": "Operator", "en": "Of course. What time and where are you travelling from?", "vi": "Được chứ. Mấy giờ và bạn đi từ đâu?" },
+      { "speaker": "Anna", "en": "Seven AM, from 42 Park Road. I need to get to the airport.", "vi": "Bảy giờ sáng, từ số 42 đường Park. Tôi cần đến sân bay." },
+      { "speaker": "Operator", "en": "Which terminal?", "vi": "Nhà ga nào?" },
+      { "speaker": "Anna", "en": "Terminal two. My flight is at nine-thirty.", "vi": "Nhà ga số hai. Chuyến bay của tôi lúc chín rưỡi." },
+      { "speaker": "Operator", "en": "No problem. The fare will be approximately thirty-five pounds. The driver will text you when they're five minutes away.", "vi": "Không vấn đề. Giá chuyến đi sẽ khoảng ba mươi lăm bảng. Tài xế sẽ nhắn tin cho bạn khi còn năm phút nữa đến." }
+    ]
+  },
+  {
+    "id": 63,
+    "title": "Trên tàu hỏa",
+    "topic": "Giao thông",
+    "level": "A2",
+    "lines": [
+      { "speaker": "Mike", "en": "Excuse me, is this seat taken?", "vi": "Xin lỗi, chỗ này có người ngồi chưa?" },
+      { "speaker": "Lisa", "en": "No, please go ahead.", "vi": "Chưa, mời bạn ngồi đi." },
+      { "speaker": "Mike", "en": "Thank you. Is this train going to Manchester?", "vi": "Cảm ơn. Tàu này có đi đến Manchester không?" },
+      { "speaker": "Lisa", "en": "Yes, it is. This is the direct service. It takes about two hours.", "vi": "Có đấy. Đây là chuyến tàu trực tiếp. Mất khoảng hai tiếng." },
+      { "speaker": "Mike", "en": "Great. Do you know if there's a food carriage on this train?", "vi": "Tốt quá. Bạn có biết tàu này có toa ăn uống không?" },
+      { "speaker": "Lisa", "en": "Yes, carriage five. They have hot drinks and sandwiches.", "vi": "Có, toa số năm. Họ có đồ uống nóng và bánh sandwich." }
+    ]
+  },
+  {
+    "id": 64,
+    "title": "Tắc đường",
+    "topic": "Giao thông",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Chris", "en": "I'm stuck in traffic and I'm going to be late for our meeting. I'm so sorry.", "vi": "Tôi đang kẹt xe và sẽ đến muộn cho cuộc họp của chúng ta. Tôi thực sự xin lỗi." },
+      { "speaker": "Emma", "en": "How late do you think you'll be?", "vi": "Bạn nghĩ bạn sẽ muộn bao lâu?" },
+      { "speaker": "Chris", "en": "At least forty minutes. There's been an accident on the motorway.", "vi": "Ít nhất bốn mươi phút. Có tai nạn trên đường cao tốc." },
+      { "speaker": "Emma", "en": "Don't worry. I'll start with the other agenda items and we'll cover your section when you arrive.", "vi": "Đừng lo. Tôi sẽ bắt đầu với các mục nghị sự khác và chúng ta sẽ thảo luận phần của bạn khi bạn đến." },
+      { "speaker": "Chris", "en": "Could you also email everyone the slides so they can look through while they wait?", "vi": "Bạn có thể gửi email cho mọi người bài trình chiếu để họ có thể xem qua trong lúc chờ không?" },
+      { "speaker": "Emma", "en": "Already done. Drive safely and we'll see you when you get here.", "vi": "Làm rồi. Lái xe cẩn thận và chúng ta sẽ gặp nhau khi bạn đến nơi." }
+    ]
+  },
+  {
+    "id": 65,
+    "title": "Học lái xe",
+    "topic": "Giao thông",
+    "level": "A2",
+    "lines": [
+      { "speaker": "Instructor", "en": "Right, let's start today's lesson. How are you feeling?", "vi": "Được rồi, hãy bắt đầu bài học hôm nay. Bạn cảm thấy thế nào?" },
+      { "speaker": "Jake", "en": "A bit nervous, to be honest. Especially about the roundabout we practised last time.", "vi": "Thành thật mà nói hơi hồi hộp. Đặc biệt về vòng xuyến chúng ta đã luyện tập lần trước." },
+      { "speaker": "Instructor", "en": "That's normal. Remember: give way to traffic already on the roundabout.", "vi": "Điều đó bình thường. Nhớ nhé: nhường đường cho xe đang lưu thông trên vòng xuyến." },
+      { "speaker": "Jake", "en": "Check mirrors, signal, then move. I've been saying it in my sleep!", "vi": "Kiểm tra gương, bật xi-nhan, rồi di chuyển. Tôi đã nói điều đó trong giấc ngủ rồi!" },
+      { "speaker": "Instructor", "en": "Ha! That means it's sinking in. Today we'll also practise parallel parking.", "vi": "Ha! Điều đó có nghĩa là bạn đang tiếp thu tốt. Hôm nay chúng ta cũng sẽ luyện tập đỗ xe song song." },
+      { "speaker": "Jake", "en": "Oh no. That's the one I'm most scared of.", "vi": "Ôi không. Đó là cái tôi sợ nhất." }
+    ]
+  },
+  {
+    "id": 66,
+    "title": "Đi xe đạp trong thành phố",
+    "topic": "Giao thông",
+    "level": "B1",
+    "lines": [
+      { "speaker": "David", "en": "I've started cycling to work instead of driving. It's been a game changer.", "vi": "Tôi bắt đầu đạp xe đi làm thay vì lái xe. Thật sự thay đổi cuộc chơi." },
+      { "speaker": "Sarah", "en": "Really? Aren't you worried about the traffic?", "vi": "Thật không? Bạn không lo lắng về giao thông sao?" },
+      { "speaker": "David", "en": "At first yes, but the city has added a lot of protected cycle lanes now. It feels much safer.", "vi": "Lúc đầu có, nhưng thành phố đã thêm nhiều làn đường đạp xe được bảo vệ rồi. Cảm thấy an toàn hơn nhiều." },
+      { "speaker": "Sarah", "en": "How long does the commute take?", "vi": "Thời gian đi lại mất bao lâu?" },
+      { "speaker": "David", "en": "About thirty-five minutes, same as the bus, but I arrive much more energised.", "vi": "Khoảng ba mươi lăm phút, bằng với đi xe buýt, nhưng tôi đến nơi tràn đầy năng lượng hơn nhiều." },
+      { "speaker": "Sarah", "en": "I might give it a try. Do I need expensive equipment to start?", "vi": "Tôi có thể thử xem sao. Tôi có cần thiết bị đắt tiền để bắt đầu không?" },
+      { "speaker": "David", "en": "Not at all. A decent second-hand bike and a good helmet are all you need.", "vi": "Không hề. Một chiếc xe đạp cũ ổn và một chiếc mũ bảo hiểm tốt là tất cả những gì bạn cần." }
+    ]
+  },
+  {
+    "id": 67,
+    "title": "Phạt vi phạm giao thông",
+    "topic": "Giao thông",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Officer", "en": "Good afternoon. Do you know why I've stopped you today?", "vi": "Chào buổi chiều. Bạn có biết tại sao tôi dừng bạn hôm nay không?" },
+      { "speaker": "Driver", "en": "I'm not sure, officer. Was I speeding?", "vi": "Tôi không chắc, thưa cảnh sát. Tôi có đang chạy quá tốc độ không?" },
+      { "speaker": "Officer", "en": "You were doing 48 in a 30 mile per hour zone. May I see your licence and insurance?", "vi": "Bạn đang đi 48 trong vùng giới hạn 30 dặm một giờ. Tôi có thể xem bằng lái và bảo hiểm của bạn không?" },
+      { "speaker": "Driver", "en": "Of course, here they are. I'm terribly sorry, I didn't notice the sign.", "vi": "Được chứ, đây ạ. Tôi thực sự xin lỗi, tôi không để ý biển hiệu." },
+      { "speaker": "Officer", "en": "Ignorance of the sign isn't a defence, I'm afraid. I'll be issuing a fixed penalty notice.", "vi": "Rất tiếc, không biết về biển hiệu không phải là lý do chính đáng. Tôi sẽ phát phiếu phạt cố định." },
+      { "speaker": "Driver", "en": "I understand. I'll be much more careful. This has been a wake-up call.", "vi": "Tôi hiểu. Tôi sẽ cẩn thận hơn nhiều. Đây là một bài học nhắc nhở." }
+    ]
+  },
+  {
+    "id": 68,
+    "title": "Mở tài khoản ngân hàng",
+    "topic": "Ngân hàng",
+    "level": "A2",
+    "lines": [
+      { "speaker": "Staff", "en": "Good morning! How can I help you today?", "vi": "Chào buổi sáng! Tôi có thể giúp gì cho bạn hôm nay?" },
+      { "speaker": "Tom", "en": "I'd like to open a current account, please.", "vi": "Tôi muốn mở tài khoản thanh toán, làm ơn." },
+      { "speaker": "Staff", "en": "Of course! Do you have proof of address and photo ID with you?", "vi": "Được chứ! Bạn có bằng chứng địa chỉ và giấy tờ tùy thân ảnh không?" },
+      { "speaker": "Tom", "en": "Yes, I have my passport and a recent utility bill.", "vi": "Có, tôi có hộ chiếu và hóa đơn tiện ích gần đây." },
+      { "speaker": "Staff", "en": "Perfect. Would you also like an overdraft facility on the account?", "vi": "Hoàn hảo. Bạn có muốn có hạn mức thấu chi trên tài khoản không?" },
+      { "speaker": "Tom", "en": "What's the interest rate on that?", "vi": "Lãi suất thấu chi là bao nhiêu?" },
+      { "speaker": "Staff", "en": "It's 39.9% APR, so we recommend only using it for genuine emergencies.", "vi": "Là 39.9% APR, vì vậy chúng tôi khuyên chỉ nên sử dụng cho các trường hợp khẩn cấp thực sự." }
+    ]
+  },
+  {
+    "id": 69,
+    "title": "Lập kế hoạch tài chính",
+    "topic": "Ngân hàng",
+    "level": "B2",
+    "lines": [
+      { "speaker": "Advisor", "en": "Based on your income and expenses, you're currently saving about eight percent of your salary.", "vi": "Dựa trên thu nhập và chi tiêu của bạn, hiện tại bạn đang tiết kiệm khoảng tám phần trăm lương." },
+      { "speaker": "Emma", "en": "Is that enough? I want to buy a flat in the next five years.", "vi": "Vậy có đủ không? Tôi muốn mua căn hộ trong năm năm tới." },
+      { "speaker": "Advisor", "en": "For a property purchase, most lenders want to see a deposit of at least ten to fifteen percent.", "vi": "Để mua bất động sản, hầu hết các tổ chức cho vay muốn thấy tiền đặt cọc ít nhất mười đến mười lăm phần trăm." },
+      { "speaker": "Emma", "en": "So I need to increase my savings rate significantly.", "vi": "Vậy tôi cần tăng đáng kể tỷ lệ tiết kiệm của mình." },
+      { "speaker": "Advisor", "en": "Ideally, yes. Could you look at reducing any discretionary spending, like eating out or subscriptions?", "vi": "Lý tưởng là vậy. Bạn có thể xem xét giảm bất kỳ khoản chi tiêu tùy ý nào, như ăn ngoài hoặc các gói đăng ký không?" },
+      { "speaker": "Emma", "en": "I probably spend too much on takeaways. I'll track my spending for a month and see where the money goes.", "vi": "Tôi có lẽ chi quá nhiều cho đồ ăn mang về. Tôi sẽ theo dõi chi tiêu trong một tháng và xem tiền đi đâu." }
+    ]
+  },
+  {
+    "id": 70,
+    "title": "Chuyển tiền quốc tế",
+    "topic": "Ngân hàng",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Mike", "en": "I need to send money to my family in Vietnam. What's the best way?", "vi": "Tôi cần gửi tiền cho gia đình ở Việt Nam. Cách tốt nhất là gì?" },
+      { "speaker": "Staff", "en": "We offer international transfers, but the fees can be quite high. Have you considered a specialist service like Wise?", "vi": "Chúng tôi có dịch vụ chuyển tiền quốc tế, nhưng phí khá cao. Bạn đã xem xét dịch vụ chuyên biệt như Wise chưa?" },
+      { "speaker": "Mike", "en": "I've heard of it. Is the exchange rate better?", "vi": "Tôi có nghe về nó. Tỷ giá hối đoái có tốt hơn không?" },
+      { "speaker": "Staff", "en": "Generally yes. They use the mid-market rate with a transparent fee, which is often cheaper than banks.", "vi": "Nhìn chung là có. Họ sử dụng tỷ giá thị trường giữa với phí minh bạch, thường rẻ hơn ngân hàng." },
+      { "speaker": "Mike", "en": "How long does the transfer take?", "vi": "Chuyển khoản mất bao lâu?" },
+      { "speaker": "Staff", "en": "For Vietnam, typically one to two business days with most providers.", "vi": "Cho Việt Nam, thường mất một đến hai ngày làm việc với hầu hết các nhà cung cấp." }
+    ]
+  },
+  {
+    "id": 71,
+    "title": "Thẻ tín dụng bị mất",
+    "topic": "Ngân hàng",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Anna", "en": "Hello, I need to report my credit card as lost or stolen.", "vi": "Xin chào, tôi cần báo cáo thẻ tín dụng của mình bị mất hoặc bị đánh cắp." },
+      { "speaker": "Staff", "en": "I'm sorry to hear that. I'll block the card immediately. Can you confirm your full name and date of birth?", "vi": "Tôi rất tiếc khi nghe vậy. Tôi sẽ chặn thẻ ngay lập tức. Bạn có thể xác nhận họ tên đầy đủ và ngày sinh không?" },
+      { "speaker": "Anna", "en": "Anna Williams, third of March 1992.", "vi": "Anna Williams, ngày ba tháng Ba năm 1992." },
+      { "speaker": "Staff", "en": "Thank you. The card is now blocked. Have there been any transactions you don't recognise?", "vi": "Cảm ơn. Thẻ đã được chặn rồi. Có giao dịch nào bạn không nhận ra không?" },
+      { "speaker": "Anna", "en": "Yes, there are two charges this morning that aren't mine. About sixty pounds in total.", "vi": "Có, có hai khoản phí sáng nay không phải của tôi. Tổng cộng khoảng sáu mươi bảng." },
+      { "speaker": "Staff", "en": "I'll raise a dispute for those immediately. A replacement card will arrive within three working days.", "vi": "Tôi sẽ khiếu nại những khoản đó ngay lập tức. Thẻ thay thế sẽ đến trong vòng ba ngày làm việc." }
+    ]
+  },
+  {
+    "id": 72,
+    "title": "Vay mua nhà",
+    "topic": "Ngân hàng",
+    "level": "B2",
+    "lines": [
+      { "speaker": "Advisor", "en": "So you're looking to borrow three hundred thousand to purchase your first property?", "vi": "Vậy bạn muốn vay ba trăm nghìn để mua bất động sản đầu tiên?" },
+      { "speaker": "Jack", "en": "That's right. We have a forty-thousand deposit ready.", "vi": "Đúng vậy. Chúng tôi có bốn mươi nghìn tiền đặt cọc sẵn sàng." },
+      { "speaker": "Advisor", "en": "That's a loan-to-value ratio of about 88 percent. Your interest rate options will be slightly higher as a result.", "vi": "Đó là tỷ lệ vay trên giá trị khoảng 88 phần trăm. Do đó các lựa chọn lãi suất của bạn sẽ cao hơn một chút." },
+      { "speaker": "Jack", "en": "We're hoping to remortgage once we've built up more equity.", "vi": "Chúng tôi hy vọng sẽ tái thế chấp một khi chúng tôi tích lũy thêm vốn chủ sở hữu." },
+      { "speaker": "Advisor", "en": "That's a sound strategy. I'd recommend a two-year fixed rate to give you stability while you do that.", "vi": "Đó là chiến lược hợp lý. Tôi khuyến nghị lãi suất cố định hai năm để cho bạn sự ổn định trong khi làm vậy." },
+      { "speaker": "Jack", "en": "What documents will we need to provide for the application?", "vi": "Chúng tôi cần cung cấp những tài liệu gì cho đơn đăng ký?" }
+    ]
+  },
+  {
+    "id": 73,
+    "title": "Tiết kiệm cho tương lai",
+    "topic": "Ngân hàng",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Lisa", "en": "I want to start investing but I have no idea where to begin.", "vi": "Tôi muốn bắt đầu đầu tư nhưng không biết bắt đầu từ đâu." },
+      { "speaker": "Chris", "en": "First things first — do you have an emergency fund? Three to six months of expenses?", "vi": "Trước tiên — bạn có quỹ khẩn cấp chưa? Ba đến sáu tháng chi phí?" },
+      { "speaker": "Lisa", "en": "I have about two months' worth saved. Not quite there yet.", "vi": "Tôi có khoảng hai tháng tiền tiết kiệm. Chưa đủ lắm." },
+      { "speaker": "Chris", "en": "Build that up first. After that, a low-cost index fund is a great starting point for most people.", "vi": "Hãy xây dựng điều đó trước. Sau đó, quỹ chỉ số chi phí thấp là điểm khởi đầu tuyệt vời cho hầu hết mọi người." },
+      { "speaker": "Lisa", "en": "I've heard about those. You just buy a small piece of hundreds of companies?", "vi": "Tôi có nghe về chúng. Bạn chỉ mua một phần nhỏ của hàng trăm công ty?" },
+      { "speaker": "Chris", "en": "Exactly. It spreads your risk, the fees are low, and historically the returns have been solid over the long term.", "vi": "Chính xác. Nó phân tán rủi ro của bạn, phí thấp, và theo lịch sử lợi nhuận đã khá vững chắc về lâu dài." }
+    ]
+  },
+  {
+    "id": 74,
+    "title": "Xem nhà",
+    "topic": "Nhà ở",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Agent", "en": "Welcome! This is a two-bedroom flat on the third floor. Shall I show you around?", "vi": "Chào mừng! Đây là căn hộ hai phòng ngủ ở tầng ba. Để tôi dẫn bạn tham quan nhé?" },
+      { "speaker": "Emma", "en": "Please. It looks nice from the listing. How old is the building?", "vi": "Vâng. Trông đẹp trong quảng cáo lắm. Tòa nhà bao nhiêu năm tuổi rồi?" },
+      { "speaker": "Agent", "en": "It was built in 2005, so relatively modern. The kitchen was fully renovated two years ago.", "vi": "Được xây năm 2005, khá hiện đại. Nhà bếp được cải tạo hoàn toàn hai năm trước." },
+      { "speaker": "Emma", "en": "The rooms look smaller than in the photos, honestly.", "vi": "Thành thật mà nói, các phòng trông nhỏ hơn trong ảnh." },
+      { "speaker": "Agent", "en": "They photograph well. The main bedroom is 12 square metres and the second is 9.", "vi": "Ảnh trông đẹp hơn thực tế. Phòng ngủ chính là 12 mét vuông và phòng thứ hai là 9." },
+      { "speaker": "Emma", "en": "What's the service charge and is there parking included?", "vi": "Phí dịch vụ là bao nhiêu và có bao gồm chỗ đỗ xe không?" }
+    ]
+  },
+  {
+    "id": 75,
+    "title": "Vấn đề với chủ nhà",
+    "topic": "Nhà ở",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Tenant", "en": "The boiler has broken down again. This is the third time this winter.", "vi": "Lò sưởi hỏng lại rồi. Đây là lần thứ ba trong mùa đông này." },
+      { "speaker": "Landlord", "en": "I'm sorry to hear that. I'll send the plumber tomorrow morning.", "vi": "Tôi rất tiếc khi nghe vậy. Tôi sẽ gửi thợ sửa ống nước vào sáng mai." },
+      { "speaker": "Tenant", "en": "Tomorrow isn't good enough. It's below zero outside and we have no heating or hot water.", "vi": "Ngày mai không ổn. Ngoài trời dưới không độ và chúng tôi không có sưởi hay nước nóng." },
+      { "speaker": "Landlord", "en": "I understand. Let me make some calls and see if someone can come this evening.", "vi": "Tôi hiểu. Để tôi gọi điện và xem có ai có thể đến tối nay không." },
+      { "speaker": "Tenant", "en": "This boiler clearly needs replacing, not just repairing. I'd like to discuss a long-term solution.", "vi": "Lò sưởi này rõ ràng cần thay thế, không chỉ sửa chữa. Tôi muốn thảo luận về giải pháp lâu dài." },
+      { "speaker": "Landlord", "en": "You're right. I'll get a quote for a replacement. Can we talk properly when the immediate issue is sorted?", "vi": "Bạn đúng. Tôi sẽ xin báo giá thay thế. Chúng ta có thể nói chuyện nghiêm túc khi vấn đề trước mắt được giải quyết không?" }
+    ]
+  },
+  {
+    "id": 76,
+    "title": "Mua căn nhà đầu tiên",
+    "topic": "Nhà ở",
+    "level": "B2",
+    "lines": [
+      { "speaker": "Kate", "en": "We had our offer accepted on the house! I can't believe it's finally happening.", "vi": "Đề nghị của chúng ta đã được chấp nhận cho ngôi nhà! Tôi không thể tin điều đó cuối cùng đang xảy ra." },
+      { "speaker": "Mark", "en": "That's incredible news! How long did the negotiation take?", "vi": "Đó là tin tuyệt vời! Cuộc đàm phán mất bao lâu?" },
+      { "speaker": "Kate", "en": "Two rounds. They came down fifteen thousand from the asking price in the end.", "vi": "Hai vòng. Cuối cùng họ giảm mười lăm nghìn so với giá chào bán." },
+      { "speaker": "Mark", "en": "Nice work! What's the next step now?", "vi": "Giỏi lắm! Bước tiếp theo là gì?" },
+      { "speaker": "Kate", "en": "We need a surveyor to inspect the property, then it goes to the solicitors for the legal side.", "vi": "Chúng ta cần thẩm định viên kiểm tra bất động sản, sau đó chuyển đến luật sư cho phần pháp lý." },
+      { "speaker": "Mark", "en": "How long does that typically take?", "vi": "Thông thường điều đó mất bao lâu?" },
+      { "speaker": "Kate", "en": "Eight to twelve weeks if everything goes smoothly. Fingers crossed!", "vi": "Tám đến mười hai tuần nếu mọi thứ diễn ra suôn sẻ. Cầu trời đi!" }
+    ]
+  },
+  {
+    "id": 77,
+    "title": "Sắp xếp nhà mới",
+    "topic": "Nhà ở",
+    "level": "A2",
+    "lines": [
+      { "speaker": "Tom", "en": "I finally moved into my new flat last weekend. It's a bit bare at the moment.", "vi": "Tôi cuối cùng đã chuyển vào căn hộ mới vào cuối tuần trước. Hiện tại nó hơi trống trải." },
+      { "speaker": "Anna", "en": "How exciting! What do you still need to buy?", "vi": "Thú vị quá! Bạn còn cần mua gì nữa không?" },
+      { "speaker": "Tom", "en": "Quite a lot — a sofa, curtains, kitchen table. The basics are there but it doesn't feel like home yet.", "vi": "Khá nhiều — ghế sofa, rèm cửa, bàn bếp. Những thứ cơ bản đã có nhưng chưa cảm giác như nhà." },
+      { "speaker": "Anna", "en": "Plants make such a difference for making a place feel cosy.", "vi": "Cây cối tạo ra sự khác biệt lớn trong việc làm cho một nơi trở nên ấm cúng." },
+      { "speaker": "Tom", "en": "Good idea! I've also been looking at second-hand furniture. It's much cheaper.", "vi": "Ý tưởng hay! Tôi cũng đang tìm đồ nội thất đã qua sử dụng. Rẻ hơn nhiều." },
+      { "speaker": "Anna", "en": "There are some great apps for that. You can find really good stuff if you're patient.", "vi": "Có một số ứng dụng tốt cho việc đó. Bạn có thể tìm được đồ tốt nếu bạn kiên nhẫn." }
+    ]
+  },
+  {
+    "id": 78,
+    "title": "Hàng xóm ồn ào",
+    "topic": "Nhà ở",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Sarah", "en": "I need to talk to you about the noise. Your music last night was incredibly loud.", "vi": "Tôi cần nói chuyện với bạn về tiếng ồn. Âm nhạc của bạn tối qua cực kỳ to." },
+      { "speaker": "Neighbour", "en": "I'm really sorry about that. We had some friends over and it got out of hand.", "vi": "Tôi thực sự xin lỗi về điều đó. Chúng tôi có vài người bạn đến và tình hình mất kiểm soát." },
+      { "speaker": "Sarah", "en": "It was past two in the morning. I have an early start for work.", "vi": "Đã qua hai giờ sáng. Tôi phải dậy sớm đi làm." },
+      { "speaker": "Neighbour", "en": "I completely understand. I should have given you a heads-up in advance.", "vi": "Tôi hoàn toàn hiểu. Đáng lẽ tôi phải báo trước cho bạn." },
+      { "speaker": "Sarah", "en": "If it happens again, can you keep it down after eleven?", "vi": "Nếu điều đó xảy ra lần nữa, bạn có thể giảm âm lượng sau mười một giờ không?" },
+      { "speaker": "Neighbour", "en": "Absolutely. And I'll knock on your door next time we're having people round, so you know in advance.", "vi": "Chắc chắn rồi. Và tôi sẽ gõ cửa bạn lần tới khi chúng tôi có khách, để bạn biết trước." }
+    ]
+  },
+  {
+    "id": 79,
+    "title": "Sửa nhà",
+    "topic": "Nhà ở",
+    "level": "A2",
+    "lines": [
+      { "speaker": "Builder", "en": "I've had a look at the bathroom and the tiles will need to be completely replaced.", "vi": "Tôi đã xem qua phòng tắm và các viên gạch sẽ cần được thay thế hoàn toàn." },
+      { "speaker": "Owner", "en": "How much is that going to cost roughly?", "vi": "Điều đó sẽ tốn khoảng bao nhiêu?" },
+      { "speaker": "Builder", "en": "For labour and materials, I'd estimate between two and three thousand pounds.", "vi": "Về công lao động và vật liệu, tôi ước tính từ hai đến ba nghìn bảng." },
+      { "speaker": "Owner", "en": "That's a lot more than I expected. How long would the work take?", "vi": "Nhiều hơn tôi mong đợi nhiều. Công việc sẽ mất bao lâu?" },
+      { "speaker": "Builder", "en": "About three to four days once we start. I can put it in writing for you.", "vi": "Khoảng ba đến bốn ngày một khi bắt đầu. Tôi có thể ghi lại điều đó cho bạn." },
+      { "speaker": "Owner", "en": "Please do. I'd like to get a couple of quotes before deciding.", "vi": "Làm ơn làm vậy. Tôi muốn xin vài báo giá trước khi quyết định." }
+    ]
+  },
+  {
+    "id": 80,
+    "title": "Đêm xem phim",
+    "topic": "Giải trí",
+    "level": "A1",
+    "lines": [
+      { "speaker": "Emma", "en": "What do you want to watch tonight?", "vi": "Tối nay bạn muốn xem gì?" },
+      { "speaker": "Tom", "en": "I'm in the mood for a comedy. Something light.", "vi": "Tôi đang muốn xem hài kịch. Cái gì nhẹ nhàng thôi." },
+      { "speaker": "Emma", "en": "How about a thriller? I haven't seen one in ages.", "vi": "Phim giật gân thì sao? Tôi chưa xem cái nào từ lâu rồi." },
+      { "speaker": "Tom", "en": "Okay, let's compromise — a funny thriller! Like a mystery comedy.", "vi": "Được, hãy dung hòa — một bộ phim giật gân vui nhộn! Như là hài hước bí ẩn." },
+      { "speaker": "Emma", "en": "That's actually a great idea. I'll look it up. Do you want popcorn?", "vi": "Thực ra đó là ý tưởng tuyệt vời. Tôi sẽ tìm xem. Bạn muốn bỏng ngô không?" },
+      { "speaker": "Tom", "en": "Obviously! With extra butter, please.", "vi": "Tất nhiên rồi! Với nhiều bơ thêm, làm ơn." }
+    ]
+  },
+  {
+    "id": 81,
+    "title": "Tại rạp chiếu phim",
+    "topic": "Giải trí",
+    "level": "A1",
+    "lines": [
+      { "speaker": "Cashier", "en": "Hi! Two tickets for the 7:30 showing?", "vi": "Xin chào! Hai vé cho suất chiếu 7:30?" },
+      { "speaker": "Lisa", "en": "Yes please. Do you have seats in the middle of the cinema?", "vi": "Vâng làm ơn. Bạn có chỗ ngồi ở giữa rạp không?" },
+      { "speaker": "Cashier", "en": "Row G, seats 14 and 15 are available. Those are centre screen.", "vi": "Hàng G, ghế 14 và 15 còn trống. Đó là vị trí giữa màn hình." },
+      { "speaker": "Lisa", "en": "Perfect! How much is that?", "vi": "Hoàn hảo! Giá bao nhiêu?" },
+      { "speaker": "Cashier", "en": "That's twenty-two pounds for two adults. Would you like any snacks?", "vi": "Đó là hai mươi hai bảng cho hai người lớn. Bạn có muốn đồ ăn vặt không?" },
+      { "speaker": "Lisa", "en": "Just a large popcorn to share, please. And two diet colas.", "vi": "Chỉ một hộp bỏng ngô lớn để chia, làm ơn. Và hai lon cola không đường." }
+    ]
+  },
+  {
+    "id": 82,
+    "title": "Thảo luận về sách",
+    "topic": "Giải trí",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Anna", "en": "I just finished the novel you recommended. I couldn't put it down!", "vi": "Tôi vừa đọc xong cuốn tiểu thuyết bạn giới thiệu. Tôi không thể đặt xuống được!" },
+      { "speaker": "David", "en": "Isn't it brilliant? The plot twist in the final act completely blindsided me.", "vi": "Tuyệt vời không? Cú bẻ ngoặt cốt truyện ở hồi cuối hoàn toàn bất ngờ với tôi." },
+      { "speaker": "Anna", "en": "I guessed part of it halfway through, but not the full extent. The ending was so satisfying.", "vi": "Tôi đoán được một phần vào giữa truyện, nhưng không đoán hết. Phần kết thật thỏa mãn." },
+      { "speaker": "David", "en": "The author's prose is so beautiful. Every sentence feels deliberate.", "vi": "Văn xuôi của tác giả thật đẹp. Mỗi câu đều có chủ ý." },
+      { "speaker": "Anna", "en": "Have you read their other novels? I went straight online to look them up.", "vi": "Bạn có đọc những cuốn tiểu thuyết khác của họ không? Tôi lên mạng ngay để tìm kiếm." },
+      { "speaker": "David", "en": "Their debut is also fantastic. A bit darker but just as gripping.", "vi": "Cuốn đầu tay của họ cũng tuyệt vời. Hơi tối tăm hơn nhưng hấp dẫn như nhau." }
+    ]
+  },
+  {
+    "id": 83,
+    "title": "Đi xem hòa nhạc",
+    "topic": "Giải trí",
+    "level": "A2",
+    "lines": [
+      { "speaker": "Jack", "en": "I got tickets for the concert on Friday! Front section.", "vi": "Tôi mua được vé cho buổi hòa nhạc thứ Sáu! Khu vực phía trước." },
+      { "speaker": "Emma", "en": "No way! How did you manage that? They sold out in minutes.", "vi": "Không thể tin được! Bạn làm thế nào vậy? Chúng đã bán hết trong vài phút." },
+      { "speaker": "Jack", "en": "I signed up for a pre-sale alert six months ago and set an alarm for the exact second they went on sale.", "vi": "Tôi đã đăng ký thông báo bán trước sáu tháng trước và đặt báo thức đúng giây chúng được bán." },
+      { "speaker": "Emma", "en": "You're a genius. That band is incredible live — I saw them three years ago.", "vi": "Bạn thật thiên tài. Ban nhạc đó biểu diễn trực tiếp thật tuyệt vời — tôi đã xem họ ba năm trước." },
+      { "speaker": "Jack", "en": "Their energy on stage is supposed to be incredible. What should I expect?", "vi": "Năng lượng của họ trên sân khấu được cho là đáng kinh ngạc. Tôi nên mong đợi gì?" },
+      { "speaker": "Emma", "en": "Prepare to sing every song at the top of your lungs and come home with no voice left!", "vi": "Hãy chuẩn bị hát từng bài hết sức và về nhà với giọng nói không còn lại!" }
+    ]
+  },
+  {
+    "id": 84,
+    "title": "Trò chơi điện tử",
+    "topic": "Giải trí",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Chris", "en": "I've been playing this new open-world game and I've completely lost track of time.", "vi": "Tôi đã chơi trò chơi thế giới mở mới này và hoàn toàn quên mất thời gian." },
+      { "speaker": "Mike", "en": "Which one? I've been looking for something new to get into.", "vi": "Cái nào vậy? Tôi đang tìm cái gì đó mới để chơi." },
+      { "speaker": "Chris", "en": "It's a fantasy RPG. The world building is extraordinary — it took the developers five years.", "vi": "Đó là trò nhập vai giả tưởng. Xây dựng thế giới thật phi thường — các nhà phát triển mất năm năm." },
+      { "speaker": "Mike", "en": "Is it a solo game or does it have multiplayer?", "vi": "Đó là trò chơi một mình hay có nhiều người chơi?" },
+      { "speaker": "Chris", "en": "Mainly solo with an optional co-op mode. I prefer solo — I can play at my own pace.", "vi": "Chủ yếu là một mình với chế độ hợp tác tùy chọn. Tôi thích một mình — tôi có thể chơi theo tốc độ của mình." },
+      { "speaker": "Mike", "en": "Sounds perfect. I'll look it up. Do you need a powerful computer to run it?", "vi": "Nghe có vẻ hoàn hảo. Tôi sẽ tìm hiểu. Cần máy tính mạnh để chạy không?" }
+    ]
+  },
+  {
+    "id": 85,
+    "title": "Nghỉ cuối tuần",
+    "topic": "Giải trí",
+    "level": "A2",
+    "lines": [
+      { "speaker": "Sarah", "en": "What are your plans for the long weekend?", "vi": "Kế hoạch của bạn cho kỳ nghỉ cuối tuần dài là gì?" },
+      { "speaker": "Tom", "en": "We're going to the countryside for two nights. A little cottage in the hills.", "vi": "Chúng tôi sẽ đi về vùng nông thôn hai đêm. Một ngôi nhà nhỏ trên đồi." },
+      { "speaker": "Sarah", "en": "That sounds idyllic! Are you doing anything specific or just relaxing?", "vi": "Nghe thật thơ mộng! Bạn có làm gì cụ thể hay chỉ nghỉ ngơi thôi?" },
+      { "speaker": "Tom", "en": "Hiking, reading, and hopefully some good food at the local pub.", "vi": "Đi bộ đường dài, đọc sách, và hy vọng có đồ ăn ngon tại quán rượu địa phương." },
+      { "speaker": "Sarah", "en": "No phones and no emails?", "vi": "Không điện thoại và không email không?" },
+      { "speaker": "Tom", "en": "Absolutely not. I need a proper digital detox. I've been staring at screens all month.", "vi": "Tuyệt đối không. Tôi cần cai nghiện kỹ thuật số thực sự. Tôi đã nhìn màn hình cả tháng rồi." }
+    ]
+  },
+  {
+    "id": 86,
+    "title": "Lớp yoga",
+    "topic": "Giải trí",
+    "level": "A2",
+    "lines": [
+      { "speaker": "Instructor", "en": "Welcome, everyone! Is anyone here for the first time?", "vi": "Chào mừng tất cả mọi người! Có ai đến lần đầu không?" },
+      { "speaker": "Lisa", "en": "Yes, I'm new. I've never done yoga before.", "vi": "Vâng, tôi mới. Tôi chưa bao giờ tập yoga trước đây." },
+      { "speaker": "Instructor", "en": "No worries at all! Today is a beginner-friendly session. Just listen to your body and don't push through pain.", "vi": "Không lo gì cả! Hôm nay là buổi học thân thiện với người mới bắt đầu. Chỉ cần lắng nghe cơ thể và đừng cố gắng vượt qua cơn đau." },
+      { "speaker": "Lisa", "en": "I'm not very flexible. Is that going to be a problem?", "vi": "Tôi không linh hoạt lắm. Điều đó có thành vấn đề không?" },
+      { "speaker": "Instructor", "en": "Not at all! Yoga is about improving flexibility over time, not about being flexible already. Everyone starts somewhere.", "vi": "Không hề! Yoga là về việc cải thiện sự linh hoạt theo thời gian, không phải về việc đã linh hoạt sẵn. Ai cũng bắt đầu từ đâu đó." },
+      { "speaker": "Lisa", "en": "That's reassuring. I've heard it's also good for stress?", "vi": "Điều đó thật yên tâm. Tôi nghe nói nó cũng tốt cho việc giảm căng thẳng?" }
+    ]
+  },
+  {
+    "id": 87,
+    "title": "Triển lãm nghệ thuật",
+    "topic": "Giải trí",
+    "level": "B2",
+    "lines": [
+      { "speaker": "Anna", "en": "What did you make of the exhibition? I found some pieces deeply moving.", "vi": "Bạn nghĩ gì về triển lãm? Tôi thấy một số tác phẩm thực sự cảm động." },
+      { "speaker": "James", "en": "Mixed feelings, honestly. The earlier works were more raw and powerful. The later pieces felt more commercial.", "vi": "Cảm xúc lẫn lộn, thành thật mà nói. Những tác phẩm trước đây thô ráp và mạnh mẽ hơn. Những tác phẩm sau này cảm giác thương mại hơn." },
+      { "speaker": "Anna", "en": "That's an interesting observation. Do you think success changes an artist's work?", "vi": "Đó là nhận xét thú vị. Bạn có nghĩ thành công làm thay đổi tác phẩm của một nghệ sĩ không?" },
+      { "speaker": "James", "en": "It often does. When survival is no longer the driving force, some artists lose that urgency.", "vi": "Thường là vậy. Khi sự sinh tồn không còn là động lực thúc đẩy, một số nghệ sĩ đánh mất sự cấp bách đó." },
+      { "speaker": "Anna", "en": "Though others argue that comfort and resources allow them to take risks they couldn't before.", "vi": "Mặc dù những người khác lập luận rằng sự thoải mái và nguồn lực cho phép họ chấp nhận rủi ro mà trước đây họ không thể." },
+      { "speaker": "James", "en": "True. I suppose it depends entirely on the individual's motivation for creating in the first place.", "vi": "Đúng vậy. Tôi cho rằng điều đó hoàn toàn phụ thuộc vào động cơ của từng cá nhân trong việc sáng tạo ngay từ đầu." }
+    ]
+  },
+  {
+    "id": 88,
+    "title": "Nói về âm nhạc yêu thích",
+    "topic": "Âm nhạc",
+    "level": "A2",
+    "lines": [
+      { "speaker": "Kate", "en": "What kind of music do you listen to?", "vi": "Bạn nghe loại nhạc gì?" },
+      { "speaker": "Chris", "en": "Mostly indie rock and some jazz. What about you?", "vi": "Chủ yếu là indie rock và một ít jazz. Còn bạn?" },
+      { "speaker": "Kate", "en": "I'm really into pop and R&B. I love anything with a strong vocal performance.", "vi": "Tôi rất thích pop và R&B. Tôi yêu bất cứ thứ gì có màn trình diễn giọng hát mạnh mẽ." },
+      { "speaker": "Chris", "en": "Have you heard the new album from Lizzo? The vocals are incredible.", "vi": "Bạn có nghe album mới của Lizzo chưa? Giọng hát thật tuyệt vời." },
+      { "speaker": "Kate", "en": "Yes! I've had it on repeat all week. Do you play any instruments?", "vi": "Có! Tôi đã nghe đi nghe lại cả tuần. Bạn có chơi nhạc cụ nào không?" },
+      { "speaker": "Chris", "en": "Guitar, badly! I've been trying to learn for three years and I'm still terrible.", "vi": "Đàn guitar, nhưng rất tệ! Tôi đã cố gắng học ba năm và vẫn còn kém lắm." }
+    ]
+  },
+  {
+    "id": 89,
+    "title": "Học đàn piano",
+    "topic": "Âm nhạc",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Teacher", "en": "How has your practice been this week?", "vi": "Tuần này bạn luyện tập thế nào?" },
+      { "speaker": "Student", "en": "I managed about thirty minutes every day, but the left-hand part of the piece is still giving me trouble.", "vi": "Tôi luyện được khoảng ba mươi phút mỗi ngày, nhưng phần tay trái của bài nhạc vẫn đang làm tôi khó chịu." },
+      { "speaker": "Teacher", "en": "Let's isolate that section. Play just the left hand slowly for me.", "vi": "Hãy tách riêng phần đó. Chơi chỉ tay trái chậm cho tôi xem." },
+      { "speaker": "Student", "en": "When I focus on the left hand I lose track of the rhythm.", "vi": "Khi tôi tập trung vào tay trái tôi lại mất nhịp." },
+      { "speaker": "Teacher", "en": "That's very common. Try counting out loud while you play. It forces your brain to stay in time.", "vi": "Điều đó rất phổ biến. Thử đếm to trong khi chơi. Nó buộc não bạn phải giữ đúng nhịp." },
+      { "speaker": "Student", "en": "I never thought of that. I'll try it. Playing this piece for the recital next month feels very ambitious suddenly.", "vi": "Tôi chưa bao giờ nghĩ đến điều đó. Tôi sẽ thử. Chơi bài này cho buổi trình diễn tháng tới bỗng dưng cảm thấy rất tham vọng." }
+    ]
+  },
+  {
+    "id": 90,
+    "title": "Thảo luận về thể loại nhạc",
+    "topic": "Âm nhạc",
+    "level": "B2",
+    "lines": [
+      { "speaker": "Emma", "en": "I've been exploring classical music lately. It's surprisingly accessible once you know where to start.", "vi": "Tôi đã khám phá nhạc cổ điển gần đây. Thật ngạc nhiên nó dễ tiếp cận một khi bạn biết bắt đầu từ đâu." },
+      { "speaker": "Tom", "en": "What drew you to it? I've always found it a bit intimidating.", "vi": "Điều gì thu hút bạn đến với nó? Tôi luôn thấy nó hơi đáng sợ." },
+      { "speaker": "Emma", "en": "A podcast that paired each piece with the historical context. Suddenly Beethoven's Ninth made sense as a product of his time.", "vi": "Một podcast ghép mỗi tác phẩm với bối cảnh lịch sử. Bỗng dưng bản Giao hưởng số 9 của Beethoven có ý nghĩa như một sản phẩm của thời ông." },
+      { "speaker": "Tom", "en": "That's a clever way in. I tend to find meaning in lyrics more than instrumentation.", "vi": "Đó là cách tiếp cận thông minh. Tôi có xu hướng tìm thấy ý nghĩa trong lời bài hát hơn là nhạc cụ." },
+      { "speaker": "Emma", "en": "Wordless music forces you to create your own narrative, which is actually quite liberating.", "vi": "Nhạc không lời buộc bạn phải tạo ra câu chuyện riêng của mình, điều này thực ra khá giải phóng." },
+      { "speaker": "Tom", "en": "I'd never thought of it that way. Maybe I'll start with something like Debussy — it always sounds painterly to me.", "vi": "Tôi chưa bao giờ nghĩ như vậy. Có lẽ tôi sẽ bắt đầu với cái gì đó như Debussy — nó luôn nghe giống tranh vẽ với tôi." }
+    ]
+  },
+  {
+    "id": 91,
+    "title": "Festival âm nhạc",
+    "topic": "Âm nhạc",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Alex", "en": "Are you going to the music festival this summer?", "vi": "Bạn có đi festival âm nhạc hè này không?" },
+      { "speaker": "Sophie", "en": "I've been thinking about it. Who's headlining?", "vi": "Tôi đang nghĩ về điều đó. Ai là nghệ sĩ chính?" },
+      { "speaker": "Alex", "en": "Arctic Monkeys on Saturday, Dua Lipa on Sunday. The lineup is incredible.", "vi": "Arctic Monkeys vào thứ Bảy, Dua Lipa vào Chủ Nhật. Danh sách biểu diễn thật tuyệt vời." },
+      { "speaker": "Sophie", "en": "I'd love to see Dua Lipa. But three days camping in a field doesn't exactly appeal to me.", "vi": "Tôi rất muốn xem Dua Lipa. Nhưng cắm trại ba ngày ngoài đồng thì không thu hút tôi lắm." },
+      { "speaker": "Alex", "en": "The glamping options are much more comfortable now. You can rent a proper bed and shower.", "vi": "Các lựa chọn glamping hiện nay thoải mái hơn nhiều. Bạn có thể thuê giường và vòi sen thật sự." },
+      { "speaker": "Sophie", "en": "Now you're talking! Send me the link. If the glamping tickets aren't sold out, I'm in.", "vi": "Bây giờ bạn đang nói đúng ý tôi! Gửi cho tôi đường link. Nếu vé glamping chưa bán hết, tôi sẽ đi." }
+    ]
+  },
+  {
+    "id": 92,
+    "title": "Khoa học khám phá vũ trụ",
+    "topic": "Khoa học",
+    "level": "B2",
+    "lines": [
+      { "speaker": "David", "en": "The images from the new space telescope are just breathtaking. We can see galaxies fourteen billion light years away.", "vi": "Hình ảnh từ kính viễn vọng không gian mới thật ngoạn mục. Chúng ta có thể thấy các thiên hà cách xa mười bốn tỷ năm ánh sáng." },
+      { "speaker": "Anna", "en": "It puts everything in perspective. What are scientists hoping to learn from them?", "vi": "Nó đặt mọi thứ vào góc độ nhìn nhận. Các nhà khoa học hy vọng học được gì từ chúng?" },
+      { "speaker": "David", "en": "Mainly about how the first galaxies formed after the Big Bang. And potentially signs of water or organic molecules on distant planets.", "vi": "Chủ yếu về cách các thiên hà đầu tiên hình thành sau Vụ Nổ Lớn. Và có thể tìm thấy dấu hiệu của nước hoặc phân tử hữu cơ trên các hành tinh xa xôi." },
+      { "speaker": "Anna", "en": "The idea that there could be life elsewhere in the universe doesn't seem far-fetched anymore.", "vi": "Ý tưởng rằng có thể có sự sống ở nơi khác trong vũ trụ không còn có vẻ xa vời nữa." },
+      { "speaker": "David", "en": "Statistically, it would be extraordinary if Earth were the only planet with life given how many billions of galaxies exist.", "vi": "Về mặt thống kê, sẽ thật phi thường nếu Trái Đất là hành tinh duy nhất có sự sống trong khi có hàng tỷ thiên hà tồn tại." },
+      { "speaker": "Anna", "en": "That thought is both thrilling and slightly terrifying.", "vi": "Suy nghĩ đó vừa hồi hộp vừa hơi đáng sợ." }
+    ]
+  },
+  {
+    "id": 93,
+    "title": "Khoa học và y học",
+    "topic": "Khoa học",
+    "level": "C1",
+    "lines": [
+      { "speaker": "Lisa", "en": "The results from that cancer immunotherapy trial are genuinely exciting. The remission rates are unprecedented.", "vi": "Kết quả từ thử nghiệm liệu pháp miễn dịch ung thư đó thực sự thú vị. Tỷ lệ thuyên giảm chưa từng có." },
+      { "speaker": "Chris", "en": "I read about that. It's remarkable how far we've come from purely chemotherapy-based approaches.", "vi": "Tôi có đọc về điều đó. Thật đáng chú ý khi chúng ta đã đi xa đến thế nào so với các phương pháp dựa hoàn toàn vào hóa trị." },
+      { "speaker": "Lisa", "en": "The principle is elegant — training the body's own immune system to target tumour cells rather than deploying toxic agents systemically.", "vi": "Nguyên tắc rất tinh tế — huấn luyện hệ miễn dịch của cơ thể để nhắm mục tiêu vào tế bào khối u thay vì triển khai các tác nhân độc hại trên toàn hệ thống." },
+      { "speaker": "Chris", "en": "Though the personalisation challenge is enormous — each patient's tumour has a different molecular signature.", "vi": "Mặc dù thách thức cá nhân hóa là rất lớn — khối u của mỗi bệnh nhân có chữ ký phân tử khác nhau." },
+      { "speaker": "Lisa", "en": "Which is exactly where AI-driven genomic analysis becomes transformative. Processing that data at scale was previously impossible.", "vi": "Đó chính xác là nơi phân tích gen dựa trên AI trở nên mang tính chuyển đổi. Xử lý dữ liệu đó ở quy mô lớn trước đây là không thể." },
+      { "speaker": "Chris", "en": "The convergence of immunology, genomics, and machine learning in the past decade has been genuinely revolutionary.", "vi": "Sự hội tụ của miễn dịch học, gen học và học máy trong thập kỷ qua thực sự mang tính cách mạng." }
+    ]
+  },
+  {
+    "id": 94,
+    "title": "Khoa học khí hậu",
+    "topic": "Khoa học",
+    "level": "B2",
+    "lines": [
+      { "speaker": "Tom", "en": "I was reading about ocean acidification. Apparently coral reefs could be gone within decades.", "vi": "Tôi đang đọc về axit hóa đại dương. Rõ ràng các rạn san hô có thể biến mất trong vòng vài thập kỷ." },
+      { "speaker": "Emma", "en": "The data is frightening. A thirty percent increase in ocean acidity since the industrial revolution.", "vi": "Dữ liệu thật đáng sợ. Độ axit đại dương tăng ba mươi phần trăm kể từ cuộc cách mạng công nghiệp." },
+      { "speaker": "Tom", "en": "And reefs support about a quarter of all marine life despite covering less than one percent of the ocean floor.", "vi": "Và các rạn san hô hỗ trợ khoảng một phần tư của tất cả sinh vật biển mặc dù chỉ chiếm chưa đến một phần trăm đáy đại dương." },
+      { "speaker": "Emma", "en": "The cascading effects on food chains and fishing communities would be catastrophic.", "vi": "Các tác động dây chuyền đến chuỗi thức ăn và cộng đồng ngư dân sẽ thảm khốc." },
+      { "speaker": "Tom", "en": "Scientists are researching heat-resistant coral strains. It might buy time.", "vi": "Các nhà khoa học đang nghiên cứu các chủng san hô chịu nhiệt. Điều đó có thể mua thêm thời gian." },
+      { "speaker": "Emma", "en": "It's a band-aid without the emission cuts, but research in parallel with policy change is the only realistic path.", "vi": "Đó là miếng dán tạm thời nếu không có việc giảm khí thải, nhưng nghiên cứu song song với thay đổi chính sách là con đường thực tế duy nhất." }
+    ]
+  },
+  {
+    "id": 95,
+    "title": "Tâm lý học hành vi",
+    "topic": "Khoa học",
+    "level": "C1",
+    "lines": [
+      { "speaker": "Jake", "en": "Have you read Kahneman's work on cognitive biases? It's made me question almost every decision I make.", "vi": "Bạn có đọc tác phẩm của Kahneman về thiên kiến nhận thức không? Nó khiến tôi đặt câu hỏi về hầu hết mọi quyết định tôi đưa ra." },
+      { "speaker": "Lily", "en": "Thinking Fast and Slow. Revelatory, isn't it. The distinction between System One and System Two thinking reframes everything.", "vi": "Thinking Fast and Slow. Thật khai sáng. Sự phân biệt giữa Hệ thống Một và Hệ thống Hai định khung lại mọi thứ." },
+      { "speaker": "Jake", "en": "The anchoring effect was particularly eye-opening. How the first number you hear disproportionately shapes your subsequent judgement.", "vi": "Hiệu ứng neo đặc biệt mở mang tầm mắt. Cách số đầu tiên bạn nghe ảnh hưởng không tương xứng đến phán đoán tiếp theo của bạn." },
+      { "speaker": "Lily", "en": "It has profound implications for pricing, negotiation, and even judicial sentencing. The system is more arbitrary than we like to believe.", "vi": "Nó có những tác động sâu rộng đối với định giá, đàm phán, và thậm chí cả việc kết án tư pháp. Hệ thống tùy tiện hơn những gì chúng ta muốn tin." },
+      { "speaker": "Jake", "en": "Once you're aware of the biases, can you actually counteract them, or just observe yourself falling into them?", "vi": "Khi bạn đã nhận thức được các thiên kiến, bạn có thể thực sự chống lại chúng không, hay chỉ quan sát bản thân rơi vào chúng?" },
+      { "speaker": "Lily", "en": "Kahneman himself is pretty pessimistic. Awareness helps at the margins, but the biases are deeply wired. Institutional safeguards matter more than individual vigilance.", "vi": "Bản thân Kahneman khá bi quan. Nhận thức giúp ích ở mức độ ngoại biên, nhưng các thiên kiến được gắn sâu. Các biện pháp bảo vệ thể chế quan trọng hơn sự cảnh giác cá nhân." }
+    ]
+  },
+  {
+    "id": 96,
+    "title": "Thực phẩm đường phố",
+    "topic": "Ẩm thực",
+    "level": "A2",
+    "lines": [
+      { "speaker": "Tourist", "en": "Excuse me, what's in this dish? It smells amazing.", "vi": "Xin lỗi, món này có gì trong đó? Mùi thơm tuyệt vời quá." },
+      { "speaker": "Vendor", "en": "It's our famous fish tacos — grilled fish, cabbage slaw, and our special lime crema.", "vi": "Đây là bánh taco cá nổi tiếng của chúng tôi — cá nướng, salad bắp cải, và nước sốt kem chanh đặc biệt của chúng tôi." },
+      { "speaker": "Tourist", "en": "It looks delicious. Is it spicy?", "vi": "Trông ngon quá. Nó có cay không?" },
+      { "speaker": "Vendor", "en": "Medium spice. But I can leave out the jalapeños if you prefer mild.", "vi": "Cay vừa. Nhưng tôi có thể bỏ ớt jalapeño nếu bạn thích nhẹ hơn." },
+      { "speaker": "Tourist", "en": "Medium is fine! I'll have two please. Do you have anything vegetarian?", "vi": "Cay vừa được! Tôi lấy hai cái. Bạn có món chay không?" },
+      { "speaker": "Vendor", "en": "Yes! Our black bean and roasted corn taco is very popular. Want to try one?", "vi": "Có! Taco đậu đen và ngô nướng của chúng tôi rất phổ biến. Bạn có muốn thử một cái không?" }
+    ]
+  },
+  {
+    "id": 97,
+    "title": "Dị ứng thực phẩm",
+    "topic": "Ẩm thực",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Guest", "en": "I need to let you know before we order — I have a severe nut allergy.", "vi": "Tôi cần cho bạn biết trước khi chúng ta gọi món — tôi bị dị ứng hạt nghiêm trọng." },
+      { "speaker": "Waiter", "en": "Thank you for telling us. I'll inform the kitchen immediately and flag your table.", "vi": "Cảm ơn bạn đã cho chúng tôi biết. Tôi sẽ thông báo ngay cho bếp và đánh dấu bàn của bạn." },
+      { "speaker": "Guest", "en": "Is the pasta sauce made with any kind of nut? Sometimes pesto contains pine nuts.", "vi": "Nước sốt pasta có được làm với bất kỳ loại hạt nào không? Đôi khi pesto có chứa hạt thông." },
+      { "speaker": "Waiter", "en": "Our classic tomato sauce is nut-free. The pesto does contain pine nuts, so I'd recommend avoiding that one.", "vi": "Nước sốt cà chua truyền thống của chúng tôi không có hạt. Pesto có chứa hạt thông, vì vậy tôi khuyên bạn nên tránh loại đó." },
+      { "speaker": "Guest", "en": "What about cross-contamination? Is there a shared preparation area?", "vi": "Còn nhiễm chéo thì sao? Có khu vực chế biến chung không?" },
+      { "speaker": "Waiter", "en": "That's a great question. Our chef can prepare your meal in a separate section of the kitchen. Let me confirm with them right now.", "vi": "Đó là câu hỏi tuyệt vời. Đầu bếp của chúng tôi có thể chuẩn bị bữa ăn của bạn trong khu vực riêng của bếp. Để tôi xác nhận với họ ngay bây giờ." }
+    ]
+  },
+  {
+    "id": 98,
+    "title": "Ẩm thực và văn hóa",
+    "topic": "Ẩm thực",
+    "level": "B2",
+    "lines": [
+      { "speaker": "Maria", "en": "Food is such an intimate window into a culture, don't you think?", "vi": "Thức ăn là cửa sổ thân mật như vậy vào một nền văn hóa, bạn có nghĩ không?" },
+      { "speaker": "David", "en": "Absolutely. When I visited Japan, understanding the rituals around food completely transformed the experience.", "vi": "Hoàn toàn đúng. Khi tôi đến thăm Nhật Bản, hiểu các nghi lễ xung quanh thức ăn đã hoàn toàn biến đổi trải nghiệm." },
+      { "speaker": "Maria", "en": "What struck you most?", "vi": "Điều gì làm bạn ấn tượng nhất?" },
+      { "speaker": "David", "en": "The respect for the ingredient. A sushi chef trains for a decade just to prepare the rice correctly. There's a philosophy behind it.", "vi": "Sự tôn trọng đối với nguyên liệu. Một đầu bếp sushi luyện tập một thập kỷ chỉ để chuẩn bị cơm đúng cách. Có một triết lý đằng sau đó." },
+      { "speaker": "Maria", "en": "It contrasts so sharply with fast food culture, where the goal is speed and uniformity over craft.", "vi": "Nó tương phản rõ rét với văn hóa đồ ăn nhanh, nơi mục tiêu là tốc độ và sự đồng nhất hơn là tay nghề." },
+      { "speaker": "David", "en": "Both have their place. But I think there's something deeply human about slowing down and treating a meal as an event rather than a transaction.", "vi": "Cả hai đều có chỗ đứng của chúng. Nhưng tôi nghĩ có điều gì đó sâu sắc về con người trong việc chậm lại và đối xử với bữa ăn như một sự kiện hơn là một giao dịch." }
+    ]
+  },
+  {
+    "id": 99,
+    "title": "Đầu bếp tại nhà",
+    "topic": "Ẩm thực",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Sam", "en": "I've been trying to get better at cooking. Any advice for a complete beginner?", "vi": "Tôi đang cố gắng nấu ăn giỏi hơn. Bạn có lời khuyên gì cho người mới hoàn toàn không?" },
+      { "speaker": "Rachel", "en": "Start with five basic techniques: roasting, sautéing, making a sauce, braising, and baking. Master those and everything else follows.", "vi": "Bắt đầu với năm kỹ thuật cơ bản: nướng, xào, làm nước sốt, hầm, và nướng bánh. Thành thạo những điều đó và mọi thứ khác sẽ theo sau." },
+      { "speaker": "Sam", "en": "I keep burning garlic. It happens every single time.", "vi": "Tôi cứ hay làm cháy tỏi. Điều đó xảy ra mỗi lần." },
+      { "speaker": "Rachel", "en": "Classic mistake! Garlic needs medium heat and constant attention. It goes from golden to burned in about thirty seconds.", "vi": "Lỗi cổ điển! Tỏi cần nhiệt độ vừa phải và sự chú ý liên tục. Nó chuyển từ vàng sang cháy trong khoảng ba mươi giây." },
+      { "speaker": "Sam", "en": "I always cook on high heat because I'm impatient. Maybe that's the problem.", "vi": "Tôi luôn nấu ở nhiệt độ cao vì tôi thiếu kiên nhẫn. Có lẽ đó là vấn đề." },
+      { "speaker": "Rachel", "en": "Patience is the most important ingredient in cooking. Low and slow beats high and fast almost every time.", "vi": "Kiên nhẫn là nguyên liệu quan trọng nhất trong nấu ăn. Thấp và chậm thắng cao và nhanh hầu như mọi lúc." }
+    ]
+  },
+  {
+    "id": 100,
+    "title": "Phong trào thể thao",
+    "topic": "Thể thao",
+    "level": "B1",
+    "lines": [
+      { "speaker": "Jamie", "en": "I've just signed up for my first Pilates class. Everyone's been raving about it.", "vi": "Tôi vừa đăng ký lớp Pilates đầu tiên. Mọi người đều ca ngợi nó." },
+      { "speaker": "Nina", "en": "You'll love it! It's so different from the gym. Everything is about control and precision.", "vi": "Bạn sẽ thích nó! Nó rất khác với phòng gym. Mọi thứ đều về sự kiểm soát và chính xác." },
+      { "speaker": "Jamie", "en": "Is it actually a tough workout or is it quite gentle?", "vi": "Đó có phải là bài tập thực sự khó không hay khá nhẹ nhàng?" },
+      { "speaker": "Nina", "en": "Deceptively tough. The movements are small but your core will be on fire by the end.", "vi": "Khó hơn bạn tưởng đấy. Các động tác nhỏ nhưng cơ thân của bạn sẽ bị đốt cháy vào cuối buổi." },
+      { "speaker": "Jamie", "en": "I've been having lower back pain recently. Will that be a problem?", "vi": "Tôi bị đau lưng dưới gần đây. Điều đó có thành vấn đề không?" },
+      { "speaker": "Nina", "en": "Actually, Pilates can really help with that. Just tell the instructor before class so they can offer modifications.", "vi": "Thực ra, Pilates thực sự có thể giúp ích cho điều đó. Chỉ cần nói với giảng viên trước buổi học để họ có thể đưa ra các biến thể phù hợp." }
+    ]
+  }
+]

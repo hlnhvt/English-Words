@@ -1,115 +1,17 @@
 import store from '../store.js';
 
-const dialogues = [
-  {
-    id: 1,
-    title: 'Chào hỏi cơ bản',
-    topic: 'Giao tiếp hàng ngày',
-    level: 'A1',
-    lines: [
-      { speaker: 'A', en: 'Hello! How are you today?', vi: 'Xin chào! Hôm nay bạn khỏe không?' },
-      { speaker: 'B', en: 'I am fine, thank you. And you?', vi: 'Tôi khỏe, cảm ơn. Còn bạn?' },
-      { speaker: 'A', en: 'I am doing well, thanks!', vi: 'Tôi cũng ổn, cảm ơn!' },
-      { speaker: 'B', en: 'Nice to meet you.', vi: 'Rất vui được gặp bạn.' },
-    ],
-  },
-  {
-    id: 2,
-    title: 'Gọi đồ uống',
-    topic: 'Nhà hàng & Quán cà phê',
-    level: 'A2',
-    lines: [
-      { speaker: 'A', en: 'Hi, what can I get for you?', vi: 'Xin chào, bạn muốn gọi gì?' },
-      { speaker: 'B', en: 'Can I have a coffee, please?', vi: 'Cho tôi một cà phê được không?' },
-      { speaker: 'A', en: 'Sure. Hot or iced?', vi: 'Được. Nóng hay đá?' },
-      { speaker: 'B', en: 'Iced, please. With a little milk.', vi: 'Đá ạ. Cho thêm một chút sữa.' },
-      { speaker: 'A', en: 'Anything else?', vi: 'Bạn cần thêm gì không?' },
-      { speaker: 'B', en: 'No, that is all. Thank you.', vi: 'Không, vậy thôi. Cảm ơn.' },
-    ],
-  },
-  {
-    id: 3,
-    title: 'Hỏi đường',
-    topic: 'Di chuyển & Địa điểm',
-    level: 'A2',
-    lines: [
-      { speaker: 'A', en: 'Excuse me, I am lost.', vi: 'Xin lỗi, tôi bị lạc đường.' },
-      { speaker: 'B', en: 'No problem! Where do you want to go?', vi: 'Không sao! Bạn muốn đến đâu?' },
-      { speaker: 'A', en: 'I am looking for the train station.', vi: 'Tôi đang tìm ga tàu.' },
-      { speaker: 'B', en: 'Go straight and turn left at the bank.', vi: 'Đi thẳng rồi rẽ trái ở ngân hàng.' },
-      { speaker: 'A', en: 'How far is it from here?', vi: 'Từ đây đến đó bao xa?' },
-      { speaker: 'B', en: 'About ten minutes on foot.', vi: 'Khoảng mười phút đi bộ.' },
-    ],
-  },
-  {
-    id: 4,
-    title: 'Mua sắm',
-    topic: 'Cửa hàng & Mua sắm',
-    level: 'B1',
-    lines: [
-      { speaker: 'A', en: 'Can I help you find something?', vi: 'Tôi có thể giúp bạn tìm gì không?' },
-      { speaker: 'B', en: 'Yes, I am looking for a winter jacket.', vi: 'Vâng, tôi đang tìm áo khoác mùa đông.' },
-      { speaker: 'A', en: 'What size do you usually wear?', vi: 'Bạn thường mặc cỡ nào?' },
-      { speaker: 'B', en: 'Medium. Do you have any in dark blue?', vi: 'Cỡ vừa. Bạn có màu xanh đậm không?' },
-      { speaker: 'A', en: 'Yes, this one just arrived. Try it on.', vi: 'Có, cái này vừa về. Thử xem.' },
-      { speaker: 'B', en: 'It fits perfectly. I will take it.', vi: 'Vừa lắm. Tôi mua cái này.' },
-    ],
-  },
-  {
-    id: 5,
-    title: 'Phỏng vấn xin việc',
-    topic: 'Công việc & Nghề nghiệp',
-    level: 'B2',
-    lines: [
-      { speaker: 'A', en: 'Tell me a little about yourself.', vi: 'Hãy giới thiệu đôi chút về bản thân bạn.' },
-      { speaker: 'B', en: 'I have three years of experience in marketing.', vi: 'Tôi có ba năm kinh nghiệm trong lĩnh vực marketing.' },
-      { speaker: 'A', en: 'Why do you want to work here?', vi: 'Tại sao bạn muốn làm việc ở đây?' },
-      { speaker: 'B', en: 'I admire your company culture and growth.', vi: 'Tôi ngưỡng mộ văn hóa và sự phát triển của công ty.' },
-      { speaker: 'A', en: 'What is your greatest strength?', vi: 'Điểm mạnh lớn nhất của bạn là gì?' },
-      { speaker: 'B', en: 'I am very organized and a quick learner.', vi: 'Tôi rất có tổ chức và học hỏi nhanh.' },
-    ],
-  },
-  {
-    id: 6,
-    title: 'Khám bệnh',
-    topic: 'Sức khỏe & Y tế',
-    level: 'B1',
-    lines: [
-      { speaker: 'A', en: 'What seems to be the problem?', vi: 'Bạn đang gặp vấn đề gì vậy?' },
-      { speaker: 'B', en: 'I have had a headache for two days.', vi: 'Tôi bị đau đầu hai ngày nay.' },
-      { speaker: 'A', en: 'Do you have a fever or cough?', vi: 'Bạn có sốt hay ho không?' },
-      { speaker: 'B', en: 'No fever, but I feel very tired.', vi: 'Không sốt, nhưng tôi cảm thấy rất mệt.' },
-      { speaker: 'A', en: 'I will prescribe you some rest and medicine.', vi: 'Tôi sẽ kê đơn nghỉ ngơi và thuốc cho bạn.' },
-    ],
-  },
-  {
-    id: 7,
-    title: 'Đặt phòng khách sạn',
-    topic: 'Du lịch & Lưu trú',
-    level: 'A2',
-    lines: [
-      { speaker: 'A', en: 'Good evening. How can I help you?', vi: 'Chào buổi tối. Tôi có thể giúp gì cho bạn?' },
-      { speaker: 'B', en: 'I would like to book a room for two nights.', vi: 'Tôi muốn đặt phòng cho hai đêm.' },
-      { speaker: 'A', en: 'Single or double room?', vi: 'Phòng đơn hay phòng đôi?' },
-      { speaker: 'B', en: 'A double room, please.', vi: 'Phòng đôi, làm ơn.' },
-      { speaker: 'A', en: 'Your room is ready. Here is your key.', vi: 'Phòng của bạn đã sẵn sàng. Đây là chìa khóa.' },
-    ],
-  },
-  {
-    id: 8,
-    title: 'Nói về thời tiết',
-    topic: 'Thời tiết & Môi trường',
-    level: 'A1',
-    lines: [
-      { speaker: 'A', en: 'What is the weather like today?', vi: 'Hôm nay thời tiết như thế nào?' },
-      { speaker: 'B', en: 'It is sunny but a little windy.', vi: 'Trời nắng nhưng hơi có gió.' },
-      { speaker: 'A', en: 'Perfect for a walk outside!', vi: 'Thật lý tưởng để đi dạo bên ngoài!' },
-      { speaker: 'B', en: 'Yes! Will it rain this afternoon?', vi: 'Đúng vậy! Chiều nay có mưa không?' },
-      { speaker: 'A', en: 'Maybe. You should bring an umbrella.', vi: 'Có thể. Bạn nên mang theo ô.' },
-      { speaker: 'B', en: 'Good idea. Thanks for the tip!', vi: 'Ý hay đấy. Cảm ơn bạn đã nhắc!' },
-    ],
-  },
-];
+let allDialogues = [];
+let filteredDialogues = [];
+
+let convFilters = {
+  topics: ['all'],
+  levels: ['all'],
+  keyword: ''
+};
+
+let convCurrentPage = 1;
+let convItemsPerPage = 12;
+let showAdvancedFilters = false;
 
 let convSession = {
   phase: 'setup',
@@ -118,6 +20,31 @@ let convSession = {
   answers: [],
   startTime: null,
 };
+
+async function fetchDialogues(rerenderFn) {
+  if (allDialogues.length > 0) return allDialogues;
+  try {
+    const res = await fetch('/data/conversations.json');
+    allDialogues = await res.json();
+    applyFilters();
+    if (rerenderFn) rerenderFn();
+    return allDialogues;
+  } catch (e) {
+    console.error('Failed to load dialogues', e);
+    return [];
+  }
+}
+
+function applyFilters() {
+  filteredDialogues = allDialogues.filter(d => {
+    const matchTopic = convFilters.topics.includes('all') || convFilters.topics.includes(d.topic);
+    const matchLevel = convFilters.levels.includes('all') || convFilters.levels.includes(d.level);
+    const matchKeyword = !convFilters.keyword || 
+                         d.title.toLowerCase().includes(convFilters.keyword.toLowerCase()) ||
+                         d.topic.toLowerCase().includes(convFilters.keyword.toLowerCase());
+    return matchTopic && matchLevel && matchKeyword;
+  });
+}
 
 export function resetConversationSession() {
   convSession = { phase: 'setup', dialogue: null, lineIndex: 0, answers: [], startTime: null };
@@ -142,33 +69,201 @@ function getGradeColor(score) {
 }
 
 function speakerCircle(speaker) {
-  if (speaker === 'A') {
-    return `<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary-600/20 text-primary-400 font-bold text-sm flex-shrink-0">A</span>`;
-  }
-  return `<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent-600/20 text-accent-400 font-bold text-sm flex-shrink-0">B</span>`;
+  // Use first letter of name
+  const letter = speaker.charAt(0).toUpperCase();
+  const isA = speaker.charCodeAt(0) % 2 === 0; // Pseudo-random color
+  return `<span title="${speaker}" class="inline-flex items-center justify-center w-8 h-8 rounded-full ${isA ? 'bg-primary-600/20 text-primary-400' : 'bg-accent-600/20 text-accent-400'} font-bold text-sm flex-shrink-0 border border-white/5 shadow-sm cursor-help transition-transform hover:scale-110">${letter}</span>`;
 }
 
 function renderSetup() {
+  const topics = ['all', ...new Set(allDialogues.map(d => d.topic))];
+  const levels = ['all', 'A1', 'A2', 'B1', 'B2', 'C1'];
+  const perPageOptions = [6, 12, 24, 48];
+
+  const totalPages = Math.ceil(filteredDialogues.length / convItemsPerPage);
+  if (convCurrentPage > totalPages && totalPages > 0) convCurrentPage = totalPages;
+  if (convCurrentPage < 1) convCurrentPage = 1;
+  
+  const startIndex = (convCurrentPage - 1) * convItemsPerPage;
+  const pagedDialogues = filteredDialogues.slice(startIndex, startIndex + convItemsPerPage);
+
+  const renderMultiSelectDropdown = (id, options, selected, label) => {
+    const isAll = selected.includes('all');
+    const displayText = isAll ? 'Tất cả' : `${selected.length} đã chọn`;
+    
+    return `
+      <div class="relative h-full" id="dropdown-${id}">
+        <label class="block text-xs font-semibold text-surface-500 uppercase tracking-wider mb-2">${label}</label>
+        <button class="dropdown-trigger w-full bg-surface-950 border border-surface-800 rounded-xl px-4 py-2.5 text-sm text-surface-200 flex items-center justify-between hover:border-primary-500/50 transition-all focus:border-primary-500 outline-none shadow-sm">
+          <span class="${!isAll ? 'text-primary-400 font-medium' : ''}">${displayText}</span>
+          <svg class="w-4 h-4 text-surface-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="dropdown-content absolute z-[100] top-full left-0 mt-2 w-full max-h-80 overflow-y-auto bg-surface-900 border border-surface-700 rounded-xl shadow-2xl hidden p-2 space-y-0.5 shadow-primary-900/50">
+          <div class="max-h-60 overflow-y-auto mb-2 custom-scrollbar">
+            ${options.map(opt => {
+              const isSelected = selected.includes(opt);
+              return `
+                <div data-filter="${id}" data-value="${opt}" 
+                     class="flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-all
+                            ${isSelected ? 'bg-primary-600/20 text-primary-100' : 'hover:bg-white/5 text-surface-400 hover:text-surface-200'}">
+                  <div class="w-4 h-4 rounded border transition-colors ${isSelected ? 'bg-primary-600 border-primary-500' : 'border-surface-600'} flex items-center justify-center shrink-0">
+                    ${isSelected ? '<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>' : ''}
+                  </div>
+                  <span class="text-sm font-medium">${opt === 'all' ? 'Tất cả' : opt}</span>
+                </div>
+              `;
+            }).join('')}
+          </div>
+          <button class="btn-apply-filter w-full py-2 bg-primary-600 hover:bg-primary-500 text-white text-xs font-bold rounded-lg transition-all shadow-lg shadow-primary-600/20">
+            Áp dụng
+          </button>
+        </div>
+      </div>
+    `;
+  };
+
   return `
     <div class="fade-in max-w-5xl mx-auto px-4 py-8">
-      <div class="mb-8">
-        <h1 class="text-3xl font-bold text-surface-100">Giao tiếp</h1>
-        <p class="text-surface-400 mt-1">Chọn một bài hội thoại để luyện tập</p>
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+        <div>
+          <h1 class="text-3xl font-bold text-surface-100">Giao tiếp</h1>
+          <p class="text-surface-400 mt-1">Luyện tập hội thoại với nhân vật nổi tiếng</p>
+        </div>
+        <div class="flex gap-3">
+          <button id="btn-conv-advanced" class="btn-hover flex items-center gap-2 bg-surface-800 hover:bg-surface-700 text-surface-200 font-semibold px-4 py-2.5 rounded-xl transition-all border border-white/5" title="Hiện/Ẩn bộ lọc nâng cao">
+            <svg class="w-5 h-5 ${showAdvancedFilters ? 'rotate-180' : ''} transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+            </svg>
+            Bộ lọc
+          </button>
+          <button id="btn-conv-random" class="btn-hover flex items-center gap-2 bg-accent-600 hover:bg-accent-500 text-white font-semibold px-6 py-2.5 rounded-xl transition-all shadow-lg shadow-accent-600/20" title="Luyện tập ngẫu nhiên dựa trên bộ lọc">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+            Ngẫu nhiên
+          </button>
+        </div>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        ${dialogues.map(d => `
-          <div class="glass rounded-2xl p-5 cursor-pointer btn-hover dialogue-card" data-id="${d.id}">
-            <div class="flex flex-wrap gap-2 mb-3">
-              <span class="text-xs px-2 py-0.5 rounded-full bg-surface-700 text-surface-300">${d.topic}</span>
-              <span class="text-xs px-2 py-0.5 rounded-full ${getLevelClass(d.level)} font-semibold">${d.level}</span>
+
+      <!-- Filters -->
+      <div class="glass rounded-2xl p-6 mb-8 space-y-6 relative z-20">
+        <div class="grid grid-cols-1 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-surface-500 uppercase tracking-wider mb-2">Tìm kiếm bài hội thoại</label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-surface-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              </span>
+              <input id="conv-filter-search" type="text" placeholder="Tên bài, chủ đề..." value="${convFilters.keyword}"
+                     class="w-full bg-surface-950 border border-surface-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-surface-200 focus:border-primary-500/50 outline-none transition-all shadow-sm"/>
             </div>
-            <h3 class="font-semibold text-surface-100 text-sm leading-snug mb-2">${d.title}</h3>
-            <p class="text-surface-500 text-xs">${d.lines.length} câu thoại</p>
           </div>
-        `).join('')}
+        </div>
+
+        <div class="${showAdvancedFilters ? 'grid' : 'hidden'} grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-white/5 animate-scale-in">
+          ${renderMultiSelectDropdown('conv-filter-topics', topics, convFilters.topics, 'Chủ đề')}
+          ${renderMultiSelectDropdown('conv-filter-levels', levels, convFilters.levels, 'Trình độ')}
+          <div>
+            <label class="block text-xs font-semibold text-surface-500 uppercase tracking-wider mb-2">Số bài / trang</label>
+            <select id="conv-per-page" class="w-full bg-surface-950 border border-surface-800 rounded-xl px-3 py-2.5 text-sm text-surface-200 focus:border-primary-500/50 outline-none transition-all cursor-pointer shadow-sm">
+              ${perPageOptions.map(n => `<option value="${n}" ${convItemsPerPage === n ? 'selected' : ''}>${n} bài</option>`).join('')}
+            </select>
+          </div>
+        </div>
       </div>
+
+      ${filteredDialogues.length === 0 ? `
+        <div class="text-center py-20 bg-white/5 rounded-3xl border border-white/5">
+          <p class="text-surface-500">Không tìm thấy bài hội thoại nào phù hợp với bộ lọc.</p>
+          <button id="btn-reset-filters" class="mt-4 text-primary-400 hover:underline text-sm font-medium">Đặt lại bộ lọc</button>
+        </div>
+      ` : `
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+          ${pagedDialogues.map(d => {
+            const previewEn = d.lines[0].en.length > 60 ? d.lines[0].en.substring(0, 60) + '...' : d.lines[0].en;
+            const previewVi = d.lines[0].vi.length > 60 ? d.lines[0].vi.substring(0, 60) + '...' : d.lines[0].vi;
+            
+            return `
+              <div class="glass rounded-2xl p-6 cursor-pointer btn-hover dialogue-card border border-white/5 hover:border-primary-500/30 group relative overflow-hidden flex flex-col h-full" data-id="${d.id}">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                
+                <div class="flex items-start justify-between mb-4 relative">
+                  <div class="flex items-center gap-2">
+                    <span class="text-[10px] px-2.5 py-1 rounded-lg bg-surface-800 text-surface-300 font-bold uppercase tracking-wider">${d.topic}</span>
+                    <span class="text-[10px] px-2.5 py-1 rounded-lg ${getLevelClass(d.level)} font-bold text-white shadow-sm">${d.level}</span>
+                  </div>
+                  <div class="flex -space-x-2">
+                    ${speakerCircle(d.lines[0].speaker)}
+                    ${speakerCircle(d.lines[1].speaker)}
+                  </div>
+                </div>
+
+                <h3 class="font-bold text-surface-100 text-lg leading-tight mb-3 group-hover:text-primary-400 transition-colors relative">${d.title}</h3>
+                
+                <div class="bg-white/5 rounded-xl p-3 mb-4 relative flex-1">
+                  <p class="text-xs text-surface-400 italic mb-1">"${previewEn}"</p>
+                  <p class="text-xs text-primary-400/80 font-medium">${previewVi}</p>
+                </div>
+
+                <div class="flex items-center justify-between text-surface-500 text-xs relative pt-2">
+                  <span class="flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.827-1.233L3 20l1.326-4.707A10.001 10.001 0 0112 4c4.97 0 9 3.582 9 8z"/></svg>
+                    ${d.lines.length} câu thoại
+                  </span>
+                  <span class="opacity-0 group-hover:opacity-100 transition-all transform translate-x-2 group-hover:translate-x-0 text-primary-400 font-bold flex items-center gap-1">Luyện tập <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/></svg></span>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+
+        <!-- Pagination Controls -->
+        ${totalPages > 1 ? `
+          <div class="flex items-center justify-center gap-3">
+            <button id="conv-prev" ${convCurrentPage === 1 ? 'disabled' : ''} 
+                    class="w-10 h-10 rounded-xl flex items-center justify-center bg-white/5 text-surface-400 hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed transition-all border border-white/5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            
+            <div class="flex items-center gap-2">
+              ${generatePageNumbers(convCurrentPage, totalPages).map(p => `
+                <button data-conv-page="${p}" 
+                        class="w-10 h-10 rounded-xl text-sm font-medium transition-all border
+                               ${p === convCurrentPage 
+                                 ? 'bg-primary-600 text-white border-primary-500 shadow-lg shadow-primary-600/25' 
+                                 : p === '...' 
+                                   ? 'bg-transparent text-surface-600 border-transparent cursor-default' 
+                                   : 'bg-white/5 text-surface-400 border-white/5 hover:bg-white/10'}">
+                  ${p}
+                </button>
+              `).join('')}
+            </div>
+
+            <button id="conv-next" ${convCurrentPage === totalPages ? 'disabled' : ''} 
+                    class="w-10 h-10 rounded-xl flex items-center justify-center bg-white/5 text-surface-400 hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed transition-all border border-white/5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+        ` : ''}
+      `}
     </div>
   `;
+}
+
+function generatePageNumbers(current, total) {
+  const pages = [];
+  if (total <= 7) {
+    for (let i = 1; i <= total; i++) pages.push(i);
+  } else {
+    pages.push(1);
+    if (current > 3) pages.push('...');
+    const start = Math.max(2, current - 1);
+    const end = Math.min(total - 1, current + 1);
+    for (let i = start; i <= end; i++) pages.push(i);
+    if (current < total - 2) pages.push('...');
+    pages.push(total);
+  }
+  return pages;
 }
 
 function renderPractice() {
@@ -183,6 +278,7 @@ function renderPractice() {
       <div class="flex items-start gap-3 opacity-60">
         ${speakerCircle(l.speaker)}
         <div>
+          <p class="text-xs font-bold text-surface-400 mb-0.5">${l.speaker}</p>
           <p class="text-surface-300 text-sm">${l.en}</p>
           <p class="text-surface-500 text-xs italic mt-0.5">${l.vi}</p>
         </div>
@@ -193,11 +289,11 @@ function renderPractice() {
   return `
     <div class="fade-in max-w-2xl mx-auto px-4 py-8">
       <div class="flex items-center justify-between mb-4">
-        <div>
-          <h2 class="text-xl font-bold text-surface-100">${dialogue.title}</h2>
+        <div class="flex-1 min-w-0 pr-4">
+          <h2 class="text-xl font-bold text-surface-100 truncate">${dialogue.title}</h2>
           <p class="text-surface-400 text-sm">Câu ${lineIndex + 1} / ${total}</p>
         </div>
-        <button id="btn-conv-exit" class="btn-hover text-surface-400 hover:text-red-400 text-sm px-3 py-1.5 rounded-lg border border-surface-700 transition-colors">
+        <button id="btn-conv-exit" class="btn-hover text-surface-400 hover:text-red-400 text-sm px-3 py-1.5 rounded-lg border border-surface-700 transition-colors shrink-0">
           Thoát
         </button>
       </div>
@@ -206,34 +302,42 @@ function renderPractice() {
         <div class="bg-primary-500 h-1.5 rounded-full transition-all" style="width: ${progress}%"></div>
       </div>
 
-      ${answers.length > 0 ? `
-        <div class="glass rounded-2xl p-5 mb-4 space-y-4">
-          ${transcript}
-        </div>
-      ` : ''}
+      <div class="space-y-4 mb-6">
+        ${answers.length > 0 ? `
+          <div class="glass rounded-2xl p-5 space-y-4 max-h-60 overflow-y-auto">
+            ${transcript}
+          </div>
+        ` : ''}
 
-      <div class="glass rounded-2xl p-5">
-        <div class="flex items-center gap-3 mb-3">
-          ${speakerCircle(current.speaker)}
-          <span class="text-surface-400 text-sm font-medium">Người ${current.speaker === 'A' ? 'A' : 'B'}</span>
-        </div>
-        <p class="text-surface-400 italic text-sm mb-4">${current.vi}</p>
+        <div class="glass rounded-2xl p-6 border-2 border-primary-500/20 shadow-xl shadow-primary-500/5">
+          <div class="flex items-center gap-3 mb-4">
+            ${speakerCircle(current.speaker)}
+            <span class="text-surface-400 text-sm font-bold">${current.speaker}</span>
+          </div>
+          
+          <div class="bg-white/5 rounded-xl p-4 mb-6">
+            <p class="text-surface-100 font-medium text-lg leading-relaxed">${current.vi}</p>
+          </div>
 
-        <div id="conv-typing-target" class="font-mono text-lg tracking-wide mb-4 min-h-[1.75rem]"></div>
+          <div id="conv-typing-target" class="font-mono text-xl tracking-wider mb-6 min-h-[1.75rem] break-words"></div>
 
-        <input
-          id="conv-input"
-          type="text"
-          autocomplete="off"
-          spellcheck="false"
-          placeholder="Gõ câu tiếng Anh vào đây..."
-          class="w-full bg-surface-800 border border-surface-600 rounded-xl px-4 py-3 text-surface-100 placeholder-surface-600 focus:border-primary-500/50 focus:outline-none transition-colors mb-4"
-        />
+          <div class="relative">
+            <input
+              id="conv-input"
+              type="text"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="Gõ lời thoại của ${current.speaker}..."
+              class="w-full bg-surface-800 border-2 border-surface-700 rounded-2xl px-5 py-4 text-surface-100 placeholder-surface-600 focus:border-primary-500 outline-none transition-all text-lg mb-6"
+            />
+          </div>
 
-        <div class="flex justify-end">
-          <button id="btn-conv-next" class="btn-hover bg-primary-600 hover:bg-primary-500 text-white font-semibold px-5 py-2 rounded-xl transition-colors">
-            Tiếp theo →
-          </button>
+          <div class="flex justify-end items-center gap-4">
+            <p class="text-xs text-surface-500 hidden sm:block">Nhấn <kbd class="px-1.5 py-0.5 rounded bg-surface-700 text-surface-300">Enter</kbd> để tiếp tục</p>
+            <button id="btn-conv-next" class="btn-hover bg-primary-600 hover:bg-primary-500 text-white font-bold px-8 py-3 rounded-xl transition-all shadow-lg shadow-primary-600/20">
+              Tiếp theo →
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -250,42 +354,51 @@ function renderComplete() {
 
   const breakdown = answers.map((ans, i) => {
     const statusIcon = ans.correct
-      ? `<span class="text-success-400 text-xs font-semibold">✓ Đúng</span>`
-      : `<span class="text-red-400 text-xs font-semibold">✗ Sai</span>`;
+      ? `<span class="text-success-400 text-xs font-bold flex items-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg> Đúng</span>`
+      : `<span class="text-red-400 text-xs font-bold flex items-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg> Sai</span>`;
     return `
-      <div class="border-b border-surface-700 pb-4 last:border-0 last:pb-0">
-        <div class="flex items-center gap-2 mb-1">
+      <div class="p-4 rounded-xl ${ans.correct ? 'bg-success-500/5' : 'bg-red-500/5'} border border-white/5">
+        <div class="flex items-center gap-2 mb-2">
           ${speakerCircle(ans.line.speaker)}
-          <span class="text-surface-400 text-xs">Người ${ans.line.speaker}</span>
+          <span class="text-surface-400 text-xs font-bold">${ans.line.speaker}</span>
           <span class="ml-auto">${statusIcon}</span>
         </div>
-        <p class="text-surface-200 text-sm ml-9">${ans.line.en}</p>
-        ${!ans.correct ? `<p class="text-red-400 text-sm ml-9 mt-0.5">Bạn gõ: "${ans.typed || '(trống)'}"</p>` : ''}
+        <p class="text-surface-100 text-sm font-medium mb-1">${ans.line.en}</p>
+        <p class="text-surface-500 text-xs italic mb-2">${ans.line.vi}</p>
+        ${!ans.correct ? `<p class="text-red-400 text-xs mt-2 pt-2 border-t border-white/5">Bạn gõ: <span class="italic">"${ans.typed || '(trống)'}"</span></p>` : ''}
       </div>
     `;
   }).join('');
 
   return `
-    <div class="fade-in max-w-2xl mx-auto px-4 py-8">
-      <div class="glass rounded-2xl p-5 mb-6 text-center">
-        <p class="text-surface-400 text-sm mb-1">Kết quả</p>
-        <p class="text-5xl font-bold text-surface-100 mb-2">${score}%</p>
-        <p class="text-2xl font-semibold ${gradeColor}">${grade}</p>
-        <p class="text-surface-500 text-sm mt-2">${correct} / ${total} câu đúng</p>
+    <div class="fade-in max-w-2xl mx-auto px-4 py-8 pb-20">
+      <div class="glass rounded-3xl p-8 mb-8 text-center shadow-2xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-accent-500"></div>
+        <p class="text-surface-400 text-sm font-semibold uppercase tracking-widest mb-2">Kết quả luyện tập</p>
+        <p class="text-6xl font-black text-surface-100 mb-2">${score}%</p>
+        <p class="text-2xl font-bold ${gradeColor} mb-4">${grade}</p>
+        <div class="flex justify-center gap-6 text-sm">
+          <div class="text-success-400 font-bold"><span class="text-surface-500 font-normal">Đúng:</span> ${correct}</div>
+          <div class="text-red-400 font-bold"><span class="text-surface-500 font-normal">Sai:</span> ${total - correct}</div>
+          <div class="text-surface-300 font-bold"><span class="text-surface-500 font-normal">Tổng:</span> ${total}</div>
+        </div>
       </div>
 
-      <div class="glass rounded-2xl p-5 mb-6">
-        <h3 class="text-surface-200 font-semibold mb-4">Chi tiết từng câu</h3>
-        <div class="space-y-4">
+      <div class="glass rounded-2xl p-6 mb-8">
+        <h3 class="text-surface-200 font-bold mb-4 flex items-center gap-2">
+          <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+          Chi tiết bài nói
+        </h3>
+        <div class="space-y-3">
           ${breakdown}
         </div>
       </div>
 
-      <div class="flex gap-3 justify-center">
-        <button id="btn-conv-retry" class="btn-hover bg-primary-600 hover:bg-primary-500 text-white font-semibold px-5 py-2 rounded-xl transition-colors">
+      <div class="flex gap-4 justify-center">
+        <button id="btn-conv-retry" class="btn-hover flex-1 max-w-[200px] bg-primary-600 hover:bg-primary-500 text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-primary-600/20">
           Luyện lại
         </button>
-        <button id="btn-conv-back" class="btn-hover bg-surface-700 hover:bg-surface-600 text-surface-100 font-semibold px-5 py-2 rounded-xl transition-colors">
+        <button id="btn-conv-back" class="btn-hover flex-1 max-w-[200px] bg-surface-700 hover:bg-surface-600 text-surface-100 font-bold py-3 rounded-xl transition-all border border-white/5">
           Chọn bài khác
         </button>
       </div>
@@ -294,6 +407,15 @@ function renderComplete() {
 }
 
 export function renderConversation() {
+  if (allDialogues.length === 0) {
+    return `
+      <div class="flex flex-col items-center justify-center min-h-[60vh]">
+        <div class="w-12 h-12 border-4 border-primary-500/20 border-t-primary-500 rounded-full animate-spin mb-4"></div>
+        <p class="text-surface-400">Đang tải dữ liệu hội thoại...</p>
+      </div>
+    `;
+  }
+
   if (convSession.phase === 'setup') return renderSetup();
   if (convSession.phase === 'practice') return renderPractice();
   if (convSession.phase === 'complete') return renderComplete();
@@ -355,28 +477,196 @@ function submitLine(rerenderFn) {
   }
 }
 
+function startPractice(dialogue, rerenderFn) {
+  convSession = {
+    phase: 'practice',
+    dialogue,
+    lineIndex: 0,
+    answers: [],
+    startTime: Date.now(),
+  };
+  rerenderFn();
+  setTimeout(() => {
+    renderTypingTarget();
+    const input = document.getElementById('conv-input');
+    if (input) input.focus();
+  }, 0);
+}
+
 export function initConversationEvents(allWords, rerenderFn) {
+  if (allDialogues.length === 0) {
+    fetchDialogues(rerenderFn);
+    return;
+  }
+
+  // Setup Events
+  document.getElementById('btn-conv-advanced')?.addEventListener('click', () => {
+    showAdvancedFilters = !showAdvancedFilters;
+    rerenderFn();
+  });
+
   document.querySelectorAll('.dialogue-card').forEach(card => {
     card.addEventListener('click', () => {
       const id = parseInt(card.dataset.id, 10);
-      const dialogue = dialogues.find(d => d.id === id);
-      if (!dialogue) return;
-      convSession = {
-        phase: 'practice',
-        dialogue,
-        lineIndex: 0,
-        answers: [],
-        startTime: Date.now(),
-      };
-      rerenderFn();
-      setTimeout(() => {
-        renderTypingTarget();
-        const input = document.getElementById('conv-input');
-        if (input) input.focus();
-      }, 0);
+      const dialogue = allDialogues.find(d => d.id === id);
+      if (dialogue) startPractice(dialogue, rerenderFn);
     });
   });
 
+  // Filter Events
+  const searchInput = document.getElementById('conv-filter-search');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      convFilters.keyword = e.target.value;
+      convCurrentPage = 1;
+      applyFilters();
+      rerenderFn();
+      const newSearch = document.getElementById('conv-filter-search');
+      if (newSearch) {
+        newSearch.focus();
+        newSearch.setSelectionRange(newSearch.value.length, newSearch.value.length);
+      }
+    });
+  }
+
+  // Dropdown Toggle handling
+  document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const content = trigger.nextElementSibling;
+      const isOpen = !content.classList.contains('hidden');
+      
+      // Close all other dropdowns
+      document.querySelectorAll('.dropdown-content').forEach(d => {
+        if (d !== content) {
+          d.classList.add('hidden');
+          d.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
+        }
+      });
+      
+      content.classList.toggle('hidden');
+      trigger.querySelector('svg').classList.toggle('rotate-180', !isOpen);
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  window.addEventListener('click', (e) => {
+    if (!e.target.closest('.dropdown-content') && !e.target.closest('.dropdown-trigger')) {
+      document.querySelectorAll('.dropdown-content').forEach(d => {
+        d.classList.add('hidden');
+        d.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
+      });
+    }
+  });
+
+  // Tag Selector handling (reused for dropdown items)
+  document.querySelectorAll('[data-filter]').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const type = item.dataset.filter;
+      const value = item.dataset.value;
+      const key = type === 'conv-filter-topics' ? 'topics' : 'levels';
+      
+      if (value === 'all') {
+        convFilters[key] = ['all'];
+      } else {
+        // Remove 'all' if it was selected
+        convFilters[key] = convFilters[key].filter(v => v !== 'all');
+        if (convFilters[key].includes(value)) {
+          convFilters[key] = convFilters[key].filter(v => v !== value);
+          if (convFilters[key].length === 0) convFilters[key] = ['all'];
+        } else {
+          convFilters[key].push(value);
+        }
+      }
+      
+      // Visual update inside dropdown only (no rerenderFn yet)
+      const dropdown = item.closest('.dropdown-content');
+      dropdown.querySelectorAll('[data-filter]').forEach(i => {
+        const val = i.dataset.value;
+        const isSel = convFilters[key].includes(val);
+        i.className = `flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-all ${isSel ? 'bg-primary-600/20 text-primary-100' : 'hover:bg-white/5 text-surface-400 hover:text-surface-200'}`;
+        const box = i.querySelector('.w-4');
+        box.className = `w-4 h-4 rounded border transition-colors ${isSel ? 'bg-primary-600 border-primary-500' : 'border-surface-600'} flex items-center justify-center shrink-0`;
+        box.innerHTML = isSel ? '<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>' : '';
+      });
+      
+      // Update trigger text
+      const isAll = convFilters[key].includes('all');
+      const triggerSpan = dropdown.previousElementSibling.querySelector('span');
+      triggerSpan.textContent = isAll ? 'Tất cả' : `${convFilters[key].length} đã chọn`;
+      triggerSpan.className = !isAll ? 'text-primary-400 font-medium' : '';
+    });
+  });
+
+  // Apply button handling
+  document.querySelectorAll('.btn-apply-filter').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      convCurrentPage = 1;
+      applyFilters();
+      rerenderFn();
+    });
+  });
+
+  const perPageSelect = document.getElementById('conv-per-page');
+  if (perPageSelect) {
+    perPageSelect.addEventListener('change', (e) => {
+      convItemsPerPage = parseInt(e.target.value);
+      convCurrentPage = 1;
+      rerenderFn();
+    });
+  }
+
+  // Reset Filters
+  const btnReset = document.getElementById('btn-reset-filters');
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      convFilters = { topics: ['all'], levels: ['all'], keyword: '' };
+      convCurrentPage = 1;
+      applyFilters();
+      rerenderFn();
+    });
+  }
+
+  // Pagination Events
+  document.getElementById('conv-prev')?.addEventListener('click', () => {
+    if (convCurrentPage > 1) {
+      convCurrentPage--;
+      rerenderFn();
+    }
+  });
+
+  document.getElementById('conv-next')?.addEventListener('click', () => {
+    const totalPages = Math.ceil(filteredDialogues.length / convItemsPerPage);
+    if (convCurrentPage < totalPages) {
+      convCurrentPage++;
+      rerenderFn();
+    }
+  });
+
+  document.querySelectorAll('[data-conv-page]').forEach(btn => {
+    const p = btn.dataset.convPage;
+    if (p !== '...') {
+      btn.addEventListener('click', () => {
+        convCurrentPage = parseInt(p);
+        rerenderFn();
+      });
+    }
+  });
+
+  // Random Button
+  const btnRandom = document.getElementById('btn-conv-random');
+  if (btnRandom) {
+    btnRandom.addEventListener('click', () => {
+      const pool = filteredDialogues.length > 0 ? filteredDialogues : allDialogues;
+      if (pool.length === 0) return;
+      const randomDialogue = pool[Math.floor(Math.random() * pool.length)];
+      startPractice(randomDialogue, rerenderFn);
+    });
+  }
+
+  // Practice Events
   const convInput = document.getElementById('conv-input');
   if (convInput) {
     convInput.addEventListener('input', () => {
@@ -401,7 +691,7 @@ export function initConversationEvents(allWords, rerenderFn) {
   const btnExit = document.getElementById('btn-conv-exit');
   if (btnExit) {
     btnExit.addEventListener('click', () => {
-      convSession = { phase: 'setup', dialogue: null, lineIndex: 0, answers: [], startTime: null };
+      resetConversationSession();
       rerenderFn();
     });
   }
@@ -409,27 +699,14 @@ export function initConversationEvents(allWords, rerenderFn) {
   const btnRetry = document.getElementById('btn-conv-retry');
   if (btnRetry) {
     btnRetry.addEventListener('click', () => {
-      const dialogue = convSession.dialogue;
-      convSession = {
-        phase: 'practice',
-        dialogue,
-        lineIndex: 0,
-        answers: [],
-        startTime: Date.now(),
-      };
-      rerenderFn();
-      setTimeout(() => {
-        renderTypingTarget();
-        const input = document.getElementById('conv-input');
-        if (input) input.focus();
-      }, 0);
+      if (convSession.dialogue) startPractice(convSession.dialogue, rerenderFn);
     });
   }
 
   const btnBack = document.getElementById('btn-conv-back');
   if (btnBack) {
     btnBack.addEventListener('click', () => {
-      convSession = { phase: 'setup', dialogue: null, lineIndex: 0, answers: [], startTime: null };
+      resetConversationSession();
       rerenderFn();
     });
   }
