@@ -187,6 +187,7 @@ export function renderStats(allWords) {
 function renderActivityStats() {
   const rev = store.getReviewStats();
   const conv = store.getConversationStats();
+  const sw = store.getSentenceWritingStats();
   const revAccuracy = rev.totalWords > 0 ? Math.round((rev.correctWords / rev.totalWords) * 100) : 0;
   const convAccuracy = conv.totalLines > 0 ? Math.round((conv.correctLines / conv.totalLines) * 100) : 0;
 
@@ -198,7 +199,7 @@ function renderActivityStats() {
     </div>`;
 
   return `
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 fade-in" style="animation-delay: 0.55s">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 fade-in" style="animation-delay: 0.55s">
       <!-- Review stats -->
       <div class="glass rounded-2xl p-5">
         <h3 class="text-sm font-semibold text-surface-300 mb-4 flex items-center gap-2">
@@ -249,6 +250,27 @@ function renderActivityStats() {
               <span class="text-sm font-bold ${convAccuracy >= 70 ? 'text-success-400' : convAccuracy >= 50 ? 'text-warning-400' : 'text-red-400'}">${convAccuracy}%</span>
             </div>
             <div class="text-xs text-surface-500 mt-2 text-right">${conv.correctLines}/${conv.totalLines} câu đúng</div>`}
+      </div>
+
+      <!-- Sentence writing stats -->
+      <div class="glass rounded-2xl p-5">
+        <h3 class="text-sm font-semibold text-surface-300 mb-4 flex items-center gap-2">
+          <svg class="w-4 h-4 text-success-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+          </svg>
+          Thống kê viết câu
+        </h3>
+        <div class="flex flex-col items-center justify-center py-3">
+          <div class="text-5xl font-black text-success-400 mb-2">${sw.total.toLocaleString()}</div>
+          <div class="text-sm text-surface-400 text-center">câu đã viết thành công</div>
+          ${sw.total === 0
+            ? `<p class="text-xs text-surface-500 mt-4 text-center">Vào mục <a href="#/write-sentence" class="text-primary-400 hover:underline">Viết câu</a> để luyện tập!</p>`
+            : `<div class="mt-4 flex items-center gap-2 px-3 py-1.5 bg-success-500/10 rounded-xl border border-success-500/20">
+                <svg class="w-3.5 h-3.5 text-success-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-xs text-success-400 font-medium">Tiếp tục luyện tập!</span>
+              </div>`}
+        </div>
       </div>
     </div>
   `;

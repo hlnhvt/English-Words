@@ -10,6 +10,7 @@ import { renderLearned, initLearnedEvents } from './pages/learned.js';
 import { renderAllWords, initAllWordsEvents } from './pages/all-words.js';
 import { renderBookmarks, initBookmarksEvents } from './pages/bookmarks.js';
 import { renderConversation, initConversationEvents, resetConversationSession } from './pages/conversation.js';
+import { renderWriteSentence, initWriteSentenceEvents } from './pages/write-sentence.js';
 
 let allWords = [];
 
@@ -84,6 +85,9 @@ function initRouter() {
     })
     .addRoute('/conversation', () => {
       renderPage(renderConversation, initConversationEvents);
+    })
+    .addRoute('/write-sentence', () => {
+      renderPage(renderWriteSentence, initWriteSentenceEvents);
     });
 
   // Update header on route change

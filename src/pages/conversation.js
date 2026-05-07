@@ -19,6 +19,7 @@ let convSession = {
   lineIndex: 0,
   answers: [],
   startTime: null,
+  speakerFilter: 'both', // 'both' | speaker name (e.g. 'A' | 'B')
 };
 
 const LINE_TIME_SEC = 90;
@@ -87,9 +88,10 @@ function autoAdvanceLine(rerenderFn) {
   const isLast = convSession.lineIndex >= convSession.dialogue.lines.length - 1;
   if (isLast) {
     convSession.phase = 'complete';
-    const total = convSession.answers.length;
-    const correctCount = convSession.answers.filter(a => a.correct).length;
-    const score = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+    const typedAnswers = convSession.answers.filter(a => !a.autoSkipped);
+    const total = typedAnswers.length;
+    const correctCount = typedAnswers.filter(a => a.correct).length;
+    const score = total > 0 ? Math.round((correctCount / total) * 100) : 100;
     store.logConversationSession({
       dialogueId: convSession.dialogue.id,
       title: convSession.dialogue.title,
@@ -134,7 +136,7 @@ function applyFilters() {
 }
 
 export function resetConversationSession() {
-  convSession = { phase: 'setup', dialogue: null, lineIndex: 0, answers: [], startTime: null };
+  convSession = { phase: 'setup', dialogue: null, lineIndex: 0, answers: [], startTime: null, speakerFilter: 'both' };
 }
 
 function getLevelClass(level) {
@@ -398,6 +400,9 @@ function renderPractice() {
   const current = dialogue.lines[lineIndex];
   const progress = Math.round((lineIndex / total) * 100);
   const smap = buildSpeakerMap(dialogue.lines);
+  const speakerFilter = convSession.speakerFilter || 'both';
+  const uniqueSpeakers = Object.keys(smap);
+  const isTypingLine = speakerFilter === 'both' || current.speaker === speakerFilter;
 
   const transcript = answers.map((ans, i) => {
     const l = ans.line;
@@ -415,14 +420,36 @@ function renderPractice() {
 
   return `
     <div class="fade-in max-w-2xl mx-auto px-4 py-8">
-      <div class="flex items-center justify-between mb-4">
-        <div class="flex-1 min-w-0 pr-4">
+      <div class="flex items-start justify-between mb-4 gap-3">
+        <div class="flex-1 min-w-0">
           <h2 class="text-xl font-bold text-surface-100 truncate">${dialogue.title}</h2>
           <p class="text-surface-400 text-sm">Câu ${lineIndex + 1} / ${total}</p>
         </div>
-        <button id="btn-conv-exit" class="btn-hover text-surface-400 hover:text-red-400 text-sm px-3 py-1.5 rounded-lg border border-surface-700 transition-colors shrink-0">
-          Thoát
-        </button>
+        <div class="flex items-center gap-2 shrink-0">
+          <!-- Speaker filter toggle -->
+          <div class="flex items-center gap-0.5 bg-surface-800/80 rounded-xl p-1">
+            ${uniqueSpeakers[0] ? `
+              <button data-speaker-filter="${uniqueSpeakers[0]}"
+                class="px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all
+                       ${speakerFilter === uniqueSpeakers[0] ? 'bg-primary-600 text-white shadow-sm' : 'text-surface-400 hover:text-surface-200'}">
+                Người ${uniqueSpeakers[0]}
+              </button>` : ''}
+            <button data-speaker-filter="both"
+              class="px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all
+                     ${speakerFilter === 'both' ? 'bg-primary-600 text-white shadow-sm' : 'text-surface-400 hover:text-surface-200'}">
+              Cả hai
+            </button>
+            ${uniqueSpeakers[1] ? `
+              <button data-speaker-filter="${uniqueSpeakers[1]}"
+                class="px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all
+                       ${speakerFilter === uniqueSpeakers[1] ? 'bg-primary-600 text-white shadow-sm' : 'text-surface-400 hover:text-surface-200'}">
+                Người ${uniqueSpeakers[1]}
+              </button>` : ''}
+          </div>
+          <button id="btn-conv-exit" class="btn-hover text-surface-400 hover:text-red-400 text-sm px-3 py-1.5 rounded-lg border border-surface-700 transition-colors">
+            Thoát
+          </button>
+        </div>
       </div>
 
       <div class="w-full bg-surface-800 rounded-full h-1.5 mb-6">
@@ -436,6 +463,7 @@ function renderPractice() {
           </div>
         ` : ''}
 
+        ${isTypingLine ? `
         <div class="glass rounded-2xl p-6 border-2 border-primary-500/20 shadow-xl shadow-primary-500/5">
           <div class="flex items-center gap-3 mb-4">
             ${speakerCircle(current.speaker, dialogue.id, smap[current.speaker])}
@@ -448,7 +476,7 @@ function renderPractice() {
               Nghe
             </button>
           </div>
-          
+
           <div class="bg-white/5 rounded-xl p-4 mb-4">
             <p class="text-surface-100 font-medium text-lg leading-relaxed">${current.vi}</p>
           </div>
@@ -483,6 +511,23 @@ function renderPractice() {
             </button>
           </div>
         </div>
+        ` : `
+        <div class="glass rounded-2xl p-5 border-2 border-surface-700/20 opacity-80">
+          <div class="flex items-center gap-3 mb-3">
+            ${speakerCircle(current.speaker, dialogue.id, smap[current.speaker])}
+            <span class="text-surface-400 text-sm font-bold">${current.speaker}</span>
+            <div class="ml-auto flex items-center gap-1 text-surface-600">
+              <div class="w-1.5 h-1.5 rounded-full bg-surface-600 animate-pulse"></div>
+              <div class="w-1.5 h-1.5 rounded-full bg-surface-600 animate-pulse" style="animation-delay:0.2s"></div>
+              <div class="w-1.5 h-1.5 rounded-full bg-surface-600 animate-pulse" style="animation-delay:0.4s"></div>
+            </div>
+          </div>
+          <div class="bg-white/5 rounded-xl p-4">
+            <p class="text-surface-300 font-medium leading-relaxed">${current.en}</p>
+            <p class="text-surface-500 text-sm italic mt-1">${current.vi}</p>
+          </div>
+        </div>
+        `}
       </div>
     </div>
   `;
@@ -490,14 +535,27 @@ function renderPractice() {
 
 function renderComplete() {
   const { dialogue, answers } = convSession;
-  const total = answers.length;
-  const correct = answers.filter(a => a.correct).length;
-  const score = total > 0 ? Math.round((correct / total) * 100) : 0;
+  const smap = buildSpeakerMap(dialogue.lines);
+  const typedAnswers = answers.filter(a => !a.autoSkipped);
+  const total = typedAnswers.length;
+  const correct = typedAnswers.filter(a => a.correct).length;
+  const score = total > 0 ? Math.round((correct / total) * 100) : 100;
   const grade = getGrade(score);
   const gradeColor = getGradeColor(score);
-  const smap = buildSpeakerMap(dialogue.lines);
 
   const breakdown = answers.map((ans, i) => {
+    if (ans.autoSkipped) {
+      return `
+        <div class="p-3 rounded-xl bg-white/3 border border-white/5 opacity-50">
+          <div class="flex items-center gap-2">
+            ${speakerCircle(ans.line.speaker, dialogue.id, smap[ans.line.speaker])}
+            <span class="text-surface-500 text-xs font-bold">${ans.line.speaker}</span>
+            <span class="ml-auto text-[10px] text-surface-600 italic">Tự động</span>
+          </div>
+          <p class="text-surface-400 text-sm mt-1.5">${ans.line.en}</p>
+        </div>
+      `;
+    }
     const statusIcon = ans.correct
       ? `<span class="text-success-400 text-xs font-bold flex items-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg> Đúng</span>`
       : `<span class="text-red-400 text-xs font-bold flex items-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg> Sai</span>`;
@@ -615,9 +673,10 @@ function submitLine(rerenderFn) {
   setTimeout(() => {
     if (isLast) {
       convSession.phase = 'complete';
-      const total = convSession.answers.length;
-      const correctCount = convSession.answers.filter(a => a.correct).length;
-      const score = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+      const typedAnswers = convSession.answers.filter(a => !a.autoSkipped);
+      const total = typedAnswers.length;
+      const correctCount = typedAnswers.filter(a => a.correct).length;
+      const score = total > 0 ? Math.round((correctCount / total) * 100) : 100;
       store.logConversationSession({
         dialogueId: convSession.dialogue.id,
         title: convSession.dialogue.title,
@@ -640,12 +699,14 @@ function submitLine(rerenderFn) {
 }
 
 function startPractice(dialogue, rerenderFn) {
+  const savedFilter = convSession.speakerFilter || 'both';
   convSession = {
     phase: 'practice',
     dialogue,
     lineIndex: 0,
     answers: [],
     startTime: Date.now(),
+    speakerFilter: savedFilter,
   };
   rerenderFn();
   setTimeout(() => {
@@ -884,12 +945,63 @@ export function initConversationEvents(allWords, rerenderFn) {
     });
   }
 
+  // Speaker filter toggle buttons
+  document.querySelectorAll('[data-speaker-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const newFilter = btn.dataset.speakerFilter;
+      if (newFilter === convSession.speakerFilter) return;
+      clearAllTimers();
+      convSession.speakerFilter = newFilter;
+      convSession.lineIndex = 0;
+      convSession.answers = [];
+      convSession.startTime = Date.now();
+      rerenderFn();
+      setTimeout(() => {
+        renderTypingTarget();
+        document.getElementById('conv-input')?.focus();
+      }, 0);
+    });
+  });
+
   if (convSession.phase === 'practice') {
-    setTimeout(() => {
-      renderTypingTarget();
-      const input = document.getElementById('conv-input');
-      if (input) input.focus();
-      startLineCountdown(rerenderFn);
-    }, 0);
+    const filter = convSession.speakerFilter || 'both';
+    const currentLine = convSession.dialogue?.lines[convSession.lineIndex];
+    const isAutoReveal = filter !== 'both' && currentLine && currentLine.speaker !== filter;
+
+    if (isAutoReveal) {
+      clearAllTimers();
+      setTimeout(() => {
+        convSession.answers.push({ line: currentLine, typed: currentLine.en, correct: true, autoSkipped: true });
+        const isLast = convSession.lineIndex >= convSession.dialogue.lines.length - 1;
+        if (isLast) {
+          convSession.phase = 'complete';
+          const typedAnswers = convSession.answers.filter(a => !a.autoSkipped);
+          const total = typedAnswers.length;
+          const correctCount = typedAnswers.filter(a => a.correct).length;
+          const score = total > 0 ? Math.round((correctCount / total) * 100) : 100;
+          store.logConversationSession({
+            dialogueId: convSession.dialogue.id,
+            title: convSession.dialogue.title,
+            score, correctLines: correctCount, totalLines: total,
+            date: new Date().toISOString(),
+          });
+          rerenderFn();
+        } else {
+          convSession.lineIndex++;
+          rerenderFn();
+          setTimeout(() => {
+            renderTypingTarget();
+            document.getElementById('conv-input')?.focus();
+          }, 0);
+        }
+      }, 600);
+    } else {
+      setTimeout(() => {
+        renderTypingTarget();
+        const input = document.getElementById('conv-input');
+        if (input) input.focus();
+        startLineCountdown(rerenderFn);
+      }, 0);
+    }
   }
 }

@@ -11,6 +11,7 @@ const STORE_KEYS = {
   BOOKMARKS: 'vocab_bookmarks',
   CONVERSATION: 'vocab_conversation_sessions',
   REVIEW_SESSIONS: 'vocab_review_sessions',
+  SENTENCE_WRITING: 'vocab_sentence_writing',
 };
 
 const DEFAULT_SETTINGS = {
@@ -396,6 +397,17 @@ class Store {
       totalWords: sessions.reduce((a, s) => a + (s.total || 0), 0),
       correctWords: sessions.reduce((a, s) => a + (s.correct || 0), 0),
     };
+  }
+
+  // Sentence writing
+  logSentenceWritten() {
+    const data = this._get(STORE_KEYS.SENTENCE_WRITING) || { total: 0 };
+    data.total = (data.total || 0) + 1;
+    this._set(STORE_KEYS.SENTENCE_WRITING, data);
+  }
+
+  getSentenceWritingStats() {
+    return this._get(STORE_KEYS.SENTENCE_WRITING) || { total: 0 };
   }
 
   // Export/Import
