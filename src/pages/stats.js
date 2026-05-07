@@ -146,6 +146,9 @@ export function renderStats(allWords) {
       <!-- Activity Stats: Review + Conversation -->
       ${renderActivityStats()}
 
+      <!-- Proficiency Assessment -->
+      ${renderProficiencyAssessment(allWords)}
+
       <!-- Data Management -->
       <div class="fade-in glass rounded-2xl p-5" style="animation-delay: 0.6s">
         <h3 class="text-sm font-semibold text-surface-300 mb-4 flex items-center gap-2">
@@ -270,6 +273,242 @@ function renderActivityStats() {
                 <svg class="w-3.5 h-3.5 text-success-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                 <span class="text-xs text-success-400 font-medium">Tiếp tục luyện tập!</span>
               </div>`}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+const LEVEL_ORDER = { 'Beginner': -1, A1: 0, A2: 1, B1: 2, B2: 3, C1: 4 };
+
+function getCefrDescription(level) {
+  return {
+    'Beginner': 'Đang ở bước khởi đầu. Hãy học đều đặn để xây dựng nền tảng vững chắc.',
+    A1: 'Trình độ sơ cấp. Hiểu và sử dụng được các từ và cụm từ cơ bản nhất.',
+    A2: 'Tiền trung cấp. Giao tiếp được trong các tình huống quen thuộc hàng ngày.',
+    B1: 'Trung cấp. Xử lý được hầu hết các tình huống thực tế khi đi đến vùng nói tiếng Anh.',
+    B2: 'Trung cao cấp. Giao tiếp lưu loát, tự nhiên với người bản xứ.',
+    C1: 'Cao cấp. Sử dụng tiếng Anh linh hoạt, hiệu quả trong học thuật và công việc.',
+  }[level] || '';
+}
+
+function getCefrLevelName(level) {
+  return { A1: 'Sơ cấp', A2: 'Tiền trung cấp', B1: 'Trung cấp', B2: 'Trung cao cấp', C1: 'Cao cấp' }[level] || level;
+}
+
+function calculateProficiency(allWords) {
+  const stats = store.getStats(allWords);
+  const rev = store.getReviewStats();
+  const conv = store.getConversationStats();
+  const sw = store.getSentenceWritingStats();
+  const dailyLog = store.getDailyLog();
+
+  const levels = ['A1', 'A2', 'B1', 'B2', 'C1'];
+  const coverage = {};
+  for (const level of levels) {
+    const d = stats.byLevel[level];
+    coverage[level] = d.total > 0 ? d.learned / d.total : 0;
+  }
+
+  const learnedCount = stats.learnedWords;
+  const masteryRatio = learnedCount > 0 ? stats.masteredWords / learnedCount : 0;
+  const revAccuracy = rev.totalWords > 0 ? rev.correctWords / rev.totalWords : null;
+  const convAccuracy = conv.totalLines > 0 ? conv.correctLines / conv.totalLines : null;
+  const writingScore = Math.min(sw.total / 100, 1);
+
+  const today = new Date();
+  let activeDays30 = 0;
+  for (let i = 0; i < 30; i++) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    const key = d.toISOString().split('T')[0];
+    const l = dailyLog[key];
+    if (l && (l.wordsLearned > 0 || l.wordsReviewed > 0)) activeDays30++;
+  }
+  const consistencyScore = activeDays30 / 30;
+
+  const levelWeights = { A1: 1, A2: 2, B1: 3, B2: 4, C1: 5 };
+  const vocabScore = levels.reduce((s, l) => s + coverage[l] * levelWeights[l], 0) / 15;
+
+  const practiceComponents = [writingScore];
+  if (revAccuracy !== null) practiceComponents.push(revAccuracy);
+  if (convAccuracy !== null) practiceComponents.push(convAccuracy);
+  const practiceScore = practiceComponents.reduce((a, b) => a + b, 0) / practiceComponents.length;
+
+  const overallScore = Math.round(
+    (vocabScore * 0.5 + masteryRatio * 0.2 + practiceScore * 0.2 + consistencyScore * 0.1) * 100
+  );
+
+  const cefrThresholds = [
+    { level: 'C1', checks: { A1: 0.80, A2: 0.70, B1: 0.50, B2: 0.35, C1: 0.20 } },
+    { level: 'B2', checks: { A1: 0.70, A2: 0.55, B1: 0.35, B2: 0.20 } },
+    { level: 'B1', checks: { A1: 0.60, A2: 0.45, B1: 0.20 } },
+    { level: 'A2', checks: { A1: 0.50, A2: 0.20 } },
+    { level: 'A1', checks: { A1: 0.25 } },
+  ];
+  let cefrLevel = 'Beginner';
+  for (const { level, checks } of cefrThresholds) {
+    if (Object.entries(checks).every(([l, t]) => coverage[l] >= t)) { cefrLevel = level; break; }
+  }
+
+  const strengths = [];
+  const suggestions = [];
+  if (coverage.A1 >= 0.75) strengths.push('Vốn từ A1 rất vững chắc');
+  if (coverage.A2 >= 0.65) strengths.push('Phủ rộng từ vựng A2');
+  if (masteryRatio >= 0.5) strengths.push('Tỷ lệ thành thạo cao');
+  if (revAccuracy !== null && revAccuracy >= 0.75) strengths.push('Độ chính xác ôn tập xuất sắc');
+  if (convAccuracy !== null && convAccuracy >= 0.75) strengths.push('Kỹ năng giao tiếp tốt');
+  if (consistencyScore >= 0.5) strengths.push('Học đều đặn, kiên trì');
+  if (sw.total >= 50) strengths.push(`Đã viết ${sw.total} câu thành công`);
+
+  if (coverage.A1 < 0.65) suggestions.push('Tập trung học thêm từ vựng A1');
+  else if (coverage.A2 < 0.55) suggestions.push('Tăng cường từ vựng A2');
+  else if (coverage.B1 < 0.35) suggestions.push('Mở rộng vốn từ B1');
+  else if (coverage.B2 < 0.25) suggestions.push('Chinh phục thêm từ vựng B2');
+  if (masteryRatio < 0.4) suggestions.push('Ôn tập đều đặn để tăng độ thành thạo');
+  if (consistencyScore < 0.3) suggestions.push('Học ít nhất 15 phút mỗi ngày');
+  if (sw.total < 20) suggestions.push('Luyện viết câu để củng cố ngữ pháp');
+  if (conv.total < 5) suggestions.push('Thực hành giao tiếp nhiều hơn');
+
+  return {
+    cefrLevel, overallScore, coverage, masteryRatio,
+    revAccuracy, convAccuracy, writingScore, consistencyScore,
+    activeDays30, learnedCount, totalWords: stats.totalWords,
+    strengths: strengths.slice(0, 3),
+    suggestions: suggestions.slice(0, 3),
+  };
+}
+
+function renderProficiencyAssessment(allWords) {
+  const p = calculateProficiency(allWords);
+  const currentLevelIdx = LEVEL_ORDER[p.cefrLevel];
+
+  const LEVEL_STYLE = {
+    'Beginner': { text: 'text-surface-400', bg: 'bg-surface-700/30', border: 'border-surface-600/30' },
+    A1: { text: 'text-sky-400',     bg: 'bg-sky-500/10',     border: 'border-sky-500/20' },
+    A2: { text: 'text-cyan-400',    bg: 'bg-cyan-500/10',    border: 'border-cyan-500/20' },
+    B1: { text: 'text-success-400', bg: 'bg-success-500/10', border: 'border-success-500/20' },
+    B2: { text: 'text-warning-400', bg: 'bg-warning-500/10', border: 'border-warning-500/20' },
+    C1: { text: 'text-primary-400', bg: 'bg-primary-500/10', border: 'border-primary-500/20' },
+  };
+  const ls = LEVEL_STYLE[p.cefrLevel] || LEVEL_STYLE['Beginner'];
+  const levels = ['A1', 'A2', 'B1', 'B2', 'C1'];
+
+  const bar = (label, value, colorClass) => `
+    <div class="mb-2.5">
+      <div class="flex justify-between text-xs mb-1">
+        <span class="text-surface-400">${label}</span>
+        <span class="text-surface-300 font-medium">${Math.round(value * 100)}%</span>
+      </div>
+      <div class="w-full h-1.5 bg-surface-800 rounded-full overflow-hidden">
+        <div class="h-full rounded-full ${colorClass} transition-all" style="width:${Math.round(value * 100)}%"></div>
+      </div>
+    </div>`;
+
+  const circumference = 2 * Math.PI * 42;
+
+  return `
+    <div class="fade-in glass rounded-2xl p-5 mb-6" style="animation-delay: 0.58s">
+      <h3 class="text-sm font-semibold text-surface-300 mb-5 flex items-center gap-2">
+        <svg class="w-4 h-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+        </svg>
+        Đánh giá năng lực hiện tại
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Left: circular score + level badge -->
+        <div class="flex flex-col items-center justify-center text-center">
+          <div class="relative mb-4">
+            <svg class="w-28 h-28 -rotate-90" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" stroke="currentColor" class="text-surface-800" stroke-width="8" fill="none"/>
+              <circle cx="50" cy="50" r="42" stroke="currentColor" class="${ls.text}" stroke-width="8" fill="none"
+                      stroke-linecap="round"
+                      stroke-dasharray="${circumference.toFixed(1)}"
+                      stroke-dashoffset="${(circumference * (1 - p.overallScore / 100)).toFixed(1)}"/>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+              <span class="text-2xl font-black ${ls.text}">${p.overallScore}</span>
+              <span class="text-[10px] text-surface-500">/ 100</span>
+            </div>
+          </div>
+
+          <div class="px-5 py-2 rounded-xl ${ls.bg} border ${ls.border} mb-3">
+            <span class="text-xl font-black ${ls.text}">${p.cefrLevel === 'Beginner' ? 'Mới bắt đầu' : p.cefrLevel}</span>
+          </div>
+
+          <p class="text-xs text-surface-400 leading-relaxed max-w-[200px]">
+            ${getCefrDescription(p.cefrLevel)}
+          </p>
+
+          <div class="mt-3 text-xs text-surface-500">
+            ${p.learnedCount.toLocaleString()} / ${p.totalWords.toLocaleString()} từ đã tiếp cận
+          </div>
+        </div>
+
+        <!-- Middle: coverage bars + quality metrics -->
+        <div>
+          <p class="text-xs font-semibold text-surface-400 mb-3">Phủ sóng từ vựng theo cấp</p>
+          ${levels.map(level => {
+            const idx = LEVEL_ORDER[level];
+            const barColor = idx <= currentLevelIdx ? 'bg-success-500' : p.coverage[level] > 0 ? 'bg-primary-500' : 'bg-surface-700';
+            return bar(level, p.coverage[level], barColor);
+          }).join('')}
+
+          <div class="border-t border-white/5 mt-4 pt-4">
+            <p class="text-xs font-semibold text-surface-400 mb-3">Chỉ số chất lượng</p>
+            ${bar('Thành thạo', p.masteryRatio, 'bg-success-500')}
+            ${p.revAccuracy !== null ? bar('Chính xác ôn tập', p.revAccuracy, 'bg-accent-500') : ''}
+            ${p.convAccuracy !== null ? bar('Chính xác giao tiếp', p.convAccuracy, 'bg-primary-500') : ''}
+            ${bar(`Nhất quán (${p.activeDays30}/30 ngày)`, p.consistencyScore, 'bg-warning-500')}
+          </div>
+        </div>
+
+        <!-- Right: strengths, suggestions, CEFR scale -->
+        <div>
+          ${p.strengths.length > 0 ? `
+            <p class="text-xs font-semibold text-surface-400 mb-2">Điểm mạnh</p>
+            <div class="space-y-1.5 mb-4">
+              ${p.strengths.map(s => `
+                <div class="flex items-start gap-2 text-xs">
+                  <svg class="w-3.5 h-3.5 text-success-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-surface-300">${s}</span>
+                </div>`).join('')}
+            </div>` : ''}
+
+          ${p.suggestions.length > 0 ? `
+            <p class="text-xs font-semibold text-surface-400 mb-2">Gợi ý cải thiện</p>
+            <div class="space-y-1.5 mb-4">
+              ${p.suggestions.map(s => `
+                <div class="flex items-start gap-2 text-xs">
+                  <svg class="w-3.5 h-3.5 text-warning-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  <span class="text-surface-300">${s}</span>
+                </div>`).join('')}
+            </div>` : ''}
+
+          <p class="text-xs font-semibold text-surface-400 mb-2">Thang bậc CEFR</p>
+          <div class="space-y-1">
+            ${['C1', 'B2', 'B1', 'A2', 'A1'].map(level => {
+              const isCurrent = level === p.cefrLevel;
+              const isAchieved = LEVEL_ORDER[level] <= currentLevelIdx && currentLevelIdx >= 0;
+              const ls2 = LEVEL_STYLE[level];
+              return `
+                <div class="flex items-center gap-2 px-2 py-1.5 rounded-lg ${isCurrent ? `${ls2.bg} border ${ls2.border}` : ''}">
+                  <span class="text-[10px] px-1.5 py-0.5 rounded level-${level.toLowerCase()} text-white font-bold w-8 text-center shrink-0">${level}</span>
+                  <span class="text-xs flex-1 ${isCurrent ? ls2.text : isAchieved ? 'text-surface-300' : 'text-surface-600'}">${getCefrLevelName(level)}</span>
+                  ${isCurrent
+                    ? `<span class="text-[10px] ${ls2.text} font-bold shrink-0">◀ Bạn</span>`
+                    : isAchieved
+                      ? `<svg class="w-3 h-3 text-success-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>`
+                      : ''}
+                </div>`;
+            }).join('')}
+          </div>
         </div>
       </div>
     </div>
