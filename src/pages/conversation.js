@@ -155,11 +155,48 @@ function getGradeColor(score) {
   return 'text-red-400';
 }
 
-function speakerCircle(speaker) {
-  // Use first letter of name
-  const letter = speaker.charAt(0).toUpperCase();
-  const isA = speaker.charCodeAt(0) % 2 === 0; // Pseudo-random color
-  return `<span title="${speaker}" class="inline-flex items-center justify-center w-8 h-8 rounded-full ${isA ? 'bg-primary-600/20 text-primary-400' : 'bg-accent-600/20 text-accent-400'} font-bold text-sm flex-shrink-0 border border-white/5 shadow-sm cursor-help transition-transform hover:scale-110">${letter}</span>`;
+// 20 pairs where index-0 and index-1 are always different files
+const AVATAR_PAIRS = [
+  ['female_1', 'male_3'],
+  ['female_3', 'male_4'],
+  ['male_3',   'female_3'],
+  ['male_4',   'male_5'],
+  ['male_5',   'female_3'],
+  ['female_1', 'male_4'],
+  ['female_3', 'male_5'],
+  ['male_3',   'female_1'],
+  ['male_4',   'female_3'],
+  ['male_5',   'female_1'],
+  ['female_1', 'male_5'],
+  ['female_3', 'male_3'],
+  ['male_3',   'male_4'],
+  ['male_4',   'female_1'],
+  ['male_5',   'male_3'],
+  ['female_3', 'female_1'],
+  ['male_3',   'male_5'],
+  ['male_4',   'male_3'],
+  ['male_5',   'male_4'],
+  ['female_1', 'female_3'],
+];
+
+// Build speaker→index map for a dialogue (first seen = 0, second = 1)
+function buildSpeakerMap(lines) {
+  const map = {};
+  for (const line of lines) {
+    if (map[line.speaker] === undefined) {
+      map[line.speaker] = Object.keys(map).length; // 0 or 1
+      if (Object.keys(map).length === 2) break;
+    }
+  }
+  return map;
+}
+
+function speakerCircle(speaker, dialogueId, speakerIdx) {
+  const pair = AVATAR_PAIRS[((dialogueId || 1) - 1) % AVATAR_PAIRS.length];
+  const avatar = pair[speakerIdx ?? 0];
+  return `<span title="${speaker}" class="inline-flex items-center justify-center w-8 h-8 rounded-full overflow-hidden flex-shrink-0 border border-white/10 shadow-sm bg-surface-800">
+    <img src="/avatar/${avatar}.svg" alt="${speaker}" class="w-full h-full object-cover"/>
+  </span>`;
 }
 
 function renderSetup() {
@@ -280,8 +317,10 @@ function renderSetup() {
                     <span class="text-[10px] px-2.5 py-1 rounded-lg ${getLevelClass(d.level)} font-bold text-white shadow-sm">${d.level}</span>
                   </div>
                   <div class="flex -space-x-2">
-                    ${speakerCircle(d.lines[0].speaker)}
-                    ${speakerCircle(d.lines[1].speaker)}
+                    ${(() => {
+                      const smap = buildSpeakerMap(d.lines);
+                      return Object.keys(smap).map(sp => speakerCircle(sp, d.id, smap[sp])).join('');
+                    })()}
                   </div>
                 </div>
 
@@ -358,12 +397,13 @@ function renderPractice() {
   const total = dialogue.lines.length;
   const current = dialogue.lines[lineIndex];
   const progress = Math.round((lineIndex / total) * 100);
+  const smap = buildSpeakerMap(dialogue.lines);
 
   const transcript = answers.map((ans, i) => {
     const l = ans.line;
     return `
       <div class="flex items-start gap-3 opacity-60">
-        ${speakerCircle(l.speaker)}
+        ${speakerCircle(l.speaker, dialogue.id, smap[l.speaker])}
         <div>
           <p class="text-xs font-bold text-surface-400 mb-0.5">${l.speaker}</p>
           <p class="text-surface-300 text-sm">${l.en}</p>
@@ -398,7 +438,7 @@ function renderPractice() {
 
         <div class="glass rounded-2xl p-6 border-2 border-primary-500/20 shadow-xl shadow-primary-500/5">
           <div class="flex items-center gap-3 mb-4">
-            ${speakerCircle(current.speaker)}
+            ${speakerCircle(current.speaker, dialogue.id, smap[current.speaker])}
             <span class="text-surface-400 text-sm font-bold">${current.speaker}</span>
             <button id="btn-conv-speak" title="Nghe phát âm"
               class="ml-auto flex items-center gap-1.5 text-xs text-surface-400 hover:text-primary-400 bg-white/5 hover:bg-primary-500/10 border border-white/5 hover:border-primary-500/30 px-3 py-1.5 rounded-lg transition-all">
@@ -455,6 +495,7 @@ function renderComplete() {
   const score = total > 0 ? Math.round((correct / total) * 100) : 0;
   const grade = getGrade(score);
   const gradeColor = getGradeColor(score);
+  const smap = buildSpeakerMap(dialogue.lines);
 
   const breakdown = answers.map((ans, i) => {
     const statusIcon = ans.correct
@@ -463,7 +504,7 @@ function renderComplete() {
     return `
       <div class="p-4 rounded-xl ${ans.correct ? 'bg-success-500/5' : 'bg-red-500/5'} border border-white/5">
         <div class="flex items-center gap-2 mb-2">
-          ${speakerCircle(ans.line.speaker)}
+          ${speakerCircle(ans.line.speaker, dialogue.id, smap[ans.line.speaker])}
           <span class="text-surface-400 text-xs font-bold">${ans.line.speaker}</span>
           <span class="ml-auto">${statusIcon}</span>
         </div>
