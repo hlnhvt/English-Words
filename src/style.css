@@ -77,6 +77,7 @@ body.light-mode {
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -84,6 +85,15 @@ body.light-mode {
 ::-webkit-scrollbar-thumb {
   background: var(--color-surface-700);
   border-radius: 3px;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 /* Card flip animation */

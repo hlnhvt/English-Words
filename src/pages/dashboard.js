@@ -1,4 +1,5 @@
 import store from '../store.js';
+import { renderWordModal, initWordModalEvents } from '../components/modal.js';
 
 /**
  * Render the Dashboard page
@@ -17,7 +18,7 @@ export function renderDashboard(allWords) {
     .slice(0, 8)
     .map(([word, p]) => {
       const wordData = allWords.find(w => w.word === word);
-      return { ...p, word, level: wordData?.level || 'B2', pos: wordData?.pos || [] };
+      return { ...p, word, level: wordData?.level || 'B2', pos: wordData?.pos || [], meaning_vi: wordData?.meaning_vi || '', phonetic: wordData?.phonetic || '' };
     });
 
   const progressPercent = Math.round((stats.learnedWords / stats.totalWords) * 100);
@@ -89,6 +90,9 @@ export function renderDashboard(allWords) {
           </div>
         </div>
       </div>
+
+      <!-- Daily Quotes -->
+      ${renderDailyQuotes(allWords, progress)}
 
       <!-- Quick Stats -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
@@ -168,12 +172,14 @@ export function renderDashboard(allWords) {
           </h3>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
             ${recentWords.map((w, i) => `
-              <div class="glass rounded-xl p-3 hover:bg-white/8 transition-all cursor-default group" style="animation-delay: ${0.5 + i * 0.05}s">
+              <div class="glass rounded-xl p-3 hover:bg-white/10 transition-all cursor-pointer group fade-in"
+                   data-word-detail="${w.word}" style="animation-delay: ${0.5 + i * 0.05}s">
                 <div class="flex items-start justify-between mb-1">
-                  <span class="font-semibold text-surface-100 group-hover:text-primary-400 transition-colors">${w.word}</span>
-                  <span class="text-[10px] px-1.5 py-0.5 rounded level-${w.level.toLowerCase()} text-white font-medium">${w.level}</span>
+                  <span class="font-semibold text-surface-100 group-hover:text-primary-400 transition-colors text-sm">${w.word}</span>
+                  <span class="text-[10px] px-1.5 py-0.5 rounded level-${w.level.toLowerCase()} text-white font-medium shrink-0 ml-1">${w.level}</span>
                 </div>
-                <div class="text-xs text-surface-500">${w.pos.join(', ')}</div>
+                ${w.meaning_vi ? `<div class="text-xs text-primary-400/80 mb-1 truncate">${w.meaning_vi}</div>` : ''}
+                <div class="text-[10px] text-surface-500">${w.pos.join(', ')}</div>
                 <div class="mt-1.5 flex items-center gap-1">
                   <div class="w-1.5 h-1.5 rounded-full ${w.status === 'mastered' ? 'bg-success-500' : w.status === 'learning' ? 'bg-warning-500' : 'bg-surface-600'}"></div>
                   <span class="text-[10px] text-surface-500">${w.status === 'mastered' ? 'Thành thạo' : w.status === 'learning' ? 'Đang học' : 'Mới'}</span>
@@ -196,6 +202,97 @@ export function renderDashboard(allWords) {
   `;
 }
 
+function getDailyQuotes(allWords, progress) {
+  const learnedWords = allWords.filter(w => progress[w.word] && w.examples?.length > 0);
+  if (learnedWords.length === 0) return [];
+
+  // Deterministic daily seed from date string
+  const dateStr = new Date().toISOString().split('T')[0].replace(/-/g, '');
+  let seed = parseInt(dateStr) % 999983;
+  const rng = () => { seed = (seed * 16807 + 0) % 2147483647; return (seed - 1) / 2147483646; };
+
+  const shuffled = [...learnedWords].sort(() => rng() - 0.5);
+  const picked = [];
+  for (const w of shuffled) {
+    if (picked.length >= 5) break;
+    const ex = w.examples.find(e => e.en && e.vi);
+    if (ex) picked.push({ word: w.word, en: ex.en, vi: ex.vi, level: w.level });
+  }
+  return picked;
+}
+
+function renderDailyQuotes(allWords, progress) {
+  const quotes = getDailyQuotes(allWords, progress);
+  if (quotes.length === 0) return '';
+
+  const dots = quotes.map((_, i) => `
+    <button class="quote-dot w-1.5 h-1.5 rounded-full transition-all duration-300 ${i === 0 ? 'bg-primary-400 w-4' : 'bg-surface-600 hover:bg-surface-400'}"
+            data-dot="${i}"></button>`).join('');
+
+  const slides = quotes.map((q, i) => {
+    const highlighted = q.en.replace(
+      new RegExp(`\\b${q.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\w*`, 'gi'),
+      match => `<button data-word-detail="${q.word}" class="text-primary-400 not-italic font-bold hover:text-primary-300 hover:underline underline-offset-2 transition-colors cursor-pointer">${match}</button>`
+    );
+    return `
+    <div class="quote-slide absolute inset-0 flex flex-col justify-center px-2 transition-all duration-500 ${i === 0 ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8 pointer-events-none'}"
+         data-slide="${i}" data-en="${q.en.replace(/"/g, '&quot;')}">
+      <p class="text-base sm:text-lg font-medium text-surface-100 leading-relaxed mb-3 italic">"${highlighted}"</p>
+      <p class="text-sm text-surface-400 not-italic">${q.vi}</p>
+    </div>`;
+  }).join('');
+
+  return `
+    <div class="fade-in mb-8" style="animation-delay:0.15s">
+      <h3 class="text-sm font-semibold text-surface-300 mb-4 flex items-center gap-2">
+        <svg class="w-4 h-4 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+        </svg>
+        Câu nói hôm nay
+      </h3>
+      <div class="glass rounded-2xl p-5 relative overflow-hidden">
+        <div id="quote-slides" class="relative" style="min-height:90px">${slides}</div>
+        <div class="flex items-center justify-between mt-4 pt-3 border-t border-white/5">
+          <div class="flex items-center gap-1.5" id="quote-dots">${dots}</div>
+          <div class="flex gap-1.5">
+            <button id="quote-prev" class="w-7 h-7 rounded-lg bg-white/5 hover:bg-white/10 text-surface-400 hover:text-surface-200 flex items-center justify-center transition-all">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button id="quote-next" class="w-7 h-7 rounded-lg bg-white/5 hover:bg-white/10 text-surface-400 hover:text-surface-200 flex items-center justify-center transition-all">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Typing practice -->
+        <div class="mt-4 pt-4 border-t border-white/5">
+          <p class="text-xs text-surface-500 mb-2 flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+            </svg>
+            Luyện gõ lại câu trên
+          </p>
+          <div id="quote-typing-target"
+               class="font-mono text-sm leading-relaxed mb-2.5 min-h-[20px] tracking-wide select-none"></div>
+          <div class="flex gap-2">
+            <input id="quote-input" type="text" autocomplete="off" spellcheck="false"
+                   placeholder="Gõ câu tiếng Anh vào đây..."
+                   class="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-surface-200
+                          placeholder:text-surface-600 focus:outline-none focus:border-primary-500/50 transition-all font-mono">
+            <button id="quote-check"
+                    class="shrink-0 px-4 py-2.5 rounded-xl bg-primary-600/20 text-primary-400
+                           hover:bg-primary-600/30 text-sm font-medium transition-all">
+              Kiểm tra
+            </button>
+          </div>
+          <div id="quote-feedback" class="hidden mt-2.5 px-4 py-2.5 rounded-xl text-sm font-medium flex items-center gap-2"></div>
+        </div>
+      </div>
+    </div>`;
+}
+
 function renderStatCard(icon, label, value, unit, bgGradient, textColor, delay) {
   return `
     <div class="fade-in glass rounded-2xl p-4 hover:scale-[1.02] transition-transform" style="animation-delay: ${0.1 + delay * 0.1}s">
@@ -213,6 +310,106 @@ function renderStatCard(icon, label, value, unit, bgGradient, textColor, delay) 
   `;
 }
 
-export function initDashboardEvents() {
-  // No special events needed for dashboard
+export function initDashboardEvents(allWords) {
+  // Recent word cards → open modal
+  document.querySelectorAll('[data-word-detail]').forEach(card => {
+    card.addEventListener('click', () => {
+      const wordData = allWords.find(w => w.word === card.dataset.wordDetail);
+      if (!wordData) return;
+      let root = document.getElementById('modal-root');
+      if (!root) { root = document.createElement('div'); root.id = 'modal-root'; document.body.appendChild(root); }
+      root.innerHTML = renderWordModal(wordData);
+      initWordModalEvents(wordData);
+    });
+  });
+
+  // Daily quotes slideshow + typing practice
+  const totalSlides = document.querySelectorAll('.quote-slide').length;
+  if (totalSlides === 0) return;
+
+  let current = 0;
+  let timer = null;
+
+  const inputEl    = document.getElementById('quote-input');
+  const targetEl   = document.getElementById('quote-typing-target');
+  const feedbackEl = document.getElementById('quote-feedback');
+  const checkBtn   = document.getElementById('quote-check');
+
+  function getSlideText(idx) {
+    return document.querySelector(`.quote-slide[data-slide="${idx}"]`)?.dataset.en || '';
+  }
+
+  function renderTypingTarget() {
+    const target = getSlideText(current);
+    const typed  = inputEl?.value || '';
+    if (!targetEl) return;
+    targetEl.innerHTML = target.split('').map((ch, i) => {
+      const esc = ch === '<' ? '&lt;' : ch === '>' ? '&gt;' : ch === '&' ? '&amp;' : ch;
+      if (i >= typed.length) return `<span class="text-surface-600">${esc}</span>`;
+      return typed[i] === ch
+        ? `<span class="text-success-400">${esc}</span>`
+        : `<span class="text-red-400 bg-red-500/10 rounded-sm">${ch === ' ' ? '<span class="opacity-50">·</span>' : esc}</span>`;
+    }).join('');
+  }
+
+  function resetTyping() {
+    if (inputEl)    { inputEl.value = ''; }
+    if (feedbackEl) { feedbackEl.className = 'hidden mt-2.5 px-4 py-2.5 rounded-xl text-sm font-medium flex items-center gap-2'; feedbackEl.innerHTML = ''; }
+    renderTypingTarget();
+  }
+
+  function checkAnswer() {
+    if (!inputEl || !feedbackEl) return;
+    const target  = getSlideText(current);
+    const typed   = inputEl.value.trim();
+    const correct = typed.toLowerCase() === target.toLowerCase();
+    feedbackEl.className = `mt-2.5 px-4 py-2.5 rounded-xl text-sm font-medium flex items-center gap-2 ${correct ? 'bg-success-500/15 text-success-400 border border-success-500/25' : 'bg-red-500/10 text-red-400 border border-red-500/20'}`;
+    feedbackEl.innerHTML = correct
+      ? `<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Chúc mừng! Bạn đã gõ đúng câu này rồi!`
+      : `<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg> Chưa đúng, hãy thử lại nhé!`;
+  }
+
+  function goTo(idx) {
+    const slides = document.querySelectorAll('.quote-slide');
+    const dots   = document.querySelectorAll('.quote-dot');
+    slides.forEach((s, i) => {
+      s.classList.toggle('opacity-100', i === idx);
+      s.classList.toggle('translate-x-0', i === idx);
+      s.classList.toggle('pointer-events-none', i !== idx);
+      s.classList.toggle('opacity-0', i !== idx);
+      s.classList.toggle('translate-x-8', i !== idx);
+    });
+    dots.forEach((d, i) => {
+      d.classList.toggle('bg-primary-400', i === idx);
+      d.classList.toggle('w-4', i === idx);
+      d.classList.toggle('bg-surface-600', i !== idx);
+      d.classList.toggle('w-1.5', i !== idx);
+    });
+    current = idx;
+    resetTyping();
+  }
+
+  function startTimer() {
+    if (timer) clearInterval(timer);
+    timer = setInterval(() => goTo((current + 1) % totalSlides), 25000);
+  }
+
+  // Init typing target for first slide
+  renderTypingTarget();
+
+  inputEl?.addEventListener('input', renderTypingTarget);
+  inputEl?.addEventListener('keydown', e => { if (e.key === 'Enter') checkAnswer(); });
+  checkBtn?.addEventListener('click', checkAnswer);
+
+  document.getElementById('quote-next')?.addEventListener('click', () => {
+    goTo((current + 1) % totalSlides); startTimer();
+  });
+  document.getElementById('quote-prev')?.addEventListener('click', () => {
+    goTo((current - 1 + totalSlides) % totalSlides); startTimer();
+  });
+  document.querySelectorAll('.quote-dot').forEach(dot => {
+    dot.addEventListener('click', () => { goTo(parseInt(dot.dataset.dot)); startTimer(); });
+  });
+
+  startTimer();
 }

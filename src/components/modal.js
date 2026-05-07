@@ -30,7 +30,7 @@ export function renderWordModal(word) {
           <div class="space-y-6">
             <!-- Meanings -->
             <div class="space-y-2">
-              <h3 class="text-xs font-bold text-surface-500 uppercase tracking-widest">Ý nghĩa</h3>
+              <h3 class="text-xs font-bold text-surface-500 uppercase">Ý nghĩa</h3>
               <div class="glass bg-white/3 rounded-2xl p-4">
                 ${word.meaning_vi ? `
                   <p class="text-base font-semibold text-primary-400 ${word.meaning_en || word.meaning_vi_detail ? 'mb-3 pb-3 border-b border-white/5' : ''}">${word.meaning_vi}</p>
@@ -43,7 +43,7 @@ export function renderWordModal(word) {
             <!-- Examples -->
             ${word.examples && word.examples.length > 0 ? `
               <div class="space-y-3">
-                <h3 class="text-xs font-bold text-surface-500 uppercase tracking-widest">Ví dụ</h3>
+                <h3 class="text-xs font-bold text-surface-500 uppercase">Ví dụ</h3>
                 <div class="space-y-3">
                   ${word.examples.map(ex => `
                     <div class="pl-4 border-l-2 border-primary-500/30">

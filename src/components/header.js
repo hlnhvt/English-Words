@@ -1,26 +1,22 @@
 import { router } from '../router.js';
 import store from '../store.js';
+import { navItems } from './sidebar.js';
+import { renderWordModal, initWordModalEvents } from './modal.js';
 
-export function renderHeader() {
+export function renderHeader(allWords = []) {
   const settings = store.getSettings();
   const streak = store.getStreak();
   const currentRoute = router.getCurrentRoute();
 
-  const navItems = [
-    { path: '/', label: 'Trang chủ', icon: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>' },
-    { path: '/learn', label: 'Học từ mới', icon: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>' },
-    { path: '/review', label: 'Ôn tập', icon: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>' },
-    { path: '/learned', label: 'Từ đã học', icon: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>' },
-    { path: '/bookmarks', label: 'Từ đã lưu', icon: '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/></svg>' },
-    { path: '/all-words', label: 'Tất cả từ vựng', icon: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>' },
-    { path: '/stats', label: 'Thống kê', icon: '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>' },
-  ];
+  const themeIcon = settings.darkMode 
+    ? '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>' 
+    : '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>';
 
   return `
-    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
-      <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <!-- Logo -->
-        <a href="#/" class="flex items-center gap-2 group">
+    <header class="sticky top-0 z-40 glass border-b border-white/5 w-full">
+      <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+        <!-- Mobile Logo (Hidden on Desktop) -->
+        <a href="#/" class="flex md:hidden items-center gap-2 group shrink-0">
           <img src="/Screenshot%202026-05-06%20172948.png"
                class="w-9 h-9 rounded-xl object-cover group-hover:scale-110 transition-transform"
                alt="Foxlearn">
@@ -29,21 +25,12 @@ export function renderHeader() {
           </span>
         </a>
 
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex items-center gap-1">
-          ${navItems.map(item => `
-            <a href="#${item.path}" 
-               class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200
-                      ${currentRoute === item.path 
-                        ? 'bg-primary-600/20 text-primary-400 shadow-lg shadow-primary-600/10' 
-                        : 'text-surface-400 hover:text-surface-200 hover:bg-white/5'}">
-              <span class="mr-1.5 inline-flex">${item.icon}</span>${item.label}
-            </a>
-          `).join('')}
-        </nav>
+        <!-- Word Ticker -->
+        <div id="header-word-ticker" class="flex flex-1 mx-2 sm:mx-4 items-center justify-center overflow-hidden min-w-0">
+        </div>
 
         <!-- Right side -->
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 shrink-0 ml-auto">
           <!-- Streak -->
           ${streak.current > 0 ? `
             <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warning-500/15 text-warning-400 text-sm font-medium">
@@ -52,14 +39,14 @@ export function renderHeader() {
             </div>
           ` : ''}
           
-          <!-- Dark mode toggle -->
+          <!-- Desktop Dark mode toggle -->
           <button id="theme-toggle" 
-                  class="w-9 h-9 rounded-xl flex items-center justify-center text-surface-400 hover:text-surface-200 hover:bg-white/5 transition-all"
+                  class="hidden md:flex w-9 h-9 rounded-xl flex items-center justify-center text-surface-400 hover:text-surface-200 hover:bg-white/5 transition-all"
                   title="Chuyển đổi giao diện">
-            ${settings.darkMode ? '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>' : '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>'}
+            ${themeIcon}
           </button>
 
-          <!-- Mobile menu -->
+          <!-- Mobile menu btn -->
           <button id="mobile-menu-btn" class="md:hidden w-9 h-9 rounded-xl flex items-center justify-center text-surface-400 hover:text-surface-200 hover:bg-white/5">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -69,41 +56,51 @@ export function renderHeader() {
       </div>
 
       <!-- Mobile Nav -->
-      <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 pb-3">
+      <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 pb-3 bg-surface-950/95 backdrop-blur-xl absolute w-full left-0 top-16 shadow-xl">
         <div class="max-w-6xl mx-auto px-4 pt-2 flex flex-col gap-1">
           ${navItems.map(item => `
             <a href="#${item.path}" 
-               class="px-4 py-2.5 rounded-xl text-sm font-medium transition-all
+               class="px-4 py-2.5 rounded-xl text-sm font-medium transition-all flex items-center
                       ${currentRoute === item.path 
                         ? 'bg-primary-600/20 text-primary-400' 
                         : 'text-surface-400 hover:text-surface-200 hover:bg-white/5'}">
-              <span class="mr-2 inline-flex">${item.icon}</span>${item.label}
+              <span class="mr-3 inline-flex shrink-0">${item.icon}</span>${item.label}
             </a>
           `).join('')}
+          
+          <!-- Mobile Theme Toggle -->
+          <button id="theme-toggle-mobile" class="mt-2 px-4 py-3 rounded-xl text-sm font-medium transition-all flex items-center gap-3 text-surface-400 hover:text-surface-200 hover:bg-white/5 border-t border-white/10 pt-4">
+             <span class="shrink-0">${themeIcon}</span>
+             <span>Giao diện: ${settings.darkMode ? 'Sáng' : 'Tối'}</span>
+          </button>
         </div>
       </div>
     </header>
   `;
 }
 
-export function initHeaderEvents() {
+let headerTickerInterval = null;
+
+export function initHeaderEvents(allWords = []) {
   const themeToggle = document.getElementById('theme-toggle');
+  const themeToggleMobile = document.getElementById('theme-toggle-mobile');
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const settings = store.getSettings();
-      store.updateSettings({ darkMode: !settings.darkMode });
-      document.body.classList.toggle('light-mode', !settings.darkMode);
-      // Re-render header to update icon
-      const headerEl = document.querySelector('header');
-      if (headerEl) {
-        headerEl.outerHTML = renderHeader();
-        initHeaderEvents();
-      }
-    });
-  }
+  const handleThemeToggle = () => {
+    const settings = store.getSettings();
+    store.updateSettings({ darkMode: !settings.darkMode });
+    document.body.classList.toggle('light-mode', !settings.darkMode);
+    // Re-render header
+    const headerEl = document.querySelector('header');
+    if (headerEl) {
+      headerEl.outerHTML = renderHeader(allWords);
+      initHeaderEvents(allWords);
+    }
+  };
+
+  themeToggle?.addEventListener('click', handleThemeToggle);
+  themeToggleMobile?.addEventListener('click', handleThemeToggle);
 
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => {
@@ -113,5 +110,43 @@ export function initHeaderEvents() {
     mobileMenu.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
     });
+  }
+
+  // Init word ticker
+  if (allWords.length > 0) {
+    const learnedWords = store.getLearnedWords(allWords).filter(w => w.status && w.status !== 'new');
+    const tickerContainer = document.getElementById('header-word-ticker');
+    
+    if (tickerContainer && learnedWords.length > 0) {
+      if (headerTickerInterval) clearInterval(headerTickerInterval);
+      
+      let currentIndex = Math.floor(Math.random() * learnedWords.length);
+      let currentWord = learnedWords[currentIndex];
+      
+      const renderTicker = () => {
+        currentWord = learnedWords[currentIndex];
+        tickerContainer.innerHTML = `
+          <div class="fade-in flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-800/50 border border-white/5 shadow-sm max-w-full cursor-pointer hover:bg-white/10 transition-all">
+            <span class="font-bold text-primary-400 whitespace-nowrap text-sm sm:text-base">${currentWord.word}</span>
+            <span class="text-surface-400 text-xs sm:text-sm whitespace-nowrap hidden sm:inline">${currentWord.phonetic || ''}</span>
+            <span class="text-surface-300 text-xs sm:text-sm ml-1 truncate max-w-[120px] sm:max-w-[200px] lg:max-w-[400px]">- ${currentWord.meaning_vi || ''}</span>
+          </div>
+        `;
+        currentIndex = (currentIndex + 1) % learnedWords.length;
+      };
+
+      tickerContainer.onclick = () => {
+        if (currentWord) {
+          const modalRoot = document.getElementById('modal-root') || document.createElement('div');
+          modalRoot.id = 'modal-root';
+          if (!document.getElementById('modal-root')) document.body.appendChild(modalRoot);
+          modalRoot.innerHTML = renderWordModal(currentWord);
+          initWordModalEvents(currentWord);
+        }
+      };
+      
+      renderTicker();
+      headerTickerInterval = setInterval(renderTicker, 6000);
+    }
   }
 }

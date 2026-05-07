@@ -9,12 +9,15 @@ const STORE_KEYS = {
   DAILY_LOG: 'vocab_daily_log',
   STREAK: 'vocab_streak',
   BOOKMARKS: 'vocab_bookmarks',
+  CONVERSATION: 'vocab_conversation_sessions',
+  REVIEW_SESSIONS: 'vocab_review_sessions',
 };
 
 const DEFAULT_SETTINGS = {
   wordsPerDay: 15,
   darkMode: true,
   currentLevelFilter: 'all', // all, A1, A2, B1, B2, C1
+  sidebarCollapsed: false,
 };
 
 function getToday() {
@@ -342,6 +345,56 @@ class Store {
       reviewDue,
       byLevel,
       streak: this.getStreak(),
+    };
+  }
+
+  // Conversation sessions
+  logConversationSession(data) {
+    const sessions = this._get(STORE_KEYS.CONVERSATION) || [];
+    sessions.push({ ...data, date: data.date || new Date().toISOString().split('T')[0] });
+    if (sessions.length > 200) sessions.splice(0, sessions.length - 200);
+    this._set(STORE_KEYS.CONVERSATION, sessions);
+  }
+
+  getConversationSessions() {
+    return this._get(STORE_KEYS.CONVERSATION) || [];
+  }
+
+  getConversationStats() {
+    const sessions = this.getConversationSessions();
+    if (sessions.length === 0) return { total: 0, avgScore: 0, bestScore: 0, totalLines: 0, correctLines: 0 };
+    const scores = sessions.map(s => s.score);
+    return {
+      total: sessions.length,
+      avgScore: Math.round(scores.reduce((a, b) => a + b, 0) / scores.length),
+      bestScore: Math.max(...scores),
+      totalLines: sessions.reduce((a, s) => a + (s.totalLines || 0), 0),
+      correctLines: sessions.reduce((a, s) => a + (s.correctLines || 0), 0),
+    };
+  }
+
+  // Review sessions
+  logReviewSession(data) {
+    const sessions = this._get(STORE_KEYS.REVIEW_SESSIONS) || [];
+    sessions.push({ ...data, date: data.date || new Date().toISOString().split('T')[0] });
+    if (sessions.length > 200) sessions.splice(0, sessions.length - 200);
+    this._set(STORE_KEYS.REVIEW_SESSIONS, sessions);
+  }
+
+  getReviewSessions() {
+    return this._get(STORE_KEYS.REVIEW_SESSIONS) || [];
+  }
+
+  getReviewStats() {
+    const sessions = this.getReviewSessions();
+    if (sessions.length === 0) return { total: 0, avgScore: 0, bestScore: 0, totalWords: 0, correctWords: 0 };
+    const scores = sessions.map(s => s.score);
+    return {
+      total: sessions.length,
+      avgScore: Math.round(scores.reduce((a, b) => a + b, 0) / scores.length),
+      bestScore: Math.max(...scores),
+      totalWords: sessions.reduce((a, s) => a + (s.total || 0), 0),
+      correctWords: sessions.reduce((a, s) => a + (s.correct || 0), 0),
     };
   }
 

@@ -143,6 +143,9 @@ export function renderStats(allWords) {
         </div>
       </div>
 
+      <!-- Activity Stats: Review + Conversation -->
+      ${renderActivityStats()}
+
       <!-- Data Management -->
       <div class="fade-in glass rounded-2xl p-5" style="animation-delay: 0.6s">
         <h3 class="text-sm font-semibold text-surface-300 mb-4 flex items-center gap-2">
@@ -176,6 +179,76 @@ export function renderStats(allWords) {
             <span id="words-per-day-label" class="text-sm font-medium text-primary-400 w-8">${store.getSettings().wordsPerDay}</span>
           </div>
         </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderActivityStats() {
+  const rev = store.getReviewStats();
+  const conv = store.getConversationStats();
+  const revAccuracy = rev.totalWords > 0 ? Math.round((rev.correctWords / rev.totalWords) * 100) : 0;
+  const convAccuracy = conv.totalLines > 0 ? Math.round((conv.correctLines / conv.totalLines) * 100) : 0;
+
+  const statCell = (label, value, sub) => `
+    <div class="text-center">
+      <div class="text-lg font-bold text-surface-100">${value}</div>
+      <div class="text-[10px] text-surface-400">${label}</div>
+      ${sub ? `<div class="text-[10px] text-surface-500">${sub}</div>` : ''}
+    </div>`;
+
+  return `
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 fade-in" style="animation-delay: 0.55s">
+      <!-- Review stats -->
+      <div class="glass rounded-2xl p-5">
+        <h3 class="text-sm font-semibold text-surface-300 mb-4 flex items-center gap-2">
+          <svg class="w-4 h-4 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          Thống kê ôn tập
+        </h3>
+        ${rev.total === 0
+          ? `<p class="text-sm text-surface-500 text-center py-4">Chưa có phiên ôn tập nào</p>`
+          : `<div class="grid grid-cols-3 gap-3 mb-4">
+              ${statCell('Phiên ôn tập', rev.total)}
+              ${statCell('TB điểm', rev.avgScore + '%')}
+              ${statCell('Cao nhất', rev.bestScore + '%')}
+            </div>
+            <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3">
+              <div class="flex-1">
+                <div class="text-xs text-surface-400 mb-1">Độ chính xác tổng</div>
+                <div class="w-full h-2 bg-surface-800 rounded-full overflow-hidden">
+                  <div class="h-full rounded-full ${revAccuracy >= 70 ? 'bg-success-500' : revAccuracy >= 50 ? 'bg-warning-500' : 'bg-red-500'} transition-all"
+                       style="width:${revAccuracy}%"></div>
+                </div>
+              </div>
+              <span class="text-sm font-bold ${revAccuracy >= 70 ? 'text-success-400' : revAccuracy >= 50 ? 'text-warning-400' : 'text-red-400'}">${revAccuracy}%</span>
+            </div>
+            <div class="text-xs text-surface-500 mt-2 text-right">${rev.correctWords}/${rev.totalWords} từ đúng</div>`}
+      </div>
+
+      <!-- Conversation stats -->
+      <div class="glass rounded-2xl p-5">
+        <h3 class="text-sm font-semibold text-surface-300 mb-4 flex items-center gap-2">
+          <svg class="w-4 h-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          Thống kê giao tiếp
+        </h3>
+        ${conv.total === 0
+          ? `<p class="text-sm text-surface-500 text-center py-4">Chưa có phiên giao tiếp nào</p>`
+          : `<div class="grid grid-cols-3 gap-3 mb-4">
+              ${statCell('Đoạn hội thoại', conv.total)}
+              ${statCell('TB điểm', conv.avgScore + '%')}
+              ${statCell('Cao nhất', conv.bestScore + '%')}
+            </div>
+            <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3">
+              <div class="flex-1">
+                <div class="text-xs text-surface-400 mb-1">Độ chính xác câu</div>
+                <div class="w-full h-2 bg-surface-800 rounded-full overflow-hidden">
+                  <div class="h-full rounded-full ${convAccuracy >= 70 ? 'bg-success-500' : convAccuracy >= 50 ? 'bg-warning-500' : 'bg-red-500'} transition-all"
+                       style="width:${convAccuracy}%"></div>
+                </div>
+              </div>
+              <span class="text-sm font-bold ${convAccuracy >= 70 ? 'text-success-400' : convAccuracy >= 50 ? 'text-warning-400' : 'text-red-400'}">${convAccuracy}%</span>
+            </div>
+            <div class="text-xs text-surface-500 mt-2 text-right">${conv.correctLines}/${conv.totalLines} câu đúng</div>`}
       </div>
     </div>
   `;

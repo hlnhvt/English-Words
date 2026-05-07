@@ -9,6 +9,7 @@ import { renderStats, initStatsEvents } from './pages/stats.js';
 import { renderLearned, initLearnedEvents } from './pages/learned.js';
 import { renderAllWords, initAllWordsEvents } from './pages/all-words.js';
 import { renderBookmarks, initBookmarksEvents } from './pages/bookmarks.js';
+import { renderConversation, initConversationEvents, resetConversationSession } from './pages/conversation.js';
 
 let allWords = [];
 
@@ -33,12 +34,26 @@ async function loadWords() {
   }
 }
 
+import { renderSidebar, initSidebarEvents } from './components/sidebar.js';
+
 function renderPage(renderFn, initFn) {
   const app = document.getElementById('app');
-  const header = renderHeader();
+  const header = renderHeader(allWords);
+  const sidebar = renderSidebar();
   const content = renderFn(allWords);
-  app.innerHTML = header + `<main>${content}</main>`;
-  initHeaderEvents();
+  app.innerHTML = `
+    <div class="flex h-screen overflow-hidden">
+      ${sidebar}
+      <div class="flex-1 flex flex-col min-w-0 h-screen overflow-y-auto relative" id="main-scroll-container">
+        ${header}
+        <main class="flex-1">
+          ${content}
+        </main>
+      </div>
+    </div>
+  `;
+  initSidebarEvents();
+  initHeaderEvents(allWords);
   if (initFn) {
     initFn(allWords, () => renderPage(renderFn, initFn));
   }
@@ -66,6 +81,9 @@ function initRouter() {
     })
     .addRoute('/bookmarks', () => {
       renderPage(renderBookmarks, initBookmarksEvents);
+    })
+    .addRoute('/conversation', () => {
+      renderPage(renderConversation, initConversationEvents);
     });
 
   // Update header on route change

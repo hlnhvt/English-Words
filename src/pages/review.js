@@ -1,4 +1,5 @@
 import store from '../store.js';
+import { renderWordModal, initWordModalEvents } from '../components/modal.js';
 
 function getToday() { return new Date().toISOString().split('T')[0]; }
 function getFirstDayOfMonth() {
@@ -348,6 +349,13 @@ function renderReviewScreen(allWords) {
             })() : ''}
             <span class="px-2.5 py-1 rounded-lg bg-success-500/15 text-success-400 font-semibold text-xs">${reviewSession.score.correct} đúng</span>
             <span class="px-2.5 py-1 rounded-lg bg-red-500/15 text-red-400 font-semibold text-xs">${reviewSession.score.wrong} sai</span>
+            <button id="btn-review-bookmark" data-word="${word.word}"
+                    class="w-8 h-8 rounded-lg flex items-center justify-center transition-all
+                           ${store.isBookmarked(word.word) ? 'text-amber-400 bg-amber-500/15' : 'text-surface-500 hover:text-amber-400 hover:bg-amber-500/10'}">
+              <svg class="w-4 h-4" fill="${store.isBookmarked(word.word) ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+              </svg>
+            </button>
             <button id="btn-exit-review" class="px-3 py-1.5 rounded-lg text-xs text-surface-500 hover:text-surface-300 hover:bg-white/5 transition-all">
               Thoát
             </button>
@@ -474,9 +482,9 @@ function _blankSentence(sentence, word) {
 }
 
 function renderFillBlankQuiz(word, allWords) {
-  // Fallback if no examples: treat as vi_detail_to_en
+  // Fallback if no examples: use en_to_vi (always works)
   const examples = word.examples?.filter(e => e.en);
-  if (!examples || examples.length === 0) return renderViToEnQuiz(word, allWords, 'detail');
+  if (!examples || examples.length === 0) return renderEnToViQuiz(word, allWords);
 
   const ex = examples[Math.floor(Math.random() * examples.length)];
   const blanked = _blankSentence(ex.en, word.word);
@@ -573,7 +581,16 @@ function renderReviewComplete(allWords) {
               : pct >= 50 ? { label: 'Cố gắng hơn nhé!', color: 'text-warning-400' }
               : { label: 'Cần ôn thêm!', color: 'text-red-400' };
 
-  const showDetail = !reviewConfig.showResultImmediately && reviewSession.answers.length > 0 && reviewConfig.mode === 'quiz';
+  const showDetail = reviewSession.answers.length > 0 && reviewConfig.mode === 'quiz';
+
+  if (!reviewSession.sessionLogged) {
+    reviewSession.sessionLogged = true;
+    const correct = reviewSession.score.correct;
+    const total = reviewSession.score.correct + reviewSession.score.wrong;
+    if (total > 0) {
+      store.logReviewSession({ score: pct, correct, total });
+    }
+  }
 
   return `
     <div class="max-w-2xl mx-auto px-4 pt-20 pb-10">
@@ -710,7 +727,7 @@ export function initReviewEvents(allWords, rerenderFn) {
     reviewSession = {
       phase: 'reviewing', words: pool, currentIndex: 0,
       score: { correct: 0, wrong: 0 }, answered: false, answers: [],
-      startTime: Date.now(),
+      startTime: Date.now(), sessionLogged: false,
       questionTypes: pool.map(() => types[Math.floor(Math.random() * types.length)]),
     };
     rerenderFn();
@@ -741,6 +758,18 @@ export function initReviewEvents(allWords, rerenderFn) {
   }
 
   // ── Review screen events ──────────────────────────────────────────────────
+
+  document.getElementById('btn-review-bookmark')?.addEventListener('click', () => {
+    const word = reviewSession.words?.[reviewSession.currentIndex];
+    if (!word) return;
+    if (store.isBookmarked(word.word)) store.unbookmarkWord(word.word);
+    else store.bookmarkWord(word.word);
+    const btn = document.getElementById('btn-review-bookmark');
+    if (!btn) return;
+    const on = store.isBookmarked(word.word);
+    btn.className = `w-8 h-8 rounded-lg flex items-center justify-center transition-all ${on ? 'text-amber-400 bg-amber-500/15' : 'text-surface-500 hover:text-amber-400 hover:bg-amber-500/10'}`;
+    btn.querySelector('svg').setAttribute('fill', on ? 'currentColor' : 'none');
+  });
 
   document.getElementById('btn-exit-review')?.addEventListener('click', () => {
     if (reviewTimerInterval) { clearInterval(reviewTimerInterval); reviewTimerInterval = null; }
@@ -868,7 +897,7 @@ export function initReviewEvents(allWords, rerenderFn) {
     reviewSession = {
       phase: 'reviewing', words: pool, currentIndex: 0,
       score: { correct: 0, wrong: 0 }, answered: false, answers: [],
-      startTime: Date.now(),
+      startTime: Date.now(), sessionLogged: false,
       questionTypes: pool.map(() => types[Math.floor(Math.random() * types.length)]),
     };
     rerenderFn();
