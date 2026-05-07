@@ -5958,5 +5958,1415 @@
         "vi": "Chính xác. Lịch trình của mọi người đều khác nhau, và điều đó hoàn toàn ổn."
       }
     ]
+  },
+  {
+    "id": 151,
+    "title": "Giới thiệu bản thân – BA Interview",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B2",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "Good morning. Thank you for coming in today. Could you start by telling me a bit about yourself and your background?",
+        "vi": "Chào buổi sáng. Cảm ơn bạn đã đến hôm nay. Bạn có thể bắt đầu bằng cách giới thiệu đôi chút về bản thân và nền tảng của mình không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Of course. I have five years of experience as a Business Analyst in the IT sector, primarily in banking and fintech projects.",
+        "vi": "Tất nhiên. Tôi có năm năm kinh nghiệm làm Business Analyst trong lĩnh vực IT, chủ yếu trong các dự án ngân hàng và fintech."
+      },
+      {
+        "speaker": "A",
+        "en": "Interesting. What types of systems have you worked with most frequently?",
+        "vi": "Thú vị đó. Bạn đã làm việc với những loại hệ thống nào thường xuyên nhất?"
+      },
+      {
+        "speaker": "B",
+        "en": "Mainly core banking systems, loan origination platforms, and customer-facing mobile applications. I've also spent considerable time on ERP integrations.",
+        "vi": "Chủ yếu là hệ thống ngân hàng lõi, nền tảng khởi tạo khoản vay và ứng dụng di động hướng khách hàng. Tôi cũng đã dành nhiều thời gian cho việc tích hợp ERP."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you typically start a new project as a BA?",
+        "vi": "Bạn thường bắt đầu một dự án mới như thế nào với tư cách là BA?"
+      },
+      {
+        "speaker": "B",
+        "en": "I start with a kickoff meeting with key stakeholders to understand the business problem we're solving. Then I conduct structured interviews and workshops to gather requirements.",
+        "vi": "Tôi bắt đầu bằng một cuộc họp khởi động với các bên liên quan chính để hiểu vấn đề nghiệp vụ mà chúng tôi đang giải quyết. Sau đó tôi thực hiện các cuộc phỏng vấn có cấu trúc và workshop để thu thập yêu cầu."
+      },
+      {
+        "speaker": "A",
+        "en": "And how do you handle situations where different stakeholders have conflicting requirements?",
+        "vi": "Và bạn xử lý thế nào khi các bên liên quan khác nhau có yêu cầu mâu thuẫn?"
+      },
+      {
+        "speaker": "B",
+        "en": "I facilitate a prioritization workshop using techniques like MoSCoW or weighted scoring. My goal is to align everyone on what delivers the most business value.",
+        "vi": "Tôi tổ chức workshop ưu tiên hóa bằng các kỹ thuật như MoSCoW hoặc chấm điểm có trọng số. Mục tiêu của tôi là đưa mọi người đến sự đồng thuận về những gì mang lại giá trị nghiệp vụ cao nhất."
+      },
+      {
+        "speaker": "A",
+        "en": "Can you give me a specific example of a conflict you resolved?",
+        "vi": "Bạn có thể cho tôi một ví dụ cụ thể về một mâu thuẫn mà bạn đã giải quyết không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Sure. On a payment gateway project, the operations team wanted real-time reconciliation while the finance team preferred end-of-day batching. I proposed a hybrid approach that satisfied both requirements technically.",
+        "vi": "Được. Trong một dự án cổng thanh toán, nhóm vận hành muốn đối chiếu theo thời gian thực trong khi nhóm tài chính thích xử lý theo lô cuối ngày. Tôi đề xuất một phương pháp kết hợp thỏa mãn cả hai yêu cầu về mặt kỹ thuật."
+      },
+      {
+        "speaker": "A",
+        "en": "That's a good example. What tools do you use to document your requirements?",
+        "vi": "Đó là ví dụ tốt. Bạn dùng công cụ gì để tài liệu hóa yêu cầu của mình?"
+      },
+      {
+        "speaker": "B",
+        "en": "I use Confluence for documentation, JIRA for tracking user stories, and Lucidchart or draw.io for process diagrams and data flow diagrams.",
+        "vi": "Tôi dùng Confluence để viết tài liệu, JIRA để theo dõi user story, và Lucidchart hoặc draw.io cho sơ đồ quy trình và sơ đồ luồng dữ liệu."
+      },
+      {
+        "speaker": "A",
+        "en": "Very thorough. We'll move on to some scenario-based questions next. Are you comfortable with that?",
+        "vi": "Rất kỹ lưỡng. Tiếp theo chúng ta sẽ chuyển sang một số câu hỏi tình huống. Bạn có thoải mái với điều đó không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Absolutely. I actually find scenario questions more revealing than generic ones — they reflect real challenges in the role.",
+        "vi": "Hoàn toàn. Thực ra tôi thấy câu hỏi tình huống có ý nghĩa hơn câu hỏi chung chung — chúng phản ánh những thách thức thực tế trong vai trò này."
+      }
+    ]
+  },
+  {
+    "id": 152,
+    "title": "Thu thập yêu cầu (Requirements Gathering)",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B2",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "Walk me through your requirements gathering process. How do you ensure you're capturing the right information?",
+        "vi": "Hãy hướng dẫn tôi qua quy trình thu thập yêu cầu của bạn. Làm thế nào để bạn đảm bảo bạn đang nắm bắt đúng thông tin?"
+      },
+      {
+        "speaker": "B",
+        "en": "I use a combination of techniques depending on the project. For complex domains, I prefer one-on-one interviews with subject matter experts because it allows for deep exploration.",
+        "vi": "Tôi sử dụng kết hợp các kỹ thuật tùy thuộc vào dự án. Đối với các lĩnh vực phức tạp, tôi thích phỏng vấn một-một với các chuyên gia vì nó cho phép khám phá sâu hơn."
+      },
+      {
+        "speaker": "A",
+        "en": "What about when you have a large number of stakeholders with diverse needs?",
+        "vi": "Còn khi bạn có số lượng lớn các bên liên quan với nhu cầu đa dạng thì sao?"
+      },
+      {
+        "speaker": "B",
+        "en": "In those cases, I run facilitated workshops or focus groups. I also use surveys to gather input from stakeholders who can't attend sessions in person.",
+        "vi": "Trong những trường hợp đó, tôi tổ chức workshop có điều phối hoặc nhóm tập trung. Tôi cũng dùng khảo sát để thu thập ý kiến từ các bên không thể tham dự trực tiếp."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you distinguish between what a stakeholder says they want and what they actually need?",
+        "vi": "Làm thế nào để bạn phân biệt giữa những gì bên liên quan nói họ muốn và những gì họ thực sự cần?"
+      },
+      {
+        "speaker": "B",
+        "en": "That's the core challenge of the BA role. I ask 'why' repeatedly to uncover the underlying business goal. Often the stated requirement is just one possible solution.",
+        "vi": "Đó là thách thức cốt lõi của vai trò BA. Tôi hỏi 'tại sao' nhiều lần để khám phá mục tiêu nghiệp vụ cơ bản. Thường thì yêu cầu được nêu ra chỉ là một giải pháp có thể có."
+      },
+      {
+        "speaker": "A",
+        "en": "Can you give an example of that situation?",
+        "vi": "Bạn có thể cho tôi một ví dụ về tình huống đó không?"
+      },
+      {
+        "speaker": "B",
+        "en": "A product manager once asked for a new report. After asking why, I found the real need was faster access to overdue invoices — we solved it with a dashboard filter instead.",
+        "vi": "Một giám đốc sản phẩm từng yêu cầu một báo cáo mới. Sau khi hỏi tại sao, tôi phát hiện nhu cầu thực sự là truy cập nhanh hơn vào các hóa đơn quá hạn — chúng tôi giải quyết bằng bộ lọc dashboard thay thế."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you validate that the requirements you've documented are complete and accurate?",
+        "vi": "Làm thế nào để bạn xác nhận rằng các yêu cầu bạn đã tài liệu hóa là đầy đủ và chính xác?"
+      },
+      {
+        "speaker": "B",
+        "en": "I run structured walkthroughs with stakeholders and use traceability matrices to ensure every business objective is covered by at least one requirement.",
+        "vi": "Tôi tổ chức các buổi review có cấu trúc với các bên liên quan và sử dụng ma trận truy xuất nguồn gốc để đảm bảo mọi mục tiêu nghiệp vụ đều được ít nhất một yêu cầu đề cập."
+      },
+      {
+        "speaker": "A",
+        "en": "What happens when new requirements emerge mid-project?",
+        "vi": "Điều gì xảy ra khi các yêu cầu mới nảy sinh giữa chừng dự án?"
+      },
+      {
+        "speaker": "B",
+        "en": "I assess the impact on scope, timeline, and cost, and escalate to the project sponsor. In agile environments, new requirements go into the product backlog for prioritization.",
+        "vi": "Tôi đánh giá tác động đến phạm vi, thời gian và chi phí, rồi báo cáo lên nhà tài trợ dự án. Trong môi trường agile, các yêu cầu mới đi vào product backlog để ưu tiên hóa."
+      },
+      {
+        "speaker": "A",
+        "en": "That's a solid approach. How do you handle requirement scope creep specifically?",
+        "vi": "Đó là cách tiếp cận vững chắc. Bạn xử lý cụ thể như thế nào với việc phình to phạm vi yêu cầu?"
+      },
+      {
+        "speaker": "B",
+        "en": "Prevention is key — a well-defined scope statement signed off by stakeholders early is my best defense. When it does happen, I document it as a change request and run a formal impact analysis.",
+        "vi": "Phòng ngừa là chìa khóa — một tuyên bố phạm vi được xác định rõ và được các bên ký duyệt sớm là biện pháp bảo vệ tốt nhất của tôi. Khi điều đó xảy ra, tôi ghi lại dưới dạng yêu cầu thay đổi và thực hiện phân tích tác động chính thức."
+      }
+    ]
+  },
+  {
+    "id": 153,
+    "title": "Agile và Scrum trong dự án IT",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B2",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "Our projects follow the Scrum framework. How familiar are you with the BA role in an agile environment?",
+        "vi": "Các dự án của chúng tôi theo khung Scrum. Bạn quen thuộc như thế nào với vai trò BA trong môi trường agile?"
+      },
+      {
+        "speaker": "B",
+        "en": "Very familiar. In Scrum, the BA often works closely with the Product Owner to maintain and refine the product backlog, and bridges communication between the PO and the development team.",
+        "vi": "Rất quen thuộc. Trong Scrum, BA thường làm việc chặt chẽ với Product Owner để duy trì và tinh chỉnh product backlog, và là cầu nối giao tiếp giữa PO và nhóm phát triển."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you write user stories? What's your template?",
+        "vi": "Bạn viết user story như thế nào? Mẫu của bạn là gì?"
+      },
+      {
+        "speaker": "B",
+        "en": "I use the standard 'As a [persona], I want [action], so that [benefit]' format. But I always attach acceptance criteria in Gherkin syntax — Given, When, Then — to reduce ambiguity.",
+        "vi": "Tôi dùng định dạng chuẩn 'Là một [vai người dùng], tôi muốn [hành động], để [lợi ích]'. Nhưng tôi luôn đính kèm tiêu chí chấp nhận theo cú pháp Gherkin — Given, When, Then — để giảm sự mơ hồ."
+      },
+      {
+        "speaker": "A",
+        "en": "Can you walk me through how you'd handle backlog refinement?",
+        "vi": "Bạn có thể hướng dẫn tôi cách bạn xử lý việc tinh chỉnh backlog không?"
+      },
+      {
+        "speaker": "B",
+        "en": "In refinement sessions, I review upcoming user stories with the team, clarify acceptance criteria, identify dependencies, and help break down large stories into smaller, estimable ones.",
+        "vi": "Trong các buổi tinh chỉnh, tôi xem xét các user story sắp tới với nhóm, làm rõ tiêu chí chấp nhận, xác định các phụ thuộc, và giúp chia nhỏ các story lớn thành các story nhỏ hơn có thể ước lượng được."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you define 'Definition of Ready' and 'Definition of Done' for stories?",
+        "vi": "Bạn định nghĩa 'Definition of Ready' và 'Definition of Done' cho story như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "Definition of Ready means the story is clear, estimated, and has no unresolved dependencies. Definition of Done is set by the team and typically includes code reviewed, tested, and deployed to staging.",
+        "vi": "Definition of Ready có nghĩa là story rõ ràng, đã ước lượng và không có phụ thuộc chưa giải quyết. Definition of Done do nhóm đặt ra và thường bao gồm code được review, kiểm thử và deploy lên môi trường staging."
+      },
+      {
+        "speaker": "A",
+        "en": "What challenges have you faced working in sprints as a BA?",
+        "vi": "Bạn đã đối mặt với những thách thức nào khi làm việc trong sprint với tư cách BA?"
+      },
+      {
+        "speaker": "B",
+        "en": "The biggest challenge is keeping the backlog refined enough so developers always have work ready to pull. If BA work isn't ahead of development, the team can stall.",
+        "vi": "Thách thức lớn nhất là giữ cho backlog được tinh chỉnh đủ để developer luôn có việc sẵn sàng để lấy. Nếu công việc BA không đi trước development, nhóm có thể bị đình trệ."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you manage that?",
+        "vi": "Bạn quản lý điều đó như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "I try to work at least one sprint ahead — what we call 'sprint zero' or 'BA swim lane.' While developers implement sprint N, I'm already clarifying and preparing stories for sprint N+1.",
+        "vi": "Tôi cố gắng làm trước ít nhất một sprint — chúng tôi gọi là 'sprint zero' hoặc 'BA swim lane'. Trong khi developer triển khai sprint N, tôi đã làm rõ và chuẩn bị story cho sprint N+1."
+      },
+      {
+        "speaker": "A",
+        "en": "Have you ever had to push back on a sprint scope that was overloaded?",
+        "vi": "Bạn đã bao giờ phải phản đối phạm vi sprint bị quá tải chưa?"
+      },
+      {
+        "speaker": "B",
+        "en": "Yes, frequently. I always reference the team's velocity data. If we consistently fail to complete commitments, it damages trust. I'd rather negotiate scope upfront than deliver poorly.",
+        "vi": "Có, thường xuyên. Tôi luôn tham chiếu dữ liệu velocity của nhóm. Nếu chúng tôi liên tục không hoàn thành cam kết, điều đó làm hỏng lòng tin. Tôi thà thương lượng phạm vi trước còn hơn giao sản phẩm kém chất lượng."
+      }
+    ]
+  },
+  {
+    "id": 154,
+    "title": "Viết User Story và Acceptance Criteria",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B2",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "Let's do a quick exercise. How would you write a user story for a login feature?",
+        "vi": "Hãy làm một bài tập nhanh. Bạn sẽ viết user story cho tính năng đăng nhập như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "Sure. 'As a registered user, I want to log in with my email and password, so that I can securely access my account.'",
+        "vi": "Được. 'Là người dùng đã đăng ký, tôi muốn đăng nhập bằng email và mật khẩu, để tôi có thể truy cập tài khoản của mình một cách an toàn.'"
+      },
+      {
+        "speaker": "A",
+        "en": "Good. Now give me three acceptance criteria for that story.",
+        "vi": "Tốt. Bây giờ hãy cho tôi ba tiêu chí chấp nhận cho story đó."
+      },
+      {
+        "speaker": "B",
+        "en": "First: Given a valid email and correct password, when the user submits the form, then they are redirected to their dashboard.",
+        "vi": "Thứ nhất: Cho một email hợp lệ và mật khẩu đúng, khi người dùng gửi biểu mẫu, thì họ được chuyển hướng đến dashboard."
+      },
+      {
+        "speaker": "B",
+        "en": "Second: Given an incorrect password, when the user submits, then an error message displays and the account is locked after five failed attempts.",
+        "vi": "Thứ hai: Cho một mật khẩu sai, khi người dùng gửi, thì hiển thị thông báo lỗi và tài khoản bị khóa sau năm lần thất bại."
+      },
+      {
+        "speaker": "B",
+        "en": "Third: Given the user is on a mobile device, when they log in successfully, then the session persists for 30 days unless they log out manually.",
+        "vi": "Thứ ba: Cho người dùng đang trên thiết bị di động, khi họ đăng nhập thành công, thì phiên duy trì trong 30 ngày trừ khi họ đăng xuất thủ công."
+      },
+      {
+        "speaker": "A",
+        "en": "Those are clear. How do you handle edge cases — things that aren't captured in the happy path?",
+        "vi": "Những điều đó rõ ràng. Bạn xử lý các trường hợp biên như thế nào — những thứ không được nắm bắt trong luồng chính?"
+      },
+      {
+        "speaker": "B",
+        "en": "Edge cases come from asking 'what if' questions. What if the email doesn't exist? What if the user hasn't verified their email? What if they're already logged in on another device?",
+        "vi": "Các trường hợp biên đến từ việc đặt câu hỏi 'điều gì nếu'. Điều gì nếu email không tồn tại? Điều gì nếu người dùng chưa xác minh email? Điều gì nếu họ đã đăng nhập trên thiết bị khác?"
+      },
+      {
+        "speaker": "A",
+        "en": "Do you involve developers in identifying edge cases?",
+        "vi": "Bạn có liên quan developer trong việc xác định các trường hợp biên không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Absolutely. Developers often see technical edge cases I might miss — like network timeouts, concurrent sessions, or database race conditions. It's a collaborative process.",
+        "vi": "Hoàn toàn. Developer thường thấy các trường hợp biên kỹ thuật mà tôi có thể bỏ lỡ — như timeout mạng, phiên đồng thời, hoặc điều kiện tương tranh cơ sở dữ liệu. Đó là một quy trình cộng tác."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you decide when a user story is small enough to fit in a single sprint?",
+        "vi": "Làm thế nào để bạn quyết định khi nào một user story đủ nhỏ để vừa trong một sprint?"
+      },
+      {
+        "speaker": "B",
+        "en": "I use the INVEST criteria — Independent, Negotiable, Valuable, Estimable, Small, and Testable. If a story scores poorly on any of those, I split it.",
+        "vi": "Tôi dùng tiêu chí INVEST — Độc lập, Có thể thương lượng, Có giá trị, Có thể ước lượng, Nhỏ và Có thể kiểm thử. Nếu một story kém ở bất kỳ tiêu chí nào, tôi chia nhỏ nó."
+      },
+      {
+        "speaker": "A",
+        "en": "Excellent. You clearly have a solid grasp of the craft.",
+        "vi": "Xuất sắc. Bạn rõ ràng có sự hiểu biết vững chắc về nghề này."
+      }
+    ]
+  },
+  {
+    "id": 155,
+    "title": "Phân tích quy trình nghiệp vụ (Process Analysis)",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B2",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "How do you approach business process analysis? What methods do you typically use?",
+        "vi": "Bạn tiếp cận phân tích quy trình nghiệp vụ như thế nào? Bạn thường dùng những phương pháp nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "I start by documenting the as-is process using BPMN diagrams to visualize current workflows. Then I identify pain points and inefficiencies through stakeholder interviews and observation.",
+        "vi": "Tôi bắt đầu bằng cách tài liệu hóa quy trình hiện tại bằng sơ đồ BPMN để hình dung các luồng công việc hiện tại. Sau đó tôi xác định các điểm đau và sự kém hiệu quả qua phỏng vấn bên liên quan và quan sát."
+      },
+      {
+        "speaker": "A",
+        "en": "Can you explain what BPMN is to someone who isn't familiar with it?",
+        "vi": "Bạn có thể giải thích BPMN là gì cho người chưa quen không?"
+      },
+      {
+        "speaker": "B",
+        "en": "BPMN stands for Business Process Model and Notation. It's a standardized graphical notation for mapping workflows — using symbols for tasks, gateways, events, and flows so both business and technical teams can read the same diagram.",
+        "vi": "BPMN là viết tắt của Business Process Model and Notation. Đó là ký hiệu đồ họa tiêu chuẩn để ánh xạ luồng công việc — sử dụng ký hiệu cho các tác vụ, cổng, sự kiện và luồng để cả nhóm nghiệp vụ lẫn kỹ thuật đều có thể đọc cùng một sơ đồ."
+      },
+      {
+        "speaker": "A",
+        "en": "After mapping the as-is process, what's your next step?",
+        "vi": "Sau khi ánh xạ quy trình hiện tại, bước tiếp theo của bạn là gì?"
+      },
+      {
+        "speaker": "B",
+        "en": "I conduct a gap analysis — comparing the current state against the desired future state. I identify bottlenecks, manual workarounds, and any steps that could be automated or eliminated.",
+        "vi": "Tôi thực hiện phân tích khoảng cách — so sánh trạng thái hiện tại với trạng thái tương lai mong muốn. Tôi xác định các nút thắt cổ chai, các cách làm thủ công và bất kỳ bước nào có thể được tự động hóa hoặc loại bỏ."
+      },
+      {
+        "speaker": "A",
+        "en": "Can you describe a process you improved and what the outcome was?",
+        "vi": "Bạn có thể mô tả một quy trình mà bạn đã cải thiện và kết quả là gì không?"
+      },
+      {
+        "speaker": "B",
+        "en": "At my previous company, loan approval involved 12 manual handoffs between teams, taking an average of 5 days. I mapped it, identified 4 redundant steps, and designed an automated workflow. We reduced processing time to 18 hours.",
+        "vi": "Tại công ty trước, việc phê duyệt khoản vay liên quan đến 12 bước chuyển giao thủ công giữa các nhóm, mất trung bình 5 ngày. Tôi đã ánh xạ nó, xác định 4 bước dư thừa và thiết kế luồng công việc tự động hóa. Chúng tôi giảm thời gian xử lý xuống còn 18 giờ."
+      },
+      {
+        "speaker": "A",
+        "en": "That's a significant improvement. How did you get buy-in from teams who were used to the old process?",
+        "vi": "Đó là một cải thiện đáng kể. Làm thế nào để bạn nhận được sự ủng hộ từ các nhóm đã quen với quy trình cũ?"
+      },
+      {
+        "speaker": "B",
+        "en": "Change management is critical. I involved key users in designing the to-be process so they felt ownership. I also ran training sessions and provided job aids during the transition.",
+        "vi": "Quản lý thay đổi là rất quan trọng. Tôi đã liên quan đến những người dùng chính trong việc thiết kế quy trình tương lai để họ cảm thấy có quyền sở hữu. Tôi cũng tổ chức các buổi đào tạo và cung cấp tài liệu hỗ trợ trong giai đoạn chuyển đổi."
+      },
+      {
+        "speaker": "A",
+        "en": "What metrics do you use to measure the success of a process improvement?",
+        "vi": "Bạn dùng các chỉ số nào để đo lường sự thành công của một cải thiện quy trình?"
+      },
+      {
+        "speaker": "B",
+        "en": "Cycle time, error rate, cost per transaction, and user satisfaction scores. I establish a baseline before implementation so I can demonstrate measurable before-and-after results.",
+        "vi": "Thời gian chu kỳ, tỷ lệ lỗi, chi phí mỗi giao dịch và điểm hài lòng của người dùng. Tôi thiết lập đường cơ sở trước khi triển khai để có thể chứng minh kết quả đo lường được trước và sau."
+      }
+    ]
+  },
+  {
+    "id": 156,
+    "title": "Kỹ năng SQL và phân tích dữ liệu",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B2",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "This role involves working closely with data. How comfortable are you with SQL?",
+        "vi": "Vai trò này liên quan đến làm việc chặt chẽ với dữ liệu. Bạn có thoải mái với SQL không?"
+      },
+      {
+        "speaker": "B",
+        "en": "I use SQL regularly for data validation, writing ad hoc queries to investigate anomalies, and verifying that development output matches business rules.",
+        "vi": "Tôi sử dụng SQL thường xuyên để xác nhận dữ liệu, viết truy vấn tạm thời để điều tra các bất thường và xác minh rằng đầu ra phát triển khớp với quy tắc nghiệp vụ."
+      },
+      {
+        "speaker": "A",
+        "en": "What's the most complex SQL query you've had to write?",
+        "vi": "Truy vấn SQL phức tạp nhất bạn từng phải viết là gì?"
+      },
+      {
+        "speaker": "B",
+        "en": "I once wrote a query using multiple CTEs and window functions to calculate running balances for thousands of accounts and detect discrepancies against a legacy system during a migration.",
+        "vi": "Tôi đã từng viết một truy vấn sử dụng nhiều CTE và hàm cửa sổ để tính số dư lũy kế cho hàng nghìn tài khoản và phát hiện sự khác biệt so với hệ thống cũ trong quá trình di chuyển dữ liệu."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you use data analysis in requirements work specifically?",
+        "vi": "Bạn sử dụng phân tích dữ liệu trong công việc yêu cầu như thế nào cụ thể?"
+      },
+      {
+        "speaker": "B",
+        "en": "I use it to validate assumptions. For example, if a stakeholder says '90% of transactions are under $1,000,' I query the data to confirm that before designing the system around it.",
+        "vi": "Tôi dùng nó để xác nhận các giả định. Ví dụ, nếu bên liên quan nói '90% giao dịch dưới 1.000 đô,' tôi truy vấn dữ liệu để xác nhận điều đó trước khi thiết kế hệ thống xung quanh nó."
+      },
+      {
+        "speaker": "A",
+        "en": "That's good practice. Do you have experience with any BI tools like Power BI or Tableau?",
+        "vi": "Đó là thực hành tốt. Bạn có kinh nghiệm với các công cụ BI như Power BI hay Tableau không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Yes, I've used Power BI to build dashboards for executive reporting and to visualize KPIs during project reviews. It helps make data accessible to non-technical stakeholders.",
+        "vi": "Có, tôi đã dùng Power BI để xây dựng dashboard cho báo cáo cấp điều hành và để trực quan hóa KPI trong các buổi review dự án. Nó giúp dữ liệu tiếp cận được với các bên không có kỹ thuật."
+      },
+      {
+        "speaker": "A",
+        "en": "If you found a significant data quality issue in production data, how would you handle it?",
+        "vi": "Nếu bạn phát hiện ra vấn đề chất lượng dữ liệu nghiêm trọng trong dữ liệu sản xuất, bạn sẽ xử lý như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "First, I'd quantify the scope of the issue. Then I'd raise it with the data owner and document the business impact. Depending on severity, I'd recommend either a data cleansing exercise or a correction script.",
+        "vi": "Đầu tiên, tôi sẽ định lượng phạm vi của vấn đề. Sau đó tôi sẽ báo cáo cho chủ sở hữu dữ liệu và tài liệu hóa tác động nghiệp vụ. Tùy thuộc vào mức độ nghiêm trọng, tôi sẽ đề xuất hoặc một hoạt động làm sạch dữ liệu hoặc một script sửa chữa."
+      },
+      {
+        "speaker": "A",
+        "en": "Have you ever had to reject data from a vendor or third party because it didn't meet your specs?",
+        "vi": "Bạn có bao giờ phải từ chối dữ liệu từ nhà cung cấp hoặc bên thứ ba vì nó không đáp ứng thông số kỹ thuật của bạn không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Yes. In one project, we received a bulk data file with inconsistent date formats and missing mandatory fields. I documented the discrepancies against our data dictionary and sent a formal rejection with a remediation guide.",
+        "vi": "Có. Trong một dự án, chúng tôi nhận được một file dữ liệu hàng loạt với định dạng ngày không nhất quán và thiếu các trường bắt buộc. Tôi tài liệu hóa sự khác biệt so với từ điển dữ liệu của chúng tôi và gửi từ chối chính thức kèm hướng dẫn khắc phục."
+      },
+      {
+        "speaker": "A",
+        "en": "Excellent attention to detail. That's exactly the kind of rigor we need.",
+        "vi": "Sự chú ý đến chi tiết xuất sắc. Đó chính xác là loại nghiêm ngặt mà chúng tôi cần."
+      }
+    ]
+  },
+  {
+    "id": 157,
+    "title": "Quản lý các bên liên quan (Stakeholder Management)",
+    "topic": "Phỏng vấn BA IT",
+    "level": "C1",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "Stakeholder management is critical for a BA. How do you approach it?",
+        "vi": "Quản lý các bên liên quan là rất quan trọng đối với BA. Bạn tiếp cận điều đó như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "I start with a stakeholder analysis — mapping each person by their level of interest and influence on the project. This helps me tailor my communication and engagement strategy.",
+        "vi": "Tôi bắt đầu bằng phân tích bên liên quan — ánh xạ từng người theo mức độ quan tâm và ảnh hưởng của họ đối với dự án. Điều này giúp tôi điều chỉnh chiến lược giao tiếp và tương tác của mình."
+      },
+      {
+        "speaker": "A",
+        "en": "What do you do with stakeholders who are highly influential but tend to disengage?",
+        "vi": "Bạn làm gì với những bên liên quan có ảnh hưởng cao nhưng có xu hướng không tham gia?"
+      },
+      {
+        "speaker": "B",
+        "en": "I try to understand what's driving their disengagement — often it's competing priorities or a feeling that they're not being heard. I schedule brief, targeted touchpoints and make sure their input visibly shapes decisions.",
+        "vi": "Tôi cố gắng hiểu điều gì đang thúc đẩy sự không tham gia của họ — thường là các ưu tiên cạnh tranh hoặc cảm giác họ không được lắng nghe. Tôi lên lịch các điểm tiếp xúc ngắn, có mục tiêu và đảm bảo đầu vào của họ định hình các quyết định một cách rõ ràng."
+      },
+      {
+        "speaker": "A",
+        "en": "Describe a time you had to manage a very difficult stakeholder.",
+        "vi": "Mô tả một lần bạn phải quản lý một bên liên quan rất khó khăn."
+      },
+      {
+        "speaker": "B",
+        "en": "On one project, the head of compliance resisted every proposed system change, citing risk. I invited her to co-author the risk register with me — framing it as protecting the company rather than blocking progress.",
+        "vi": "Trong một dự án, trưởng bộ phận tuân thủ phản đối mọi thay đổi hệ thống được đề xuất, trích dẫn rủi ro. Tôi mời bà ấy cùng tôi soạn thảo sổ đăng ký rủi ro — định hình đó là bảo vệ công ty thay vì cản trở tiến trình."
+      },
+      {
+        "speaker": "A",
+        "en": "How did that turn out?",
+        "vi": "Kết quả như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "She became one of the project's strongest advocates. Once she had visibility and ownership of the risk documentation, her tone shifted completely.",
+        "vi": "Bà ấy trở thành một trong những người ủng hộ mạnh mẽ nhất của dự án. Khi bà ấy có khả năng thấy và quyền sở hữu tài liệu rủi ro, thái độ của bà ấy thay đổi hoàn toàn."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you communicate project status to executive stakeholders?",
+        "vi": "Bạn truyền đạt trạng thái dự án cho các bên liên quan cấp điều hành như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "Executives need concise, impact-focused updates. I use a one-page status report — RAG status, key milestones, risks, and decisions needed. I avoid technical jargon and lead with business outcomes.",
+        "vi": "Các giám đốc điều hành cần các bản cập nhật ngắn gọn, tập trung vào tác động. Tôi dùng báo cáo trạng thái một trang — trạng thái RAG, các cột mốc quan trọng, rủi ro và các quyết định cần thiết. Tôi tránh biệt ngữ kỹ thuật và dẫn đầu bằng kết quả nghiệp vụ."
+      },
+      {
+        "speaker": "A",
+        "en": "What's a RAG status?",
+        "vi": "Trạng thái RAG là gì?"
+      },
+      {
+        "speaker": "B",
+        "en": "RAG stands for Red, Amber, Green. Red means the project is off track and needs escalation, Amber means there are risks that need attention, and Green means on track. It's a simple visual signal for busy executives.",
+        "vi": "RAG là viết tắt của Đỏ, Hổ phách, Xanh. Đỏ có nghĩa là dự án đang lệch hướng và cần leo thang, Hổ phách có nghĩa là có rủi ro cần chú ý, và Xanh có nghĩa là đúng hướng. Đó là tín hiệu trực quan đơn giản cho các giám đốc điều hành bận rộn."
+      },
+      {
+        "speaker": "A",
+        "en": "That's a very effective communication tool. It sounds like you have strong interpersonal skills alongside your technical ones.",
+        "vi": "Đó là một công cụ giao tiếp rất hiệu quả. Nghe có vẻ bạn có kỹ năng giao tiếp cá nhân mạnh mẽ bên cạnh kỹ năng kỹ thuật của mình."
+      }
+    ]
+  },
+  {
+    "id": 158,
+    "title": "Use Case và sơ đồ luồng",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B2",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "Do you still use use cases in your work, or have user stories completely replaced them?",
+        "vi": "Bạn có còn dùng use case trong công việc không, hay user story đã thay thế hoàn toàn chúng?"
+      },
+      {
+        "speaker": "B",
+        "en": "Both still have their place. User stories are great for agile sprints — they're lightweight and conversation-driven. Use cases are better for complex scenarios that need complete flow documentation, especially for system-to-system interactions.",
+        "vi": "Cả hai vẫn có vị trí của chúng. User story rất phù hợp cho sprint agile — chúng nhẹ nhàng và hướng đến hội thoại. Use case tốt hơn cho các tình huống phức tạp cần tài liệu luồng đầy đủ, đặc biệt cho các tương tác hệ thống-với-hệ thống."
+      },
+      {
+        "speaker": "A",
+        "en": "Can you write a brief use case structure for me — just the main elements?",
+        "vi": "Bạn có thể viết cấu trúc use case ngắn cho tôi không — chỉ các phần tử chính?"
+      },
+      {
+        "speaker": "B",
+        "en": "Sure. A use case includes: a title, actors, preconditions, the main success scenario, alternate flows, exception flows, and postconditions.",
+        "vi": "Được. Use case bao gồm: tiêu đề, các tác nhân, điều kiện tiên quyết, kịch bản thành công chính, các luồng thay thế, các luồng ngoại lệ và các điều kiện hậu."
+      },
+      {
+        "speaker": "A",
+        "en": "What's the difference between an alternate flow and an exception flow?",
+        "vi": "Sự khác biệt giữa luồng thay thế và luồng ngoại lệ là gì?"
+      },
+      {
+        "speaker": "B",
+        "en": "An alternate flow is a valid variation of the main flow — like paying by card instead of bank transfer. An exception flow is an error or unexpected condition — like a payment gateway timeout.",
+        "vi": "Luồng thay thế là một biến thể hợp lệ của luồng chính — như thanh toán bằng thẻ thay vì chuyển khoản ngân hàng. Luồng ngoại lệ là lỗi hoặc điều kiện không mong đợi — như timeout cổng thanh toán."
+      },
+      {
+        "speaker": "A",
+        "en": "Good distinction. How do you decide which artifacts to produce for a given project?",
+        "vi": "Phân biệt tốt. Bạn quyết định như thế nào về việc tạo ra các tài liệu nào cho một dự án nhất định?"
+      },
+      {
+        "speaker": "B",
+        "en": "I tailor my artifact selection to the project context. A small agile feature needs user stories and acceptance criteria. A large integration project needs interface specifications, data mapping documents, and sequence diagrams.",
+        "vi": "Tôi điều chỉnh lựa chọn tài liệu của mình phù hợp với ngữ cảnh dự án. Một tính năng agile nhỏ cần user story và tiêu chí chấp nhận. Một dự án tích hợp lớn cần đặc tả giao diện, tài liệu ánh xạ dữ liệu và sơ đồ trình tự."
+      },
+      {
+        "speaker": "A",
+        "en": "What is a sequence diagram and when do you use one?",
+        "vi": "Sơ đồ trình tự là gì và khi nào bạn dùng nó?"
+      },
+      {
+        "speaker": "B",
+        "en": "A sequence diagram shows how objects or systems interact over time, depicting the order of messages. I use them for complex API integrations where the timing and order of calls matter.",
+        "vi": "Sơ đồ trình tự thể hiện cách các đối tượng hoặc hệ thống tương tác theo thời gian, mô tả thứ tự các thông điệp. Tôi dùng chúng cho các tích hợp API phức tạp khi thứ tự và thời điểm của các lời gọi quan trọng."
+      },
+      {
+        "speaker": "A",
+        "en": "Can you describe an integration project you documented this way?",
+        "vi": "Bạn có thể mô tả một dự án tích hợp mà bạn đã tài liệu hóa theo cách này không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Yes. We integrated a CRM with an insurance policy management system. I drew sequence diagrams for quote generation, policy issuance, and claims notification — three separate flows with different actors and timing requirements.",
+        "vi": "Có. Chúng tôi tích hợp một CRM với hệ thống quản lý chính sách bảo hiểm. Tôi đã vẽ sơ đồ trình tự cho việc tạo báo giá, phát hành chính sách và thông báo khiếu nại — ba luồng riêng biệt với các tác nhân và yêu cầu thời gian khác nhau."
+      },
+      {
+        "speaker": "A",
+        "en": "That's a sophisticated piece of work. How long did it take to produce that documentation?",
+        "vi": "Đó là một công việc tinh vi. Mất bao lâu để tạo ra tài liệu đó?"
+      },
+      {
+        "speaker": "B",
+        "en": "About two weeks of focused effort, including multiple review cycles with both the technical architects and business SMEs. Getting consensus on the diagrams was as important as drawing them.",
+        "vi": "Khoảng hai tuần nỗ lực tập trung, bao gồm nhiều vòng review với cả kiến trúc sư kỹ thuật và các chuyên gia nghiệp vụ. Đạt được sự đồng thuận về các sơ đồ quan trọng không kém việc vẽ chúng."
+      }
+    ]
+  },
+  {
+    "id": 159,
+    "title": "UAT – Kiểm thử chấp nhận người dùng",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B2",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "What is your role during User Acceptance Testing?",
+        "vi": "Vai trò của bạn trong Kiểm thử Chấp nhận Người dùng là gì?"
+      },
+      {
+        "speaker": "B",
+        "en": "During UAT, I coordinate between the business users conducting the tests and the development team. I ensure test scenarios cover all acceptance criteria, triage defects, and make the go/no-go recommendation.",
+        "vi": "Trong UAT, tôi điều phối giữa người dùng nghiệp vụ thực hiện kiểm thử và nhóm phát triển. Tôi đảm bảo các kịch bản kiểm thử bao gồm tất cả tiêu chí chấp nhận, phân loại lỗi và đưa ra khuyến nghị đi tiếp hay không."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you design UAT test cases? Do you write them yourself or do the business users write them?",
+        "vi": "Bạn thiết kế các trường hợp kiểm thử UAT như thế nào? Bạn tự viết hay người dùng nghiệp vụ viết?"
+      },
+      {
+        "speaker": "B",
+        "en": "I create the test case templates and seed them with scenarios derived from acceptance criteria. Then business users add their own cases based on real workflows they know. It's collaborative.",
+        "vi": "Tôi tạo các mẫu trường hợp kiểm thử và điền vào đó các kịch bản được suy ra từ tiêu chí chấp nhận. Sau đó người dùng nghiệp vụ thêm các trường hợp của riêng họ dựa trên luồng công việc thực tế mà họ biết. Đó là sự cộng tác."
+      },
+      {
+        "speaker": "A",
+        "en": "What's the difference between a defect and a change request during UAT?",
+        "vi": "Sự khác biệt giữa lỗi và yêu cầu thay đổi trong UAT là gì?"
+      },
+      {
+        "speaker": "B",
+        "en": "A defect is when the system doesn't behave according to an agreed requirement — something that must be fixed before go-live. A change request is when the user wants something different from what was agreed — that goes back through the change management process.",
+        "vi": "Lỗi là khi hệ thống không hoạt động theo yêu cầu đã thống nhất — thứ phải được sửa trước khi ra mắt. Yêu cầu thay đổi là khi người dùng muốn thứ gì đó khác với những gì đã thống nhất — điều đó quay lại quy trình quản lý thay đổi."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you handle a situation where users find many defects close to the go-live date?",
+        "vi": "Bạn xử lý thế nào khi người dùng tìm thấy nhiều lỗi gần đến ngày ra mắt?"
+      },
+      {
+        "speaker": "B",
+        "en": "I triage the defects by severity and business impact. Showstoppers get fixed before go-live. Minor defects can be logged and fixed post-launch if the business accepts the risk. I document that acceptance formally.",
+        "vi": "Tôi phân loại các lỗi theo mức độ nghiêm trọng và tác động nghiệp vụ. Các lỗi nghiêm trọng được sửa trước khi ra mắt. Các lỗi nhỏ có thể được ghi lại và sửa sau khi ra mắt nếu nghiệp vụ chấp nhận rủi ro. Tôi tài liệu hóa sự chấp nhận đó một cách chính thức."
+      },
+      {
+        "speaker": "A",
+        "en": "Have you ever recommended delaying a go-live?",
+        "vi": "Bạn có bao giờ đề xuất trì hoãn việc ra mắt không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Yes, once. We had a payment calculation defect that would have caused systematic overcharging of customers. Launching on time was not worth the regulatory and reputational risk.",
+        "vi": "Có, một lần. Chúng tôi có một lỗi tính toán thanh toán sẽ gây ra việc tính phí quá mức có hệ thống cho khách hàng. Ra mắt đúng hạn không đáng với rủi ro pháp lý và uy tín."
+      },
+      {
+        "speaker": "A",
+        "en": "That's a tough call to make. How did you communicate that recommendation to leadership?",
+        "vi": "Đó là quyết định khó khăn. Bạn truyền đạt khuyến nghị đó cho ban lãnh đạo như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "I presented a clear risk comparison — the cost of a delay versus the estimated cost of the error in financial penalties and customer remediation. The numbers made the decision straightforward.",
+        "vi": "Tôi trình bày một so sánh rủi ro rõ ràng — chi phí trì hoãn so với chi phí ước tính của lỗi trong các khoản phạt tài chính và đền bù khách hàng. Các con số đã làm cho quyết định trở nên đơn giản."
+      },
+      {
+        "speaker": "A",
+        "en": "Using data to support a difficult message is exactly the right approach.",
+        "vi": "Dùng dữ liệu để hỗ trợ một thông điệp khó khăn là cách tiếp cận đúng đắn."
+      }
+    ]
+  },
+  {
+    "id": 160,
+    "title": "API và tích hợp hệ thống",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B2",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "This role involves a lot of system integrations. How comfortable are you working with APIs?",
+        "vi": "Vai trò này liên quan đến nhiều tích hợp hệ thống. Bạn có thoải mái khi làm việc với API không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Very comfortable. I don't write code, but I understand REST API concepts well — endpoints, HTTP methods, request/response structures, status codes, and authentication like OAuth.",
+        "vi": "Rất thoải mái. Tôi không viết code, nhưng tôi hiểu rõ các khái niệm API REST — điểm cuối, phương thức HTTP, cấu trúc yêu cầu/phản hồi, mã trạng thái và xác thực như OAuth."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you document integration requirements between two systems?",
+        "vi": "Bạn tài liệu hóa các yêu cầu tích hợp giữa hai hệ thống như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "I create an Interface Control Document, or ICD. It specifies the data fields, formats, frequency of transfer, error handling, and the business rules that govern the transformation of data between systems.",
+        "vi": "Tôi tạo Tài liệu Kiểm soát Giao diện, hay ICD. Nó xác định các trường dữ liệu, định dạng, tần suất truyền, xử lý lỗi và các quy tắc nghiệp vụ điều chỉnh việc biến đổi dữ liệu giữa các hệ thống."
+      },
+      {
+        "speaker": "A",
+        "en": "What tools do you use to test and validate APIs before sign-off?",
+        "vi": "Bạn dùng công cụ nào để kiểm thử và xác nhận API trước khi ký duyệt?"
+      },
+      {
+        "speaker": "B",
+        "en": "Postman is my primary tool. I use it to send test requests, validate response payloads against the spec, and check that error codes are returned correctly for invalid inputs.",
+        "vi": "Postman là công cụ chính của tôi. Tôi dùng nó để gửi yêu cầu kiểm thử, xác nhận payload phản hồi so với thông số kỹ thuật và kiểm tra rằng các mã lỗi được trả về đúng cho các đầu vào không hợp lệ."
+      },
+      {
+        "speaker": "A",
+        "en": "What is a payload in the context of an API?",
+        "vi": "Payload trong ngữ cảnh API là gì?"
+      },
+      {
+        "speaker": "B",
+        "en": "It's the actual data content carried in an API request or response — typically in JSON or XML format. It's separate from the headers, which carry metadata like authentication tokens.",
+        "vi": "Đó là nội dung dữ liệu thực tế được mang theo trong yêu cầu hoặc phản hồi API — thường ở định dạng JSON hoặc XML. Nó tách biệt với các header, mang siêu dữ liệu như token xác thực."
+      },
+      {
+        "speaker": "A",
+        "en": "Have you worked with third-party APIs — payment gateways, mapping services, that kind of thing?",
+        "vi": "Bạn đã làm việc với các API bên thứ ba — cổng thanh toán, dịch vụ bản đồ, những thứ đó chưa?"
+      },
+      {
+        "speaker": "B",
+        "en": "Yes. I've worked with payment APIs like VNPay and Momo, and messaging APIs for SMS OTP. I review their developer documentation to write the integration requirements and acceptance criteria.",
+        "vi": "Có. Tôi đã làm việc với các API thanh toán như VNPay và Momo, và các API nhắn tin cho SMS OTP. Tôi xem xét tài liệu lập trình viên của họ để viết các yêu cầu tích hợp và tiêu chí chấp nhận."
+      },
+      {
+        "speaker": "A",
+        "en": "What do you do when the third-party API doesn't behave as documented?",
+        "vi": "Bạn làm gì khi API bên thứ ba không hoạt động như đã tài liệu hóa?"
+      },
+      {
+        "speaker": "B",
+        "en": "I collect evidence — screenshots, Postman logs, raw request and response payloads — and raise a formal ticket with the vendor's technical support. I also flag the dependency to the project manager so the timeline is adjusted.",
+        "vi": "Tôi thu thập bằng chứng — ảnh chụp màn hình, log Postman, payload yêu cầu và phản hồi thô — và tạo ticket chính thức với bộ phận hỗ trợ kỹ thuật của nhà cung cấp. Tôi cũng báo hiệu sự phụ thuộc cho quản lý dự án để điều chỉnh thời gian."
+      }
+    ]
+  },
+  {
+    "id": 161,
+    "title": "Phân tích khoảng cách (Gap Analysis)",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B2",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "We often need to evaluate whether a software solution fits our business needs. How do you approach a gap analysis?",
+        "vi": "Chúng tôi thường cần đánh giá xem một giải pháp phần mềm có phù hợp với nhu cầu nghiệp vụ của chúng tôi không. Bạn tiếp cận phân tích khoảng cách như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "I start by defining the target state — what the business needs to achieve. Then I assess the current capabilities against that target and document each gap with its business impact and a proposed remediation.",
+        "vi": "Tôi bắt đầu bằng cách xác định trạng thái mục tiêu — những gì nghiệp vụ cần đạt được. Sau đó tôi đánh giá các khả năng hiện tại so với mục tiêu đó và tài liệu hóa từng khoảng cách với tác động nghiệp vụ và đề xuất khắc phục."
+      },
+      {
+        "speaker": "A",
+        "en": "Have you done a fit-gap analysis for a packaged software — like an ERP or CRM?",
+        "vi": "Bạn đã thực hiện phân tích phù hợp-khoảng cách cho phần mềm đóng gói chưa — như ERP hay CRM?"
+      },
+      {
+        "speaker": "B",
+        "en": "Yes. I was involved in evaluating three CRM platforms for a financial services firm. I mapped 200 business requirements against each vendor's out-of-the-box capabilities and scored the gaps.",
+        "vi": "Có. Tôi đã tham gia đánh giá ba nền tảng CRM cho một công ty dịch vụ tài chính. Tôi đã ánh xạ 200 yêu cầu nghiệp vụ so với khả năng sẵn có của từng nhà cung cấp và chấm điểm các khoảng cách."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you categorize gaps?",
+        "vi": "Bạn phân loại các khoảng cách như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "I use three categories: Fit — fully met by the standard solution; Partial Fit — met with minor configuration; and Gap — requires custom development or a workaround. Gaps carry higher cost and risk.",
+        "vi": "Tôi dùng ba danh mục: Phù hợp — được đáp ứng đầy đủ bởi giải pháp tiêu chuẩn; Phù hợp Một Phần — được đáp ứng với cấu hình nhỏ; và Khoảng Cách — yêu cầu phát triển tùy chỉnh hoặc giải pháp thay thế. Khoảng cách mang rủi ro và chi phí cao hơn."
+      },
+      {
+        "speaker": "A",
+        "en": "What happens when a vendor claims a gap is actually a fit?",
+        "vi": "Điều gì xảy ra khi nhà cung cấp tuyên bố rằng một khoảng cách thực ra là phù hợp?"
+      },
+      {
+        "speaker": "B",
+        "en": "I ask for a live demonstration. Claims in a sales presentation don't count — I need to see the functionality working with our specific scenario, not a generic demo.",
+        "vi": "Tôi yêu cầu một buổi demo trực tiếp. Các tuyên bố trong bài thuyết trình bán hàng không có giá trị — tôi cần thấy chức năng hoạt động với kịch bản cụ thể của chúng tôi, không phải demo chung chung."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you communicate gap analysis results to decision-makers?",
+        "vi": "Bạn truyền đạt kết quả phân tích khoảng cách cho người ra quyết định như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "I produce a scorecard matrix with a visual summary — which vendors score highest overall, and a breakdown of critical gaps for each. I also quantify the estimated cost of closing each gap.",
+        "vi": "Tôi tạo ma trận thẻ điểm với tóm tắt trực quan — nhà cung cấp nào đạt điểm cao nhất tổng thể, và phân tích chi tiết các khoảng cách quan trọng cho từng nhà cung cấp. Tôi cũng định lượng chi phí ước tính để thu hẹp từng khoảng cách."
+      },
+      {
+        "speaker": "A",
+        "en": "What factors beyond functionality matter in a software selection decision?",
+        "vi": "Những yếu tố nào ngoài chức năng quan trọng trong quyết định chọn phần mềm?"
+      },
+      {
+        "speaker": "B",
+        "en": "Total cost of ownership, vendor stability, integration complexity, scalability, support SLAs, and the ease of adoption for end users. Functionality alone doesn't tell the whole story.",
+        "vi": "Tổng chi phí sở hữu, sự ổn định của nhà cung cấp, độ phức tạp tích hợp, khả năng mở rộng, SLA hỗ trợ và sự dễ dàng áp dụng cho người dùng cuối. Chức năng một mình không nói lên toàn bộ câu chuyện."
+      }
+    ]
+  },
+  {
+    "id": 162,
+    "title": "Wireframe và Prototype",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B1",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "Do you create wireframes as part of your BA work?",
+        "vi": "Bạn có tạo wireframe như một phần của công việc BA không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Yes, for user-facing features I often create low-fidelity wireframes early in the process. It helps stakeholders visualize the solution and give feedback before development starts.",
+        "vi": "Có, đối với các tính năng hướng người dùng, tôi thường tạo wireframe độ chân thực thấp sớm trong quy trình. Nó giúp các bên liên quan hình dung giải pháp và đưa ra phản hồi trước khi phát triển bắt đầu."
+      },
+      {
+        "speaker": "A",
+        "en": "What tools do you use for wireframing?",
+        "vi": "Bạn dùng công cụ gì để tạo wireframe?"
+      },
+      {
+        "speaker": "B",
+        "en": "Balsamiq for quick low-fidelity mockups, and Figma for higher-fidelity interactive prototypes when I need to demonstrate user flows.",
+        "vi": "Balsamiq cho các mockup độ chân thực thấp nhanh, và Figma cho các prototype tương tác độ chân thực cao hơn khi tôi cần demo luồng người dùng."
+      },
+      {
+        "speaker": "A",
+        "en": "What's the difference between a wireframe and a prototype?",
+        "vi": "Sự khác biệt giữa wireframe và prototype là gì?"
+      },
+      {
+        "speaker": "B",
+        "en": "A wireframe is a static visual sketch of a screen layout — it shows structure and content placement but has no interactivity. A prototype simulates user interactions — you can click buttons and navigate between screens.",
+        "vi": "Wireframe là bản phác thảo hình ảnh tĩnh của bố cục màn hình — nó thể hiện cấu trúc và vị trí nội dung nhưng không có tính tương tác. Prototype mô phỏng các tương tác người dùng — bạn có thể nhấp nút và điều hướng giữa các màn hình."
+      },
+      {
+        "speaker": "A",
+        "en": "When do you use a prototype versus just a wireframe?",
+        "vi": "Khi nào bạn dùng prototype thay vì chỉ dùng wireframe?"
+      },
+      {
+        "speaker": "B",
+        "en": "I use prototypes for complex flows where the sequence of interactions matters, or when I need to validate usability with real users before committing to development effort.",
+        "vi": "Tôi dùng prototype cho các luồng phức tạp khi thứ tự các tương tác quan trọng, hoặc khi tôi cần xác nhận khả năng sử dụng với người dùng thực trước khi cam kết với nỗ lực phát triển."
+      },
+      {
+        "speaker": "A",
+        "en": "Have you ever run usability tests with prototypes?",
+        "vi": "Bạn có bao giờ thực hiện kiểm thử khả năng sử dụng với prototype không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Yes. I've organized think-aloud sessions where representative users interact with a Figma prototype while narrating their thoughts. The insights always surface things the design team missed.",
+        "vi": "Có. Tôi đã tổ chức các buổi 'nghĩ to' khi người dùng đại diện tương tác với prototype Figma trong khi kể ra suy nghĩ của họ. Những hiểu biết luôn phát hiện những thứ mà nhóm thiết kế đã bỏ lỡ."
+      },
+      {
+        "speaker": "A",
+        "en": "Do you work closely with UX designers, or do you handle the UX work yourself?",
+        "vi": "Bạn có làm việc chặt chẽ với các nhà thiết kế UX không, hay bạn tự xử lý công việc UX?"
+      },
+      {
+        "speaker": "B",
+        "en": "In larger teams, I collaborate with a dedicated UX designer — I focus on the business logic while they focus on the visual design. In smaller teams, I sometimes own both, which is why I keep my wireframing skills sharp.",
+        "vi": "Trong các nhóm lớn hơn, tôi cộng tác với nhà thiết kế UX chuyên dụng — tôi tập trung vào logic nghiệp vụ trong khi họ tập trung vào thiết kế trực quan. Trong các nhóm nhỏ hơn, đôi khi tôi sở hữu cả hai, đó là lý do tôi giữ kỹ năng wireframing của mình sắc bén."
+      },
+      {
+        "speaker": "A",
+        "en": "That versatility is a real strength in a fast-moving team.",
+        "vi": "Tính linh hoạt đó là một sức mạnh thực sự trong một nhóm phát triển nhanh."
+      }
+    ]
+  },
+  {
+    "id": 163,
+    "title": "Quản lý rủi ro trong dự án IT",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B2",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "How do you handle risk management as a BA? Is that really in your remit?",
+        "vi": "Bạn xử lý quản lý rủi ro như thế nào với tư cách là BA? Đó có thực sự thuộc phạm vi công việc của bạn không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Absolutely. BAs are uniquely positioned to identify business risks — we understand both what the system should do and what the business depends on. Risk identification is very much part of our role.",
+        "vi": "Hoàn toàn. BA có vị trí độc đáo để xác định rủi ro nghiệp vụ — chúng tôi hiểu cả những gì hệ thống nên làm và những gì nghiệp vụ phụ thuộc vào. Xác định rủi ro là một phần trong vai trò của chúng tôi."
+      },
+      {
+        "speaker": "A",
+        "en": "What kinds of risks do you typically identify?",
+        "vi": "Bạn thường xác định những loại rủi ro nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "Requirement risks — ambiguous or incomplete specs. Integration risks — dependencies on external systems. Data risks — poor quality source data. And adoption risks — users not accepting the change.",
+        "vi": "Rủi ro yêu cầu — thông số mơ hồ hoặc không đầy đủ. Rủi ro tích hợp — phụ thuộc vào hệ thống bên ngoài. Rủi ro dữ liệu — dữ liệu nguồn chất lượng kém. Và rủi ro áp dụng — người dùng không chấp nhận thay đổi."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you prioritize risks once you've identified them?",
+        "vi": "Bạn ưu tiên các rủi ro như thế nào sau khi xác định chúng?"
+      },
+      {
+        "speaker": "B",
+        "en": "I use a probability-impact matrix. I rate each risk on likelihood and potential impact, then focus mitigation efforts on high-probability, high-impact risks first.",
+        "vi": "Tôi dùng ma trận xác suất-tác động. Tôi đánh giá từng rủi ro theo khả năng xảy ra và tác động tiềm tàng, sau đó tập trung nỗ lực giảm thiểu vào các rủi ro có xác suất cao, tác động cao trước."
+      },
+      {
+        "speaker": "A",
+        "en": "Give me an example of a significant risk you identified and mitigated.",
+        "vi": "Hãy cho tôi một ví dụ về rủi ro đáng kể mà bạn đã xác định và giảm thiểu."
+      },
+      {
+        "speaker": "B",
+        "en": "We had a project dependent on a third-party data feed that was known to have intermittent outages. I proposed building a caching layer and a fallback mechanism so the system could continue operating during outages.",
+        "vi": "Chúng tôi có một dự án phụ thuộc vào một luồng dữ liệu bên thứ ba được biết là có sự cố gián đoạn. Tôi đề xuất xây dựng một lớp bộ nhớ đệm và một cơ chế dự phòng để hệ thống có thể tiếp tục hoạt động trong thời gian sự cố."
+      },
+      {
+        "speaker": "A",
+        "en": "Was that accepted by the development team?",
+        "vi": "Đề xuất đó có được nhóm phát triển chấp nhận không?"
+      },
+      {
+        "speaker": "B",
+        "en": "After I quantified the business impact of a potential outage — lost revenue and SLA breaches — yes, the additional development cost was approved quickly.",
+        "vi": "Sau khi tôi định lượng tác động nghiệp vụ của sự cố tiềm tàng — mất doanh thu và vi phạm SLA — có, chi phí phát triển bổ sung đã được duyệt nhanh chóng."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you track risks throughout the project lifecycle?",
+        "vi": "Bạn theo dõi rủi ro trong suốt vòng đời dự án như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "I maintain a live risk register and review it in weekly project status meetings. Risks are updated as their likelihood or impact changes, and resolved risks are closed with a note on the outcome.",
+        "vi": "Tôi duy trì sổ đăng ký rủi ro trực tiếp và xem xét nó trong các cuộc họp trạng thái dự án hàng tuần. Rủi ro được cập nhật khi khả năng xảy ra hoặc tác động của chúng thay đổi, và các rủi ro đã giải quyết được đóng với ghi chú về kết quả."
+      }
+    ]
+  },
+  {
+    "id": 164,
+    "title": "Làm việc với Developer và Testing Team",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B2",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "How do you typically work with the development team? What does your daily interaction look like?",
+        "vi": "Bạn thường làm việc với nhóm phát triển như thế nào? Sự tương tác hàng ngày của bạn trông như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "I attend the daily standup, but I also do ad hoc clarification sessions whenever a developer has a question about a story. Ambiguity in a user story is the leading cause of rework, so I make myself very accessible.",
+        "vi": "Tôi tham dự buổi standup hàng ngày, nhưng tôi cũng tổ chức các buổi làm rõ theo yêu cầu bất cứ khi nào developer có câu hỏi về một story. Sự mơ hồ trong user story là nguyên nhân hàng đầu dẫn đến làm lại, vì vậy tôi luôn sẵn sàng tiếp cận."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you handle it when a developer pushes back on a requirement, saying it's not technically feasible?",
+        "vi": "Bạn xử lý thế nào khi developer phản đối một yêu cầu, nói rằng nó không khả thi về mặt kỹ thuật?"
+      },
+      {
+        "speaker": "B",
+        "en": "I first seek to understand the technical constraint. Then I explore alternatives with the developer — sometimes the spirit of the requirement can be met with a different technical approach.",
+        "vi": "Đầu tiên tôi tìm cách hiểu ràng buộc kỹ thuật. Sau đó tôi khám phá các giải pháp thay thế với developer — đôi khi tinh thần của yêu cầu có thể được đáp ứng bằng cách tiếp cận kỹ thuật khác."
+      },
+      {
+        "speaker": "A",
+        "en": "What if the alternative doesn't fully meet the business need?",
+        "vi": "Điều gì nếu giải pháp thay thế không đáp ứng đầy đủ nhu cầu nghiệp vụ?"
+      },
+      {
+        "speaker": "B",
+        "en": "Then I escalate it as a technical risk to the project manager and product owner with a clear articulation of the business impact, so a prioritized decision can be made.",
+        "vi": "Sau đó tôi leo thang nó như một rủi ro kỹ thuật cho quản lý dự án và product owner với sự trình bày rõ ràng về tác động nghiệp vụ, để có thể đưa ra quyết định ưu tiên."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you work with the QA or testing team?",
+        "vi": "Bạn làm việc với nhóm QA hay kiểm thử như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "I share my acceptance criteria with the QA team early — ideally during story creation. They use them as the basis for test cases. I also help triage defects by confirming whether they're genuine bugs or behavior misalignments.",
+        "vi": "Tôi chia sẻ tiêu chí chấp nhận của mình với nhóm QA sớm — lý tưởng nhất là trong quá trình tạo story. Họ sử dụng chúng làm cơ sở cho các trường hợp kiểm thử. Tôi cũng giúp phân loại lỗi bằng cách xác nhận chúng là lỗi thực sự hay sự không phù hợp hành vi."
+      },
+      {
+        "speaker": "A",
+        "en": "What's the difference between a bug and a behavior misalignment?",
+        "vi": "Sự khác biệt giữa lỗi và sự không phù hợp hành vi là gì?"
+      },
+      {
+        "speaker": "B",
+        "en": "A bug is when the code doesn't do what the requirements say. A behavior misalignment is when the code does exactly what the requirements say, but the requirements themselves were wrong — that's on us, not the developers.",
+        "vi": "Lỗi là khi code không làm những gì yêu cầu nói. Sự không phù hợp hành vi là khi code làm chính xác những gì yêu cầu nói, nhưng bản thân các yêu cầu sai — đó là lỗi của chúng tôi, không phải developer."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you handle that kind of situation — where the requirements were wrong?",
+        "vi": "Bạn xử lý thế nào tình huống đó — khi yêu cầu sai?"
+      },
+      {
+        "speaker": "B",
+        "en": "Honestly. I own it, update the requirements, and work with QA to retest. Blaming the developers or hiding it would damage trust and ultimately hurt the project more.",
+        "vi": "Thành thật. Tôi chịu trách nhiệm, cập nhật yêu cầu và làm việc với QA để kiểm thử lại. Đổ lỗi cho developer hoặc che giấu nó sẽ làm hỏng lòng tin và cuối cùng gây hại cho dự án nhiều hơn."
+      }
+    ]
+  },
+  {
+    "id": 165,
+    "title": "Quản lý sản phẩm và Roadmap",
+    "topic": "Phỏng vấn BA IT",
+    "level": "C1",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "How closely do you work with product management? Where does the BA role end and the PM role begin?",
+        "vi": "Bạn làm việc chặt chẽ với quản lý sản phẩm như thế nào? Vai trò BA kết thúc và vai trò PM bắt đầu ở đâu?"
+      },
+      {
+        "speaker": "B",
+        "en": "The boundary varies by organization. Generally, the PM defines the product vision and roadmap — the 'what' and 'why.' The BA translates that into detailed requirements — the 'how' the system should behave.",
+        "vi": "Ranh giới thay đổi tùy theo tổ chức. Nói chung, PM xác định tầm nhìn và lộ trình sản phẩm — 'cái gì' và 'tại sao'. BA chuyển đổi điều đó thành các yêu cầu chi tiết — 'như thế nào' hệ thống nên hoạt động."
+      },
+      {
+        "speaker": "A",
+        "en": "Have you ever had to challenge the product roadmap based on your analysis?",
+        "vi": "Bạn có bao giờ phải thách thức lộ trình sản phẩm dựa trên phân tích của mình không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Yes. During a roadmap review, I identified that two upcoming features had overlapping data models that, if built independently, would create a significant refactoring cost later. I proposed sequencing them differently.",
+        "vi": "Có. Trong một buổi review lộ trình, tôi xác định rằng hai tính năng sắp tới có các mô hình dữ liệu chồng chéo mà nếu được xây dựng độc lập, sẽ tạo ra chi phí tái cấu trúc đáng kể sau này. Tôi đề xuất sắp xếp trình tự chúng khác đi."
+      },
+      {
+        "speaker": "A",
+        "en": "How did you make that case to the product team?",
+        "vi": "Bạn đã trình bày điều đó với nhóm sản phẩm như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "I modeled the data dependency visually and estimated the technical debt cost in developer days. When framed as 'this sequence saves us 30 developer days,' the PM was immediately receptive.",
+        "vi": "Tôi mô hình hóa sự phụ thuộc dữ liệu bằng hình ảnh và ước tính chi phí nợ kỹ thuật theo ngày công của developer. Khi được đóng khung là 'trình tự này tiết kiệm cho chúng ta 30 ngày công developer,' PM ngay lập tức tiếp nhận."
+      },
+      {
+        "speaker": "A",
+        "en": "That's strong strategic thinking. How do you stay aligned with a roadmap that's constantly shifting?",
+        "vi": "Đó là tư duy chiến lược mạnh mẽ. Làm thế nào để bạn duy trì sự phù hợp với lộ trình liên tục thay đổi?"
+      },
+      {
+        "speaker": "B",
+        "en": "I treat the roadmap as a living document and maintain a clear dependency map between features. When priorities shift, I immediately assess what requirements are affected and communicate the downstream impact.",
+        "vi": "Tôi coi lộ trình là tài liệu sống và duy trì bản đồ phụ thuộc rõ ràng giữa các tính năng. Khi ưu tiên thay đổi, tôi ngay lập tức đánh giá những yêu cầu nào bị ảnh hưởng và truyền đạt tác động tiếp theo."
+      },
+      {
+        "speaker": "A",
+        "en": "What's your experience with OKRs or strategic goal frameworks?",
+        "vi": "Kinh nghiệm của bạn với OKR hoặc các khung mục tiêu chiến lược là gì?"
+      },
+      {
+        "speaker": "B",
+        "en": "I've worked in environments using OKRs. I find them useful for ensuring requirements are anchored to measurable business outcomes rather than just features. I always ask: which OKR does this story contribute to?",
+        "vi": "Tôi đã làm việc trong các môi trường sử dụng OKR. Tôi thấy chúng hữu ích để đảm bảo các yêu cầu được gắn với các kết quả nghiệp vụ đo lường được thay vì chỉ là các tính năng. Tôi luôn hỏi: story này đóng góp vào OKR nào?"
+      },
+      {
+        "speaker": "A",
+        "en": "That kind of alignment between features and business value is rare and very valuable.",
+        "vi": "Loại liên kết giữa tính năng và giá trị nghiệp vụ đó hiếm và rất có giá trị."
+      },
+      {
+        "speaker": "B",
+        "en": "It prevents the team from building things that are technically correct but strategically irrelevant — which is a common failure mode in IT projects.",
+        "vi": "Nó ngăn nhóm xây dựng những thứ đúng về mặt kỹ thuật nhưng không liên quan về mặt chiến lược — đó là một chế độ thất bại phổ biến trong các dự án IT."
+      }
+    ]
+  },
+  {
+    "id": 166,
+    "title": "Công cụ JIRA và Confluence",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B1",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "We use JIRA and Confluence heavily here. Can you describe how you typically use each?",
+        "vi": "Chúng tôi sử dụng JIRA và Confluence rất nhiều ở đây. Bạn có thể mô tả cách bạn thường dùng mỗi cái không?"
+      },
+      {
+        "speaker": "B",
+        "en": "I use JIRA to create and manage epics, user stories, tasks, and bugs. I configure custom workflows for different project types and use filters and dashboards to track sprint progress.",
+        "vi": "Tôi dùng JIRA để tạo và quản lý epic, user story, tác vụ và lỗi. Tôi cấu hình luồng công việc tùy chỉnh cho các loại dự án khác nhau và dùng bộ lọc và dashboard để theo dõi tiến độ sprint."
+      },
+      {
+        "speaker": "A",
+        "en": "And Confluence?",
+        "vi": "Còn Confluence thì sao?"
+      },
+      {
+        "speaker": "B",
+        "en": "Confluence is my primary documentation hub. I structure spaces by project, with pages for requirements specifications, meeting notes, decisions logs, and architecture overviews. I link Confluence pages directly to JIRA stories.",
+        "vi": "Confluence là trung tâm tài liệu chính của tôi. Tôi cấu trúc không gian theo dự án, với các trang cho thông số kỹ thuật yêu cầu, ghi chú cuộc họp, nhật ký quyết định và tổng quan kiến trúc. Tôi liên kết các trang Confluence trực tiếp đến các story JIRA."
+      },
+      {
+        "speaker": "A",
+        "en": "How do you handle version control for requirements documents in Confluence?",
+        "vi": "Bạn xử lý kiểm soát phiên bản cho các tài liệu yêu cầu trong Confluence như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "Confluence has built-in version history, which I rely on. I also use a clear change log at the top of each page — dated entries describing what changed and why, so stakeholders can track the evolution.",
+        "vi": "Confluence có lịch sử phiên bản tích hợp mà tôi dựa vào. Tôi cũng dùng nhật ký thay đổi rõ ràng ở đầu mỗi trang — các mục nhập có ngày mô tả những gì đã thay đổi và tại sao, để các bên liên quan có thể theo dõi sự phát triển."
+      },
+      {
+        "speaker": "A",
+        "en": "Do you have experience with any other project management or requirements tools?",
+        "vi": "Bạn có kinh nghiệm với các công cụ quản lý dự án hoặc yêu cầu nào khác không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Yes — Azure DevOps for some Microsoft-stack projects, and IBM DOORS for highly regulated environments where formal requirements traceability is mandatory.",
+        "vi": "Có — Azure DevOps cho một số dự án Microsoft-stack, và IBM DOORS cho các môi trường được quản lý chặt chẽ khi truy xuất nguồn gốc yêu cầu chính thức là bắt buộc."
+      },
+      {
+        "speaker": "A",
+        "en": "Have you used any AI-assisted tools in your BA work?",
+        "vi": "Bạn có dùng các công cụ hỗ trợ AI trong công việc BA của mình không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Yes. I've started using AI tools to accelerate drafting user stories and acceptance criteria, and to summarize long meeting transcripts. It speeds up the routine parts so I can focus on the analysis work.",
+        "vi": "Có. Tôi đã bắt đầu sử dụng các công cụ AI để tăng tốc việc soạn thảo user story và tiêu chí chấp nhận, và để tóm tắt các bản ghi cuộc họp dài. Nó tăng tốc các phần thường lệ để tôi có thể tập trung vào công việc phân tích."
+      },
+      {
+        "speaker": "A",
+        "en": "Good to know. Adaptability with tools is important — our tech stack evolves constantly.",
+        "vi": "Tốt khi biết điều đó. Khả năng thích nghi với các công cụ quan trọng — tech stack của chúng tôi liên tục phát triển."
+      },
+      {
+        "speaker": "B",
+        "en": "I agree. The tools matter less than the underlying skills — clear thinking, structured communication, and knowing the right questions to ask.",
+        "vi": "Tôi đồng ý. Các công cụ quan trọng ít hơn các kỹ năng cơ bản — tư duy rõ ràng, giao tiếp có cấu trúc và biết câu hỏi đúng để hỏi."
+      }
+    ]
+  },
+  {
+    "id": 167,
+    "title": "Thương lượng lương và lợi ích",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B2",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "We're very impressed with your background. Before we move forward, can we talk about compensation expectations?",
+        "vi": "Chúng tôi rất ấn tượng với nền tảng của bạn. Trước khi tiến tiếp, chúng ta có thể nói về kỳ vọng thù lao không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Of course. Based on my experience level, the scope of this role, and current market rates, I'm looking for a base salary in the range of 35 to 40 million dong per month.",
+        "vi": "Tất nhiên. Dựa trên mức độ kinh nghiệm, phạm vi của vai trò này và mức thị trường hiện tại, tôi đang tìm kiếm mức lương cơ bản trong khoảng 35 đến 40 triệu đồng mỗi tháng."
+      },
+      {
+        "speaker": "A",
+        "en": "That's at the higher end of our band for this role. Can you help me understand what justifies that number?",
+        "vi": "Đó là ở mức cao hơn trong thang lương của chúng tôi cho vị trí này. Bạn có thể giúp tôi hiểu điều gì biện minh cho con số đó không?"
+      },
+      {
+        "speaker": "B",
+        "en": "I bring five years of specialized fintech experience, which is directly relevant to your core business. My track record includes delivering projects that reduced processing time by 60% and improved data accuracy significantly.",
+        "vi": "Tôi mang đến năm năm kinh nghiệm fintech chuyên biệt, trực tiếp liên quan đến hoạt động kinh doanh cốt lõi của bạn. Thành tích của tôi bao gồm việc thực hiện các dự án giảm thời gian xử lý 60% và cải thiện độ chính xác dữ liệu đáng kể."
+      },
+      {
+        "speaker": "A",
+        "en": "Fair point. Beyond base salary, what other aspects of the package matter to you?",
+        "vi": "Điểm đúng đắn. Ngoài lương cơ bản, những khía cạnh nào khác của gói lương quan trọng với bạn?"
+      },
+      {
+        "speaker": "B",
+        "en": "I care about professional development — training budget and access to certifications like CBAP or PMI-PBA. I also value flexibility, particularly the option for hybrid working.",
+        "vi": "Tôi quan tâm đến phát triển chuyên nghiệp — ngân sách đào tạo và khả năng tiếp cận các chứng chỉ như CBAP hoặc PMI-PBA. Tôi cũng đánh giá cao sự linh hoạt, đặc biệt là tùy chọn làm việc kết hợp."
+      },
+      {
+        "speaker": "A",
+        "en": "We do offer a training budget and we're open to hybrid for this role. On base salary, our maximum for this level is 38 million. Would that work for you?",
+        "vi": "Chúng tôi có ngân sách đào tạo và chúng tôi sẵn sàng làm việc kết hợp cho vai trò này. Về lương cơ bản, mức tối đa của chúng tôi cho cấp này là 38 triệu. Điều đó có phù hợp với bạn không?"
+      },
+      {
+        "speaker": "B",
+        "en": "I could accept 38 million if the training budget is at least 15 million per year and the hybrid arrangement is formalized — perhaps three days remote.",
+        "vi": "Tôi có thể chấp nhận 38 triệu nếu ngân sách đào tạo ít nhất là 15 triệu mỗi năm và sắp xếp kết hợp được chính thức hóa — có thể ba ngày làm từ xa."
+      },
+      {
+        "speaker": "A",
+        "en": "That's a reasonable ask. I'll confirm the training budget with HR and come back to you with a formal offer.",
+        "vi": "Đó là yêu cầu hợp lý. Tôi sẽ xác nhận ngân sách đào tạo với HR và quay lại với bạn bằng một đề nghị chính thức."
+      },
+      {
+        "speaker": "B",
+        "en": "That sounds great. I'm genuinely excited about this opportunity and look forward to hearing from you.",
+        "vi": "Nghe tuyệt vời. Tôi thực sự hứng khởi về cơ hội này và mong nhận được tin tức từ bạn."
+      },
+      {
+        "speaker": "A",
+        "en": "Likewise. We'll be in touch by end of week.",
+        "vi": "Tương tự. Chúng tôi sẽ liên hệ vào cuối tuần."
+      }
+    ]
+  },
+  {
+    "id": 168,
+    "title": "Câu hỏi tình huống – Dự án thất bại",
+    "topic": "Phỏng vấn BA IT",
+    "level": "C1",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "Tell me about a project that didn't go as planned. What happened and what did you learn?",
+        "vi": "Hãy kể cho tôi nghe về một dự án không diễn ra như kế hoạch. Điều gì đã xảy ra và bạn học được gì?"
+      },
+      {
+        "speaker": "B",
+        "en": "Certainly. Early in my career, I was the BA on a system migration project that overran by four months. Looking back, there were multiple contributing factors that I now know how to handle better.",
+        "vi": "Tất nhiên. Đầu sự nghiệp, tôi là BA trong một dự án di chuyển hệ thống bị trễ bốn tháng. Nhìn lại, có nhiều yếu tố góp phần mà bây giờ tôi biết cách xử lý tốt hơn."
+      },
+      {
+        "speaker": "A",
+        "en": "Walk me through the key factors.",
+        "vi": "Hãy hướng dẫn tôi qua các yếu tố chính."
+      },
+      {
+        "speaker": "B",
+        "en": "First, we didn't do sufficient upfront data profiling. We discovered data quality issues during migration that should have been found during planning — that cost us six weeks.",
+        "vi": "Đầu tiên, chúng tôi không thực hiện đủ việc lập hồ sơ dữ liệu trước. Chúng tôi phát hiện ra các vấn đề chất lượng dữ liệu trong quá trình di chuyển lẽ ra phải được tìm thấy trong giai đoạn lập kế hoạch — điều đó tiêu tốn sáu tuần của chúng tôi."
+      },
+      {
+        "speaker": "A",
+        "en": "What else?",
+        "vi": "Còn gì nữa không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Second, we had a key stakeholder — the head of operations — who was never fully aligned. He'd agree in meetings but then his team would raise new requirements during UAT. I didn't push for written sign-off early enough.",
+        "vi": "Thứ hai, chúng tôi có một bên liên quan chính — trưởng bộ phận vận hành — người không bao giờ hoàn toàn đồng thuận. Ông ấy sẽ đồng ý trong các cuộc họp nhưng sau đó nhóm của ông ấy sẽ đặt ra các yêu cầu mới trong UAT. Tôi không đẩy mạnh việc ký duyệt bằng văn bản đủ sớm."
+      },
+      {
+        "speaker": "A",
+        "en": "How did the team respond to the delays?",
+        "vi": "Nhóm phản ứng thế nào với sự chậm trễ?"
+      },
+      {
+        "speaker": "B",
+        "en": "There was frustration and some blame-shifting, which is natural under pressure. I tried to stay focused on solutions rather than post-mortems during the crisis — we did a proper retrospective once the project was delivered.",
+        "vi": "Có sự thất vọng và một số đổ lỗi, điều đó tự nhiên dưới áp lực. Tôi cố gắng tập trung vào giải pháp thay vì phân tích sự cố trong cuộc khủng hoảng — chúng tôi đã thực hiện một buổi hồi cứu đúng đắn sau khi dự án được bàn giao."
+      },
+      {
+        "speaker": "A",
+        "en": "What concrete changes did you make to your practice after that project?",
+        "vi": "Bạn đã thực hiện những thay đổi cụ thể nào trong thực hành của mình sau dự án đó?"
+      },
+      {
+        "speaker": "B",
+        "en": "I now mandate a data quality assessment as the first workstream on any migration. And I have stakeholders sign a requirements baseline document before development begins — not just verbal agreement.",
+        "vi": "Bây giờ tôi bắt buộc đánh giá chất lượng dữ liệu là luồng công việc đầu tiên trong bất kỳ di chuyển nào. Và tôi yêu cầu các bên liên quan ký vào tài liệu đường cơ sở yêu cầu trước khi phát triển bắt đầu — không chỉ là thỏa thuận bằng lời nói."
+      },
+      {
+        "speaker": "A",
+        "en": "It takes maturity to talk candidly about failures. That kind of reflection is exactly what we look for.",
+        "vi": "Cần sự trưởng thành để nói thẳng thắn về thất bại. Loại phản ánh đó chính xác là những gì chúng tôi tìm kiếm."
+      },
+      {
+        "speaker": "B",
+        "en": "Thank you. I've always believed that the projects I learned the most from were the ones that were hardest.",
+        "vi": "Cảm ơn. Tôi luôn tin rằng những dự án tôi học được nhiều nhất là những dự án khó khăn nhất."
+      }
+    ]
+  },
+  {
+    "id": 169,
+    "title": "Điểm mạnh và điểm yếu của ứng viên BA",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B2",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "What do you consider your greatest strength as a Business Analyst?",
+        "vi": "Bạn cho rằng điểm mạnh lớn nhất của mình với tư cách là Business Analyst là gì?"
+      },
+      {
+        "speaker": "B",
+        "en": "My ability to translate complex technical concepts into clear business language — and vice versa. I can sit with a developer discussing API schemas in the morning and present findings to a board in the afternoon.",
+        "vi": "Khả năng chuyển đổi các khái niệm kỹ thuật phức tạp thành ngôn ngữ nghiệp vụ rõ ràng — và ngược lại. Tôi có thể ngồi với developer thảo luận về schema API buổi sáng và trình bày kết quả cho hội đồng quản trị buổi chiều."
+      },
+      {
+        "speaker": "A",
+        "en": "Can you give a specific example of where that bridging ability made a difference?",
+        "vi": "Bạn có thể cho một ví dụ cụ thể nơi khả năng cầu nối đó tạo ra sự khác biệt không?"
+      },
+      {
+        "speaker": "B",
+        "en": "On a regulatory reporting project, the compliance team didn't understand why a simple-seeming report required six weeks of development. I created a visual showing the 12 source systems involved and the transformation complexity. It completely changed their expectations.",
+        "vi": "Trong một dự án báo cáo tuân thủ, nhóm tuân thủ không hiểu tại sao một báo cáo trông đơn giản lại cần sáu tuần phát triển. Tôi tạo ra một hình ảnh trực quan cho thấy 12 hệ thống nguồn liên quan và độ phức tạp biến đổi. Điều đó hoàn toàn thay đổi kỳ vọng của họ."
+      },
+      {
+        "speaker": "A",
+        "en": "And what would you say is a genuine weakness or an area you're working to develop?",
+        "vi": "Và bạn sẽ nói điểm yếu thực sự hoặc lĩnh vực bạn đang phát triển là gì?"
+      },
+      {
+        "speaker": "B",
+        "en": "I tend to overanalyze before making recommendations. I want to be thorough, but sometimes stakeholders need a 'good enough' answer faster than I naturally move.",
+        "vi": "Tôi có xu hướng phân tích quá mức trước khi đưa ra khuyến nghị. Tôi muốn thấu đáo, nhưng đôi khi các bên liên quan cần câu trả lời 'đủ tốt' nhanh hơn tôi tự nhiên hoạt động."
+      },
+      {
+        "speaker": "A",
+        "en": "How are you addressing that?",
+        "vi": "Bạn đang giải quyết điều đó như thế nào?"
+      },
+      {
+        "speaker": "B",
+        "en": "I've started time-boxing my analysis. I give myself a deadline — say, 30 minutes for an initial recommendation — and I clearly label it as a preliminary view that will be refined. It's improved my responsiveness significantly.",
+        "vi": "Tôi đã bắt đầu giới hạn thời gian phân tích của mình. Tôi tự đặt deadline — chẳng hạn 30 phút cho khuyến nghị ban đầu — và tôi ghi rõ đó là quan điểm sơ bộ sẽ được tinh chỉnh. Điều đó đã cải thiện đáng kể khả năng phản hồi của tôi."
+      },
+      {
+        "speaker": "A",
+        "en": "Self-awareness and deliberate improvement are great signs. What motivates you in the BA role?",
+        "vi": "Nhận thức bản thân và cải thiện có chủ đích là dấu hiệu tốt. Điều gì thúc đẩy bạn trong vai trò BA?"
+      },
+      {
+        "speaker": "B",
+        "en": "Honestly, the moment a business user says 'this is exactly what I needed.' Knowing that a well-written requirement led to a solution that genuinely improves someone's workday is deeply satisfying.",
+        "vi": "Thực sự là khoảnh khắc người dùng nghiệp vụ nói 'đây chính xác là những gì tôi cần.' Biết rằng một yêu cầu được viết tốt dẫn đến một giải pháp thực sự cải thiện ngày làm việc của ai đó là rất thỏa mãn."
+      },
+      {
+        "speaker": "A",
+        "en": "That's a great answer. It shows you're outcomes-focused rather than just process-focused.",
+        "vi": "Đó là câu trả lời tuyệt vời. Nó cho thấy bạn tập trung vào kết quả chứ không chỉ tập trung vào quy trình."
+      }
+    ]
+  },
+  {
+    "id": 170,
+    "title": "Câu hỏi ứng viên hỏi nhà tuyển dụng",
+    "topic": "Phỏng vấn BA IT",
+    "level": "B2",
+    "lines": [
+      {
+        "speaker": "A",
+        "en": "We've covered a lot of ground. Before we wrap up, do you have any questions for us?",
+        "vi": "Chúng ta đã đề cập nhiều vấn đề. Trước khi kết thúc, bạn có câu hỏi gì cho chúng tôi không?"
+      },
+      {
+        "speaker": "B",
+        "en": "Yes, several. First — how does the BA team currently interface with the product and engineering teams? Is there a formal process or is it more fluid?",
+        "vi": "Có, một vài câu. Đầu tiên — hiện tại nhóm BA giao tiếp với nhóm sản phẩm và kỹ thuật như thế nào? Có quy trình chính thức hay linh hoạt hơn?"
+      },
+      {
+        "speaker": "A",
+        "en": "We use a hybrid model — there's a structured sprint ceremony cadence, but BAs also work informally with engineers on a daily basis.",
+        "vi": "Chúng tôi sử dụng mô hình kết hợp — có một nhịp điệu buổi lễ sprint có cấu trúc, nhưng BA cũng làm việc không chính thức với kỹ sư hàng ngày."
+      },
+      {
+        "speaker": "B",
+        "en": "Good to know. Second — what does success look like for this role in the first 90 days?",
+        "vi": "Tốt khi biết. Thứ hai — thành công trông như thế nào cho vai trò này trong 90 ngày đầu tiên?"
+      },
+      {
+        "speaker": "A",
+        "en": "We'd expect you to be fully onboarded, have strong working relationships with your key stakeholders, and be independently leading requirements for at least one feature stream.",
+        "vi": "Chúng tôi kỳ vọng bạn được giới thiệu đầy đủ, có mối quan hệ làm việc tốt với các bên liên quan chính, và độc lập dẫn dắt yêu cầu cho ít nhất một luồng tính năng."
+      },
+      {
+        "speaker": "B",
+        "en": "That's a clear benchmark. Third — what are the biggest challenges the BA team is currently facing?",
+        "vi": "Đó là một điểm chuẩn rõ ràng. Thứ ba — những thách thức lớn nhất mà nhóm BA hiện đang đối mặt là gì?"
+      },
+      {
+        "speaker": "A",
+        "en": "Honestly, our biggest challenge is the speed of change. Business requirements evolve faster than our documentation sometimes. We're looking for someone who can keep pace without sacrificing quality.",
+        "vi": "Thành thật mà nói, thách thức lớn nhất của chúng tôi là tốc độ thay đổi. Yêu cầu nghiệp vụ đôi khi phát triển nhanh hơn tài liệu của chúng tôi. Chúng tôi đang tìm người có thể theo kịp mà không hy sinh chất lượng."
+      },
+      {
+        "speaker": "B",
+        "en": "That's a challenge I'm very familiar with. I'd be interested to understand how the team currently handles version control of requirements — that's often where discipline breaks down under speed.",
+        "vi": "Đó là thách thức tôi rất quen thuộc. Tôi muốn hiểu cách nhóm hiện xử lý kiểm soát phiên bản của yêu cầu — thường thì kỷ luật đó sẽ sụp đổ dưới tốc độ."
+      },
+      {
+        "speaker": "A",
+        "en": "That's a very perceptive question. It's actually an area we're actively trying to improve. Your experience here could be very valuable.",
+        "vi": "Đó là câu hỏi rất sắc sảo. Thực ra đó là lĩnh vực chúng tôi đang tích cực cố gắng cải thiện. Kinh nghiệm của bạn ở đây có thể rất có giá trị."
+      },
+      {
+        "speaker": "B",
+        "en": "I'd love to contribute to that. I have some thoughts on lightweight living documentation practices that have worked well in fast-paced environments.",
+        "vi": "Tôi muốn đóng góp cho điều đó. Tôi có một số ý tưởng về các thực hành tài liệu sống nhẹ nhàng đã hoạt động tốt trong các môi trường nhịp độ nhanh."
+      },
+      {
+        "speaker": "A",
+        "en": "Excellent. We'll definitely want to hear those ideas as part of your onboarding. Thank you for a really strong interview.",
+        "vi": "Xuất sắc. Chúng tôi chắc chắn muốn nghe những ý tưởng đó trong quá trình giới thiệu của bạn. Cảm ơn bạn đã có một buổi phỏng vấn thực sự mạnh mẽ."
+      }
+    ]
   }
 ]

@@ -255,7 +255,15 @@ function renderDailyQuotes(allWords, progress) {
         <div id="quote-slides" class="relative" style="min-height:90px">${slides}</div>
         <div class="flex items-center justify-between mt-4 pt-3 border-t border-white/5">
           <div class="flex items-center gap-1.5" id="quote-dots">${dots}</div>
-          <div class="flex gap-1.5">
+          <div class="flex gap-1.5 items-center">
+            <button id="quote-speak"
+              title="Nghe phát âm"
+              class="flex items-center gap-1.5 px-3 h-7 rounded-lg bg-white/5 hover:bg-primary-500/10 text-surface-400 hover:text-primary-400 border border-transparent hover:border-primary-500/20 text-xs font-medium transition-all">
+              <svg id="quote-speak-icon" class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z"/>
+              </svg>
+              Nghe
+            </button>
             <button id="quote-prev" class="w-7 h-7 rounded-lg bg-white/5 hover:bg-white/10 text-surface-400 hover:text-surface-200 flex items-center justify-center transition-all">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
             </button>
@@ -367,6 +375,12 @@ export function initDashboardEvents(allWords) {
     feedbackEl.innerHTML = correct
       ? `<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Chúc mừng! Bạn đã gõ đúng câu này rồi!`
       : `<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg> Chưa đúng, hãy thử lại nhé!`;
+    if (correct) {
+      setTimeout(() => {
+        goTo((current + 1) % totalSlides);
+        startTimer();
+      }, 900);
+    }
   }
 
   function goTo(idx) {
@@ -394,12 +408,37 @@ export function initDashboardEvents(allWords) {
     timer = setInterval(() => goTo((current + 1) % totalSlides), 25000);
   }
 
+  function stopTimer() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
   // Init typing target for first slide
   renderTypingTarget();
 
-  inputEl?.addEventListener('input', renderTypingTarget);
+  inputEl?.addEventListener('input', () => {
+    if (inputEl.value.length === 1) stopTimer(); // pause on first keystroke
+    renderTypingTarget();
+  });
   inputEl?.addEventListener('keydown', e => { if (e.key === 'Enter') checkAnswer(); });
   checkBtn?.addEventListener('click', checkAnswer);
+
+  function speakCurrentSlide() {
+    if (!window.speechSynthesis) return;
+    const text = getSlideText(current);
+    if (!text) return;
+    window.speechSynthesis.cancel();
+    const utt = new SpeechSynthesisUtterance(text);
+    utt.lang = 'en-US';
+    utt.rate = 0.9;
+    const btn = document.getElementById('quote-speak');
+    if (btn) btn.classList.add('text-primary-400', 'bg-primary-500/10', 'border-primary-500/20');
+    utt.onend = () => {
+      if (btn) btn.classList.remove('text-primary-400', 'bg-primary-500/10', 'border-primary-500/20');
+    };
+    window.speechSynthesis.speak(utt);
+  }
+
+  document.getElementById('quote-speak')?.addEventListener('click', speakCurrentSlide);
 
   document.getElementById('quote-next')?.addEventListener('click', () => {
     goTo((current + 1) % totalSlides); startTimer();

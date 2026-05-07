@@ -21,6 +21,93 @@ let convSession = {
   startTime: null,
 };
 
+const LINE_TIME_SEC = 90;
+let convCountdownInterval = null;
+let convTimeLeft = LINE_TIME_SEC;
+
+function clearAllTimers() {
+  if (convCountdownInterval) {
+    clearInterval(convCountdownInterval);
+    convCountdownInterval = null;
+  }
+}
+
+function updateTimerDisplay() {
+  const timerText = document.getElementById('conv-timer-text');
+  const timerBar = document.getElementById('conv-timer-bar');
+  if (!timerText || !timerBar) return;
+  timerText.textContent = convTimeLeft;
+  const pct = Math.max(0, (convTimeLeft / LINE_TIME_SEC) * 100);
+  timerBar.style.width = pct + '%';
+  if (convTimeLeft <= 10) {
+    timerBar.className = 'bg-red-500 h-1 rounded-full';
+  } else if (convTimeLeft <= 20) {
+    timerBar.className = 'bg-warning-400 h-1 rounded-full';
+  } else {
+    timerBar.className = 'bg-primary-500 h-1 rounded-full';
+  }
+}
+
+function startLineCountdown(rerenderFn) {
+  clearAllTimers();
+  convTimeLeft = LINE_TIME_SEC;
+  updateTimerDisplay();
+  convCountdownInterval = setInterval(() => {
+    convTimeLeft--;
+    updateTimerDisplay();
+    if (convTimeLeft <= 0) {
+      clearAllTimers();
+      autoAdvanceLine(rerenderFn);
+    }
+  }, 1000);
+}
+
+function speakLine(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'en-US';
+  utt.rate = 0.9;
+  const icon = document.getElementById('conv-speak-icon');
+  const btn = document.getElementById('btn-conv-speak');
+  if (btn) btn.classList.add('text-primary-400', 'bg-primary-500/10');
+  utt.onend = () => {
+    if (btn) btn.classList.remove('text-primary-400', 'bg-primary-500/10');
+  };
+  window.speechSynthesis.speak(utt);
+}
+
+function autoAdvanceLine(rerenderFn) {
+  const input = document.getElementById('conv-input');
+  if (!input || input.disabled) return;
+  const typed = input.value.trim();
+  const line = convSession.dialogue.lines[convSession.lineIndex];
+  const correct = typed.toLowerCase() === line.en.toLowerCase();
+  convSession.answers.push({ line, typed, correct });
+  const isLast = convSession.lineIndex >= convSession.dialogue.lines.length - 1;
+  if (isLast) {
+    convSession.phase = 'complete';
+    const total = convSession.answers.length;
+    const correctCount = convSession.answers.filter(a => a.correct).length;
+    const score = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+    store.logConversationSession({
+      dialogueId: convSession.dialogue.id,
+      title: convSession.dialogue.title,
+      score, correctLines: correctCount, totalLines: total,
+      date: new Date().toISOString(),
+    });
+    rerenderFn();
+  } else {
+    convSession.lineIndex++;
+    rerenderFn();
+    setTimeout(() => {
+      renderTypingTarget();
+      const newInput = document.getElementById('conv-input');
+      if (newInput) newInput.focus();
+    }, 0);
+  }
+}
+
 async function fetchDialogues(rerenderFn) {
   if (allDialogues.length > 0) return allDialogues;
   try {
@@ -313,10 +400,27 @@ function renderPractice() {
           <div class="flex items-center gap-3 mb-4">
             ${speakerCircle(current.speaker)}
             <span class="text-surface-400 text-sm font-bold">${current.speaker}</span>
+            <button id="btn-conv-speak" title="Nghe phát âm"
+              class="ml-auto flex items-center gap-1.5 text-xs text-surface-400 hover:text-primary-400 bg-white/5 hover:bg-primary-500/10 border border-white/5 hover:border-primary-500/30 px-3 py-1.5 rounded-lg transition-all">
+              <svg id="conv-speak-icon" class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z"/>
+              </svg>
+              Nghe
+            </button>
           </div>
           
-          <div class="bg-white/5 rounded-xl p-4 mb-6">
+          <div class="bg-white/5 rounded-xl p-4 mb-4">
             <p class="text-surface-100 font-medium text-lg leading-relaxed">${current.vi}</p>
+          </div>
+
+          <div class="flex items-center gap-2 mb-4">
+            <svg class="w-3.5 h-3.5 text-surface-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <div class="flex-1 bg-surface-800 rounded-full h-1 overflow-hidden">
+              <div id="conv-timer-bar" class="bg-primary-500 h-1 rounded-full" style="width:100%"></div>
+            </div>
+            <span id="conv-timer-text" class="text-surface-500 text-xs font-mono w-6 text-right">${LINE_TIME_SEC}</span>
           </div>
 
           <div id="conv-typing-target" class="font-mono text-xl tracking-wider mb-6 min-h-[1.75rem] break-words"></div>
@@ -442,39 +546,56 @@ function renderTypingTarget() {
 
 function submitLine(rerenderFn) {
   const input = document.getElementById('conv-input');
-  if (!input) return;
+  if (!input || input.disabled) return;
 
   const typed = input.value.trim();
   const line = convSession.dialogue.lines[convSession.lineIndex];
   const correct = typed.toLowerCase() === line.en.toLowerCase();
 
+  if (!correct) {
+    input.classList.add('border-red-500');
+    input.classList.remove('border-surface-700');
+    setTimeout(() => {
+      input.classList.remove('border-red-500');
+      input.classList.add('border-surface-700');
+    }, 600);
+    return;
+  }
+
+  // Correct — stop timer, lock input, wait 1.5s then advance
+  clearAllTimers();
   convSession.answers.push({ line, typed, correct });
+  input.disabled = true;
+  input.classList.add('border-success-500');
+  const nextBtn = document.getElementById('btn-conv-next');
+  if (nextBtn) nextBtn.disabled = true;
 
   const isLast = convSession.lineIndex >= convSession.dialogue.lines.length - 1;
-
-  if (isLast) {
-    convSession.phase = 'complete';
-    const total = convSession.answers.length;
-    const correctCount = convSession.answers.filter(a => a.correct).length;
-    const score = total > 0 ? Math.round((correctCount / total) * 100) : 0;
-    store.logConversationSession({
-      dialogueId: convSession.dialogue.id,
-      title: convSession.dialogue.title,
-      score,
-      correctLines: correctCount,
-      totalLines: total,
-      date: new Date().toISOString(),
-    });
-    rerenderFn();
-  } else {
-    convSession.lineIndex++;
-    rerenderFn();
-    setTimeout(() => {
-      renderTypingTarget();
-      const newInput = document.getElementById('conv-input');
-      if (newInput) newInput.focus();
-    }, 0);
-  }
+  setTimeout(() => {
+    if (isLast) {
+      convSession.phase = 'complete';
+      const total = convSession.answers.length;
+      const correctCount = convSession.answers.filter(a => a.correct).length;
+      const score = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+      store.logConversationSession({
+        dialogueId: convSession.dialogue.id,
+        title: convSession.dialogue.title,
+        score,
+        correctLines: correctCount,
+        totalLines: total,
+        date: new Date().toISOString(),
+      });
+      rerenderFn();
+    } else {
+      convSession.lineIndex++;
+      rerenderFn();
+      setTimeout(() => {
+        renderTypingTarget();
+        const newInput = document.getElementById('conv-input');
+        if (newInput) newInput.focus();
+      }, 0);
+    }
+  }, 700);
 }
 
 function startPractice(dialogue, rerenderFn) {
@@ -667,6 +788,14 @@ export function initConversationEvents(allWords, rerenderFn) {
   }
 
   // Practice Events
+  // TTS button
+  const btnSpeak = document.getElementById('btn-conv-speak');
+  if (btnSpeak && convSession.dialogue) {
+    btnSpeak.addEventListener('click', () => {
+      speakLine(convSession.dialogue.lines[convSession.lineIndex].en);
+    });
+  }
+
   const convInput = document.getElementById('conv-input');
   if (convInput) {
     convInput.addEventListener('input', () => {
@@ -691,6 +820,7 @@ export function initConversationEvents(allWords, rerenderFn) {
   const btnExit = document.getElementById('btn-conv-exit');
   if (btnExit) {
     btnExit.addEventListener('click', () => {
+      clearAllTimers();
       resetConversationSession();
       rerenderFn();
     });
@@ -699,6 +829,7 @@ export function initConversationEvents(allWords, rerenderFn) {
   const btnRetry = document.getElementById('btn-conv-retry');
   if (btnRetry) {
     btnRetry.addEventListener('click', () => {
+      clearAllTimers();
       if (convSession.dialogue) startPractice(convSession.dialogue, rerenderFn);
     });
   }
@@ -706,6 +837,7 @@ export function initConversationEvents(allWords, rerenderFn) {
   const btnBack = document.getElementById('btn-conv-back');
   if (btnBack) {
     btnBack.addEventListener('click', () => {
+      clearAllTimers();
       resetConversationSession();
       rerenderFn();
     });
@@ -716,6 +848,7 @@ export function initConversationEvents(allWords, rerenderFn) {
       renderTypingTarget();
       const input = document.getElementById('conv-input');
       if (input) input.focus();
+      startLineCountdown(rerenderFn);
     }, 0);
   }
 }
