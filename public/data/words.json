@@ -64095,10 +64095,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "chia đôi",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To divide something into separate parts or to separate from someone. It can also mean to share something between people.",
+    "meaning_vi": "chia, tách, rẽ, chia tay",
+    "examples": [
+      {
+        "en": "We decided to split the bill at the restaurant.",
+        "vi": "Chúng tôi quyết định chia đôi hóa đơn ở nhà hàng."
+      },
+      {
+        "en": "The wood split into two pieces when I hit it with an axe.",
+        "vi": "Cây gỗ bị tách thành hai mảnh khi tôi chặt nó bằng rìu."
+      }
+    ],
+    "phonetic": "/splɪt/",
+    "meaning_vi_detail": "Chia cái gì đó thành các phần riêng biệt hoặc tách rời khỏi nhau. Cũng có thể là chia sẻ hoặc phân chia giữa những người."
   },
   {
     "word": "spoil",
@@ -64106,10 +64116,20 @@
       "v."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "làm hỏng",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To damage or ruin something so that it is no longer good or usable; to make something less good or valuable.",
+    "meaning_vi": "làm hỏng, phá hủy, làm không còn tốt",
+    "examples": [
+      {
+        "en": "Don't leave the milk in the sun or it will spoil.",
+        "vi": "Đừng để sữa dưới nắng mặt trời nếu không nó sẽ bị hỏng."
+      },
+      {
+        "en": "The surprise party was spoiled when she found out early.",
+        "vi": "Bữa tiệc bất ngờ bị phá hủy khi cô ấy biết sớm."
+      }
+    ],
+    "phonetic": "/spɔɪl/",
+    "meaning_vi_detail": "Làm cho điều gì đó không còn tốt, hữu dụng hoặc có giá trị nữa; phá hủy hoặc làm hỏng một cái gì đó."
   },
   {
     "word": "spoken",
@@ -64117,10 +64137,20 @@
       "adj."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "nói",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Expressed or communicated in words; related to speech or what is said aloud.",
+    "meaning_vi": "nói ra, phát biểu, được nói",
+    "examples": [
+      {
+        "en": "English is a widely spoken language around the world.",
+        "vi": "Tiếng Anh là ngôn ngữ được nói rộng rãi trên toàn thế giới."
+      },
+      {
+        "en": "She gave a spoken presentation to the class yesterday.",
+        "vi": "Hôm qua cô ấy đã thuyết trình bằng miệng cho lớp."
+      }
+    ],
+    "phonetic": "/ˈspoʊkən/",
+    "meaning_vi_detail": "Được diễn đạt hoặc phát biểu bằng lời nói; thuộc về những điều được nói ra hoặc giao tiếp bằng miệng."
   },
   {
     "word": "spokesman",
@@ -64128,10 +64158,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "người phát ngôn",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A person who makes statements or announcements on behalf of a group, organization, or government.",
+    "meaning_vi": "người phát ngôn, đại diện phát biểu",
+    "examples": [
+      {
+        "en": "The company spokesman announced the new product launch at the press conference.",
+        "vi": "Người phát ngôn của công ty đã thông báo về sự ra mắt sản phẩm mới tại cuộc họp báo."
+      },
+      {
+        "en": "According to the government spokesman, the new policy will be implemented next month.",
+        "vi": "Theo lời người phát ngôn của chính phủ, chính sách mới sẽ được triển khai vào tháng tới."
+      }
+    ],
+    "phonetic": "/ˈspəʊkzmən/",
+    "meaning_vi_detail": "Người được uỷ quyền để nói chuyện hoặc đưa ra thông báo thay mặt cho một tổ chức, công ty, chính phủ hoặc nhóm nào đó."
   },
   {
     "word": "spokesperson",
@@ -64139,10 +64179,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "người phát ngôn",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A person who makes statements on behalf of a group, organization, or government.",
+    "meaning_vi": "người phát ngôn, đại diện, người lên tiếng",
+    "examples": [
+      {
+        "en": "The company spokesperson announced the new product at the press conference.",
+        "vi": "Người phát ngôn của công ty đã công bố sản phẩm mới tại buổi họp báo."
+      },
+      {
+        "en": "A government spokesperson refused to comment on the scandal.",
+        "vi": "Người phát ngôn của chính phủ từ chối bình luận về vụ bê bối."
+      }
+    ],
+    "phonetic": "/ˈspoʊkspɜːrsən/",
+    "meaning_vi_detail": "Người được uỷ quyền để phát biểu thay mặt cho một tổ chức, công ty, chính phủ hoặc nhóm nào đó."
   },
   {
     "word": "spokeswoman",
@@ -64150,10 +64200,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "người phát ngôn",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A woman who is authorized to speak on behalf of an organization, government, or group.",
+    "meaning_vi": "người phát ngôn nữ, đại diện phát biểu",
+    "examples": [
+      {
+        "en": "The company's spokeswoman announced the new policy at the press conference.",
+        "vi": "Người phát ngôn của công ty đã công bố chính sách mới tại cuộc họp báo."
+      },
+      {
+        "en": "A spokeswoman for the government denied the rumors.",
+        "vi": "Một người phát ngôn của chính phủ đã phủ nhận những tin đồn."
+      }
+    ],
+    "phonetic": "/ˈspoʊkzˌwʊmən/",
+    "meaning_vi_detail": "Người phụ nữ được ủy quyền để phát biểu hoặc đại diện cho một tổ chức, công ty, chính phủ hoặc nhóm nào đó."
   },
   {
     "word": "sponsor",
@@ -64162,10 +64222,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "nhà tài trợ",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To provide financial support or funding for an event, organization, or person, typically in exchange for advertising or recognition.",
+    "meaning_vi": "tài trợ, hỗ trợ tài chính, đỡ đầu",
+    "examples": [
+      {
+        "en": "The company sponsors the local football team.",
+        "vi": "Công ty tài trợ cho đội bóng đá địa phương."
+      },
+      {
+        "en": "Several brands sponsored the music festival.",
+        "vi": "Một số thương hiệu đã hỗ trợ tài chính cho lễ hội âm nhạc."
+      }
+    ],
+    "phonetic": "/ˈspɒnsər/",
+    "meaning_vi_detail": "Cung cấp tiền bạc hoặc hỗ trợ tài chính cho một sự kiện, tổ chức hoặc người; là người bảo trợ chính thức."
   },
   {
     "word": "sponsorship",
@@ -64173,10 +64243,20 @@
       "n."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "tài trợ",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Financial or other support given by a person or organization to an event, activity, or person in exchange for advertising or other benefits.",
+    "meaning_vi": "tài trợ, hỗ trợ tài chính, nhà tài trợ",
+    "examples": [
+      {
+        "en": "The company secured a major sponsorship deal for the football team.",
+        "vi": "Công ty đã ký kết một thỏa thuận tài trợ lớn cho đội bóng đá."
+      },
+      {
+        "en": "She was able to attend university thanks to a sponsorship from a local charity.",
+        "vi": "Cô ấy có thể theo học đại học nhờ sự tài trợ từ một tổ chức từ thiện địa phương."
+      }
+    ],
+    "phonetic": "/ˈspɒnsərʃɪp/",
+    "meaning_vi_detail": "Sự hỗ trợ tài chính hoặc hỗ trợ khác từ một người hoặc tổ chức cho một sự kiện, hoạt động, hoặc người khác. Nhà tài trợ thường nhận được quyền quảng cáo hoặc lợi ích khác từ việc này."
   },
   {
     "word": "spoon",
@@ -64184,10 +64264,20 @@
       "n."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "cái thìa",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A utensil with a handle and a small rounded bowl at the end, used for eating or serving food and drinks.",
+    "meaning_vi": "cái thìa, muỗng ăn cơm",
+    "examples": [
+      {
+        "en": "I used a spoon to eat my soup.",
+        "vi": "Tôi dùng cái thìa để ăn canh."
+      },
+      {
+        "en": "She put a spoon of sugar in her coffee.",
+        "vi": "Cô ấy cho một muỗng đường vào cà phê của mình."
+      }
+    ],
+    "phonetic": "/spuːn/",
+    "meaning_vi_detail": "Một dụng cụ ăn uống gồm một c柄dài và một phần lõm ở đầu, dùng để múc và nâng thức ăn hoặc thức uống lên miệng."
   },
   {
     "word": "sport",
@@ -64195,10 +64285,20 @@
       "n."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "thể thao",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A physical activity or game played for exercise, fun, or competition, usually with rules.",
+    "meaning_vi": "thể thao, môn thể thao, trò chơi",
+    "examples": [
+      {
+        "en": "I like to play football because it is a fun sport.",
+        "vi": "Tôi thích chơi bóng đá vì nó là một môn thể thao vui vẻ."
+      },
+      {
+        "en": "Swimming is a popular sport in the summer.",
+        "vi": "Bơi lội là một môn thể thao phổ biến vào mùa hè."
+      }
+    ],
+    "phonetic": "/spɔːrt/",
+    "meaning_vi_detail": "Hoạt động thể chất hoặc trò chơi có quy tắc, thường được chơi để giải trí, rèn luyện sức khỏe hoặc thi đấu."
   },
   {
     "word": "sporting",
@@ -64206,10 +64306,20 @@
       "adj."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "thể thao",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Related to sports and physical activities, or showing a good-natured and fair attitude in competition or life.",
+    "meaning_vi": "liên quan đến thể thao, có tinh thần thể thao",
+    "examples": [
+      {
+        "en": "He has a sporting attitude toward losing the match.",
+        "vi": "Anh ấy có thái độ thể thao khi thua trận đấu."
+      },
+      {
+        "en": "She joined a sporting club to improve her fitness.",
+        "vi": "Cô ấy tham gia một câu lạc bộ thể thao để cải thiện sức khỏe."
+      }
+    ],
+    "phonetic": "/ˈspɔːr.tɪŋ/",
+    "meaning_vi_detail": "Liên quan đến các hoạt động thể thao hoặc thể hiện tinh thần tốt đẹp như công bằng, lạc quan trong cuộc sống hàng ngày."
   },
   {
     "word": "spot",
@@ -64218,10 +64328,20 @@
       "v."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "chỗ",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A particular place or location; a small area or mark on a surface.",
+    "meaning_vi": "vị trí, chỗ, điểm",
+    "examples": [
+      {
+        "en": "There is a wet spot on the carpet.",
+        "vi": "Có một vết ướt trên thảm."
+      },
+      {
+        "en": "I found a nice spot for a picnic by the river.",
+        "vi": "Tôi tìm thấy một chỗ đẹp để dã ngoại bên bờ sông."
+      }
+    ],
+    "phonetic": "/spɒt/",
+    "meaning_vi_detail": "Một vị trí hoặc địa điểm cụ thể; một khu vực nhỏ trên bề mặt hoặc một phần của cái gì đó."
   },
   {
     "word": "spotlight",
@@ -64229,10 +64349,20 @@
       "n."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "ánh đèn sân khấu",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A powerful lamp that produces a strong beam of light directed at a particular area or person, often used on stage; figuratively, intense public attention or scrutiny directed at someone or something.",
+    "meaning_vi": "ánh đèn sân khấu, tập trung chú ý, nổi bật",
+    "examples": [
+      {
+        "en": "The spotlight was on the lead singer during the concert.",
+        "vi": "Ánh đèn sân khấu chiếu vào ca sĩ chính trong buổi hòa nhạc."
+      },
+      {
+        "en": "The scandal put the company in the spotlight, attracting media attention.",
+        "vi": "Vụ bê bối đưa công ty vào tầm nhìn của công chúng, thu hút sự chú ý của truyền thông."
+      }
+    ],
+    "phonetic": "/ˈspɒtlaɪt/",
+    "meaning_vi_detail": "Ánh đèn mạnh chiếu vào một vị trí trên sân khấu; hay được dùng theo nghĩa bóng để chỉ sự chú ý, quan tâm của công chúng tập trung vào một người hoặc sự việc nào đó."
   },
   {
     "word": "spouse",
@@ -64240,10 +64370,20 @@
       "n."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "vợ/chồng",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A person's husband or wife; a married partner.",
+    "meaning_vi": "vợ hoặc chồng, người bạn đời",
+    "examples": [
+      {
+        "en": "She introduced her spouse to the guests at the party.",
+        "vi": "Cô ấy giới thiệu người bạn đời của mình với các khách tại buổi tiệc."
+      },
+      {
+        "en": "My spouse and I are planning to travel abroad next year.",
+        "vi": "Tôi và người bạn đời của tôi đang lên kế hoạch đi du lịch nước ngoài năm tới."
+      }
+    ],
+    "phonetic": "/spaʊs/",
+    "meaning_vi_detail": "Người mà bạn kết hôn với; người bạn sống cùng trong quan hệ hôn nhân."
   },
   {
     "word": "spread",
@@ -64252,10 +64392,20 @@
       "n."
     ],
     "level": "B1",
-    "meaning_en": "",
-    "meaning_vi": "lây lan",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To open something out over a surface or area; or to make something extend over a larger distance or among more people.",
+    "meaning_vi": "lây lan, trải rộng, phủ lên",
+    "examples": [
+      {
+        "en": "She spread the map on the table.",
+        "vi": "Cô ấy trải bản đồ lên trên bàn."
+      },
+      {
+        "en": "The disease spread quickly through the village.",
+        "vi": "Bệnh dịch lây lan nhanh chóng khắp làng."
+      }
+    ],
+    "phonetic": "/spred/",
+    "meaning_vi_detail": "Làm cho cái gì đó mở rộng hoặc che phủ một diện tích lớn hơn; hoặc làm cho một cái gì đó phân tán đến nhiều nơi."
   },
   {
     "word": "spring",
@@ -64264,10 +64414,20 @@
       "v."
     ],
     "level": "A1",
-    "meaning_en": "",
-    "meaning_vi": "mùa xuân",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The season between winter and summer when plants begin to grow and flowers bloom. Also, a coiled metal device that returns to its original shape after being pressed.",
+    "meaning_vi": "mùa xuân, lò xo, nguồn nước",
+    "examples": [
+      {
+        "en": "Spring is my favorite season because the flowers are beautiful.",
+        "vi": "Mùa xuân là mùa yêu thích của tôi vì những bông hoa rất đẹp."
+      },
+      {
+        "en": "The toy has a spring inside that makes it bounce.",
+        "vi": "Đồ chơi có một lò xo bên trong khiến nó nảy lên."
+      }
+    ],
+    "phonetic": "/sprɪŋ/",
+    "meaning_vi_detail": "Mùa xuân là một trong bốn mùa trong năm, thường có thời tiết ấm áp và hoa nở. Lò xo là một vật dụng kim loại có khả năng co giãn và quay trở lại hình dạng ban đầu."
   },
   {
     "word": "spy",
@@ -64276,10 +64436,20 @@
       "v."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "điệp viên",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A person who secretly collects information for a government or organization; or to observe someone or something covertly.",
+    "meaning_vi": "điệp viên, mật thám, người theo dõi",
+    "examples": [
+      {
+        "en": "The intelligence agency recruited a spy to infiltrate the rival organization.",
+        "vi": "Cơ quan tình báo tuyển dụng một điệp viên để thâm nhập vào tổ chức đối thủ."
+      },
+      {
+        "en": "She was accused of spying on her competitors to steal their trade secrets.",
+        "vi": "Cô ấy bị cáo buộc theo dõi các đối thủ cạnh tranh để ăn cắp bí mật thương mại của họ."
+      }
+    ],
+    "phonetic": "/spaɪ/",
+    "meaning_vi_detail": "Một người hoạt động bí mật để thu thập thông tin cho một chính phủ hoặc tổ chức; hoặc quan sát một người/địa điểm một cách bí mật."
   },
   {
     "word": "squad",
@@ -64287,10 +64457,20 @@
       "n."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "đội hình",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A group of people organized for a particular purpose, typically a military or police unit, or a sports team.",
+    "meaning_vi": "nhóm, đội, tổ chức nhỏ",
+    "examples": [
+      {
+        "en": "The police sent a tactical squad to handle the situation.",
+        "vi": "Cảnh sát đã cử một đội đặc nhiệm để xử lý tình huống."
+      },
+      {
+        "en": "The football squad includes 23 players selected for the tournament.",
+        "vi": "Đội bóng đá gồm 23 cầu thủ được chọn cho giải đấu."
+      }
+    ],
+    "phonetic": "/skwɒd/",
+    "meaning_vi_detail": "Một nhóm người được tổ chức để làm một công việc hoặc nhiệm vụ cụ thể, thường là trong quân đội, cảnh sát hoặc thể thao."
   },
   {
     "word": "square",
@@ -64299,10 +64479,20 @@
       "n."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "hình vuông",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A shape with four equal sides and four right angles. Also a public open area in a town or city.",
+    "meaning_vi": "hình vuông, có bốn góc vuông",
+    "examples": [
+      {
+        "en": "Draw a square on the paper.",
+        "vi": "Vẽ một hình vuông trên giấy."
+      },
+      {
+        "en": "We met at the town square.",
+        "vi": "Chúng tôi gặp nhau ở quảng trường thị trấn."
+      }
+    ],
+    "phonetic": "/skwɛə(r)/",
+    "meaning_vi_detail": "Hình có bốn cạnh bằng nhau và bốn góc vuông. Cũng có thể chỉ một khu vực công cộng hoặc quảng trường trong thành phố."
   },
   {
     "word": "squeeze",
@@ -64310,10 +64500,20 @@
       "v."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "bóp",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To apply pressure by pressing or compressing something firmly, typically with your hands; to force something into a space that is too small for it.",
+    "meaning_vi": "bóp, ép, nén chặt",
+    "examples": [
+      {
+        "en": "She squeezed the lemon to extract its juice.",
+        "vi": "Cô ấy bóp chanh để lấy nước."
+      },
+      {
+        "en": "We managed to squeeze ten people into the small elevator.",
+        "vi": "Chúng tôi cố gắng nhét được mười người vào chiếc thang máy nhỏ."
+      }
+    ],
+    "phonetic": "/skwɪːz/",
+    "meaning_vi_detail": "Dùng lực để bóp hoặc ép một cái gì đó từ mọi phía, làm cho nó co lại hoặc thu nhỏ lại. Cũng có thể chỉ việc tìm cách đạt được điều gì đó trong một không gian hạn chế."
   },
   {
     "word": "stab",
@@ -64321,10 +64521,20 @@
       "v."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "đâm",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To thrust a sharp or pointed weapon into someone or something with a sudden, forceful movement, typically causing injury.",
+    "meaning_vi": "đâm, chọc, đâm thẳng",
+    "examples": [
+      {
+        "en": "He was stabbed in the shoulder during the fight.",
+        "vi": "Anh ta bị đâm vào vai trong cuộc xô xát."
+      },
+      {
+        "en": "She stabbed the knife into the meat to check if it was cooked.",
+        "vi": "Cô ấy chọc dao vào thịt để kiểm tra xem nó đã nấu chín chưa."
+      }
+    ],
+    "phonetic": "/stæb/",
+    "meaning_vi_detail": "Dùng một vật sắc hoặc nhọn để đâm vào ai đó một cách nhanh chóng và mạnh mẽ, thường gây thương tích."
   },
   {
     "word": "stability",
@@ -64332,10 +64542,20 @@
       "n."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "sự ổn định",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "The quality or state of being steady, secure, and resistant to change or disruption; the capacity to maintain equilibrium and function consistently.",
+    "meaning_vi": "sự ổn định, tính bền vững, cân bằng",
+    "examples": [
+      {
+        "en": "The government promised economic stability to attract foreign investors.",
+        "vi": "Chính phủ hứa sẽ đem lại sự ổn định kinh tế để thu hút các nhà đầu tư nước ngoài."
+      },
+      {
+        "en": "Emotional stability is essential for making sound decisions under pressure.",
+        "vi": "Sự ổn định cảm xúc là cần thiết để đưa ra quyết định sáng suốt dưới áp lực."
+      }
+    ],
+    "phonetic": "/stəˈbɪləti/",
+    "meaning_vi_detail": "Tính chất ổn định, không thay đổi hoặc không dao động, đặc biệt trong bối cảnh chính trị, kinh tế, tâm lý hoặc vật lý. Khả năng duy trì trạng thái cân bằng và không rơi vào hỗn loạn."
   },
   {
     "word": "stabilize",
@@ -64343,10 +64563,20 @@
       "v."
     ],
     "level": "C1",
-    "meaning_en": "",
-    "meaning_vi": "ổn định",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "To make something steady, balanced, or firmly established; to reach a state of equilibrium or prevent fluctuation.",
+    "meaning_vi": "làm ổn định, đạt sự cân bằng, giữ ổn định",
+    "examples": [
+      {
+        "en": "The government implemented new policies to stabilize the economy and reduce inflation.",
+        "vi": "Chính phủ thực hiện các chính sách mới để ổn định nền kinh tế và giảm lạm phát."
+      },
+      {
+        "en": "The patient's condition finally stabilized after receiving emergency treatment.",
+        "vi": "Tình trạng bệnh nhân cuối cùng đã ổn định sau khi được điều trị cấp cứu."
+      }
+    ],
+    "phonetic": "/ˈsteɪbɪlaɪz/",
+    "meaning_vi_detail": "Làm cho cái gì đó trở nên ổn định, vững chắc hoặc không thay đổi; đạt được trạng thái cân bằng hoặc bền vững."
   },
   {
     "word": "stable",
@@ -64354,10 +64584,20 @@
       "adj."
     ],
     "level": "B2",
-    "meaning_en": "",
-    "meaning_vi": "ổn định",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "Not likely to change or fail; firm and steady. Something that is stable remains the same and is reliable.",
+    "meaning_vi": "ổn định, vững chắc, không thay đổi",
+    "examples": [
+      {
+        "en": "The company has maintained stable profits for five years.",
+        "vi": "Công ty đã duy trì lợi nhuận ổn định trong năm năm."
+      },
+      {
+        "en": "A stable relationship requires trust and communication.",
+        "vi": "Một mối quan hệ ổn định đòi hỏi sự tin tưởng và giao tiếp."
+      }
+    ],
+    "phonetic": "/ˈsteɪbəl/",
+    "meaning_vi_detail": "Không thay đổi, không dao động; vững vàng và đáng tin cậy. Tình trạng hoặc vị trí không bị ảnh hưởng bởi những thay đổi bất ngờ."
   },
   {
     "word": "stadium",
@@ -64388,10 +64628,20 @@
       "v."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "sân khấu",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A platform where actors, musicians, or performers entertain an audience. It can also mean a period or level in a process of development.",
+    "meaning_vi": "sân khấu, giai đoạn, bệ phóng",
+    "examples": [
+      {
+        "en": "The singer performed on the stage in front of thousands of people.",
+        "vi": "Ca sĩ biểu diễn trên sân khấu trước hàng nghìn khán giả."
+      },
+      {
+        "en": "The project is in an early stage of development.",
+        "vi": "Dự án đang ở giai đoạn phát triển ban đầu."
+      }
+    ],
+    "phonetic": "/steɪdʒ/",
+    "meaning_vi_detail": "Sân khấu là nơi diễn ra các buổi biểu diễn như kịch, nhạc, múa. Ngoài ra, stage còn có nghĩa là một giai đoạn hoặc bước trong quá trình phát triển."
   },
   {
     "word": "stair",
@@ -64399,10 +64649,20 @@
       "n."
     ],
     "level": "A2",
-    "meaning_en": "",
-    "meaning_vi": "cầu thang",
-    "examples": [],
-    "phonetic": ""
+    "meaning_en": "A step or series of steps that you use to go up or down between different levels.",
+    "meaning_vi": "bậc thang, bậc, cầu thang",
+    "examples": [
+      {
+        "en": "I walked up the stairs to the second floor.",
+        "vi": "Tôi đi lên cầu thang đến tầng hai."
+      },
+      {
+        "en": "Be careful on the stairs; they are steep.",
+        "vi": "Hãy cẩn thận trên cầu thang; chúng rất dốc."
+      }
+    ],
+    "phonetic": "/steər/",
+    "meaning_vi_detail": "Một bậc hoặc một loạt các bậc được sử dụng để đi lên hoặc đi xuống giữa các mức độ cao khác nhau."
   },
   {
     "word": "stake",
