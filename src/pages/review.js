@@ -635,19 +635,24 @@ function renderReviewComplete(allWords) {
             <h3 class="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Chi tiết kết quả</h3>
             <div class="space-y-2">
               ${reviewSession.answers.map(a => `
-                <div class="flex items-start gap-3 p-2.5 rounded-xl ${a.correct ? 'bg-success-500/8 border border-success-500/15' : 'bg-red-500/8 border border-red-500/15'}">
+                <div data-result-word="${a.word}"
+                     class="flex items-start gap-3 p-2.5 rounded-xl cursor-pointer transition-all hover:brightness-110 active:scale-[0.99]
+                            ${a.correct ? 'bg-success-500/8 border border-success-500/15' : 'bg-red-500/8 border border-red-500/15'}">
                   <span class="mt-0.5 text-sm font-bold shrink-0 ${a.correct ? 'text-success-400' : 'text-red-400'}">
                     ${a.correct
                       ? '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>'
                       : '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>'}
                   </span>
-                  <div class="min-w-0">
+                  <div class="min-w-0 flex-1">
                     <p class="text-sm font-bold text-surface-100">${a.word}</p>
                     ${a.correct
                       ? `<p class="text-xs text-surface-500 truncate">${a.correctMeaning}</p>`
                       : `<p class="text-xs text-red-400/80 truncate">Bạn chọn: ${a.selectedMeaning}</p>
                          <p class="text-xs text-success-400/80 truncate">Đúng: ${a.correctMeaning}</p>`}
                   </div>
+                  <svg class="w-4 h-4 text-surface-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
                 </div>`).join('')}
             </div>
           </div>
@@ -906,7 +911,18 @@ export function initReviewEvents(allWords, rerenderFn) {
     });
   }
 
-  // Complete
+  // Complete — click result item to open word detail modal
+  document.querySelectorAll('[data-result-word]').forEach(item => {
+    item.addEventListener('click', () => {
+      const wordStr = item.dataset.resultWord;
+      const wordData = allWords.find(w => w.word === wordStr);
+      if (!wordData) return;
+      document.getElementById('word-modal')?.remove();
+      document.body.insertAdjacentHTML('beforeend', renderWordModal(wordData));
+      initWordModalEvents(wordData);
+    });
+  });
+
   document.getElementById('btn-review-again')?.addEventListener('click', () => {
     if (reviewTimerInterval) { clearInterval(reviewTimerInterval); reviewTimerInterval = null; }
     const pool = buildWordPool(allWords);
