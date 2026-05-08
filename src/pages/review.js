@@ -41,10 +41,13 @@ function buildWordPool(allWords) {
   const progress = store.getAllProgress();
   const bookmarkSet = new Set(store.getBookmarks());
 
+  const wrongWordSet = new Set(Object.keys(store.getWrongWords()));
+
   let pool = allWords.filter(word => {
     const p = progress[word.word];
     const hasProgress = !!p;
     const isBookmarked = bookmarkSet.has(word.word);
+    if (reviewConfig.wordSource === 'wrong' && !wrongWordSet.has(word.word)) return false;
     if (reviewConfig.wordSource === 'learned' && !hasProgress && !isBookmarked) return false;
     if (reviewConfig.levelFilter !== 'all' && word.level !== reviewConfig.levelFilter) return false;
     if (reviewConfig.bookmarkedOnly && !isBookmarked) return false;
@@ -114,9 +117,9 @@ function renderSetupScreen(allWords) {
         <!-- Word source -->
         <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.05s">
           <h3 class="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Nguồn từ vựng</h3>
-          <div class="grid grid-cols-2 gap-2">
+          <div class="grid grid-cols-3 gap-2">
             <button data-setup-word-source="learned"
-                    class="flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-medium transition-all
+                    class="flex items-center gap-2 px-3 py-3 rounded-xl text-sm font-medium transition-all
                            ${reviewConfig.wordSource === 'learned'
                              ? 'bg-primary-600 text-white shadow-lg shadow-primary-600/25'
                              : 'bg-white/5 text-surface-400 hover:bg-white/10'}">
@@ -127,7 +130,7 @@ function renderSetupScreen(allWords) {
               Từ đã học
             </button>
             <button data-setup-word-source="all"
-                    class="flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-medium transition-all
+                    class="flex items-center gap-2 px-3 py-3 rounded-xl text-sm font-medium transition-all
                            ${reviewConfig.wordSource === 'all'
                              ? 'bg-primary-600 text-white shadow-lg shadow-primary-600/25'
                              : 'bg-white/5 text-surface-400 hover:bg-white/10'}">
@@ -135,7 +138,18 @@ function renderSetupScreen(allWords) {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
               </svg>
-              Tất cả từ vựng
+              Tất cả từ
+            </button>
+            <button data-setup-word-source="wrong"
+                    class="flex items-center gap-2 px-3 py-3 rounded-xl text-sm font-medium transition-all
+                           ${reviewConfig.wordSource === 'wrong'
+                             ? 'bg-red-500/80 text-white shadow-lg shadow-red-500/25'
+                             : 'bg-white/5 text-surface-400 hover:bg-white/10'}">
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+              </svg>
+              Từ làm sai
             </button>
           </div>
         </div>
@@ -964,7 +978,7 @@ function _recordAnswer(word, selectedAnswer, isCorrect, allWords) {
 
   reviewSession.answers.push({ word: word.word, correct: isCorrect, qType, selectedMeaning: selectedDisplay, correctMeaning: correctDisplay });
   if (isCorrect) { reviewSession.score.correct++; store.markWordLearned(word.word, 4); }
-  else           { reviewSession.score.wrong++;   store.markWordLearned(word.word, 1); }
+  else           { reviewSession.score.wrong++;   store.markWordLearned(word.word, 1); store.logWrongWord(word.word); }
   store.logReview(isCorrect);
 }
 

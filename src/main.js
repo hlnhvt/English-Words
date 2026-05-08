@@ -11,6 +11,7 @@ import { renderAllWords, initAllWordsEvents } from './pages/all-words.js';
 import { renderBookmarks, initBookmarksEvents } from './pages/bookmarks.js';
 import { renderConversation, initConversationEvents, resetConversationSession } from './pages/conversation.js';
 import { renderWriteSentence, initWriteSentenceEvents } from './pages/write-sentence.js';
+import { renderWrongWords, initWrongWordsEvents } from './pages/wrong-words.js';
 
 let allWords = [];
 
@@ -88,6 +89,9 @@ function initRouter() {
     })
     .addRoute('/write-sentence', () => {
       renderPage(renderWriteSentence, initWriteSentenceEvents);
+    })
+    .addRoute('/wrong-words', () => {
+      renderPage(renderWrongWords, initWrongWordsEvents);
     });
 
   // Update header on route change

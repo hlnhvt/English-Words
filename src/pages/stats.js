@@ -281,6 +281,38 @@ function renderActivityStats() {
 
 const LEVEL_ORDER = { 'Beginner': -1, A1: 0, A2: 1, B1: 2, B2: 3, C1: 4 };
 
+// TOEIC ước tính dựa trên CEFR + chất lượng luyện tập
+function estimateToeic(p) {
+  const bands = {
+    'Beginner': { min: 10,  max: 220,  label: 'Dưới A1' },
+    'A1':       { min: 220, max: 545,  label: 'A1' },
+    'A2':       { min: 545, max: 785,  label: 'A2' },
+    'B1':       { min: 785, max: 900,  label: 'B1' },
+    'B2':       { min: 900, max: 945,  label: 'B2' },
+    'C1':       { min: 945, max: 990,  label: 'C1' },
+  };
+  const band = bands[p.cefrLevel] || bands['Beginner'];
+
+  // Chất lượng luyện tập quyết định vị trí trong band
+  const quality =
+    (p.revAccuracy !== null ? p.revAccuracy : 0.5) * 0.35 +
+    p.masteryRatio * 0.40 +
+    p.consistencyScore * 0.25;
+
+  const span = band.max - band.min;
+  const raw = band.min + span * Math.max(0.05, Math.min(0.95, quality));
+  const estimate = Math.round(raw / 5) * 5; // TOEIC chia theo bước 5
+
+  const delta = Math.max(25, Math.round(span * 0.12 / 5) * 5);
+  return {
+    estimate,
+    lo: Math.max(band.min, Math.round((estimate - delta) / 5) * 5),
+    hi: Math.min(band.max, Math.round((estimate + delta) / 5) * 5),
+    bandMin: band.min,
+    bandMax: band.max,
+  };
+}
+
 function getCefrDescription(level) {
   return {
     'Beginner': 'Đang ở bước khởi đầu. Hãy học đều đặn để xây dựng nền tảng vững chắc.',
@@ -509,6 +541,109 @@ function renderProficiencyAssessment(allWords) {
                 </div>`;
             }).join('')}
           </div>
+        </div>
+      </div>
+
+      <!-- TOEIC Estimate -->
+      ${renderToeicEstimate(p)}
+    </div>
+  `;
+}
+
+function renderToeicEstimate(p) {
+  const t = estimateToeic(p);
+
+  // Thang TOEIC: 0 → 990, các mốc CEFR
+  const thresholds = [
+    { score: 220,  label: 'A1',  pct: (220 / 990 * 100).toFixed(1) },
+    { score: 545,  label: 'A2',  pct: (545 / 990 * 100).toFixed(1) },
+    { score: 785,  label: 'B1',  pct: (785 / 990 * 100).toFixed(1) },
+    { score: 900,  label: 'B2',  pct: (900 / 990 * 100).toFixed(1) },
+    { score: 945,  label: 'C1',  pct: (945 / 990 * 100).toFixed(1) },
+  ];
+  const estPct = (t.estimate / 990 * 100).toFixed(1);
+  const loPct  = (t.lo  / 990 * 100).toFixed(1);
+  const hiPct  = (t.hi  / 990 * 100).toFixed(1);
+
+  const toeicDesc = t.estimate >= 945
+    ? 'Thành thạo chuyên nghiệp — phù hợp mọi môi trường quốc tế.'
+    : t.estimate >= 785
+    ? 'Giao tiếp lưu loát — đáp ứng hầu hết yêu cầu công việc toàn cầu.'
+    : t.estimate >= 545
+    ? 'Đủ điều kiện cho nhiều vị trí văn phòng quốc tế.'
+    : t.estimate >= 220
+    ? 'Có thể xử lý giao tiếp cơ bản trong công việc.'
+    : 'Cần xây dựng thêm nền tảng từ vựng và kỹ năng.';
+
+  return `
+    <div class="mt-6 pt-5 border-t border-white/5">
+      <div class="flex items-center gap-2 mb-4">
+        <svg class="w-4 h-4 text-warning-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+        </svg>
+        <span class="text-sm font-semibold text-surface-300">Điểm TOEIC ước tính</span>
+        <span class="text-[10px] text-surface-500 ml-1">(dựa trên từ vựng &amp; luyện tập)</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-center">
+        <!-- Score display -->
+        <div class="flex items-center gap-4">
+          <div class="text-center">
+            <div class="text-4xl font-black text-warning-400 leading-none">${t.estimate}</div>
+            <div class="text-xs text-surface-500 mt-1">ước tính</div>
+          </div>
+          <div class="text-center text-surface-600 text-sm">|</div>
+          <div class="text-center">
+            <div class="text-lg font-bold text-surface-300">${t.lo} – ${t.hi}</div>
+            <div class="text-xs text-surface-500 mt-1">khoảng dao động</div>
+          </div>
+          <div class="hidden md:block text-center text-surface-600 text-sm ml-2">|</div>
+          <div class="hidden md:block text-center">
+            <div class="text-base font-semibold text-surface-400">/ 990</div>
+            <div class="text-xs text-surface-500 mt-1">tối đa</div>
+          </div>
+        </div>
+
+        <!-- Scale bar -->
+        <div class="md:col-span-2">
+          <div class="relative h-5 mb-1">
+            <!-- Background track -->
+            <div class="absolute inset-y-1 left-0 right-0 bg-surface-800 rounded-full overflow-hidden">
+              <!-- Filled range: lo → hi -->
+              <div class="absolute h-full bg-warning-500/30 rounded-full"
+                   style="left:${loPct}%; width:${(t.hi - t.lo) / 990 * 100}%"></div>
+            </div>
+            <!-- Threshold ticks -->
+            ${thresholds.map(th => `
+              <div class="absolute top-0 bottom-0 w-px bg-surface-600/60" style="left:${th.pct}%"></div>
+            `).join('')}
+            <!-- Estimate marker -->
+            <div class="absolute top-0 bottom-0 flex items-center justify-center" style="left:${estPct}%; transform:translateX(-50%)">
+              <div class="w-3 h-3 rounded-full bg-warning-400 border-2 border-surface-900 shadow-lg shadow-warning-500/40 z-10"></div>
+            </div>
+          </div>
+
+          <!-- Scale labels -->
+          <div class="relative h-5">
+            <span class="absolute text-[10px] text-surface-600 -translate-x-0">0</span>
+            ${thresholds.map(th => `
+              <span class="absolute text-[10px] text-surface-500 -translate-x-1/2" style="left:${th.pct}%">${th.score}</span>
+            `).join('')}
+            <span class="absolute text-[10px] text-surface-600 right-0">990</span>
+          </div>
+
+          <!-- CEFR band labels below scale -->
+          <div class="flex mt-1 text-[9px] text-surface-600 font-medium">
+            <span style="width:${220/990*100}%">Beginner</span>
+            <span style="width:${(545-220)/990*100}%">A1</span>
+            <span style="width:${(785-545)/990*100}%">A2</span>
+            <span style="width:${(900-785)/990*100}%">B1</span>
+            <span style="width:${(945-900)/990*100}%">B2</span>
+            <span class="flex-1">C1</span>
+          </div>
+
+          <p class="text-xs text-surface-400 mt-3 leading-relaxed">${toeicDesc}</p>
         </div>
       </div>
     </div>

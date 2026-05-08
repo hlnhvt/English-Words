@@ -12,6 +12,7 @@ const STORE_KEYS = {
   CONVERSATION: 'vocab_conversation_sessions',
   REVIEW_SESSIONS: 'vocab_review_sessions',
   SENTENCE_WRITING: 'vocab_sentence_writing',
+  WRONG_WORDS: 'vocab_wrong_words',
 };
 
 const DEFAULT_SETTINGS = {
@@ -408,6 +409,27 @@ class Store {
 
   getSentenceWritingStats() {
     return this._get(STORE_KEYS.SENTENCE_WRITING) || { total: 0 };
+  }
+
+  // Wrong words (answered incorrectly in review)
+  logWrongWord(word) {
+    const data = this._get(STORE_KEYS.WRONG_WORDS) || {};
+    data[word] = (data[word] || 0) + 1;
+    this._set(STORE_KEYS.WRONG_WORDS, data);
+  }
+
+  getWrongWords() {
+    return this._get(STORE_KEYS.WRONG_WORDS) || {};
+  }
+
+  removeWrongWord(word) {
+    const data = this.getWrongWords();
+    delete data[word];
+    this._set(STORE_KEYS.WRONG_WORDS, data);
+  }
+
+  clearWrongWords() {
+    this._set(STORE_KEYS.WRONG_WORDS, {});
   }
 
   // Export/Import
