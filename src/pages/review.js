@@ -1,5 +1,6 @@
 import store from '../store.js';
 import { renderWordModal, initWordModalEvents } from '../components/modal.js';
+import { playDing } from '../utils/sound.js';
 
 function getToday() { return new Date().toISOString().split('T')[0]; }
 function getFirstDayOfMonth() {
@@ -856,6 +857,7 @@ export function initReviewEvents(allWords, rerenderFn) {
             b.style.pointerEvents = 'none';
           });
           if (isCorrect) {
+            playDing();
             _styleOption(btn, 'correct');
           } else {
             _styleOption(btn, 'wrong');
@@ -881,6 +883,7 @@ export function initReviewEvents(allWords, rerenderFn) {
     document.getElementById('btn-quiz-next')?.addEventListener('click', () => {
       if (!pendingAnswer) return;
       const isCorrect = pendingAnswer === window._reviewCorrectAnswer;
+      if (isCorrect) playDing();
       const word = reviewSession.words[reviewSession.currentIndex];
       _recordAnswer(word, pendingAnswer, isCorrect, allWords);
       pendingAnswer = null;
