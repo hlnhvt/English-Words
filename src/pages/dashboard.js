@@ -1,5 +1,6 @@
 import store from '../store.js';
 import { renderWordModal, initWordModalEvents } from '../components/modal.js';
+import { playDing } from '../utils/sound.js';
 
 /**
  * Render the Dashboard page
@@ -376,6 +377,7 @@ export function initDashboardEvents(allWords) {
       ? `<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Chúc mừng! Bạn đã gõ đúng câu này rồi!`
       : `<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg> Chưa đúng, hãy thử lại nhé!`;
     if (correct) {
+      playDing();
       setTimeout(() => {
         goTo((current + 1) % totalSlides);
         startTimer();
