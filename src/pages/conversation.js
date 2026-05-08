@@ -432,7 +432,7 @@ function renderPractice() {
               <button data-speaker-filter="${uniqueSpeakers[0]}"
                 class="px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all
                        ${speakerFilter === uniqueSpeakers[0] ? 'bg-primary-600 text-white shadow-sm' : 'text-surface-400 hover:text-surface-200'}">
-                Người ${uniqueSpeakers[0]}
+                ${uniqueSpeakers[0]}
               </button>` : ''}
             <button data-speaker-filter="both"
               class="px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all
@@ -443,7 +443,7 @@ function renderPractice() {
               <button data-speaker-filter="${uniqueSpeakers[1]}"
                 class="px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all
                        ${speakerFilter === uniqueSpeakers[1] ? 'bg-primary-600 text-white shadow-sm' : 'text-surface-400 hover:text-surface-200'}">
-                Người ${uniqueSpeakers[1]}
+                ${uniqueSpeakers[1]}
               </button>` : ''}
           </div>
           <button id="btn-conv-exit" class="btn-hover text-surface-400 hover:text-red-400 text-sm px-3 py-1.5 rounded-lg border border-surface-700 transition-colors">
