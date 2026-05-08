@@ -1,5 +1,8 @@
+import store from '../store.js';
+
 export function renderWordModal(word) {
   if (!word) return '';
+  const isBookmarked = store.isBookmarked(word.word);
 
   return `
     <div id="word-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-surface-950/80 backdrop-blur-sm fade-in">
@@ -58,8 +61,17 @@ export function renderWordModal(word) {
         </div>
 
         <!-- Modal Footer -->
-        <div class="p-4 bg-white/2 border-t border-white/5 text-center">
+        <div class="p-4 bg-white/2 border-t border-white/5 flex items-center justify-between">
           <p class="text-[10px] text-surface-500">Oxford 5000 Vocabulary System</p>
+          <button id="modal-bookmark" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all
+            ${isBookmarked
+              ? 'bg-warning-500/20 text-warning-400 border border-warning-500/30 hover:bg-warning-500/30'
+              : 'bg-white/5 text-surface-400 border border-white/10 hover:bg-white/10 hover:text-surface-200'}">
+            <svg class="w-3.5 h-3.5" fill="${isBookmarked ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+            </svg>
+            ${isBookmarked ? 'Đã lưu' : 'Lưu từ'}
+          </button>
         </div>
       </div>
     </div>
@@ -85,6 +97,26 @@ export function initWordModalEvents(word) {
   modal.addEventListener('click', (e) => {
     if (e.target === modal) closeModal();
   });
+
+  const bookmarkBtn = document.getElementById('modal-bookmark');
+  if (bookmarkBtn) {
+    bookmarkBtn.addEventListener('click', () => {
+      const nowBookmarked = store.isBookmarked(word.word);
+      if (nowBookmarked) store.unbookmarkWord(word.word);
+      else store.bookmarkWord(word.word);
+      const after = store.isBookmarked(word.word);
+      bookmarkBtn.className = `flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all
+        ${after
+          ? 'bg-warning-500/20 text-warning-400 border border-warning-500/30 hover:bg-warning-500/30'
+          : 'bg-white/5 text-surface-400 border border-white/10 hover:bg-white/10 hover:text-surface-200'}`;
+      bookmarkBtn.innerHTML = `
+        <svg class="w-3.5 h-3.5" fill="${after ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+        </svg>
+        ${after ? 'Đã lưu' : 'Lưu từ'}
+      `;
+    });
+  }
 
   pronounceBtn?.addEventListener('click', () => {
     if (word && 'speechSynthesis' in window) {
