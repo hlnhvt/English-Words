@@ -11,7 +11,7 @@ function getFirstDayOfMonth() {
 let reviewConfig = {
   questionCount: 20,
   wordSource: 'learned', // learned | all
-  levelFilter: 'all',
+  levelFilter: ['all'],
   dateFilter: 'all',   // all | today | week | month | range
   dateFrom: getFirstDayOfMonth(),
   dateTo: getToday(),
@@ -49,7 +49,7 @@ function buildWordPool(allWords) {
     const isBookmarked = bookmarkSet.has(word.word);
     if (reviewConfig.wordSource === 'wrong' && !wrongWordSet.has(word.word)) return false;
     if (reviewConfig.wordSource === 'learned' && !hasProgress && !isBookmarked) return false;
-    if (reviewConfig.levelFilter !== 'all' && word.level !== reviewConfig.levelFilter) return false;
+    if (!reviewConfig.levelFilter.includes('all') && !reviewConfig.levelFilter.includes(word.level)) return false;
     if (reviewConfig.bookmarkedOnly && !isBookmarked) return false;
 
     if (reviewConfig.dateFilter !== 'all') {
@@ -165,12 +165,11 @@ function renderSetupScreen(allWords) {
           </div>
         </div>
 
-        <!-- Level -->
         <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.15s">
           <h3 class="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Cấp độ từ</h3>
           <div class="flex flex-wrap gap-2">
             ${['all','A1','A2','B1','B2','C1'].map(lvl => `
-              <button data-setup-level="${lvl}" ${pill(reviewConfig.levelFilter === lvl)}>
+              <button data-setup-level="${lvl}" ${pill(reviewConfig.levelFilter.includes(lvl))}>
                 ${lvl === 'all' ? 'Tất cả' : lvl}
               </button>`).join('')}
           </div>
@@ -710,7 +709,22 @@ export function initReviewEvents(allWords, rerenderFn) {
     });
   });
   document.querySelectorAll('[data-setup-level]').forEach(btn => {
-    btn.addEventListener('click', () => { reviewConfig.levelFilter = btn.dataset.setupLevel; rerenderFn(); });
+    btn.addEventListener('click', () => { 
+      const lvl = btn.dataset.setupLevel;
+      if (lvl === 'all') {
+        reviewConfig.levelFilter = ['all'];
+      } else {
+        let filters = reviewConfig.levelFilter.filter(x => x !== 'all');
+        if (filters.includes(lvl)) {
+          filters = filters.filter(x => x !== lvl);
+        } else {
+          filters.push(lvl);
+        }
+        if (filters.length === 0) filters = ['all'];
+        reviewConfig.levelFilter = filters;
+      }
+      rerenderFn(); 
+    });
   });
   document.querySelectorAll('[data-setup-date]').forEach(btn => {
     btn.addEventListener('click', () => { reviewConfig.dateFilter = btn.dataset.setupDate; rerenderFn(); });

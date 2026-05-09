@@ -12,6 +12,7 @@ export const navItems = [
   { path: '/wrong-words', label: 'Từ làm sai', icon: '<svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>' },
   { path: '/all-words', label: 'Tất cả từ vựng', icon: '<svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>' },
   { path: '/stats', label: 'Thống kê', icon: '<svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>' },
+  { path: '/math-practice', label: 'Luyện tập phép tính', section: 'Hoạt động khác', icon: '<svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>' }
 ];
 
 export function renderSidebar() {
@@ -39,6 +40,7 @@ export function renderSidebar() {
       <!-- Navigation Links -->
       <div class="flex-1 overflow-y-auto overflow-x-hidden no-scrollbar py-4 px-3 flex flex-col gap-1.5">
         ${navItems.map(item => `
+          ${item.section && !isCollapsed ? `<div class="px-3 pt-4 pb-1 text-xs font-semibold text-surface-500 uppercase tracking-wider">${item.section}</div>` : ''}
           <a href="#${item.path}" 
              class="group relative flex items-center px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200
                     ${currentRoute === item.path 

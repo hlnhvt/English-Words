@@ -12,6 +12,7 @@ import { renderBookmarks, initBookmarksEvents } from './pages/bookmarks.js';
 import { renderConversation, initConversationEvents, resetConversationSession } from './pages/conversation.js';
 import { renderWriteSentence, initWriteSentenceEvents } from './pages/write-sentence.js';
 import { renderWrongWords, initWrongWordsEvents } from './pages/wrong-words.js';
+import { renderMathPractice, initMathPracticeEvents } from './pages/math-practice.js';
 
 let allWords = [];
 
@@ -92,6 +93,9 @@ function initRouter() {
     })
     .addRoute('/wrong-words', () => {
       renderPage(renderWrongWords, initWrongWordsEvents);
+    })
+    .addRoute('/math-practice', () => {
+      renderPage(renderMathPractice, initMathPracticeEvents);
     });
 
   // Update header on route change
