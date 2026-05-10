@@ -13,6 +13,7 @@ import { renderConversation, initConversationEvents, resetConversationSession } 
 import { renderWriteSentence, initWriteSentenceEvents } from './pages/write-sentence.js';
 import { renderWrongWords, initWrongWordsEvents } from './pages/wrong-words.js';
 import { renderMathPractice, initMathPracticeEvents } from './pages/math-practice.js';
+import { renderGomoku, initGomokuEvents } from './pages/gomoku.js';
 
 let allWords = [];
 
@@ -96,6 +97,9 @@ function initRouter() {
     })
     .addRoute('/math-practice', () => {
       renderPage(renderMathPractice, initMathPracticeEvents);
+    })
+    .addRoute('/gomoku', () => {
+      renderPage(renderGomoku, initGomokuEvents);
     });
 
   // Update header on route change

@@ -414,16 +414,52 @@ class Store {
   // Wrong words (answered incorrectly in review)
   logWrongWord(word) {
     const data = this._get(STORE_KEYS.WRONG_WORDS) || {};
-    data[word] = (data[word] || 0) + 1;
+    const existing = data[word];
+    if (existing && typeof existing === 'object') {
+      existing.wrongCount = (existing.wrongCount || 0) + 1;
+      existing.correctStreak = 0;
+    } else {
+      // Migrate from old format (number) or create new
+      data[word] = { wrongCount: (typeof existing === 'number' ? existing : 0) + 1, correctStreak: 0 };
+    }
+    this._set(STORE_KEYS.WRONG_WORDS, data);
+  }
+
+  logCorrectForWrongWord(word) {
+    const data = this._get(STORE_KEYS.WRONG_WORDS) || {};
+    if (!data[word]) return;
+    // Migrate old format
+    if (typeof data[word] === 'number') {
+      data[word] = { wrongCount: data[word], correctStreak: 0 };
+    }
+    data[word].correctStreak = (data[word].correctStreak || 0) + 1;
+    if (data[word].correctStreak >= 6) {
+      delete data[word];
+    }
     this._set(STORE_KEYS.WRONG_WORDS, data);
   }
 
   getWrongWords() {
-    return this._get(STORE_KEYS.WRONG_WORDS) || {};
+    const raw = this._get(STORE_KEYS.WRONG_WORDS) || {};
+    // Normalize: ensure all entries are objects
+    const normalized = {};
+    for (const [word, val] of Object.entries(raw)) {
+      if (typeof val === 'number') {
+        normalized[word] = { wrongCount: val, correctStreak: 0 };
+      } else {
+        normalized[word] = val;
+      }
+    }
+    return normalized;
+  }
+
+  getWrongWordCount(word) {
+    const data = this.getWrongWords();
+    return data[word] ? data[word].wrongCount : 0;
   }
 
   removeWrongWord(word) {
-    const data = this.getWrongWords();
+    const data = this._get(STORE_KEYS.WRONG_WORDS) || {};
     delete data[word];
     this._set(STORE_KEYS.WRONG_WORDS, data);
   }

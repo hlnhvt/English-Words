@@ -648,7 +648,9 @@ function renderReviewComplete(allWords) {
           <div class="glass rounded-2xl p-4 mb-5 text-left max-h-72 overflow-y-auto">
             <h3 class="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Chi tiết kết quả</h3>
             <div class="space-y-2">
-              ${reviewSession.answers.map(a => `
+              ${reviewSession.answers.map(a => {
+                const isBookmarked = store.isBookmarked(a.word);
+                return `
                 <div data-result-word="${a.word}"
                      class="flex items-start gap-3 p-2.5 rounded-xl cursor-pointer transition-all hover:brightness-110 active:scale-[0.99]
                             ${a.correct ? 'bg-success-500/8 border border-success-500/15' : 'bg-red-500/8 border border-red-500/15'}">
@@ -664,10 +666,18 @@ function renderReviewComplete(allWords) {
                       : `<p class="text-xs text-red-400/80 truncate">Bạn chọn: ${a.selectedMeaning}</p>
                          <p class="text-xs text-success-400/80 truncate">Đúng: ${a.correctMeaning}</p>`}
                   </div>
+                  <button data-bookmark-result="${a.word}" title="${isBookmarked ? 'Bỏ lưu' : 'Lưu từ'}"
+                    class="shrink-0 mt-0.5 w-7 h-7 rounded-lg flex items-center justify-center transition-all
+                           ${isBookmarked ? 'text-primary-400 bg-primary-500/15' : 'text-surface-600 hover:text-primary-400 hover:bg-primary-500/10'}">
+                    <svg class="w-4 h-4" fill="${isBookmarked ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+                    </svg>
+                  </button>
                   <svg class="w-4 h-4 text-surface-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                   </svg>
-                </div>`).join('')}
+                </div>`;
+              }).join('')}
             </div>
           </div>
         ` : ''}
@@ -942,6 +952,27 @@ export function initReviewEvents(allWords, rerenderFn) {
     });
   }
 
+  // Complete — bookmark toggle on result items
+  document.querySelectorAll('[data-bookmark-result]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const word = btn.dataset.bookmarkResult;
+      if (store.isBookmarked(word)) {
+        store.unbookmarkWord(word);
+        btn.classList.remove('text-primary-400', 'bg-primary-500/15');
+        btn.classList.add('text-surface-600');
+        btn.querySelector('svg').setAttribute('fill', 'none');
+        btn.title = 'Lưu từ';
+      } else {
+        store.bookmarkWord(word);
+        btn.classList.add('text-primary-400', 'bg-primary-500/15');
+        btn.classList.remove('text-surface-600');
+        btn.querySelector('svg').setAttribute('fill', 'currentColor');
+        btn.title = 'Bỏ lưu';
+      }
+    });
+  });
+
   // Complete — click result item to open word detail modal
   document.querySelectorAll('[data-result-word]').forEach(item => {
     item.addEventListener('click', () => {
@@ -991,7 +1022,7 @@ function _recordAnswer(word, selectedAnswer, isCorrect, allWords) {
   }
 
   reviewSession.answers.push({ word: word.word, correct: isCorrect, qType, selectedMeaning: selectedDisplay, correctMeaning: correctDisplay });
-  if (isCorrect) { reviewSession.score.correct++; store.markWordLearned(word.word, 4); }
+  if (isCorrect) { reviewSession.score.correct++; store.markWordLearned(word.word, 4); store.logCorrectForWrongWord(word.word); }
   else           { reviewSession.score.wrong++;   store.markWordLearned(word.word, 1); store.logWrongWord(word.word); }
   store.logReview(isCorrect);
 }

@@ -4,7 +4,7 @@ import { renderWordModal, initWordModalEvents } from '../components/modal.js';
 let searchQuery = '';
 
 export function renderWrongWords(allWords) {
-  const wrongData = store.getWrongWords(); // { word: count }
+  const wrongData = store.getWrongWords(); // { word: { wrongCount, correctStreak } }
   const wrongSet = new Set(Object.keys(wrongData));
 
   const wrongWords = allWords
@@ -15,7 +15,7 @@ export function renderWrongWords(allWords) {
       return w.word.toLowerCase().includes(q) ||
              (w.meaning_vi && w.meaning_vi.toLowerCase().includes(q));
     })
-    .map(w => ({ ...w, wrongCount: wrongData[w.word] || 1 }))
+    .map(w => ({ ...w, wrongCount: wrongData[w.word]?.wrongCount || 1, correctStreak: wrongData[w.word]?.correctStreak || 0 }))
     .sort((a, b) => b.wrongCount - a.wrongCount);
 
   return `
@@ -72,6 +72,11 @@ export function renderWrongWords(allWords) {
                 <span class="text-[10px] px-2 py-0.5 rounded-full bg-red-500/15 text-red-400 font-semibold border border-red-500/20">
                   ✗ ${word.wrongCount}
                 </span>
+                ${word.correctStreak > 0 ? `
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-success-500/15 text-success-400 font-semibold border border-success-500/20" title="Đúng liên tiếp ${word.correctStreak}/6 — đạt 6 sẽ tự xóa">
+                    ✓ ${word.correctStreak}/6
+                  </span>
+                ` : ''}
                 <button data-remove-wrong="${word.word}" title="Xóa khỏi danh sách sai"
                   class="w-6 h-6 rounded-lg flex items-center justify-center text-surface-600 hover:text-red-400 hover:bg-red-500/10 transition-all">
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
