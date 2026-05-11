@@ -14,6 +14,8 @@ import { renderWriteSentence, initWriteSentenceEvents } from './pages/write-sent
 import { renderWrongWords, initWrongWordsEvents } from './pages/wrong-words.js';
 import { renderMathPractice, initMathPracticeEvents } from './pages/math-practice.js';
 import { renderGomoku, initGomokuEvents } from './pages/gomoku.js';
+import { renderLudo, initLudoEvents } from './pages/ludo.js';
+import { renderMonopoly, initMonopolyEvents } from './pages/monopoly.js';
 
 let allWords = [];
 
@@ -100,6 +102,12 @@ function initRouter() {
     })
     .addRoute('/gomoku', () => {
       renderPage(renderGomoku, initGomokuEvents);
+    })
+    .addRoute('/ludo', () => {
+      renderPage(renderLudo, initLudoEvents);
+    })
+    .addRoute('/monopoly', () => {
+      renderPage(renderMonopoly, initMonopolyEvents);
     });
 
   // Update header on route change
