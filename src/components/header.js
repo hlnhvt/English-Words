@@ -58,15 +58,26 @@ export function renderHeader(allWords = []) {
       <!-- Mobile Nav -->
       <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 pb-3 bg-surface-950/95 backdrop-blur-xl absolute w-full left-0 top-16 shadow-xl">
         <div class="max-w-6xl mx-auto px-4 pt-2 flex flex-col gap-1">
-          ${navItems.map(item => `
+          ${navItems.map((item, idx) => {
+            // Check if this item is in a section group (has section, or follows an item that had one)
+            const inSection = item.section || (idx > 0 && !item.section && navItems.slice(0, idx).reverse().some((prev, i) => {
+              if (prev.section) return true;
+              if (i > 0) return false; // only check consecutive items without section after one that has it
+              return false;
+            }));
+            // Simpler: an item is "in section" if it has .section or if it has no .section but the nearest preceding item with .section exists and no non-section item is between them
+            const isSubItem = !!item.section || (idx > 0 && navItems[idx-1].section) || (idx > 0 && !navItems[idx-1].section && navItems[idx-1].path && (() => { for(let j=idx-1;j>=0;j--){ if(navItems[j].section) return true; if(!navItems[j].section && j < idx-1) return false; } return false; })());
+            return `
+            ${item.section ? `<div class="px-4 pt-3 pb-1 text-xs font-semibold text-surface-500 uppercase tracking-wider border-t border-white/5 mt-2">${item.section}</div>` : ''}
             <a href="#${item.path}" 
                class="px-4 py-2.5 rounded-xl text-sm font-medium transition-all flex items-center
+                      ${isSubItem ? 'pl-7' : ''}
                       ${currentRoute === item.path 
                         ? 'bg-primary-600/20 text-primary-400' 
                         : 'text-surface-400 hover:text-surface-200 hover:bg-white/5'}">
               <span class="mr-3 inline-flex shrink-0">${item.icon}</span>${item.label}
-            </a>
-          `).join('')}
+            </a>`;
+          }).join('')}
           
           <!-- Mobile Theme Toggle -->
           <button id="theme-toggle-mobile" class="mt-2 px-4 py-3 rounded-xl text-sm font-medium transition-all flex items-center gap-3 text-surface-400 hover:text-surface-200 hover:bg-white/5 border-t border-white/10 pt-4">

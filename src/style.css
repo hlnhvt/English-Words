@@ -358,6 +358,22 @@ body.light-mode {
 .light-mode .gomoku-win-cell .gomoku-x,
 .light-mode .gomoku-win-cell .gomoku-o { color: #059669; }
 
+/* Stone pieces */
+.gomoku-stone-black, .gomoku-stone-white {
+  display: inline-block; width: 24px; height: 24px; border-radius: 50%;
+  transition: transform 0.15s;
+}
+.gomoku-stone-black {
+  background: radial-gradient(circle at 35% 35%, #555, #1a1a1a 60%, #000);
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.5), inset 0 -2px 4px rgba(255,255,255,0.08);
+}
+.gomoku-stone-white {
+  background: radial-gradient(circle at 35% 35%, #fff, #e8e8e8 50%, #ccc);
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.25), inset 0 -2px 4px rgba(0,0,0,0.05);
+}
+.gomoku-win-cell .gomoku-stone-black,
+.gomoku-win-cell .gomoku-stone-white { transform: scale(1.15); box-shadow: 0 0 8px rgba(16,185,129,0.6); }
+
 /* Gomoku Victory Overlay */
 .gomoku-victory-overlay {
   position: fixed; inset: 0; z-index: 100;

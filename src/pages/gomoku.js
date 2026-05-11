@@ -5,6 +5,7 @@ let gomokuState = {
   boardSize: 15,
   mode: 'pvp', // pvp | ai
   aiDifficulty: 'medium', // easy | medium | hard
+  pieceStyle: 'xo', // xo | stone
   player1: 'Người chơi 1',
   player2: 'Người chơi 2',
   board: [],
@@ -160,6 +161,14 @@ function renderSetup() {
           </div>
         </div>
 
+        <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.12s">
+          <h3 class="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Kiểu quân cờ</h3>
+          <div class="flex flex-wrap gap-2">
+            <button data-gomoku-piece="xo" ${pill(gomokuState.pieceStyle === 'xo')}>X / O</button>
+            <button data-gomoku-piece="stone" ${pill(gomokuState.pieceStyle === 'stone')}>⚫ / ⚪ (quân cờ)</button>
+          </div>
+        </div>
+
         <div class="fade-in glass rounded-2xl p-5" style="animation-delay:.15s">
           <h3 class="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Tên người chơi</h3>
           <div class="flex gap-3">
@@ -217,11 +226,12 @@ function renderGame() {
 
       let cellContent = '';
       let cellClass = 'gomoku-cell';
+      const useStone = gomokuState.pieceStyle === 'stone';
       if (val === 1) {
-        cellContent = '<span class="gomoku-x">X</span>';
+        cellContent = useStone ? '<span class="gomoku-stone-black"></span>' : '<span class="gomoku-x">X</span>';
         cellClass += isWin ? ' gomoku-win-cell' : '';
       } else if (val === 2) {
-        cellContent = '<span class="gomoku-o">O</span>';
+        cellContent = useStone ? '<span class="gomoku-stone-white"></span>' : '<span class="gomoku-o">O</span>';
         cellClass += isWin ? ' gomoku-win-cell' : '';
       }
       if (isLast) cellClass += ' gomoku-last';
@@ -257,10 +267,12 @@ function renderGame() {
           <div class="gomoku-victory-trophy">🏆</div>
           <h2 class="text-3xl font-bold text-surface-100 mb-2">Chúc mừng!</h2>
           <div class="flex items-center justify-center gap-3 mb-3">
-            <span class="inline-flex items-center justify-center w-12 h-12 rounded-2xl text-2xl font-black
+            ${gomokuState.pieceStyle === 'stone'
+              ? `<span class="inline-flex items-center justify-center w-12 h-12"><span class="${gomokuState.winner === 1 ? 'gomoku-stone-black' : 'gomoku-stone-white'}" style="width:36px;height:36px"></span></span>`
+              : `<span class="inline-flex items-center justify-center w-12 h-12 rounded-2xl text-2xl font-black
                          ${gomokuState.winner === 1 ? 'bg-primary-600/30 text-primary-400' : 'bg-red-500/30 text-red-400'}">
               ${winnerSymbol}
-            </span>
+            </span>`}
             <span class="text-2xl font-bold text-${winnerColor}-400">${winnerName}</span>
           </div>
           <p class="text-surface-400 mb-6">đã giành chiến thắng!</p>
@@ -320,11 +332,15 @@ function renderGame() {
 
       <div class="flex justify-center gap-6 mt-4 text-sm">
         <div class="flex items-center gap-2">
-          <span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-primary-600/20 text-primary-400 font-bold text-xs">X</span>
+          ${gomokuState.pieceStyle === 'stone'
+            ? '<span class="inline-flex items-center justify-center w-7 h-7"><span class="gomoku-stone-black" style="width:20px;height:20px"></span></span>'
+            : '<span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-primary-600/20 text-primary-400 font-bold text-xs">X</span>'}
           <span class="text-surface-300">${gomokuState.player1}</span>
         </div>
         <div class="flex items-center gap-2">
-          <span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-red-500/20 text-red-400 font-bold text-xs">O</span>
+          ${gomokuState.pieceStyle === 'stone'
+            ? '<span class="inline-flex items-center justify-center w-7 h-7"><span class="gomoku-stone-white" style="width:20px;height:20px"></span></span>'
+            : '<span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-red-500/20 text-red-400 font-bold text-xs">O</span>'}
           <span class="text-surface-300">${gomokuState.player2}</span>
         </div>
       </div>
@@ -345,6 +361,7 @@ export function initGomokuEvents(allWords, rerenderFn) {
     }));
     document.querySelectorAll('[data-gomoku-diff]').forEach(btn => btn.addEventListener('click', () => { gomokuState.aiDifficulty = btn.dataset.gomokuDiff; rerenderFn(); }));
     document.querySelectorAll('[data-gomoku-size]').forEach(btn => btn.addEventListener('click', () => { gomokuState.boardSize = parseInt(btn.dataset.gomokuSize); rerenderFn(); }));
+    document.querySelectorAll('[data-gomoku-piece]').forEach(btn => btn.addEventListener('click', () => { gomokuState.pieceStyle = btn.dataset.gomokuPiece; rerenderFn(); }));
 
     document.getElementById('btn-gomoku-start')?.addEventListener('click', () => {
       gomokuState.player1 = document.getElementById('gomoku-p1')?.value || 'Người chơi 1';
