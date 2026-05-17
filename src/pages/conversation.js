@@ -1,4 +1,5 @@
 import store from '../store.js';
+import { playDing } from '../utils/sound.js';
 
 let allDialogues = [];
 let filteredDialogues = [];
@@ -22,45 +23,8 @@ let convSession = {
   speakerFilter: 'both', // 'both' | speaker name (e.g. 'A' | 'B')
 };
 
-const LINE_TIME_SEC = 90;
-let convCountdownInterval = null;
-let convTimeLeft = LINE_TIME_SEC;
-
 function clearAllTimers() {
-  if (convCountdownInterval) {
-    clearInterval(convCountdownInterval);
-    convCountdownInterval = null;
-  }
-}
-
-function updateTimerDisplay() {
-  const timerText = document.getElementById('conv-timer-text');
-  const timerBar = document.getElementById('conv-timer-bar');
-  if (!timerText || !timerBar) return;
-  timerText.textContent = convTimeLeft;
-  const pct = Math.max(0, (convTimeLeft / LINE_TIME_SEC) * 100);
-  timerBar.style.width = pct + '%';
-  if (convTimeLeft <= 10) {
-    timerBar.className = 'bg-red-500 h-1 rounded-full';
-  } else if (convTimeLeft <= 20) {
-    timerBar.className = 'bg-warning-400 h-1 rounded-full';
-  } else {
-    timerBar.className = 'bg-primary-500 h-1 rounded-full';
-  }
-}
-
-function startLineCountdown(rerenderFn) {
-  clearAllTimers();
-  convTimeLeft = LINE_TIME_SEC;
-  updateTimerDisplay();
-  convCountdownInterval = setInterval(() => {
-    convTimeLeft--;
-    updateTimerDisplay();
-    if (convTimeLeft <= 0) {
-      clearAllTimers();
-      autoAdvanceLine(rerenderFn);
-    }
-  }, 1000);
+  // timer removed — kept as no-op for call-site compatibility
 }
 
 function speakLine(text) {
@@ -78,37 +42,6 @@ function speakLine(text) {
   window.speechSynthesis.speak(utt);
 }
 
-function autoAdvanceLine(rerenderFn) {
-  const input = document.getElementById('conv-input');
-  if (!input || input.disabled) return;
-  const typed = input.value.trim();
-  const line = convSession.dialogue.lines[convSession.lineIndex];
-  const correct = typed.toLowerCase() === line.en.toLowerCase();
-  convSession.answers.push({ line, typed, correct });
-  const isLast = convSession.lineIndex >= convSession.dialogue.lines.length - 1;
-  if (isLast) {
-    convSession.phase = 'complete';
-    const typedAnswers = convSession.answers.filter(a => !a.autoSkipped);
-    const total = typedAnswers.length;
-    const correctCount = typedAnswers.filter(a => a.correct).length;
-    const score = total > 0 ? Math.round((correctCount / total) * 100) : 100;
-    store.logConversationSession({
-      dialogueId: convSession.dialogue.id,
-      title: convSession.dialogue.title,
-      score, correctLines: correctCount, totalLines: total,
-      date: new Date().toISOString(),
-    });
-    rerenderFn();
-  } else {
-    convSession.lineIndex++;
-    rerenderFn();
-    setTimeout(() => {
-      renderTypingTarget();
-      const newInput = document.getElementById('conv-input');
-      if (newInput) newInput.focus();
-    }, 0);
-  }
-}
 
 async function fetchDialogues(rerenderFn) {
   if (allDialogues.length > 0) return allDialogues;
@@ -481,30 +414,24 @@ function renderPractice() {
             <p class="text-surface-100 font-medium text-lg leading-relaxed">${current.vi}</p>
           </div>
 
-          <div class="flex items-center gap-2 mb-4">
-            <svg class="w-3.5 h-3.5 text-surface-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            <div class="flex-1 bg-surface-800 rounded-full h-1 overflow-hidden">
-              <div id="conv-timer-bar" class="bg-primary-500 h-1 rounded-full" style="width:100%"></div>
-            </div>
-            <span id="conv-timer-text" class="text-surface-500 text-xs font-mono w-6 text-right">${LINE_TIME_SEC}</span>
-          </div>
+          <div id="conv-typing-target" class="font-mono text-xl tracking-wider mb-4 min-h-[1.75rem] break-words leading-relaxed"></div>
 
-          <div id="conv-typing-target" class="font-mono text-xl tracking-wider mb-6 min-h-[1.75rem] break-words"></div>
-
-          <div class="relative">
-            <input
+          <div class="relative mb-2">
+            <textarea
               id="conv-input"
-              type="text"
               autocomplete="off"
               spellcheck="false"
+              rows="2"
               placeholder="Gõ lời thoại của ${current.speaker}..."
-              class="w-full bg-surface-800 border-2 border-surface-700 rounded-2xl px-5 py-4 text-surface-100 placeholder-surface-600 focus:border-primary-500 outline-none transition-all text-lg mb-6"
-            />
+              class="w-full bg-surface-800 border-2 border-surface-700 rounded-2xl px-5 py-4 text-surface-100 placeholder-surface-600 focus:border-primary-500 outline-none transition-all text-lg resize-none"
+            ></textarea>
+            <div id="conv-correct-feedback" class="hidden absolute -bottom-7 left-0 flex items-center gap-1.5 text-success-400 text-sm font-semibold">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Chính xác!
+            </div>
           </div>
 
-          <div class="flex justify-end items-center gap-4">
+          <div class="flex justify-end items-center gap-4 mt-8">
             <p class="text-xs text-surface-500 hidden sm:block">Nhấn <kbd class="px-1.5 py-0.5 rounded bg-surface-700 text-surface-300">Enter</kbd> để tiếp tục</p>
             <button id="btn-conv-next" class="btn-hover bg-primary-600 hover:bg-primary-500 text-white font-bold px-8 py-3 rounded-xl transition-all shadow-lg shadow-primary-600/20">
               Tiếp theo →
@@ -661,11 +588,14 @@ function submitLine(rerenderFn) {
     return;
   }
 
-  // Correct — stop timer, lock input, wait 1.5s then advance
+  // Correct
   clearAllTimers();
+  playDing();
   convSession.answers.push({ line, typed, correct });
   input.disabled = true;
   input.classList.add('border-success-500');
+  const feedback = document.getElementById('conv-correct-feedback');
+  if (feedback) feedback.classList.remove('hidden');
   const nextBtn = document.getElementById('btn-conv-next');
   if (nextBtn) nextBtn.disabled = true;
 
@@ -905,7 +835,7 @@ export function initConversationEvents(allWords, rerenderFn) {
     });
 
     convInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
+      if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
         submitLine(rerenderFn);
       }

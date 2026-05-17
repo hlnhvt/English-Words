@@ -127,15 +127,29 @@ export function initHeaderEvents(allWords = []) {
   if (allWords.length > 0) {
     const learnedWords = store.getLearnedWords(allWords).filter(w => w.status && w.status !== 'new');
     const tickerContainer = document.getElementById('header-word-ticker');
-    
+
     if (tickerContainer && learnedWords.length > 0) {
       if (headerTickerInterval) clearInterval(headerTickerInterval);
-      
-      let currentIndex = Math.floor(Math.random() * learnedWords.length);
-      let currentWord = learnedWords[currentIndex];
-      
+
+      // Weighted pool: B1/B2/C1 có trọng số 4×, A2 2×, A1 1×
+      const weightedPool = [];
+      for (const w of learnedWords) {
+        const weight = ['B1', 'B2', 'C1'].includes(w.level) ? 4 : w.level === 'A2' ? 2 : 1;
+        for (let i = 0; i < weight; i++) weightedPool.push(w);
+      }
+      const pickWord = () => weightedPool[Math.floor(Math.random() * weightedPool.length)];
+
+      let currentWord = pickWord();
+      let lastWord = currentWord;
+
       const renderTicker = () => {
-        currentWord = learnedWords[currentIndex];
+        // tránh lặp lại từ vừa hiển thị
+        let next = pickWord();
+        if (weightedPool.length > 1) {
+          while (next.word === lastWord.word) next = pickWord();
+        }
+        currentWord = next;
+        lastWord = currentWord;
         tickerContainer.innerHTML = `
           <div class="fade-in flex items-center gap-2 px-3 py-1 rounded-full bg-surface-800/50 border border-white/5 shadow-sm max-w-full group/ticker transition-all">
             <div class="flex items-center gap-2 flex-1 min-w-0 cursor-pointer hover:bg-white/5 px-2 py-0.5 rounded-full" id="header-ticker-info">
@@ -171,7 +185,6 @@ export function initHeaderEvents(allWords = []) {
           };
         }
         
-        currentIndex = (currentIndex + 1) % learnedWords.length;
       };
 
       renderTicker();
