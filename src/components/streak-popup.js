@@ -65,8 +65,7 @@ function launchFireworks(canvas) {
   let raf;
 
   function animate() {
-    ctx.fillStyle = 'rgba(0,0,0,0.18)';
-    ctx.fillRect(0, 0, w, h);
+    ctx.clearRect(0, 0, w, h);
 
     frame++;
     for (const b of extraBursts) {
@@ -123,7 +122,7 @@ export function showStreakPopup(streakCount) {
   root.id = 'streak-popup-root';
   root.className = 'fixed inset-0 z-[300] flex items-center justify-center p-4';
   root.innerHTML = `
-    <div class="absolute inset-0 bg-white/80 backdrop-blur-sm fade-in" id="streak-popup-bg"></div>
+    <div class="absolute inset-0 fade-in" id="streak-popup-bg" style="background:rgba(255,255,255,0.88); backdrop-filter:blur(6px);"></div>
 
     <!-- Fireworks canvas -->
     <canvas id="streak-fireworks" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
