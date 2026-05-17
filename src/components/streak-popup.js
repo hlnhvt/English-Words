@@ -123,45 +123,50 @@ export function showStreakPopup(streakCount) {
   root.id = 'streak-popup-root';
   root.className = 'fixed inset-0 z-[300] flex items-center justify-center p-4';
   root.innerHTML = `
-    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm fade-in" id="streak-popup-bg"></div>
+    <div class="absolute inset-0 bg-white/80 backdrop-blur-sm fade-in" id="streak-popup-bg"></div>
 
     <!-- Fireworks canvas -->
     <canvas id="streak-fireworks" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
 
     <!-- Card -->
-    <div class="relative glass rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl border border-white/15 slide-up z-10">
+    <div class="relative rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl slide-up z-10"
+         style="background:#fff; border:1.5px solid #f0e8d0;">
       <!-- Close -->
-      <button id="streak-popup-close" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 text-surface-400 flex items-center justify-center transition-all">
+      <button id="streak-popup-close" class="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-all"
+              style="background:#f5f5f5; color:#888;">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
 
       <!-- Flame icon -->
       <div class="flex justify-center mb-4">
-        <div class="w-20 h-20 rounded-full bg-warning-500/20 border-2 border-warning-500/40 flex items-center justify-center text-5xl shadow-lg shadow-warning-500/20">
+        <div class="w-20 h-20 rounded-full flex items-center justify-center text-5xl shadow-md"
+             style="background:#fff7e6; border:2px solid #fbbf24;">
           🔥
         </div>
       </div>
 
       <!-- Streak count -->
-      <div class="text-6xl font-black text-warning-400 mb-1 leading-none">${streakCount}</div>
-      <div class="text-sm text-warning-300/80 font-semibold mb-4 uppercase tracking-widest">ngày liên tiếp</div>
+      <div class="text-6xl font-black mb-1 leading-none" style="color:#d97706;">${streakCount}</div>
+      <div class="text-sm font-semibold mb-4 uppercase tracking-widest" style="color:#b45309;">ngày liên tiếp</div>
 
       <!-- Congrats -->
-      <h2 class="text-xl font-bold text-surface-100 mb-2">
+      <h2 class="text-xl font-bold mb-2" style="color:#1c1917;">
         ${streakCount === 1 ? 'Khởi đầu tốt!' : streakCount < 7 ? 'Xuất sắc! Chuỗi đang tăng!' : streakCount < 30 ? '🎉 Tuyệt vời! Hãy tiếp tục!' : '🏆 Phi thường! Bạn là huyền thoại!'}
       </h2>
-      <p class="text-sm text-surface-400 mb-6">
-        ${streakCount === 1 ? 'Hôm nay bạn đã hoàn thành mục tiêu học tập. Hãy duy trì đều đặn mỗi ngày!' : `Bạn đã học liên tiếp <strong class="text-warning-400">${streakCount} ngày</strong> không nghỉ. Đáng nể thật!`}
+      <p class="text-sm mb-6" style="color:#57534e;">
+        ${streakCount === 1 ? 'Hôm nay bạn đã hoàn thành mục tiêu học tập. Hãy duy trì đều đặn mỗi ngày!' : `Bạn đã học liên tiếp <strong style="color:#d97706;">${streakCount} ngày</strong> không nghỉ. Đáng nể thật!`}
       </p>
 
       <!-- Quote -->
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-4 mb-6 text-left">
-        <svg class="w-5 h-5 text-primary-400/60 mb-2" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="text-sm text-surface-300 italic leading-relaxed">"${quote.text}"</p>
-        <p class="text-xs text-surface-500 mt-2 text-right">— ${quote.author}</p>
+      <div class="rounded-2xl p-4 mb-6 text-left" style="background:#fffbeb; border:1px solid #fde68a;">
+        <svg class="w-5 h-5 mb-2" fill="currentColor" viewBox="0 0 24 24" style="color:#f59e0b;"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        <p class="text-sm italic leading-relaxed" style="color:#44403c;">"${quote.text}"</p>
+        <p class="text-xs mt-2 text-right" style="color:#78716c;">— ${quote.author}</p>
       </div>
 
-      <button id="streak-popup-ok" class="w-full py-3 rounded-xl bg-warning-500 hover:bg-warning-400 text-white font-bold text-sm transition-all shadow-lg shadow-warning-500/30">
+      <button id="streak-popup-ok" class="w-full py-3 rounded-xl font-bold text-sm transition-all text-white"
+              style="background:#f59e0b; box-shadow:0 4px 14px rgba(245,158,11,0.35);"
+              onmouseover="this.style.background='#d97706'" onmouseout="this.style.background='#f59e0b'">
         Tiếp tục học! 💪
       </button>
     </div>
