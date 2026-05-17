@@ -16,6 +16,7 @@ import { renderMathPractice, initMathPracticeEvents } from './pages/math-practic
 import { renderGomoku, initGomokuEvents } from './pages/gomoku.js';
 import { renderLudo, initLudoEvents } from './pages/ludo.js';
 import { renderMonopoly, initMonopolyEvents } from './pages/monopoly.js';
+import { showStreakPopup } from './components/streak-popup.js';
 
 let allWords = [];
 
@@ -112,6 +113,11 @@ function initRouter() {
 
   // Update header on route change
   router.onRouteChange = () => {};
+
+  // Show streak popup when streak is extended
+  window.addEventListener('streakExtended', (e) => {
+    showStreakPopup(e.detail.count);
+  });
 
   // Apply initial theme
   const settings = store.getSettings();

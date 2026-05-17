@@ -20,6 +20,7 @@ const DEFAULT_SETTINGS = {
   darkMode: true,
   currentLevelFilter: 'all', // all, A1, A2, B1, B2, C1
   sidebarCollapsed: false,
+  streakDifficulty: 'easy', // easy | normal | hard
 };
 
 function getToday() {
@@ -285,6 +286,22 @@ class Store {
 
   // Streak
   _updateStreak() {
+    const settings = this.getSettings();
+    const difficulty = settings.streakDifficulty || 'easy';
+    const todayLog = this.getTodayLog();
+
+    // Check if today meets the difficulty threshold
+    let meetsThreshold = false;
+    if (difficulty === 'easy') {
+      meetsThreshold = (todayLog.wordsLearned + todayLog.wordsReviewed) >= 1;
+    } else if (difficulty === 'normal') {
+      meetsThreshold = todayLog.wordsLearned >= 3 || todayLog.wordsReviewed >= 10;
+    } else if (difficulty === 'hard') {
+      meetsThreshold = todayLog.wordsLearned >= 5 && todayLog.wordsReviewed >= 10;
+    }
+
+    if (!meetsThreshold) return;
+
     const streak = this._get(STORE_KEYS.STREAK);
     const today = getToday();
 
@@ -296,8 +313,6 @@ class Store {
 
     if (daysSinceLastActive === 1) {
       streak.current++;
-    } else if (daysSinceLastActive > 1) {
-      streak.current = 1;
     } else {
       streak.current = 1;
     }
@@ -308,6 +323,10 @@ class Store {
 
     streak.lastActive = today;
     this._set(STORE_KEYS.STREAK, streak);
+
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('streakExtended', { detail: { count: streak.current } }));
+    }
   }
 
   getStreak() {

@@ -2,6 +2,7 @@ import { router } from '../router.js';
 import store from '../store.js';
 import { navItems } from './sidebar.js';
 import { renderWordModal, initWordModalEvents } from './modal.js';
+import { showStreakPopup } from './streak-popup.js';
 
 export function renderHeader(allWords = []) {
   const settings = store.getSettings();
@@ -33,7 +34,7 @@ export function renderHeader(allWords = []) {
         <div class="flex items-center gap-3 shrink-0 ml-auto">
           <!-- Streak -->
           ${streak.current > 0 ? `
-            <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warning-500/15 text-warning-400 text-sm font-medium">
+            <div id="header-streak-badge" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warning-500/15 text-warning-400 text-sm font-medium cursor-pointer hover:bg-warning-500/25 transition-colors">
               <span class="flex items-center"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg></span>
               <span>${streak.current}</span>
             </div>
@@ -112,6 +113,14 @@ export function initHeaderEvents(allWords = []) {
 
   themeToggle?.addEventListener('click', handleThemeToggle);
   themeToggleMobile?.addEventListener('click', handleThemeToggle);
+
+  const streakBadge = document.getElementById('header-streak-badge');
+  if (streakBadge) {
+    streakBadge.addEventListener('click', () => {
+      const streak = store.getStreak();
+      showStreakPopup(streak.current);
+    });
+  }
 
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => {
