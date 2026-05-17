@@ -173,9 +173,12 @@ export function showStreakPopup(streakCount) {
 
   document.body.appendChild(root);
 
-  // Launch fireworks
-  const canvas = document.getElementById('streak-fireworks');
-  const cancelFw = launchFireworks(canvas);
+  // Launch fireworks after layout settles to avoid blocking the current frame
+  let cancelFw = () => {};
+  requestAnimationFrame(() => {
+    const canvas = document.getElementById('streak-fireworks');
+    if (canvas) cancelFw = launchFireworks(canvas);
+  });
 
   const close = () => {
     cancelFw();

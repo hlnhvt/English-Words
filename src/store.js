@@ -286,11 +286,15 @@ class Store {
 
   // Streak
   _updateStreak() {
-    const settings = this.getSettings();
-    const difficulty = settings.streakDifficulty || 'easy';
-    const todayLog = this.getTodayLog();
+    const streak = this._get(STORE_KEYS.STREAK);
+    const today = getToday();
 
-    // Check if today meets the difficulty threshold
+    // Fast-path: already counted today
+    if (streak.lastActive === today) return;
+
+    // Check difficulty threshold
+    const difficulty = (this.getSettings().streakDifficulty) || 'easy';
+    const todayLog = this.getTodayLog();
     let meetsThreshold = false;
     if (difficulty === 'easy') {
       meetsThreshold = (todayLog.wordsLearned + todayLog.wordsReviewed) >= 1;
@@ -299,33 +303,22 @@ class Store {
     } else if (difficulty === 'hard') {
       meetsThreshold = todayLog.wordsLearned >= 5 && todayLog.wordsReviewed >= 10;
     }
-
     if (!meetsThreshold) return;
-
-    const streak = this._get(STORE_KEYS.STREAK);
-    const today = getToday();
-
-    if (streak.lastActive === today) return; // Already active today
 
     const daysSinceLastActive = streak.lastActive
       ? getDaysBetween(streak.lastActive, today)
       : 999;
 
-    if (daysSinceLastActive === 1) {
-      streak.current++;
-    } else {
-      streak.current = 1;
-    }
-
-    if (streak.current > streak.longest) {
-      streak.longest = streak.current;
-    }
-
+    streak.current = daysSinceLastActive === 1 ? streak.current + 1 : 1;
+    streak.longest = Math.max(streak.current, streak.longest);
     streak.lastActive = today;
     this._set(STORE_KEYS.STREAK, streak);
 
+    const count = streak.current;
     if (typeof window !== 'undefined') {
-      window.dispatchEvent(new CustomEvent('streakExtended', { detail: { count: streak.current } }));
+      setTimeout(() => {
+        window.dispatchEvent(new CustomEvent('streakExtended', { detail: { count } }));
+      }, 0);
     }
   }
 

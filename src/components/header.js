@@ -147,6 +147,7 @@ export function initHeaderEvents(allWords = []) {
         for (let i = 0; i < weight; i++) weightedPool.push(w);
       }
       const pickWord = () => weightedPool[Math.floor(Math.random() * weightedPool.length)];
+      const hasMultipleDistinct = new Set(weightedPool.map(w => w.word)).size > 1;
 
       let currentWord = pickWord();
       let lastWord = currentWord;
@@ -154,8 +155,9 @@ export function initHeaderEvents(allWords = []) {
       const renderTicker = () => {
         // tránh lặp lại từ vừa hiển thị
         let next = pickWord();
-        if (weightedPool.length > 1) {
-          while (next.word === lastWord.word) next = pickWord();
+        if (hasMultipleDistinct) {
+          let attempts = 0;
+          while (next.word === lastWord.word && attempts < 20) { next = pickWord(); attempts++; }
         }
         currentWord = next;
         lastWord = currentWord;
