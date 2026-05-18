@@ -166,7 +166,7 @@ export function showStreakPopup(streakCount) {
       <button id="streak-popup-ok" class="w-full py-3 rounded-xl font-bold text-sm transition-all text-white"
               style="background:#f59e0b; box-shadow:0 4px 14px rgba(245,158,11,0.35);"
               onmouseover="this.style.background='#d97706'" onmouseout="this.style.background='#f59e0b'">
-        Tiếp tục học! 💪
+        Tiếp tục học!
       </button>
     </div>
   `;

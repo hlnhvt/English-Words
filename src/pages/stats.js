@@ -182,14 +182,69 @@ export function renderStats(allWords) {
             <span id="words-per-day-label" class="text-sm font-medium text-primary-400 w-8">${store.getSettings().wordsPerDay}</span>
           </div>
         </div>
-        <div class="flex flex-wrap items-center gap-3">
-          <label class="text-sm text-surface-400">Độ khó ghi nhận chuỗi:</label>
-          <div class="flex gap-2">
-            ${['easy','normal','hard'].map(d => {
-              const active = (store.getSettings().streakDifficulty || 'easy') === d;
-              const label = d === 'easy' ? 'Đơn giản' : d === 'normal' ? 'Bình thường' : 'Khó';
-              const desc = d === 'easy' ? '(1 hoạt động)' : d === 'normal' ? '(3 từ mới / 10 ôn)' : '(5 từ mới + 10 ôn)';
-              return `<button data-streak-diff="${d}" class="streak-diff-btn px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${active ? 'bg-warning-500/20 text-warning-400 border-warning-500/40' : 'bg-white/5 text-surface-400 border-white/10 hover:bg-white/10'}" title="${desc}">${label}</button>`;
+        <div>
+          <label class="text-sm text-surface-400 block mb-3">Độ khó ghi nhận chuỗi:</label>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            ${[
+              {
+                id: 'easy',
+                label: 'Đơn giản',
+                icon: '',
+                color: 'success',
+                condition: 'Mỗi ngày chỉ cần:',
+                rules: ['Học hoặc ôn <strong>ít nhất 1 từ</strong>'],
+                tip: 'Phù hợp để duy trì thói quen hàng ngày.',
+              },
+              {
+                id: 'normal',
+                label: 'Bình thường',
+                icon: '',
+                color: 'warning',
+                condition: 'Mỗi ngày cần đạt <strong>một trong hai</strong>:',
+                rules: [
+                  'Học ít nhất <strong>3 từ mới</strong>',
+                  'Ôn tập ít nhất <strong>10 từ</strong>',
+                ],
+                tip: 'Cân bằng giữa học mới và củng cố kiến thức.',
+              },
+              {
+                id: 'hard',
+                label: 'Thử thách',
+                icon: '',
+                color: 'red',
+                condition: 'Mỗi ngày phải đạt <strong>cả hai</strong>:',
+                rules: [
+                  'Học ít nhất <strong>5 từ mới</strong>',
+                  'Ôn tập ít nhất <strong>10 từ</strong>',
+                ],
+                tip: 'Dành cho người muốn tiến bộ nhanh, không nhượng bộ.',
+              },
+            ].map(({ id, label, icon, color, condition, rules, tip }) => {
+              const active = (store.getSettings().streakDifficulty || 'easy') === id;
+              const borderCls = active
+                ? color === 'success' ? 'border-success-500/50 bg-success-500/10'
+                  : color === 'warning' ? 'border-warning-500/50 bg-warning-500/10'
+                  : 'border-red-500/50 bg-red-500/10'
+                : 'border-white/10 bg-white/3 hover:bg-white/6 hover:border-white/20';
+              const labelCls = active
+                ? color === 'success' ? 'text-success-400'
+                  : color === 'warning' ? 'text-warning-400'
+                  : 'text-red-400'
+                : 'text-surface-300';
+              return `
+                <button data-streak-diff="${id}"
+                        class="streak-diff-btn text-left rounded-xl p-4 border transition-all ${borderCls}">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="text-lg">${icon}</span>
+                    <span class="font-semibold text-sm ${labelCls}">${label}</span>
+                    ${active ? `<span class="ml-auto text-[10px] px-1.5 py-0.5 rounded-full ${color === 'success' ? 'bg-success-500/20 text-success-400' : color === 'warning' ? 'bg-warning-500/20 text-warning-400' : 'bg-red-500/20 text-red-400'}">Đang dùng</span>` : ''}
+                  </div>
+                  <p class="text-[11px] text-surface-400 mb-2">${condition}</p>
+                  <ul class="space-y-1 mb-3">
+                    ${rules.map(r => `<li class="text-[11px] text-surface-300 flex items-start gap-1.5"><span class="mt-0.5 shrink-0 ${color === 'success' ? 'text-success-400' : color === 'warning' ? 'text-warning-400' : 'text-red-400'}">✓</span>${r}</li>`).join('')}
+                  </ul>
+                  <p class="text-[10px] text-surface-500 italic">${tip}</p>
+                </button>`;
             }).join('')}
           </div>
         </div>
@@ -945,11 +1000,9 @@ export function initStatsEvents(allWords, rerenderFn) {
   document.querySelectorAll('.streak-diff-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const diff = btn.dataset.streakDiff;
+      if ((store.getSettings().streakDifficulty || 'easy') === diff) return;
       store.updateSettings({ streakDifficulty: diff });
-      document.querySelectorAll('.streak-diff-btn').forEach(b => {
-        const active = b.dataset.streakDiff === diff;
-        b.className = `streak-diff-btn px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${active ? 'bg-warning-500/20 text-warning-400 border-warning-500/40' : 'bg-white/5 text-surface-400 border-white/10 hover:bg-white/10'}`;
-      });
+      rerenderFn();
     });
   });
 }
