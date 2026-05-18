@@ -351,14 +351,21 @@ function renderReviewScreen(allWords) {
   const word = reviewSession.words[reviewSession.currentIndex];
   const total = reviewSession.words.length;
   const current = reviewSession.currentIndex + 1;
+  const retryCount = reviewSession.wordRetryCount?.[word.word] || 0;
+  const isRetry = retryCount > 0;
+  const originalTotal = reviewSession.originalTotal || total;
+  const extraCount = total - originalTotal;
 
   return `
     <div class="max-w-2xl mx-auto px-4 pt-10 pb-10">
       <div class="fade-in mb-6">
         <div class="flex items-center justify-between mb-3">
           <div>
-            <h2 class="text-lg font-bold text-surface-100">Ôn tập</h2>
-            <p class="text-xs text-surface-400">${current} / ${total}${reviewConfig.quizTypes.length > 1 ? ` · ${
+            <h2 class="text-lg font-bold text-surface-100 flex items-center gap-2">
+              Ôn tập
+              ${isRetry ? `<span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-red-500/15 text-red-400 border border-red-500/20 animate-pulse">Xem lại${retryCount > 1 ? ` lần ${retryCount}` : ''}</span>` : ''}
+            </h2>
+            <p class="text-xs text-surface-400">${current} / ${total}${extraCount > 0 ? ` <span class="text-red-400/70">(+${extraCount} từ sai)</span>` : ''}${reviewConfig.quizTypes.length > 1 ? ` · ${
               { en_to_vi: 'Từ→Nghĩa', vi_short_to_en: 'Nghĩa ngắn→Từ', vi_detail_to_en: 'Nghĩa chi tiết→Từ', fill_blank: 'Điền từ' }[reviewSession.questionTypes[reviewSession.currentIndex]] || ''
             }` : ''}</p>
           </div>
@@ -790,6 +797,7 @@ export function initReviewEvents(allWords, rerenderFn) {
       score: { correct: 0, wrong: 0 }, answered: false, answers: [],
       startTime: Date.now(), sessionLogged: false,
       questionTypes: pool.map(() => types[Math.floor(Math.random() * types.length)]),
+      wordRetryCount: {}, originalTotal: pool.length,
     };
     rerenderFn();
   });
@@ -945,7 +953,7 @@ export function initReviewEvents(allWords, rerenderFn) {
         store.markWordLearned(word.word, quality);
         store.logReview(quality >= 3);
         if (quality >= 3) reviewSession.score.correct++;
-        else reviewSession.score.wrong++;
+        else { reviewSession.score.wrong++; _reinsertWrongWord(word); }
         reviewSession.currentIndex++;
         rerenderFn();
       });
@@ -994,6 +1002,7 @@ export function initReviewEvents(allWords, rerenderFn) {
       score: { correct: 0, wrong: 0 }, answered: false, answers: [],
       startTime: Date.now(), sessionLogged: false,
       questionTypes: pool.map(() => types[Math.floor(Math.random() * types.length)]),
+      wordRetryCount: {}, originalTotal: pool.length,
     };
     rerenderFn();
   });
@@ -1002,6 +1011,22 @@ export function initReviewEvents(allWords, rerenderFn) {
     reviewSession = { phase: 'setup', words: [], currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [], startTime: null, questionTypes: [] };
     rerenderFn();
   });
+}
+
+// ─── Wrong-word re-insertion ──────────────────────────────────────────────────
+
+function _reinsertWrongWord(word) {
+  if (!reviewSession.wordRetryCount) reviewSession.wordRetryCount = {};
+  const count = (reviewSession.wordRetryCount[word.word] || 0) + 1;
+  reviewSession.wordRetryCount[word.word] = count;
+  if (count > 2) return; // max 2 re-inserts per word (shown 3× total)
+  const types = reviewConfig.quizTypes.length > 0 ? reviewConfig.quizTypes : ['en_to_vi'];
+  const insertAt = Math.min(
+    reviewSession.currentIndex + 2 + Math.floor(Math.random() * 3),
+    reviewSession.words.length
+  );
+  reviewSession.words.splice(insertAt, 0, { ...word });
+  reviewSession.questionTypes.splice(insertAt, 0, types[Math.floor(Math.random() * types.length)]);
 }
 
 // ─── Answer recording helper ─────────────────────────────────────────────────
@@ -1023,7 +1048,7 @@ function _recordAnswer(word, selectedAnswer, isCorrect, allWords) {
 
   reviewSession.answers.push({ word: word.word, correct: isCorrect, qType, selectedMeaning: selectedDisplay, correctMeaning: correctDisplay });
   if (isCorrect) { reviewSession.score.correct++; store.markWordLearned(word.word, 4); store.logCorrectForWrongWord(word.word); }
-  else           { reviewSession.score.wrong++;   store.markWordLearned(word.word, 1); store.logWrongWord(word.word); }
+  else           { reviewSession.score.wrong++;   store.markWordLearned(word.word, 1); store.logWrongWord(word.word); _reinsertWrongWord(word); }
   store.logReview(isCorrect);
 }
 
