@@ -18,6 +18,10 @@ import { renderLudo, initLudoEvents } from './pages/ludo.js';
 import { renderMonopoly, initMonopolyEvents } from './pages/monopoly.js';
 import { showStreakPopup } from './components/streak-popup.js';
 
+// Apply initial theme immediately to prevent flashing
+const initialSettings = store.getSettings();
+document.body.classList.toggle('light-mode', !initialSettings.darkMode);
+
 let allWords = [];
 
 // Load word data
@@ -111,17 +115,17 @@ function initRouter() {
       renderPage(renderMonopoly, initMonopolyEvents);
     });
 
-  // Update header on route change
-  router.onRouteChange = () => {};
+  // Reset review session when navigating away
+  router.onRouteChange = (hash) => {
+    if (hash !== '/review') {
+      resetReviewSession();
+    }
+  };
 
   // Show streak popup when streak is extended
   window.addEventListener('streakExtended', (e) => {
     showStreakPopup(e.detail.count);
   });
-
-  // Apply initial theme
-  const settings = store.getSettings();
-  document.body.classList.toggle('light-mode', !settings.darkMode);
 
   // Trigger initial route
   if (!window.location.hash || window.location.hash === '#') {

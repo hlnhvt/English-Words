@@ -8,19 +8,43 @@ function getFirstDayOfMonth() {
   return `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, '0')}-01`;
 }
 
-let reviewConfig = {
-  questionCount: 20,
-  wordSource: 'learned', // learned | all
-  levelFilter: ['all'],
-  dateFilter: 'all',   // all | today | week | month | range
-  dateFrom: getFirstDayOfMonth(),
-  dateTo: getToday(),
-  bookmarkedOnly: false,
-  mode: 'quiz',
-  quizTypes: ['en_to_vi'], // 'en_to_vi' | 'vi_short_to_en' | 'vi_detail_to_en' | 'fill_blank' (multi-select)
-  showResultImmediately: true,
-  timeLimit: null,     // null = no limit, number = seconds
-};
+const CONFIG_STORAGE_KEY = 'vocab_review_config';
+
+function loadReviewConfig() {
+  const defaults = {
+    questionCount: 20,
+    wordSource: 'learned', // learned | all
+    levelFilter: ['all'],
+    dateFilter: 'all',   // all | today | week | month | range
+    dateFrom: getFirstDayOfMonth(),
+    dateTo: getToday(),
+    bookmarkedOnly: false,
+    mode: 'quiz',
+    quizTypes: ['en_to_vi'], // 'en_to_vi' | 'vi_short_to_en' | 'vi_detail_to_en' | 'fill_blank' (multi-select)
+    showResultImmediately: true,
+    timeLimit: null,     // null = no limit, number = seconds
+  };
+  try {
+    const saved = localStorage.getItem(CONFIG_STORAGE_KEY);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      return { ...defaults, ...parsed };
+    }
+  } catch (e) {
+    console.error('Failed to load review config:', e);
+  }
+  return defaults;
+}
+
+function saveReviewConfig() {
+  try {
+    localStorage.setItem(CONFIG_STORAGE_KEY, JSON.stringify(reviewConfig));
+  } catch (e) {
+    console.error('Failed to save review config:', e);
+  }
+}
+
+let reviewConfig = loadReviewConfig();
 
 let reviewSession = {
   phase: 'setup',      // setup | reviewing | complete
@@ -34,6 +58,7 @@ let reviewSession = {
 };
 
 let reviewTimerInterval = null;
+let reviewAutoAdvanceTimeout = null;
 
 // ─── Pool builder ────────────────────────────────────────────────────────────
 
@@ -716,12 +741,13 @@ export function initReviewEvents(allWords, rerenderFn) {
   // ── Setup events ──────────────────────────────────────────────────────────
 
   document.querySelectorAll('[data-setup-word-source]').forEach(btn => {
-    btn.addEventListener('click', () => { reviewConfig.wordSource = btn.dataset.setupWordSource; rerenderFn(); });
+    btn.addEventListener('click', () => { reviewConfig.wordSource = btn.dataset.setupWordSource; saveReviewConfig(); rerenderFn(); });
   });
   document.querySelectorAll('[data-q-count]').forEach(btn => {
     btn.addEventListener('click', () => {
       const v = btn.dataset.qCount;
       reviewConfig.questionCount = v === 'all' ? 'all' : parseInt(v);
+      saveReviewConfig();
       rerenderFn();
     });
   });
@@ -740,24 +766,26 @@ export function initReviewEvents(allWords, rerenderFn) {
         if (filters.length === 0) filters = ['all'];
         reviewConfig.levelFilter = filters;
       }
+      saveReviewConfig();
       rerenderFn(); 
     });
   });
   document.querySelectorAll('[data-setup-date]').forEach(btn => {
-    btn.addEventListener('click', () => { reviewConfig.dateFilter = btn.dataset.setupDate; rerenderFn(); });
+    btn.addEventListener('click', () => { reviewConfig.dateFilter = btn.dataset.setupDate; saveReviewConfig(); rerenderFn(); });
   });
   document.getElementById('date-from')?.addEventListener('change', e => {
-    reviewConfig.dateFrom = e.target.value; rerenderFn();
+    reviewConfig.dateFrom = e.target.value; saveReviewConfig(); rerenderFn();
   });
   document.getElementById('date-to')?.addEventListener('change', e => {
-    reviewConfig.dateTo = e.target.value; rerenderFn();
+    reviewConfig.dateTo = e.target.value; saveReviewConfig(); rerenderFn();
   });
   document.querySelectorAll('[data-setup-mode]').forEach(btn => {
-    btn.addEventListener('click', () => { reviewConfig.mode = btn.dataset.setupMode; rerenderFn(); });
+    btn.addEventListener('click', () => { reviewConfig.mode = btn.dataset.setupMode; saveReviewConfig(); rerenderFn(); });
   });
   document.querySelectorAll('[data-show-result]').forEach(btn => {
     btn.addEventListener('click', () => {
       reviewConfig.showResultImmediately = btn.dataset.showResult === 'true';
+      saveReviewConfig();
       rerenderFn();
     });
   });
@@ -765,6 +793,7 @@ export function initReviewEvents(allWords, rerenderFn) {
     btn.addEventListener('click', () => {
       const v = btn.dataset.setupTimer;
       reviewConfig.timeLimit = v === 'null' ? null : parseInt(v);
+      saveReviewConfig();
       rerenderFn();
     });
   });
@@ -782,11 +811,12 @@ export function initReviewEvents(allWords, rerenderFn) {
       } else {
         reviewConfig.quizTypes = [...reviewConfig.quizTypes, t];
       }
+      saveReviewConfig();
       rerenderFn();
     });
   });
   document.getElementById('toggle-bookmarked')?.addEventListener('click', () => {
-    reviewConfig.bookmarkedOnly = !reviewConfig.bookmarkedOnly; rerenderFn();
+    reviewConfig.bookmarkedOnly = !reviewConfig.bookmarkedOnly; saveReviewConfig(); rerenderFn();
   });
   document.getElementById('btn-start-review')?.addEventListener('click', () => {
     const pool = buildWordPool(allWords);
@@ -914,10 +944,12 @@ export function initReviewEvents(allWords, rerenderFn) {
 
           // Auto-advance after 1.3s (guard against stale closure if user exits)
           const questionIndex = reviewSession.currentIndex;
-          setTimeout(() => {
+          if (reviewAutoAdvanceTimeout) clearTimeout(reviewAutoAdvanceTimeout);
+          reviewAutoAdvanceTimeout = setTimeout(() => {
             if (reviewSession.currentIndex === questionIndex && reviewSession.phase === 'reviewing') {
               reviewSession.currentIndex++;
               reviewSession.answered = false;
+              reviewAutoAdvanceTimeout = null;
               rerenderFn();
             }
           }, 1300);
@@ -1090,5 +1122,7 @@ function _styleOption(btn, type) {
 }
 
 export function resetReviewSession() {
+  if (reviewTimerInterval) { clearInterval(reviewTimerInterval); reviewTimerInterval = null; }
+  if (reviewAutoAdvanceTimeout) { clearTimeout(reviewAutoAdvanceTimeout); reviewAutoAdvanceTimeout = null; }
   reviewSession = { phase: 'setup', words: [], currentIndex: 0, score: { correct: 0, wrong: 0 }, answered: false, answers: [], startTime: null, questionTypes: [] };
 }

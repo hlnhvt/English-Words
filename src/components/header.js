@@ -101,8 +101,9 @@ export function initHeaderEvents(allWords = []) {
 
   const handleThemeToggle = () => {
     const settings = store.getSettings();
-    store.updateSettings({ darkMode: !settings.darkMode });
-    document.body.classList.toggle('light-mode', !settings.darkMode);
+    const newDarkMode = !settings.darkMode;
+    store.updateSettings({ darkMode: newDarkMode });
+    document.body.classList.toggle('light-mode', !newDarkMode);
     // Re-render header
     const headerEl = document.querySelector('header');
     if (headerEl) {
